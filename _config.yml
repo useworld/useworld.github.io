@@ -1,0 +1,22 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+#permalink:           pretty
+#relative_permalinks: true
+
+# Setup
+title:               Se-yong's Github Page
+tagline:             ''
+description:         ''
+url:                 http://useworld.github.io
+baseurl:             ''
+#paginate:            5
+
+# About/contact
+author:
+  name:              Se-yong Kim
+  url:               http://useworld.github.io
+  email:             shocora@naver.com
+
+# Custom vars
+#version:             1.0.0
