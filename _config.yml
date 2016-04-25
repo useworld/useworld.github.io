@@ -1,22 +1,18 @@
-# Permalinks
+# Welcome to Jekyll!
 #
-# Use of `relative_permalinks` ensures post links from the index work properly.
-#permalink:           pretty
-#relative_permalinks: true
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Setup
-title:               Se-yong's Github Page
-tagline:             ''
-description:         ''
-url:                 http://useworld.github.io
-baseurl:             ''
-#paginate:            5
+# Site settings
+title: Se-yong's Github Page
+email: shocora@naver.com
+description: Githbu Page Test. Powered by Jekyll.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://useworld.github.io" # the base hostname & protocol for your site
+#twitter_username: jekyllrb
+github_username:  useworld
 
-# About/contact
-author:
-  name:              Se-yong Kim
-  url:               http://useworld.github.io
-  email:             shocora@naver.com
-
-# Custom vars
-#version:             1.0.0
+# Build settings
+markdown: kramdown
