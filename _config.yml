@@ -7,12 +7,12 @@
 
 # Site settings
 title: Se-yong's Github Page
-email: shocora@naver.com
-description: Githbu Page Test. Powered by Jekyll.
+email: useworld@daum.net
+# description: .
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://useworld.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
-github_username:  useworld
+github_username: useworld
 
 # Build settings
 markdown: kramdown
