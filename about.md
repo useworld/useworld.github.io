@@ -6,7 +6,7 @@ permalink: /about/
 
 Name : 김세용
 
-Blog : [이것저것 다 하는 블로그](https://shocora.blog.me)
+Blog : [이것저것 다하는 블로그](https://shocora.blog.me)
 
 E-Mail : useworld@daum.net
 
