@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Nothing.
+[Blog](shocora.blog.me)
