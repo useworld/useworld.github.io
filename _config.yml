@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+﻿# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -8,7 +8,7 @@
 # Site settings
 title: Se-yong's Notepad
 email: useworld@daum.net
-description: &copy; 2018. 김세용 All rights reserved. 
+description: 2018. Se-yong Kim
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://useworld.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
