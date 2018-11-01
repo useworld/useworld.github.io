@@ -15,7 +15,7 @@ title_separator          : "-"
 name                     : "Seyong Kim"
 description              : "Seyong's Notepad"
 url                      : "https://useworld.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : 
+baseurl                  : "/test"
 repository               : "useworld/useworld.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
@@ -300,7 +300,7 @@ defaults:
   # _portfolio
   - scope:
       path: ""
-      type: portfolio
+      type: portfolio   
     values:
       layout: single
       author_profile: false
