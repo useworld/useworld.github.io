@@ -1,8 +1,32 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <!-- <h1 class="page-heading">Posts</h1> -->
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
+
+</div>
+
 <footer class="site-footer">
 
   <div class="wrapper">
 
-    <!--<h2 class="footer-heading">{{ site.title }}</h2>
+    <!--<h2 class="footer-heading">{{ site.title }}</h2>-->
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
@@ -19,7 +43,9 @@
             {% include icon-github.html username=site.github_username %}
           </li>
           {% endif %}
-
+	<li>
+	<a href="https://shocora.blog.me">Blog</a>
+	</li>
           {% if site.twitter_username %}
           <li>
             {% include icon-twitter.html username=site.twitter_username %}
@@ -32,7 +58,7 @@
         <p>{{ site.description }}</p>
       </div>
     </div>
-  -->
+
   </div>
 
 </footer>

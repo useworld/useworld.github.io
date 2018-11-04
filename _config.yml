@@ -1,33 +1,110 @@
+﻿# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: To Be Useful to the World
-email: useworld@naver.co
-name: Seyong Kim
-#baseurl: "/subdirectory" #used if hosting in a subdirectory
-url: "https://useworld.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-blogPermalink: "/blog/" # Optional, used by post layout. If absent, "Blog"
-                        # link will point to root.
-
-# Put your logo image file in assets/logo.
-# If you don't want a logo, comment the following 5 lines out.
-defaults:
-  - scope: # Sets the logo image to be used in the posts and post layout.
-      path: "assets/logo"
-    values:
-      logoImage: true
-
-# If you want to link only specific pages in your footer or home page, 
-# uncomment the corresponding variable below and add the paths to the 
-# pages in order as they should show up. Otherwise, page order is set
-# on each page's front matter with the order variable.
-
-#home_pages:
-# - posts.md
-
-#footer_pages:
-# - simple.md
+#title: Se-yong's Notepad
+#email: useworld@daum.net
+#description: 2018. Se-yong Kim
+#baseurl: "" # the subpath of your site, e.g. /blog
+#url: "http://useworld.github.io" # the base hostname & protocol for your site
+##twitter_username: jekyllrb
+#github_username: useworld
 
 # Build settings
-exclude:
-  - README.md
-  - LICENSE.txt
+#markdown: kramdown
+
+remote_theme : mmistakes/minimal-mistakes
+
+title:            Seyong's Notepad
+description:      2018. Kim Seyong
+disqus_shortname: 
+reading_time:     true
+words_per_minute: 200
+# Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
+# When testing locally leave blank or use http://localhost:4000
+url:http://useworld.github.io
+
+# Owner/author information
+owner:
+  name:           Kim Seyong
+  avatar:         avatar.jpg
+  bio:            "Your bio goes here. It shouldn't be super long but a good sentence or two should suffice."
+  email:          useworld@naver.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        
+  facebook:       
+  github:         
+  stackexchange:  
+  linkedin:       
+  instagram:      
+  flickr:         
+  tumblr:         
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:
+
+# Background image to be tiled on all pages
+background: 
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Seoul
+future:      false  # publish future dated posts --  true, false (default) 
+highlighter: rouge
+markdown:    kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-feed
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+include: 
+  - .htaccess
+exclude: 
+  - "*.less"
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - config
+  - gulpfile.js
+  - lib
+  - log
+  - node_modules
+  - package.json
+  - spec
+  - tmp
