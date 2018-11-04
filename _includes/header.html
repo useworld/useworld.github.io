@@ -1,0 +1,35 @@
+<header class="site-header" class="row" role="banner">
+  {% assign logo = site.static_files | where: "logoImage", true %}
+  {% if page.layout == "post" %}
+
+    {% if logo.first %}
+      <a href="{{ "/" | relative_url }}"><img src="{{ logo.first.path | relative_url }}" class="site-logo" class="u-max-full-width" /></a>
+    {% else %}
+      <a href="{{ "/" | relative_url }}"><h1 class="site-header-title">{{site.title}}</h1></a>
+    {% endif %}
+
+    <h1 class="site-header-title">{{page.title}}</h1>
+    <p>
+      {% if site.blogPermalink %}
+        <a href="{{ site.blogPermalink | relative_url }}">Blog</a> | 
+      {% else %}
+        <a href="{{ "/" | relative_url }}">Blog</a> | 
+      {% endif %}
+      {{ site.name }} | {{ page.date | date: "%m-%d-%y" }}
+    </p>
+
+  {% else %}
+
+    {% if logo.first %}
+      <a href="{{ "/" | relative_url }}"><img src="{{ logo.first.path | relative_url }}" class="site-logo" class="u-max-full-width" /></a>
+      <h1 class="site-header-title">{{site.title}}</h1>
+    {% else %}
+      <a href="{{ "/" | relative_url }}"><h1 class="site-header-title">{{site.title}}</h1></a>
+    {% endif %}
+
+    {% if site.blogPermalink %}
+      <a href="../">../</a>
+    {% endif %}
+
+  {% endif %}
+</header>
