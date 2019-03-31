@@ -1,18 +1,18 @@
 title:             To be Useful to the World
 email:             useworld@naver.com
-description:       Seyong Kim's Blog
-author:            Seyong Kim
+description:       IT, Programming, Security, Hacking
+author:            useworld
 baseurl:           "/"
 url:               "https://useworld.github.io"
 
 # Social Profiles
 twitter_username:
-github_username:   useworld
+github_username:
 facebook_username:
 
 # Build settings
 markdown:          kramdown
-paginate:          5
+paginate:          10
 paginate_path:     "/posts/page:num/"
 plugins:
   - jekyll-feed
