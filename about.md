@@ -6,6 +6,7 @@ title: About
 
 ---
 
-#About me
+About me
+========
 
 ![img]({{ '/assets/images/wanted.jpg' | relative_url }})\{: .center-image }
