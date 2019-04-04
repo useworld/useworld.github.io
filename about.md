@@ -1,13 +1,9 @@
 ---
-
 layout: page
-
 title: About
-
 ---
 
-About
-=====
+# About
 
 ![]({{ '/assets/images/wanted.jpg' | relative_url }}){: .center-image }
 
