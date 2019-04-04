@@ -1,5 +1,5 @@
 <div class="sidebar ">
-  <h2>Recent Posts</h2>
+  <h2>최근 글</h2>
   <ul>
     {% for post in site.posts limit:5 %}
     <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
@@ -8,7 +8,7 @@
 </div>
 
 <div class="sidebar">
-  <h2>Tags</h2>
+  <h2>태그</h2>
   <ul class="sideBarTags">
     {% assign tags = (site.tags | sort:0) %}
     {% for tag in tags %}
