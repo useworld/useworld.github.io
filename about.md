@@ -26,5 +26,3 @@ title: About
 좌우 시력이 다릅니다.
 
 {% endhighlight bash %}
-
-`Ctrl`{: .key}+`A`{:.key}
