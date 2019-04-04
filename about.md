@@ -1,8 +1,11 @@
 ---
-layout: page 
+
+layout: page
+
 title: About
 
 ---
 
-# Some info 
-...about how cool you are ;)
+#About me
+
+![img]({{ '/assets/images/wanted.jpg' | relative_url }})\{: .center-image }
