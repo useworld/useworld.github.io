@@ -1,6 +1,6 @@
 # Jekyll configuration
 
-name: Be Useful to the World
+name: Useworld
 description: Security Engineer, Software Developer, ...Hacker
 
 # Url is currently only used only for the RSS feed in feed.xml
@@ -10,7 +10,7 @@ url: https://useworld.github.io
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
 baseurl: '/'
 
-author: Useworld
+author: Seyong Kim
 copyright: 2019-2019
 
 share:
