@@ -9,7 +9,7 @@ title: About
 About
 =====
 
-![]({{ '/assets/images/wanted.jpg' | relative_url }})
+![]({{ '/assets/images/wanted.jpg' | relative_url }}){: .center-image }
 
 {% highlight bash %}
 
@@ -31,4 +31,4 @@ About
 
 {% endhighlight bash %}
 
-`Ctrl` {: .key}+`A` {:.key}
+`Ctrl`{: .key}+`A`{:.key}
