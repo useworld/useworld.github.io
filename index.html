@@ -1,70 +1,64 @@
-<!doctype html>
-<html lang="ko">
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<title>Development Test Page</title>
-	</head>
-	<body>
-		<style>
-		@font-face { font-family: 'Binggrae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff'); font-weight: normal; font-style: normal; }
-		body {
-			font-family: 'Binggrae';
-		}
-		</style>
-		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff5e00;">
-			<span class="navbar-brand" href="#">EQST LMS iOS</span>
-			
-			
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<span class="nav-link disabled" >15번 문제</span>
-				</li>
-				
-			</div>
-		</nav>
-		<div class="jumbotron" style="background-color: white;">
-			<div class="container">
-				<h1 class="display-4">축하합니다!</h1>
-				<br>
-				<p class="lead">문제 15. 앱 바이너리를 분석하여 개발용 앱 서버 주소를 확인하고 접속하시오.</p>
-				<hr class="my-4">
-				<p>당신은 테스트용 개발 서버를 찾았습니다. 아래의 Get Flag 버튼을 눌러 정답을 확인하세요.</p><br><br>
-				<div class="container">
-					<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#staticBackdrop" style="display: block; background-color: orange; margin: 0px auto;">Get Flag
-					</button>
-				</div>
-			</div>
-		</div>
-		<!-- Modal -->
-		<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="staticBackdropLabel">Flag</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">정답 확인</span>
-						</button>
-					</div>
-					<div class="modal-body" style="display:block; margin: 0px auto;">
-						you_found_dev_server
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color: orange;">확인</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<nav class="navbar fixed-bottom">
-			<img src="data:image/png;base64,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" style="display: block; margin: 0px auto;"/>
-		</nav>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	</body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <!-- <h1 class="page-heading">Posts</h1> -->
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
+
+</div>
+
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">{{ site.title }}</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>{{ site.title }}</li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+	<li>
+	<a href="https://shocora.blog.me">Blog</a>
+	</li>
+          {% if site.twitter_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description }}</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
