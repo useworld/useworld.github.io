@@ -1,7 +1,7 @@
 body {
   font-size: 20px;
   color: #212529;
-  font-family: 'D2 Coding', 'Lora', 'Times New Roman', serif; }
+  font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Lora', 'Times New Roman', serif; }
 
 p {
   line-height: 1.5;
@@ -16,7 +16,7 @@ h4,
 h5,
 h6 {
   font-weight: 800;
-  font-family: 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 a {
   color: #212529;
@@ -67,7 +67,7 @@ img::-moz-selection {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
   background-color: white;
-  font-family: 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   #mainNav .dropdown-menu {
     border-bottom: 1px solid transparent;
     background: rgba(255, 255, 255, 0.8); }
@@ -178,7 +178,7 @@ header.masthead {
       line-height: 1.1;
       display: block;
       margin: 10px 0 0;
-      font-family: 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
     @media only screen and (min-width: 768px) {
       header.masthead .page-heading h1,
       header.masthead .site-heading h1 {
@@ -193,12 +193,12 @@ header.masthead {
     font-size: 24px;
     font-weight: 600;
     margin: 10px 0 30px;
-    font-family: 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   header.masthead .post-heading .meta {
     font-size: 20px;
     font-weight: 300;
     font-style: italic;
-    font-family: 'D2 Coding', 'Lora', 'Times New Roman', serif; }
+    font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Lora', 'Times New Roman', serif; }
     header.masthead .post-heading .meta a {
       color: #fff; }
   @media only screen and (min-width: 768px) {
@@ -315,11 +315,11 @@ header.masthead {
     border-radius: 0;
     background: none;
     box-shadow: none !important;
-    font-family: 'D2 Coding', 'Lora', 'Times New Roman', serif; }
+    font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Lora', 'Times New Roman', serif; }
     .floating-label-form-group input::-webkit-input-placeholder,
     .floating-label-form-group textarea::-webkit-input-placeholder {
       color: #868e96;
-      font-family: 'D2 Coding', 'Lora', 'Times New Roman', serif; }
+      font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Lora', 'Times New Roman', serif; }
   .floating-label-form-group label {
     font-size: 0.85em;
     line-height: 1.764705882em;
@@ -366,7 +366,7 @@ footer {
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 0;
-  font-family: 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 .btn-primary {
   background-color: #868e96;
