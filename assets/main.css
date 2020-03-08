@@ -67,10 +67,15 @@ img::-moz-selection {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
   background-color: white;
-  font-family: 'Nanum Gothic Coding', 'D2 Coding', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   #mainNav .dropdown-menu {
     border-bottom: 1px solid transparent;
     background: rgba(255, 255, 255, 0.8); }
+  #mainNav .dropdown-item {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #343a40;
+    font-size: 12px;
+    font-weight: 800; }
   #mainNav .navbar-brand {
     font-weight: 800;
     color: #343a40; }
