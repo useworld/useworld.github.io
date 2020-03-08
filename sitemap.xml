@@ -76,6 +76,9 @@
 <loc>http://localhost:4000/category/Node.js.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/category/Swift.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/category/Web.html</loc>
 </url>
 <url>
@@ -85,10 +88,13 @@
 <loc>http://localhost:4000/contact.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>http://localhost:4000/category/iOS.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/category/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/posts/</loc>
