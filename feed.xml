@@ -1,6 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-08T23:19:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">헌드레드 소울 - 화산 하피(헬) 무한 공중 콤보로 토벌하기(영상)</title><link href="http://localhost:4000/game/2019/10/15/hsoulharpy.html" rel="alternate" type="text/html" title="헌드레드 소울 - 화산 하피(헬) 무한 공중 콤보로 토벌하기(영상)" /><published>2019-10-15T00:00:00+09:00</published><updated>2019-10-15T00:00:00+09:00</updated><id>http://localhost:4000/game/2019/10/15/hsoulharpy</id><content type="html" xml:base="http://localhost:4000/game/2019/10/15/hsoulharpy.html">&lt;h1 id=&quot;화산-하피헬-토벌-영상&quot;&gt;화산 하피(헬) 토벌 영상&lt;/h1&gt;
-&lt;p&gt;카르마 강화 재료를 드랍하는
-화산 하피(헬)를 무과금 장비로 잡아보겠다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-09T01:16:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">Favicon 만들고 적용하기</title><link href="http://localhost:4000/jekyll/2020/03/08/favicon.html" rel="alternate" type="text/html" title="Favicon 만들고 적용하기" /><published>2020-03-08T00:00:00+09:00</published><updated>2020-03-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/2020/03/08/favicon</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/03/08/favicon.html">&lt;h1 id=&quot;favicon&quot;&gt;Favicon&lt;/h1&gt;
+&lt;p&gt;Favicon이란 Favorites + Icon의 합성어로 웹 브라우저 주소창에 표시되는 웹사이트나 웹페이지를 대표하는 아이콘이다.&lt;br /&gt;
+새로 개장한 내 블로그에도 Favicon을 달아야겠다.&lt;/p&gt;
+
+&lt;h1 id=&quot;제작&quot;&gt;제작&lt;/h1&gt;
+&lt;p&gt;보통 스샷찍고 보고서 쓸 때 사용하지만 알고보면 그래픽 만능 툴인 &lt;a href=&quot;https://picpick.app/ko/&quot;&gt;PicPick&lt;/a&gt;을 이용하여 간단하게 블로그 대표문자 U를 넣은 깔끔한 그림 파일을 하나 제작한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/favicon01.png&quot; class=&quot;fit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가로, 세로 크기는 150으로 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.favicon-generator.org/&quot;&gt;Favicon.ico &amp;amp; App Icon Generator&lt;/a&gt; 사이트에서 만든 이미지 파일을 변환시키고 다운받는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/favicon02.png&quot; class=&quot;fit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;만든 그림 파일을 업로드한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/favicon03.png&quot; class=&quot;fit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;생성된 아이콘 파일은 다운받는다.&lt;/p&gt;
+
+&lt;h1 id=&quot;적용&quot;&gt;적용&lt;/h1&gt;
+&lt;p&gt;그냥 별도로 설정하기 귀찮으면 favicon.ico 파일을 블로그 루트 디렉토리에 넣는다. 다른 경로의 아이콘을 사용하고 싶으면 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 안에&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shortcut icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://example.com/myicon.ico&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이런 식으로 넣어주면 된다고 한다.&lt;br /&gt;
+난 귀찮아서 그냥 넣었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/favicon04.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;요렇게 깔끔하게 적용이 되었다.&lt;br /&gt;
+끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Jekyll" /><summary type="html">Favicon Favicon이란 Favorites + Icon의 합성어로 웹 브라우저 주소창에 표시되는 웹사이트나 웹페이지를 대표하는 아이콘이다. 새로 개장한 내 블로그에도 Favicon을 달아야겠다.</summary></entry><entry><title type="html">헌드레드 소울 - 화산 하피(헬) 무한 공중 콤보로 토벌하기(영상)</title><link href="http://localhost:4000/game/2019/10/15/hsoulharpy.html" rel="alternate" type="text/html" title="헌드레드 소울 - 화산 하피(헬) 무한 공중 콤보로 토벌하기(영상)" /><published>2019-10-15T00:00:00+09:00</published><updated>2019-10-15T00:00:00+09:00</updated><id>http://localhost:4000/game/2019/10/15/hsoulharpy</id><content type="html" xml:base="http://localhost:4000/game/2019/10/15/hsoulharpy.html">&lt;h1 id=&quot;화산-하피헬-토벌-영상&quot;&gt;화산 하피(헬) 토벌 영상&lt;/h1&gt;
+&lt;p&gt;카르마 강화 재료를 드랍하는 화산 하피(헬)를 무과금 장비로 잡아보겠다.&lt;br /&gt;
 맞으면 거의 실패라고 보면 되기 때문에 패턴을 무시하고 토벌한다.&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/r0D5m_DIhYs&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
@@ -18,14 +48,12 @@
   &lt;li&gt;카르마 : B. 돌격대장의 전투장갑&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;무과금으로 하다보니 장비가 거의 일반 장비다.
-Youtube 영상 제작 연습용으로 제작해봤다.
+&lt;p&gt;무과금으로 하다보니 장비가 거의 일반 장비다.&lt;br /&gt;
+Youtube 영상 제작 연습용으로 제작해봤다.&lt;br /&gt;
 끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">화산 하피(헬) 토벌 영상 카르마 강화 재료를 드랍하는 화산 하피(헬)를 무과금 장비로 잡아보겠다. 맞으면 거의 실패라고 보면 되기 때문에 패턴을 무시하고 토벌한다.</summary></entry><entry><title type="html">헌드레드 소울 - 태고의 웜(노멀) 본 크러셔로 부관 없이 잡기(영상)</title><link href="http://localhost:4000/game/2019/10/14/hsoulworm.html" rel="alternate" type="text/html" title="헌드레드 소울 - 태고의 웜(노멀) 본 크러셔로 부관 없이 잡기(영상)" /><published>2019-10-14T00:00:00+09:00</published><updated>2019-10-14T00:00:00+09:00</updated><id>http://localhost:4000/game/2019/10/14/hsoulworm</id><content type="html" xml:base="http://localhost:4000/game/2019/10/14/hsoulworm.html">&lt;h1 id=&quot;태고의-웜노멀-토벌-영상&quot;&gt;태고의 웜(노멀) 토벌 영상&lt;/h1&gt;
 
-&lt;p&gt;헌드레드 소울 비앙카의 대장간 재료를 드랍하는
-태고의 웜(노멀)을 무과금 장비로 잡아보겠다.&lt;/p&gt;
-
-&lt;p&gt;부관 행동력이 드니 부관 상관 없이 혼자 잡아 보자.&lt;/p&gt;
+&lt;p&gt;헌드레드 소울 비앙카의 대장간 재료를 드랍하는 태고의 웜(노멀)을 무과금 장비로 잡아보겠다.&lt;br /&gt;
+부관 행동력이 드니 부관 상관 없이 혼자 잡아 보자.&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/7PcnWsAcZ6Y&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;hr /&gt;
@@ -42,8 +70,8 @@ Youtube 영상 제작 연습용으로 제작해봤다.
   &lt;li&gt;카르마 : B. 돌격대장의 전투장갑&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;무과금으로 하다보니 장비가 거의 일반 장비다.
-Youtube 영상 제작 연습용으로 제작해봤다.
+&lt;p&gt;무과금으로 하다보니 장비가 거의 일반 장비다.&lt;br /&gt;
+Youtube 영상 제작 연습용으로 제작해봤다.&lt;br /&gt;
 끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">태고의 웜(노멀) 토벌 영상</summary></entry><entry><title type="html">Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface)</title><link href="http://localhost:4000/node.js/2016/04/20/nodejsffi.html" rel="alternate" type="text/html" title="Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface)" /><published>2016-04-20T00:00:00+09:00</published><updated>2016-04-20T00:00:00+09:00</updated><id>http://localhost:4000/node.js/2016/04/20/nodejsffi</id><content type="html" xml:base="http://localhost:4000/node.js/2016/04/20/nodejsffi.html">&lt;p&gt;NodeJS에서 C언어로 만들어진 라이브러리 파일을 이용하는 Test를 해보았다.
 fft는 fast Fourier transform C 라이브러리다.&lt;/p&gt;
 
@@ -71,17 +99,34 @@ fft는 fast Fourier transform C 라이브러리다.&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;잘된다.
-끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Node.js" /><summary type="html">NodeJS에서 C언어로 만들어진 라이브러리 파일을 이용하는 Test를 해보았다. fft는 fast Fourier transform C 라이브러리다.</summary></entry><entry><title type="html">바람의 시(Wind song) - 오시오 코타로(Kotaro Oshio)(영상)</title><link href="http://localhost:4000/guitar/2014/04/02/windsong.html" rel="alternate" type="text/html" title="바람의 시(Wind song) - 오시오 코타로(Kotaro Oshio)(영상)" /><published>2014-04-02T00:00:00+09:00</published><updated>2014-04-02T00:00:00+09:00</updated><id>http://localhost:4000/guitar/2014/04/02/windsong</id><content type="html" xml:base="http://localhost:4000/guitar/2014/04/02/windsong.html">&lt;h1 id=&quot;바람의-시&quot;&gt;바람의 시&lt;/h1&gt;
-&lt;p&gt;이 노래는 황혼(Twilight)과 함께 핑거스타일 입문곡으로 많이 치는 곡이다.
-쉬운 운지와 잔잔한 멜로디로 인기가 많다.
+&lt;p&gt;잘된다.&lt;br /&gt;
+끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Node.js" /><summary type="html">NodeJS에서 C언어로 만들어진 라이브러리 파일을 이용하는 Test를 해보았다. fft는 fast Fourier transform C 라이브러리다.</summary></entry><entry><title type="html">Fight - 오시오 코타로(Kotaro Oshio)(영상)</title><link href="http://localhost:4000/guitar/2014/07/06/fight.html" rel="alternate" type="text/html" title="Fight - 오시오 코타로(Kotaro Oshio)(영상)" /><published>2014-07-06T00:00:00+09:00</published><updated>2014-07-06T00:00:00+09:00</updated><id>http://localhost:4000/guitar/2014/07/06/fight</id><content type="html" xml:base="http://localhost:4000/guitar/2014/07/06/fight.html">&lt;h1 id=&quot;fight&quot;&gt;Fight&lt;/h1&gt;
+
+&lt;p&gt;베이스 느낌이 물씬 나는 곡.&lt;br /&gt;
+정튜닝으로 쳐도 문제 없어서 부담없이 많이들 친다.&lt;br /&gt;
+(실제론 음을 많이 내려야되지만… 줄이 헐렁해지고 다시 올릴 때 잘 끊어진다.)&lt;/p&gt;
+
+&lt;p&gt;원테이크로 틀리던지 말던지 아무렇게나 막쳤다.&lt;br /&gt;
+원 동영상이 흑백이라 따라해보려다가 스케치 효과가 있어서 한번 넣어봤다.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;480&quot; src=&quot;https://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=3A4F5FAF7C1CD0BBA3A118D00D22679809A4&amp;amp;outKey=V12493b05def58a215b3c4e6f069383455c65e5ed7833195d48d84e6f069383455c65&quot; frameborder=&quot;no&quot; scrolling=&quot;no&quot; title=&quot;NaverVideo&quot; allow=&quot;autoplay; gyroscope; accelerometer; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Guitar" /><summary type="html">Fight</summary></entry><entry><title type="html">Red Shoes Dance - 오시오 코타로(Kotaro Oshio)(영상)</title><link href="http://localhost:4000/guitar/2014/04/03/redshoesdance.html" rel="alternate" type="text/html" title="Red Shoes Dance - 오시오 코타로(Kotaro Oshio)(영상)" /><published>2014-04-03T00:00:00+09:00</published><updated>2014-04-03T00:00:00+09:00</updated><id>http://localhost:4000/guitar/2014/04/03/redshoesdance</id><content type="html" xml:base="http://localhost:4000/guitar/2014/04/03/redshoesdance.html">&lt;h1 id=&quot;red-shoes-dance&quot;&gt;Red Shoes Dance&lt;/h1&gt;
+
+&lt;p&gt;원테이크에 내가 치고 싶은 부분만 골라쳤다.&lt;br /&gt;
+신나고 흥겨운 노래…. 지만 별로 안신나네.&lt;br /&gt;
+마구마구 틀렸다.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;480&quot; src=&quot;https://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=47A414612C81D3D357733C4464AF1AF07D5B&amp;amp;outKey=V127f61468098e9fb5a75c10964006b52b35c6024846383536a17c10964006b52b35c&quot; frameborder=&quot;no&quot; scrolling=&quot;no&quot; title=&quot;NaverVideo&quot; allow=&quot;autoplay; gyroscope; accelerometer; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Guitar" /><summary type="html">Red Shoes Dance</summary></entry><entry><title type="html">바람의 시(Wind song) - 오시오 코타로(Kotaro Oshio)(영상)</title><link href="http://localhost:4000/guitar/2014/04/02/windsong.html" rel="alternate" type="text/html" title="바람의 시(Wind song) - 오시오 코타로(Kotaro Oshio)(영상)" /><published>2014-04-02T00:00:00+09:00</published><updated>2014-04-02T00:00:00+09:00</updated><id>http://localhost:4000/guitar/2014/04/02/windsong</id><content type="html" xml:base="http://localhost:4000/guitar/2014/04/02/windsong.html">&lt;h1 id=&quot;바람의-시&quot;&gt;바람의 시&lt;/h1&gt;
+&lt;p&gt;이 노래는 황혼(Twilight)과 함께 핑거스타일 입문곡으로 많이 치는 곡이다.&lt;br /&gt;
+쉬운 운지와 잔잔한 멜로디로 인기가 많다.&lt;br /&gt;
 하지만 정확하게 운지하고 깔끔한 소리를 내려면 많은 연습이 필요하다.&lt;/p&gt;
 
-&lt;p&gt;원테이크로 그냥 틀리던지 말던지 한번에 막 찍었다.
-풀커버도 아니고 내 마음대로 치고 싶은 부분만 쳤다.
+&lt;p&gt;원테이크로 그냥 틀리던지 말던지 한번에 막 찍었다.&lt;br /&gt;
+풀커버도 아니고 내 마음대로 치고 싶은 부분만 쳤다.&lt;br /&gt;
 동영상으로 찍고보니 엉망이다.&lt;/p&gt;
 
 &lt;iframe width=&quot;100%&quot; height=&quot;480&quot; src=&quot;https://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=471A00C2AE2615C978835508428F425CE66C&amp;amp;outKey=V1288b926a503ff983129c7010c78dc3356e1e56bc5f9731948cec7010c78dc3356e1&quot; frameborder=&quot;no&quot; scrolling=&quot;no&quot; title=&quot;NaverVideo&quot; allow=&quot;autoplay; gyroscope; accelerometer; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Guitar" /><summary type="html">바람의 시 이 노래는 황혼(Twilight)과 함께 핑거스타일 입문곡으로 많이 치는 곡이다. 쉬운 운지와 잔잔한 멜로디로 인기가 많다. 하지만 정확하게 운지하고 깔끔한 소리를 내려면 많은 연습이 필요하다.</summary></entry></feed>

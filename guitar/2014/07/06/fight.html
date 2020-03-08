@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>
-    Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface) - To be Useful to the World
+    Fight - 오시오 코타로(Kotaro Oshio)(영상) - To be Useful to the World
     
   </title>
 
-  <meta name="description" content="NodeJS에서 C언어로 만들어진 라이브러리 파일을 이용하는 Test를 해보았다. fft는 fast Fourier transform C 라이브러리다.">
+  <meta name="description" content="Fight">
   <link href="https://fonts.googleapis.com/nanumgothiccoding.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/node.js/2016/04/20/nodejsffi.html">
+  <link rel="canonical" href="http://localhost:4000/guitar/2014/07/06/fight.html">
   <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
 
 </head>
@@ -95,17 +95,17 @@
 </nav>
 		<!-- Page Header -->
 
-  <header class="masthead" style="background-image: url('/img/category/bg-node.js.jpg')">
+  <header class="masthead" style="background-image: url('/img/category/bg-guitar.jpg')">
   
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface)</h1>
-            <span class="meta" style="font-size:16px;color: gray;"><i class="far fa-calendar-alt"></i> 2016년 04월 20일 &middot; <span class="reading-time" title="Estimated read time">
+            <h1>Fight - 오시오 코타로(Kotaro Oshio)(영상)</h1>
+            <span class="meta" style="font-size:16px;color: gray;"><i class="far fa-calendar-alt"></i> 2014년 07월 06일 &middot; <span class="reading-time" title="Estimated read time">
   
-   2분  분량 </span>
+   1분  분량 </span>
 
             </span>
           </div>
@@ -117,47 +117,33 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="content">
-        <p>NodeJS에서 C언어로 만들어진 라이브러리 파일을 이용하는 Test를 해보았다.
-fft는 fast Fourier transform C 라이브러리다.</p>
+        <h1 id="fight">Fight</h1>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">ref</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">ffi</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">ffi</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">ArrayType</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">ref-array</span><span class="dl">'</span><span class="p">);</span>
+<p>베이스 느낌이 물씬 나는 곡.<br />
+정튜닝으로 쳐도 문제 없어서 부담없이 많이들 친다.<br />
+(실제론 음을 많이 내려야되지만… 줄이 헐렁해지고 다시 올릴 때 잘 끊어진다.)</p>
 
-<span class="kd">var</span> <span class="nx">double</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">.</span><span class="nx">types</span><span class="p">.</span><span class="nx">double</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">DoubleArray</span> <span class="o">=</span> <span class="nx">ArrayType</span><span class="p">(</span><span class="nx">double</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">fftlib</span> <span class="o">=</span> <span class="nx">ffi</span><span class="p">.</span><span class="nx">Library</span><span class="p">(</span><span class="dl">'</span><span class="s1">./fft</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">fft</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">void</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="nx">DoubleArray</span><span class="p">,</span> <span class="nx">DoubleArray</span><span class="p">,</span> <span class="dl">'</span><span class="s1">int</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">int</span><span class="dl">'</span><span class="p">]]</span>
-<span class="p">});</span>
+<p>원테이크로 틀리던지 말던지 아무렇게나 막쳤다.<br />
+원 동영상이 흑백이라 따라해보려다가 스케치 효과가 있어서 한번 넣어봤다.</p>
 
-<span class="kd">var</span> <span class="nx">frData</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.6</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">5.9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">];</span>   
-<span class="kd">var</span> <span class="nx">fiData</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">inv</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">fr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DoubleArray</span><span class="p">(</span><span class="nx">frData</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">fi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DoubleArray</span><span class="p">(</span><span class="nx">fiData</span><span class="p">);</span>
-<span class="nx">fftlib</span><span class="p">.</span><span class="nx">fft</span><span class="p">(</span><span class="nx">fr</span><span class="p">,</span> <span class="nx">fi</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">inv</span><span class="p">);</span>
+<iframe width="100%" height="480" src="https://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=3A4F5FAF7C1CD0BBA3A118D00D22679809A4&amp;outKey=V12493b05def58a215b3c4e6f069383455c65e5ed7833195d48d84e6f069383455c65" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen=""></iframe>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">======== NODEJS =========</span><span class="dl">"</span><span class="p">);</span>
-<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="dl">"</span><span class="s2"> : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">fr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>잘된다.<br />
-끝.</p>
+<p>끝.</p>
 
       </div>
         <div class="more-posts">
     <div class="more-category">
       <!-- 하단의 더보기의 링크는 자신의 사이트에 맞게 수정 -->
-      <h4>Node.js 카테고리의 다른 글</h4>
-      <a href="/category/Node.js.html" class="more-button">더보기</a>
+      <h4>Guitar 카테고리의 다른 글</h4>
+      <a href="/category/Guitar.html" class="more-button">더보기</a>
     </div>
     <table>
       <tbody>
         <!-- if문 도는 횟수 체크하기 위해 변수 선언 -->
         
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
         
           <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
           
@@ -176,20 +162,41 @@ fft는 fast Fourier transform C 라이브러리다.</p>
               <tr>
                 <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
                 <th class="more-posts-title">
-                  <a href="/node.js/2016/04/20/nodejsffi.html">Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface)</a>
+                  <a href="/guitar/2014/07/06/fight.html">Fight - 오시오 코타로(Kotaro Oshio)(영상)</a>
                 </th>
-                <td class="more-posts-date">2016. 04. 20</td>
+                <td class="more-posts-date">2014. 07. 06</td>
               </tr>
             
           
         
           <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
           
-        
-          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+            
+            <!-- 글의 목록을 최대 3개만 허용 -->
+            
+              <tr>
+                <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
+                <th class="more-posts-title">
+                  <a href="/guitar/2014/04/03/redshoesdance.html">Red Shoes Dance - 오시오 코타로(Kotaro Oshio)(영상)</a>
+                </th>
+                <td class="more-posts-date">2014. 04. 03</td>
+              </tr>
+            
           
         
           <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+            
+            <!-- 글의 목록을 최대 3개만 허용 -->
+            
+              <tr>
+                <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
+                <th class="more-posts-title">
+                  <a href="/guitar/2014/04/02/windsong.html">바람의 시(Wind song) - 오시오 코타로(Kotaro Oshio)(영상)</a>
+                </th>
+                <td class="more-posts-date">2014. 04. 02</td>
+              </tr>
+            
           
         
       </tbody>
@@ -200,11 +207,11 @@ fft는 fast Fourier transform C 라이브러리다.</p>
         <div class="clearfix">
           <!--
           
-            <a class="btn btn-primary float-left" href="/guitar/2014/07/06/fight.html" data-toggle="tooltip" data-placement="top" title="Fight - 오시오 코타로(Kotaro Oshio)(영상)">&larr; Previous<span class="d-none d-md-inline">
+            <a class="btn btn-primary float-left" href="/guitar/2014/04/03/redshoesdance.html" data-toggle="tooltip" data-placement="top" title="Red Shoes Dance - 오시오 코타로(Kotaro Oshio)(영상)">&larr; Previous<span class="d-none d-md-inline">
             Post</span></a>
           
           
-            <a class="btn btn-primary float-right" href="/game/2019/10/14/hsoulworm.html" data-toggle="tooltip" data-placement="top" title="헌드레드 소울 - 태고의 웜(노멀) 본 크러셔로 부관 없이 잡기(영상)">Next<span class="d-none d-md-inline">
+            <a class="btn btn-primary float-right" href="/node.js/2016/04/20/nodejsffi.html" data-toggle="tooltip" data-placement="top" title="Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface)">Next<span class="d-none d-md-inline">
             Post</span> &rarr;</a>
           
         -->

@@ -287,10 +287,11 @@ header.masthead {
   border-collapse: collapse; }
 
 .more-posts-title a {
-  color: #909090; }
+  color: #212529; }
 
 .more-posts-title a:hover {
-  color: #34373e; }
+  text-decoration: none;
+  color: #868e96; }
 
 .more-posts-date {
   text-align: right;
@@ -301,6 +302,20 @@ header.masthead {
   display: table-cell;
   vertical-align: inherit;
   border-collapse: collapse; }
+
+div.content a {
+  color: #868e96;
+  text-decoration: none;
+  font-weight: bold; }
+
+div.content img {
+  border: 1px solid #888888;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: block;
+  margin: 0px auto; }
+
+div.content img.fit {
+  width: 100%; }
 
 .floating-label-form-group {
   font-size: 14px;
