@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    iOS 8.0에서 WebView를 사용하기 - To be Useful to the World
+    
+  </title>
+
+  <meta name="description" content="웹 페이지 표시">
+  <link href="https://fonts.googleapis.com/nanumgothiccoding.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://useworld.github.io/swift/2020/03/09/webview.html">
+  <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
+
+</head>
+
+	<body>
+		<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Useworld</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    Menu
+    <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Development
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/category/Node.js.html">Node.js</a>
+            <a class="dropdown-item" href="/category/Python.html">Python</a>
+            <a class="dropdown-item" href="/category/Swift.html">Swift</a>
+            <a class="dropdown-item" href="/category/Jekyll.html">Jekyll</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hacking
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/category/Web.html">Web</a>
+            <a class="dropdown-item" href="/category/Android.html">Android</a>
+            <a class="dropdown-item" href="/category/iOS.html">iOS</a>
+            <a class="dropdown-item" href="/category/Forensic.html">Forensic</a>
+            
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Etc
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/category/Cooking.html">Cooking</a>
+            <a class="dropdown-item" href="/category/Food.html">Food</a>
+            <a class="dropdown-item" href="/category/Guitar.html">Guitar</a>
+            <a class="dropdown-item" href="/category/Game.html">Game</a>
+            <!--
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+            -->
+          </div>
+        </li>
+        <!--
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        -->
+      </ul>
+    </div>
+  </div>
+</nav>
+		<!-- Page Header -->
+
+  <header class="masthead" style="background-image: url('/img/category/bg-swift.jpg')">
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>iOS 8.0에서 WebView를 사용하기</h1>
+            <span class="meta" style="font-size:16px;color: #AAAAAA;"><i class="far fa-calendar-alt"></i> 2020년 03월 09일
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="content">
+        <h1 id="웹-페이지-표시">웹 페이지 표시</h1>
+
+<p>iOS 앱에서 웹페이지를 보여주려면 몇 가지 방법이 있다.</p>
+
+<ol>
+  <li>WebView를 사용해서 앱 내부에서 표시</li>
+  <li>앱이 Safari를 호출해서 해당 URL을 열기</li>
+  <li>SFSafariViewController로 앱 안에서 SafariView로 열기</li>
+</ol>
+
+<p>각각 장단점이 있기에 사용할 용도에 따라 선택해서 쓰면 되겠다.
+이번에는 WebView를 사용하려고 한다.</p>
+
+<h1 id="webview">WebView</h1>
+
+<p>우선 웹뷰를 사용하기 위해 ViewController를 하나 생성하였다.
+그리고 UIWebView를 사용하려고 했더니 이런.. <a href="https://developer.apple.com/documentation/uikit/uiwebview">애플 개발자 사이트</a>에 알아보니 Deprecated라고 한다.
+그래서 찾아보니 iOS 8부터 사용 가능한 WKWebView를 쓰면 될 것 같다.</p>
+
+<h1 id="webkit-view">Webkit View</h1>
+<p>Storyboard에서 WebView를 추가했더니 바로 에러가났다.</p>
+
+<div class="alert alert-danger" role="alert">WKWebView before OS 11.0 (NSCoding support was broken in previous versions)</div>
+
+<p>그렇다. 나는 Deployment Target을 8.0으로 작업하고 있기에 안되는 것이었다.
+혹시 모를 호환성 때문에 낮은 버전 기준으로 개발을 하고 있는데 이것때문에 겪은 불편이 한두가지가 아니다.</p>
+
+<p>그래서 코드로 직접 만들어 넣었다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">WebKit</span>
+
+<span class="kd">class</span> <span class="kt">WebViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">WKNavigationDelegate</span><span class="p">,</span>
+    <span class="kt">WKUIDelegate</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="o">!</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">loadView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">loadView</span><span class="p">()</span>
+        <span class="n">webView</span> <span class="o">=</span> <span class="kt">WKWebView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">frame</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">webView</span><span class="o">!</span>
+    <span class="p">}</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">sURL</span> <span class="o">=</span> <span class="s">"주소"</span>
+        <span class="k">let</span> <span class="nv">uURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">sURL</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">uURL</span><span class="o">!</span><span class="p">)</span>
+        <span class="n">webView</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>해당 주소로 접속해서 웹 페이지가 잘 나온다.</p>
+
+<h1 id="post-method">POST Method</h1>
+
+<p>웹뷰에 POST 방식으로 파라미터를 전달하고 싶어졌다.
+다음 코드를 위의 <code class="highlighter-rouge">webView.load(request)</code> 앞에 추가하면 될 것 같았다.
+파라미터는 <code class="highlighter-rouge">a=1&amp;b=2</code> 이런 String으로 해도 되고 Dictionary 타입으로 지정하고 나서 형변환해도 된다. 이번 테스트는 문자열로 했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">request</span><span class="o">.</span><span class="n">httpMethod</span> <span class="o">=</span> <span class="s">"POST"</span>
+<span class="k">let</span> <span class="nv">postString</span> <span class="o">=</span> <span class="s">"파라미터"</span>
+<span class="n">request</span><span class="o">.</span><span class="n">httpBody</span> <span class="o">=</span> <span class="n">postString</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="o">.</span><span class="n">utf8</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>에러는 나지 않았지만 뭔가 이상했다.
+웹 서버에서 확인해 보니 앱에서 아무런 파라미터도 날리지 않았다.
+또 열심히 <a href="https://bugs.webkit.org/show_bug.cgi?id=140188">찾아보니</a> WKWebkit에서 POST 요청 시 HTTP Body를 씹는 버그가 있다고 한다.</p>
+
+<p>여러가지 방법이 있었는데 가장 쉽고 간단한 방법을 선택했다.
+보아하니 content-type 설정이 누락되어 안된다는 것 같았다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">request</span><span class="o">.</span><span class="nf">setValue</span><span class="p">(</span><span class="s">"application/x-www-form-urlencoded"</span><span class="p">,</span>
+    <span class="nv">forHTTPHeaderField</span><span class="p">:</span> <span class="s">"Content-Type"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>요걸 추가하면 될 것 같았다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="k">let</span> <span class="nv">sURL</span> <span class="o">=</span> <span class="s">"주소"</span>
+    <span class="k">let</span> <span class="nv">uURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">sURL</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">uURL</span><span class="o">!</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="nf">setValue</span><span class="p">(</span><span class="s">"application/x-www-form-urlencoded"</span><span class="p">,</span>
+        <span class="nv">forHTTPHeaderField</span><span class="p">:</span> <span class="s">"Content-Type"</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">httpMethod</span> <span class="o">=</span> <span class="s">"POST"</span>
+    <span class="k">let</span> <span class="nv">postString</span> <span class="o">=</span> <span class="s">"파라미터"</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">httpBody</span> <span class="o">=</span> <span class="n">postString</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="o">.</span><span class="n">utf8</span><span class="p">)</span>
+    <span class="n">webView</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>코드는 요렇게 되겠다.
+테스트 결과 성공했다.</p>
+
+<p>끝.</p>
+
+      </div>
+        <div class="more-posts">
+    <div class="more-category">
+      <!-- 하단의 더보기의 링크는 자신의 사이트에 맞게 수정 -->
+      <h4>Swift 카테고리의 다른 글</h4>
+      <a href="/category/Swift.html" class="more-button">더보기</a>
+    </div>
+    <table>
+      <tbody>
+        <!-- if문 도는 횟수 체크하기 위해 변수 선언 -->
+        
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+            
+            <!-- 글의 목록을 최대 3개만 허용 -->
+            
+              <tr>
+                <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
+                <th class="more-posts-title">
+                  <a href="/swift/2020/03/09/webview.html">iOS 8.0에서 WebView를 사용하기</a>
+                </th>
+                <td class="more-posts-date">2020. 03. 09</td>
+              </tr>
+            
+          
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+        
+          <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+          
+        
+      </tbody>
+    </table>
+  </div>
+        
+        <hr>
+        <div class="clearfix">
+          <!--
+          
+            <a class="btn btn-primary float-left" href="/jekyll/2020/03/08/favicon.html" data-toggle="tooltip" data-placement="top" title="Favicon 만들고 적용하기">&larr; Previous<span class="d-none d-md-inline">
+            Post</span></a>
+          
+          
+        -->
+        </div>
+        
+        <div id="disqus_thread"></div>
+        <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://useworld.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </div>
+  </div>
+		<!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:useworld@naver.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/useworld">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+
+          <li class="list-inline-item">
+            <a href="https://open.kakao.com/o/s5bkJP0b">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr>
+        <p class="copyright text-muted">Copyright &copy; Useworld 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+		<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+	</body>
+</html>
