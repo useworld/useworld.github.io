@@ -128,7 +128,15 @@
 
 <h1 id="이미지-교체">이미지 교체</h1>
 
-<p>직접적으로 이미지 지정이 안된다면 다른 방법을 사용해야 한다. 앱이 백그라운드로 갈 때 원하는 이미지 파일로 스냅샷이 찍히도록 꼼수를 썼다. 지정한 이미지파일로 UIImageView를 하나 생성하여 앱이 백그라운드에 진입 직전 현재 화면 위에 이미지뷰를 덮어올리고 다시 앱이 실행되면 해당 이미지뷰를 지우는 방법이다. 그러면 백그라운드 진입과 동시에 찍히는 스냅샷은 화면 위에 덮어 쓴 이미지뷰가 찍힐 것이다.</p>
+<p>직접적으로 이미지 지정이 안된다면 다른 방법을 사용해야 한다. 앱이 백그라운드로 갈 때 원하는 이미지 파일로 스냅샷이 찍히도록 꼼수를 썼다.</p>
+
+<ol>
+  <li>지정한 이미지파일로 UIImageView를 하나 생성한다.</li>
+  <li>앱이 백그라운드에 진입 직전 현재 화면 위에 이미지뷰를 덮어버린다.</li>
+  <li>다시 앱이 실행되면 해당 이미지뷰를 지운다.</li>
+</ol>
+
+<p>이러면 백그라운드 진입과 동시에 찍히는 스냅샷은 화면 위에 덮어 쓴 이미지뷰가 찍힐 것이다.</p>
 
 <h1 id="appdelegate">AppDelegate</h1>
 
@@ -159,7 +167,7 @@
 
 <h1 id="scenedelegate">SceneDelegate</h1>
 
-<p>한참을 삽질하다가 결국 알아냈다. <a href="https://developer.apple.com/documentation/uikit/app_and_environment/scenes/specifying_the_scenes_your_app_supports">애플 개발자 페이지</a>가 iOS 13 이상부터는 SceneDelegate를 사용한댄다. 이런… 개발중인 내 폰의 버전은 iOS 13.3.1이었다.</p>
+<p>한참을 삽질하다가 결국 알아냈다. <a href="https://developer.apple.com/documentation/uikit/app_and_environment/scenes/specifying_the_scenes_your_app_supports">애플 개발자 페이지</a>에 써있기를 iOS 13 이상부터는 SceneDelegate를 사용한댄다. 이런… 개발중인 내 폰의 버전은 iOS 13.3.1이었다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SceneDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIWindowSceneDelegate</span> <span class="p">{</span>
     
@@ -179,9 +187,16 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>다시 한 번 앱에서 홈버튼을 누르면 Background!라고 콘솔에 찍힐 것이고 다시 실행하면 Foreground!라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다. 드디어 콘솔창에 찍혔다.<br />
-하지만 뭔가 애매했다. 홈버튼을 한 번 눌러서 완전히 백그라운드로 돌아갔다가 다시 실행할 때는 저 함수가 실행이 되지만 앱이 실행중인 상태에서 홈버튼을 따닥 두 번 눌러서 Multitasking Switcher로 진입 시에는 해당 함수들이 실행이 되지 않는 것이었다.
-모든 이벤트를 다 테스트 해본 결과 <code class="highlighter-rouge">sceneWillResignActive</code>, <code class="highlighter-rouge">sceneDidBecomeActive</code> 이 두 함수가 홈버튼을 한 번 눌러서 백그라운드로 갔다가 복귀하던, 홈버튼을 두 번 눌러서 바로 멀티태스킹을 하던 실행이 되는 것이었다.</p>
+<p>다시 한 번 앱에서 홈버튼을 누르면 Background!라고 콘솔에 찍힐 것이고 다시 실행하면 Foreground!라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다. 드디어 콘솔창에 찍혔다!</p>
+
+<p>하지만 뭔가 애매했다.</p>
+
+<ul>
+  <li>앱 실행 중 홈버튼을 한 번 눌러서 완전히 백그라운드로 돌아갔다가 다시 실행(O)</li>
+  <li>앱 실행 중 홈버튼을 따닥 두 번 눌러서 멀티태스킹 진입 시(X)</li>
+</ul>
+
+<p>또 뭐가 문제인지 찾다가 모든 이벤트를 다 테스트 해본 결과 <code class="highlighter-rouge">sceneWillResignActive</code>, <code class="highlighter-rouge">sceneDidBecomeActive</code> 이 두 함수가 홈버튼을 한 번 눌러서 백그라운드로 갔다가 복귀하던, 홈버튼을 두 번 눌러서 바로 멀티태스킹을 하던 실행이 되는 것을 확인했다.</p>
 
 <p>이제 스냅샷으로 찍혀 줄 이미지 파일을 asset에 SecureBackground로 등록한 뒤 해당 이미지를 표시해 줄 이미지뷰를 백그라운드 갈때는 덮어 쓰고 다시 실행될때는 없애는 코드를 넣고 실행했다.</p>
 
@@ -215,8 +230,9 @@
 
 <h1 id="마무리">마무리</h1>
 
-<p>근데 이렇게 삽질을 하다보니 애당초 iOS 13이건 뭐건 Scene을 사용 안하도록 설정하면 AppDelegate에서 해결되는게 아닌가 싶었다. 그리고 iOS 13보다 낮은 버전에서는 어차피 AppDelegate로 이벤트를 핸들링할텐데 그럼 똑같은 코드를 두번 넣어야 되게 생겼다.
-또 하나는 뭔가 앱이 홈버튼 한 번 눌러서 백그라운드에 갔다가 다시 실행될 때 처음부터 재실행되는 것이었다. 저것 때문인건지 다른것 때문인건지 뭔가 빼먹은건지… 아무튼 일단 구현은 됐다. 나중에 다시 연구하는걸로.</p>
+<p>근데 이렇게 삽질을 하다보니 애당초 iOS 13이건 뭐건 Scene을 사용 안하도록 설정하면 AppDelegate에서 해결되는게 아닌가 싶었다. 그리고 iOS 13보다 낮은 버전에서는 어차피 AppDelegate로 이벤트를 핸들링할텐데 그럼 똑같은 코드를 두번 넣어야 되게 생겼다.</p>
+
+<p>그리고 뭔가 앱이 홈버튼 한 번 눌러서 백그라운드에 갔다가 다시 실행될 때 처음부터 재실행되는 것이었다. 저것 때문인건지 다른것 때문인건지 뭔가 빼먹은건지… 아무튼 일단 구현은 됐다. 나중에 다시 연구하는걸로.</p>
 
 <p>끝.</p>
 
