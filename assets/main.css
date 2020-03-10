@@ -304,9 +304,12 @@ header.masthead {
   border-collapse: collapse; }
 
 div.content a {
+  color: #343a40;
+  text-decoration: none; }
+
+div.content a:hover {
   color: #868e96;
-  text-decoration: none;
-  font-weight: bold; }
+  text-decoration: none; }
 
 div.content img {
   border: 1px solid #888888;
