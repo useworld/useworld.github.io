@@ -122,9 +122,13 @@
 
 <p>iOS 앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱은 백그라운드로 들어가고 홈화면이 나온다. 홈화면이던 앱 실행중이던 홈버튼을 연속으로 두번 누르면 현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다. 이 기능을 Multitasking Switcher라고 하는 것 같다.</p>
 
+<hr />
+
 <h1 id="snapshot">Snapshot</h1>
 
 <p>앱 생명 주기는 <a href="https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle">애플 개발자 페이지</a>에 설명이 나와있다. 아이폰은 앱이 백그라운드에 갈 때마다 Screenshot을 저장하여 해당 이미지를 Multitasking Switcher에서 보여준다. 그럼 직접적으로 해당 스냅샷을 지정할 수 있는지 찾아보았는데 마땅히 없었다.</p>
+
+<hr />
 
 <h1 id="이미지-교체">이미지 교체</h1>
 
@@ -137,6 +141,8 @@
 </ol>
 
 <p>이러면 백그라운드 진입과 동시에 찍히는 스냅샷은 화면 위에 덮어 쓴 이미지뷰가 찍힐 것이다.</p>
+
+<hr />
 
 <h1 id="appdelegate">AppDelegate</h1>
 
@@ -164,6 +170,8 @@
 
 <p>앱에서 홈버튼을 누르면 Background!라고 콘솔에 찍힐 것이고 다시 실행하면 Foreground!라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다.<br />
 하지만 콘솔창엔 아무것도 찍히지 않았다.</p>
+
+<hr />
 
 <h1 id="scenedelegate">SceneDelegate</h1>
 
@@ -228,35 +236,41 @@
 
 <p>성공이다.</p>
 
+<hr />
+
 <h1 id="scenedelegate-제거">SceneDelegate 제거</h1>
 
 <p>그런데 위 코드는 iOS 13 미만 버전대 기기에서는 또 작동을 안했다. 다시 AppDelegate에서 코드를 추가했더니 작동했다. iOS 13보다 낮은 버전에서는 AppDelegate로 이벤트를 핸들링하기 때문에 똑같은 코드를 두번 넣어야 되게 생겼다. 
 어차피 나는 Scene을 사용하지 않아도 무방하기 때문에 아예 SceneDelegate를 삭제하고  설정하면 AppDelegate에서 해결되는게 아닌가 싶었다.</p>
 
-<ol>
+<ul>
   <li>info.plist에서 <kbd>Application Scene Manifest</kbd> 제거</li>
-  <li>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 코드 주석처리나 삭제</li>
-</ol>
+  <li>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 관련 코드들 주석처리나 삭제</li>
+</ul>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// AppDelegate.swift</span>
 
     <span class="c1">// MARK: UISceneSession Lifecycle</span>
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">configurationForConnecting</span> <span class="nv">connectingSceneSession</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UISceneConfiguration</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">configurationForConnecting</span> 
+        <span class="nv">connectingSceneSession</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> 
+        <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UISceneConfiguration</span> <span class="p">{</span>
         <span class="c1">// Called when a new scene session is being created.</span>
         <span class="c1">// Use this method to select a configuration to create the new scene with.</span>
-        <span class="k">return</span> <span class="kt">UISceneConfiguration</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Default Configuration"</span><span class="p">,</span> <span class="nv">sessionRole</span><span class="p">:</span> <span class="n">connectingSceneSession</span><span class="o">.</span><span class="n">role</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kt">UISceneConfiguration</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Default Configuration"</span><span class="p">,</span>
+         <span class="nv">sessionRole</span><span class="p">:</span> <span class="n">connectingSceneSession</span><span class="o">.</span><span class="n">role</span><span class="p">)</span>
     <span class="p">}</span>
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didDiscardSceneSessions</span> <span class="nv">sceneSessions</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">UISceneSession</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didDiscardSceneSessions</span> 
+        <span class="nv">sceneSessions</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">UISceneSession</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Called when the user discards a scene session.</span>
-        <span class="c1">// If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.</span>
+        <span class="c1">// If any sessions were discarded while the application was not running, this will be called shortly after  application:didFinishLaunchingWithOptions.</span>
         <span class="c1">// Use this method to release any resources that were specific to the discarded scenes, as they will not return.</span>
     <span class="p">}</span>
 
 </code></pre></div></div>
-<ol>
+<ul>
   <li>SceneDelegate에 삽입했던 코드를 AppDelegate로 이동</li>
   <li>어차피 이제는 안쓸 SceneDelegate.swift 제거</li>
-</ol>
+</ul>
 
 <p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
 
