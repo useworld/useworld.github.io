@@ -228,11 +228,39 @@
 
 <p>성공이다.</p>
 
-<h1 id="마무리">마무리</h1>
+<h1 id="scenedelegate-제거">SceneDelegate 제거</h1>
 
-<p>근데 이렇게 삽질을 하다보니 애당초 iOS 13이건 뭐건 Scene을 사용 안하도록 설정하면 AppDelegate에서 해결되는게 아닌가 싶었다. 그리고 iOS 13보다 낮은 버전에서는 어차피 AppDelegate로 이벤트를 핸들링할텐데 그럼 똑같은 코드를 두번 넣어야 되게 생겼다.</p>
+<p>그런데 위 코드는 iOS 13 미만 버전대 기기에서는 또 작동을 안했다. 다시 AppDelegate에서 코드를 추가했더니 작동했다. iOS 13보다 낮은 버전에서는 AppDelegate로 이벤트를 핸들링하기 때문에 똑같은 코드를 두번 넣어야 되게 생겼다. 
+어차피 나는 Scene을 사용하지 않아도 무방하기 때문에 아예 SceneDelegate를 삭제하고  설정하면 AppDelegate에서 해결되는게 아닌가 싶었다.</p>
 
-<p>그리고 뭔가 앱이 홈버튼 한 번 눌러서 백그라운드에 갔다가 다시 실행될 때 처음부터 재실행되는 것이었다. 저것 때문인건지 다른것 때문인건지 뭔가 빼먹은건지… 아무튼 일단 구현은 됐다. 나중에 다시 연구하는걸로.</p>
+<ol>
+  <li>info.plist에서 <kbd>Application Scene Manifest</kbd> 제거</li>
+  <li>
+    <p>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 코드 주석처리나 삭제
+~~~swift
+// AppDelegate.swift</p>
+
+    <p>// MARK: UISceneSession Lifecycle
+ func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -&gt; UISceneConfiguration {
+     // Called when a new scene session is being created.
+     // Use this method to select a configuration to create the new scene with.
+     return UISceneConfiguration(name: “Default Configuration”, sessionRole: connectingSceneSession.role)
+ }
+ func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+     // Called when the user discards a scene session.
+     // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+ }</UISceneSession></p>
+  </li>
+</ol>
+
+<p>~~~</p>
+<ol>
+  <li>SceneDelegate에 삽입했던 코드를 AppDelegate로 이동</li>
+  <li>어차피 이제는 안쓸 SceneDelegate.swift 제거</li>
+</ol>
+
+<p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
 
 <p>끝.</p>
 
