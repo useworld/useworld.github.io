@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-03-11T17:53:37+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)</title><link href="https://useworld.github.io/swift/2020/03/10/bgsnapshot.html" rel="alternate" type="text/html" title="iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)" /><published>2020-03-10T00:00:00+09:00</published><updated>2020-03-10T00:00:00+09:00</updated><id>https://useworld.github.io/swift/2020/03/10/bgsnapshot</id><content type="html" xml:base="https://useworld.github.io/swift/2020/03/10/bgsnapshot.html">&lt;h1 id=&quot;multitasking-switcher&quot;&gt;Multitasking Switcher&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-03-11T18:00:47+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)</title><link href="https://useworld.github.io/swift/2020/03/10/bgsnapshot.html" rel="alternate" type="text/html" title="iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)" /><published>2020-03-10T00:00:00+09:00</published><updated>2020-03-10T00:00:00+09:00</updated><id>https://useworld.github.io/swift/2020/03/10/bgsnapshot</id><content type="html" xml:base="https://useworld.github.io/swift/2020/03/10/bgsnapshot.html">&lt;h1 id=&quot;multitasking-switcher&quot;&gt;Multitasking Switcher&lt;/h1&gt;
 
 &lt;p&gt;iOS 앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱은 백그라운드로 들어가고 홈화면이 나온다. 홈화면이던 앱 실행중이던 홈버튼을 연속으로 두번 누르면 현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다. 이 기능을 Multitasking Switcher라고 하는 것 같다.&lt;/p&gt;
 
@@ -115,26 +115,24 @@
 
 &lt;ol&gt;
   &lt;li&gt;info.plist에서 &lt;kbd&gt;Application Scene Manifest&lt;/kbd&gt; 제거&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;AppDelegate.swift에서 아래의 UISceneSession Lifecycle 코드 주석처리나 삭제
-~~~swift
-// AppDelegate.swift&lt;/p&gt;
-
-    &lt;p&gt;// MARK: UISceneSession Lifecycle
- func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -&amp;gt; UISceneConfiguration {
-     // Called when a new scene session is being created.
-     // Use this method to select a configuration to create the new scene with.
-     return UISceneConfiguration(name: “Default Configuration”, sessionRole: connectingSceneSession.role)
- }
- func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set&lt;UISceneSession&gt;) {
-     // Called when the user discards a scene session.
-     // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
- }&lt;/UISceneSession&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;AppDelegate.swift에서 아래의 UISceneSession Lifecycle 코드 주석처리나 삭제&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;~~~&lt;/p&gt;
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// AppDelegate.swift&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// MARK: UISceneSession Lifecycle&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;configurationForConnecting&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;connectingSceneSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UISceneSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIScene&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;ConnectionOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UISceneConfiguration&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Called when a new scene session is being created.&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Use this method to select a configuration to create the new scene with.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UISceneConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Default Configuration&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sessionRole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;connectingSceneSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didDiscardSceneSessions&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sceneSessions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UISceneSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Called when the user discards a scene session.&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Use this method to release any resources that were specific to the discarded scenes, as they will not return.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;ol&gt;
   &lt;li&gt;SceneDelegate에 삽입했던 코드를 AppDelegate로 이동&lt;/li&gt;
   &lt;li&gt;어차피 이제는 안쓸 SceneDelegate.swift 제거&lt;/li&gt;

@@ -235,26 +235,24 @@
 
 <ol>
   <li>info.plist에서 <kbd>Application Scene Manifest</kbd> 제거</li>
-  <li>
-    <p>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 코드 주석처리나 삭제
-~~~swift
-// AppDelegate.swift</p>
-
-    <p>// MARK: UISceneSession Lifecycle
- func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -&gt; UISceneConfiguration {
-     // Called when a new scene session is being created.
-     // Use this method to select a configuration to create the new scene with.
-     return UISceneConfiguration(name: “Default Configuration”, sessionRole: connectingSceneSession.role)
- }
- func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-     // Called when the user discards a scene session.
-     // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
- }</UISceneSession></p>
-  </li>
+  <li>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 코드 주석처리나 삭제</li>
 </ol>
 
-<p>~~~</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// AppDelegate.swift</span>
+
+    <span class="c1">// MARK: UISceneSession Lifecycle</span>
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">configurationForConnecting</span> <span class="nv">connectingSceneSession</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UISceneConfiguration</span> <span class="p">{</span>
+        <span class="c1">// Called when a new scene session is being created.</span>
+        <span class="c1">// Use this method to select a configuration to create the new scene with.</span>
+        <span class="k">return</span> <span class="kt">UISceneConfiguration</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Default Configuration"</span><span class="p">,</span> <span class="nv">sessionRole</span><span class="p">:</span> <span class="n">connectingSceneSession</span><span class="o">.</span><span class="n">role</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didDiscardSceneSessions</span> <span class="nv">sceneSessions</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">UISceneSession</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Called when the user discards a scene session.</span>
+        <span class="c1">// If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.</span>
+        <span class="c1">// Use this method to release any resources that were specific to the discarded scenes, as they will not return.</span>
+    <span class="p">}</span>
+
+</code></pre></div></div>
 <ol>
   <li>SceneDelegate에 삽입했던 코드를 AppDelegate로 이동</li>
   <li>어차피 이제는 안쓸 SceneDelegate.swift 제거</li>
