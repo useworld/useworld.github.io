@@ -315,10 +315,8 @@ div.content img {
   border: 1px solid #888888;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: block;
-  margin: 0px auto; }
-
-div.content img.fit {
-  width: 100%; }
+  margin: 0px auto;
+  max-width: 100%; }
 
 .floating-label-form-group {
   font-size: 14px;
