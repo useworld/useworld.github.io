@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-  Red Shoes Dance - 오시오 코타로(Kotaro Oshio)(영상) - To be Useful to the World
+  탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기 - To be Useful to the World
   
   </title>
   <meta name="naver-site-verification" content="0852d6d163568038e97274dc755d304f86cfebda"/>
-  <meta name="description" content="Red Shoes Dance">
+  <meta name="description" content="사건의 발단">
   <link href="https://fonts.googleapis.com/nanumgothiccoding.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://useworld.github.io/guitar/2014/04/03/redshoesdance.html">
+  <link rel="canonical" href="https://useworld.github.io/ios/2020/04/07/hosts.html">
   <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160063834-1"></script>
@@ -98,15 +98,15 @@
   </div>
 </nav>
 		<!-- Page Header -->
-<header class="masthead" style="background-image: url('/img/category/bg-guitar.jpg')">
+<header class="masthead" style="background-image: url('/img/category/bg-ios.jpg')">
   
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
-          <h1>Red Shoes Dance - 오시오 코타로(Kotaro Oshio)(영상)</h1>
-          <span class="meta" style="font-size:16px;color: #AAAAAA;"><i class="far fa-calendar-alt"></i> 2014년 04월 03일
+          <h1>탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</h1>
+          <span class="meta" style="font-size:16px;color: #AAAAAA;"><i class="far fa-calendar-alt"></i> 2020년 04월 07일
           </span>
         </div>
       </div>
@@ -117,13 +117,69 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="content">
-        <h1 id="red-shoes-dance">Red Shoes Dance</h1>
+        <h1 id="사건의-발단">사건의 발단</h1>
 
-<p>원테이크에 내가 치고 싶은 부분만 골라쳤다.<br />
-신나고 흥겨운 노래…. 지만 별로 안신나네.<br />
-마구마구 틀렸다.</p>
+<p>앱에 SSL Pinning을 구현하기 위하여 우선 HTTPS 서버를 구축했다.<br />
+운영 서버에서 사용하는 인증서를 받아 로컬에 서버를 구동하고 접속하려고 하니<br />
+인증서에 등록된 Hostname에 맞지 않으면 Invalid Certificate 에러를 뿜어낸다.<br />
+우선 개발용인 PC에서 hosts 파일을 수정하여 등록된 주소로 접속해보니 잘 됐다.</p>
 
-<iframe width="100%" height="480" src="https://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=47A414612C81D3D357733C4464AF1AF07D5B&amp;outKey=V127f61468098e9fb5a75c10964006b52b35c6024846383536a17c10964006b52b35c" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen=""></iframe>
+<hr />
+
+<h1 id="아이폰에서-접속">아이폰에서 접속</h1>
+
+<p>동일 네트워크에 있는 탈옥된 아이폰에 /etc/hosts 파일을 수정했다.<br />
+로컬 서버의 내부 IP와 사용할 주소를 넣고나서 Ping을 날렸다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ping test.useworld.com
+<span class="go">PING test.useworld.com (192.168.0.0) 56(84) bytes of data.
+64 bytes from 192.168.0.0: icmp_seq=1 ttl=54 time=0.0 ms
+64 bytes from 192.168.0.0: icmp_seq=2 ttl=54 time=0.0 ms
+64 bytes from 192.168.0.0: icmp_seq=3 ttl=54 time=0.0 ms
+64 bytes from 192.168.0.0: icmp_seq=4 ttl=54 time=0.0 ms
+64 bytes from 192.168.0.0: icmp_seq=5 ttl=54 time=0.0 ms
+64 bytes from 192.168.0.0: icmp_seq=6 ttl=54 time=0.0 ms
+64 bytes from 192.168.0.0: icmp_seq=7 ttl=54 time=0.0 ms
+</span><span class="c">...
+</span></code></pre></div></div>
+
+<p>잘 된다.<br />
+이어서 Safari를 열어 <kbd>https://test.useworld.com</kbd>로 접속해보니 이게 왠걸.<br />
+서버에 접속할 수 없다고 한다.<br />
+개발중인 앱에서 Request를 날려봐도 마찬가지로 Not Found라고 나온다.</p>
+
+<hr />
+
+<h1 id="삽질">삽질</h1>
+
+<p>구글링을 해봐도 쉽게 나와주질 않는다.<br />
+DNS Flush를 하라고 해서 찾아보니 비행기 모드를 하고 15초 정도 있다가 다시 켜면 된다고 한다.<br />
+해봤으나 실패.<br />
+IPv4로만 해놨으면 IPv6으로 변환해서 한번 더 hosts 파일에 등록하면 된다고 한다.<br />
+<a href="https://www.ultratools.com/tools/ipv4toipv6">변환 사이트</a>에서 변환해서 등록해 보았으나 역시나 실패.<br />
+test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 된다고 한다.
+마찬가지로 실패.
+또 구글링해보니 iOS 12에서 hosts 적용이 안되는데 어떻게 하냐는 질문에 답이 없는 글도 봤다.<br />
+계속되는 실패에 원래 iOS에서는 안되는 건가? 라는 생각이 들었다.</p>
+
+<hr />
+
+<h1 id="letmeblock">LetMeBlock</h1>
+
+<p>삽질을 하다가 결국엔 찾았다.</p>
+
+<ol>
+  <li>Cydia의 Source에서 <kbd>https://poomsmart.github.io/repo/</kbd> Repository를 추가한다.</li>
+  <li><code class="highlighter-rouge">LetMeBlock</code>을 검색하여 들어가서 변경을 누르고 재설치한다.</li>
+  <li>root 권한으로 mDNSResponder를 kill한다.</li>
+</ol>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>killall <span class="nt">-9</span> mDNSResponder
+<span class="gp">$</span><span class="w"> </span>killall <span class="nt">-9</span> mDNSResponderHelper
+</code></pre></div></div>
+
+<p>Safari로 접속을 해도 앱에서 접근을 해도 잘 접속된다.<br />
+오 놀라워라.</p>
 
 <p>끝.</p>
 
@@ -131,8 +187,8 @@
       <div class="more-posts">
         <div class="more-category">
           <!-- 하단의 더보기의 링크는 자신의 사이트에 맞게 수정 -->
-          <h4>Guitar 카테고리의 다른 글</h4>
-          <a href="/category/Guitar.html" class="more-button">더보기</a>
+          <h4>iOS 카테고리의 다른 글</h4>
+          <a href="/category/iOS.html" class="more-button">더보기</a>
         </div>
         <table>
           <tbody>
@@ -141,77 +197,53 @@
             
               <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
               
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
-            
-              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
-              
                 
                 <!-- 글의 목록을 최대 3개만 허용 -->
                 
                   <tr>
                     <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
                     <th class="more-posts-title">
-                      <a href="/guitar/2014/07/06/fight.html">Fight - 오시오 코타로(Kotaro Oshio)(영상)</a>
+                      <a href="/ios/2020/04/07/hosts.html">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</a>
                     </th>
-                    <td class="more-posts-date">2014. 07. 06</td>
+                    <td class="more-posts-date">2020. 04. 07</td>
                   </tr>
                 
               
             
               <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
               
-                
-                <!-- 글의 목록을 최대 3개만 허용 -->
-                
-                  <tr>
-                    <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
-                    <th class="more-posts-title">
-                      <a href="/guitar/2014/04/03/redshoesdance.html">Red Shoes Dance - 오시오 코타로(Kotaro Oshio)(영상)</a>
-                    </th>
-                    <td class="more-posts-date">2014. 04. 03</td>
-                  </tr>
-                
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
               
             
               <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
               
-                
-                <!-- 글의 목록을 최대 3개만 허용 -->
-                
-                  <tr>
-                    <!-- 각 포스트의 링크도 자신의 사이트에 맞게 수정 -->
-                    <th class="more-posts-title">
-                      <a href="/guitar/2014/04/02/windsong.html">바람의 시(Wind song) - 오시오 코타로(Kotaro Oshio)(영상)</a>
-                    </th>
-                    <td class="more-posts-date">2014. 04. 02</td>
-                  </tr>
-                
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+              
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+              
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+              
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+              
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+              
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+              
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+              
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
+              
+            
+              <!-- 전체 포스트의 카테고리가 현재 들어와 있는 페이지의 카테고리와 같은지 판단-->
               
             
           </tbody>
@@ -222,12 +254,9 @@
       <div class="clearfix">
         <!--
         
-          <a class="btn btn-primary float-left" href="/guitar/2014/04/02/windsong.html" data-toggle="tooltip" data-placement="top" title="바람의 시(Wind song) - 오시오 코타로(Kotaro Oshio)(영상)">&larr; Previous<span class="d-none d-md-inline">
+          <a class="btn btn-primary float-left" href="/game/2020/03/25/asyuna.html" data-toggle="tooltip" data-placement="top" title="어나더 에덴 - AS유나 등장">&larr; Previous<span class="d-none d-md-inline">
           Post</span></a>
         
-        
-          <a class="btn btn-primary float-right" href="/guitar/2014/07/06/fight.html" data-toggle="tooltip" data-placement="top" title="Fight - 오시오 코타로(Kotaro Oshio)(영상)">Next<span class="d-none d-md-inline">
-          Post</span> &rarr;</a>
         
         -->
       </div>
