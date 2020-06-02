@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-04-07T20:07:36+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</title><link href="https://useworld.github.io/ios/2020/04/07/hosts.html" rel="alternate" type="text/html" title="탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기" /><published>2020-04-07T00:00:00+09:00</published><updated>2020-04-07T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/04/07/hosts</id><content type="html" xml:base="https://useworld.github.io/ios/2020/04/07/hosts.html">&lt;h1 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-06-02T09:30:59+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</title><link href="https://useworld.github.io/ios/2020/04/07/hosts.html" rel="alternate" type="text/html" title="탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기" /><published>2020-04-07T00:00:00+09:00</published><updated>2020-04-07T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/04/07/hosts</id><content type="html" xml:base="https://useworld.github.io/ios/2020/04/07/hosts.html">&lt;h1 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h1&gt;
 
 &lt;p&gt;앱에 SSL Pinning을 구현하기 위하여 우선 HTTPS 서버를 구축했다.&lt;br /&gt;
 운영 서버에서 사용하는 인증서를 받아 로컬에 서버를 구동하고 접속하려고 하니&lt;br /&gt;
@@ -392,7 +392,7 @@ New라 고맙긴한데 사실 5성 아니면 안써.&lt;/p&gt;
 &lt;h1 id=&quot;webkit-view&quot;&gt;Webkit View&lt;/h1&gt;
 &lt;p&gt;Storyboard에서 WebView를 추가했더니 바로 에러가 났다.&lt;/p&gt;
 
-&lt;div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;WKWebView before OS 11.0 (NSCoding support was broken in previous versions)&lt;/div&gt;
+&lt;div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;WKWebView before iOS 11.0 (NSCoding support was broken in previous versions)&lt;/div&gt;
 
 &lt;p&gt;그렇다. 나는 Deployment Target을 8.0으로 작업하고 있기에 안되는 것이었다.
 혹시 모를 호환성 때문에 낮은 버전 기준으로 개발을 하고 있는데 이것때문에 겪은 불편이 한두가지가 아니다.&lt;/p&gt;
