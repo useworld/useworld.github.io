@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-06-02T09:30:59+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</title><link href="https://useworld.github.io/ios/2020/04/07/hosts.html" rel="alternate" type="text/html" title="탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기" /><published>2020-04-07T00:00:00+09:00</published><updated>2020-04-07T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/04/07/hosts</id><content type="html" xml:base="https://useworld.github.io/ios/2020/04/07/hosts.html">&lt;h1 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-06-02T11:28:08+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">Python PIP에서 SSLCertVerificationError 날 때</title><link href="https://useworld.github.io/python/2020/04/16/pipssl.html" rel="alternate" type="text/html" title="Python PIP에서 SSLCertVerificationError 날 때" /><published>2020-04-16T00:00:00+09:00</published><updated>2020-04-16T00:00:00+09:00</updated><id>https://useworld.github.io/python/2020/04/16/pipssl</id><content type="html" xml:base="https://useworld.github.io/python/2020/04/16/pipssl.html">&lt;style&gt;
+.highlight pre{
+  white-space: pre-wrap;
+}
+&lt;/style&gt;
+
+&lt;h1 id=&quot;pip가-안된다&quot;&gt;PIP가 안된다.&lt;/h1&gt;
+
+&lt;p&gt;인터넷이 되는 환경인데 주로 웹 Proxy를 사용하는 네트워크 환경에서&lt;br /&gt;
+PIP를 이용하여 모듈을 설치 하면 꼭 이런 에러가 발생한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;frida
+&lt;span class=&quot;go&quot;&gt;Collecting frida
+ WARNING: Retrying &amp;lt;Retry&amp;lt;total=4, connect=None, read=None, redirect=None, status=none)) after connection broken by 'SSLError&amp;lt;SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERTIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1056)'))': /simple/frida
+ WARNING: Retrying &amp;lt;Retry&amp;lt;total=3, connect=None, read=None, redirect=None, status=none)) after connection broken by 'SSLError&amp;lt;SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERTIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1056)'))': /simple/frida
+
+ ... [생략] ...
+ 
+ Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retres exceeded with url: /simple/pip/ (Caused by SSLError&amp;lt;SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERTIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1056)'))) - skipping
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&lt;/span&gt;_
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+&lt;h1 id=&quot;옵션-추가&quot;&gt;옵션 추가&lt;/h1&gt;
+
+&lt;p&gt;이럴 경우 다운받아오는 위치를 신뢰할 수 있는 호스트로 설정하여 사용하면&lt;br /&gt;
+설치가 가능해진다.&lt;br /&gt;
+&lt;kbd&gt;--trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org&lt;/kbd&gt; 옵션을 붙여주면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--trusted-host&lt;/span&gt; pypi.org &lt;span class=&quot;nt&quot;&gt;--trusted-host&lt;/span&gt; pypi.python.org &lt;span class=&quot;nt&quot;&gt;--trusted-host&lt;/span&gt; files.pythonhosted.org frida
+&lt;span class=&quot;go&quot;&gt;Collecting frida
+  Downloading https://files.pythonhosted.org/packages/c7/52/a4c0c4d85fbe27389841ae40958c46e612ad4a66a75ff838b9f6c96eceff/frida-12.7.11.tar.gz
+Installing collected packages: frida
+  Running setup.py install for frida ... done
+Successfully installed frida-12.7.11
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&lt;/span&gt;_
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;잘 된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;매번-붙여-넣기-귀찮음&quot;&gt;매번 붙여 넣기 귀찮음&lt;/h1&gt;
+
+&lt;p&gt;매번 저렇게 옵션을 달아서 설치하기 귀찮을 경우&lt;br /&gt;
+아예 pip.ini 파일에 설정을 해주면 된다.&lt;br /&gt;
+윈도우의 경우 경로는&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;\Users\[사용자]\AppData\Roaming\pip\pip.ini&lt;/code&gt;&lt;br /&gt;
+이며 파일이 없으면 생성해서 넣어주면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[global]
+trusted-host = pypi.python.org
+               pypi.org
+               files.pythonhosted.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;인터넷이-없을-때는-어떻게&quot;&gt;인터넷이 없을 때는 어떻게?&lt;/h1&gt;
+
+&lt;p&gt;인터넷이 안되거나 혹은 내 작업 환경 그대로 이전하고 싶은데&lt;br /&gt;
+폴더째로 들고다니긴 싫고 깔끔하게 설치하고 싶다.&lt;br /&gt;
+나만 그런가…&lt;/p&gt;
+
+&lt;p&gt;우선 Python을 사용하고 있는 원하는 버전의 설치본으로&lt;br /&gt;
+&lt;a href=&quot;https://www.python.org/downloads/&quot;&gt;Python 홈페이지&lt;/a&gt;에서 다운받는다.&lt;/p&gt;
+
+&lt;p&gt;pip freeze 명령을 사용하여 requirements format으로 설치된 목록을 저장한다.&lt;br /&gt;
+&lt;kbd&gt;pip freeze &amp;gt; requirements.txt&lt;/kbd&gt;&lt;/p&gt;
+
+&lt;p&gt;그러면 requirements.txt 파일에 설치 목록이 버전과 함께 저장된다.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[requirements.txt Sample]
+
+colorama==0.4.1
+frida==12.7.11
+frida-tools==5.1.0
+prompt-toolkit==2.0.10
+py==1.8.0
+Pygments==2.4.2
+six==1.12.0
+wcwidth==0.1.7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;해당 모듈들을 pip download 명령으로 다운로드 받는다.&lt;br /&gt;
+&lt;kbd&gt;pip download -r requirements.txt&lt;/kbd&gt;&lt;/p&gt;
+
+&lt;p&gt;그러면 아래와 같은 설치파일들이 다운받아진다.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;colorama-0.4.1-py2.py3-none-any.whl
+frida-12.7.11.tar.gz
+frida-tools-5.1.0.tar.gz
+prompt_toolkit-2.0.10-py3-none-any.whl
+py-1.8.0-py2.py3-none-any.whl
+Pygments-2.4.2-py2.py3-none-any.whl
+six-1.12.0-py2.py3-none-any.whl
+wcwidth-0.1.7-py2.py3-none-any.whl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;파이썬 설치파일과 requirements.txt, 이 설치 파일들을 갖고 다니면서&lt;br /&gt;
+필요할 때 원하는 곳으로 복사하여 pip install로 한번에 설치한다.&lt;br /&gt;
+&lt;kbd&gt;pip install --no-index --find-links=&quot;./&quot; -r .\requirements.txt&lt;/kbd&gt;&lt;/p&gt;
+
+&lt;p&gt;이 방법을 사용하면 사용하던 환경 그대로 dependency 문제 없이 깔끔하게 한번에 모두 오프라인으로 설치가 가능하다.&lt;/p&gt;
+
+&lt;p&gt;정리하면&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Python 설치 파일&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;kbd&gt;pip freeze &amp;gt; requirements.txt&lt;/kbd&gt; 해서 나온 &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;kbd&gt;pip download -r requirements.txt&lt;/kbd&gt; 해서 나온 &lt;code class=&quot;highlighter-rouge&quot;&gt;설치 파일&lt;/code&gt;들&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이것들을 가지고&lt;br /&gt;
+&lt;kbd&gt;pip install --no-index --find-links=&quot;./&quot; -r .\requirements.txt&lt;/kbd&gt;로 설치한다.&lt;/p&gt;
+
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</title><link href="https://useworld.github.io/ios/2020/04/07/hosts.html" rel="alternate" type="text/html" title="탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기" /><published>2020-04-07T00:00:00+09:00</published><updated>2020-04-07T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/04/07/hosts</id><content type="html" xml:base="https://useworld.github.io/ios/2020/04/07/hosts.html">&lt;h1 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h1&gt;
 
 &lt;p&gt;앱에 SSL Pinning을 구현하기 위하여 우선 HTTPS 서버를 구축했다.&lt;br /&gt;
 운영 서버에서 사용하는 인증서를 받아 로컬에 서버를 구동하고 접속하려고 하니&lt;br /&gt;
@@ -657,32 +771,4 @@ Youtube 영상 제작 연습용으로 제작해봤다.&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Jekyll" /><summary type="html">제목쓰기</summary></entry><entry><title type="html">Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface)</title><link href="https://useworld.github.io/node.js/2016/04/20/nodejsffi.html" rel="alternate" type="text/html" title="Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface)" /><published>2016-04-20T00:00:00+09:00</published><updated>2016-04-20T00:00:00+09:00</updated><id>https://useworld.github.io/node.js/2016/04/20/nodejsffi</id><content type="html" xml:base="https://useworld.github.io/node.js/2016/04/20/nodejsffi.html">&lt;p&gt;NodeJS에서 C언어로 만들어진 라이브러리 파일을 이용하는 Test를 해보았다.
-fft는 fast Fourier transform C 라이브러리다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;ref&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ffi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;ffi&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ArrayType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;ref-array&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;types&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DoubleArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ArrayType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fftlib&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ffi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./fft&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;fft&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DoubleArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DoubleArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;frData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;   
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fiData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DoubleArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;frData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DoubleArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fiData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;fftlib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;======== NODEJS =========&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; : &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;잘된다.&lt;br /&gt;
-끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Node.js" /><summary type="html">NodeJS에서 C언어로 만들어진 라이브러리 파일을 이용하는 Test를 해보았다. fft는 fast Fourier transform C 라이브러리다.</summary></entry></feed>
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Jekyll" /><summary type="html">제목쓰기</summary></entry></feed>
