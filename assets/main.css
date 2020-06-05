@@ -600,3 +600,6 @@ footer {
 
 .highlight .il {
   color: #099; }
+
+.highlight pre {
+  white-space: pre-wrap; }
