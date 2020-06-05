@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-06-05T11:51:49+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">아이폰 백그라운드 스냅샷은 어디에 저장될까?</title><link href="https://useworld.github.io/ios/2020/06/05/iossnapshot.html" rel="alternate" type="text/html" title="아이폰 백그라운드 스냅샷은 어디에 저장될까?" /><published>2020-06-05T00:00:00+09:00</published><updated>2020-06-05T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/06/05/iossnapshot</id><content type="html" xml:base="https://useworld.github.io/ios/2020/06/05/iossnapshot.html">&lt;h1 id=&quot;백그라운드-스냅샷이-뭐야&quot;&gt;백그라운드 스냅샷이 뭐야?&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-06-05T12:50:45+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">아이폰 백그라운드 스냅샷은 어디에 저장될까?</title><link href="https://useworld.github.io/ios/2020/06/05/iossnapshot.html" rel="alternate" type="text/html" title="아이폰 백그라운드 스냅샷은 어디에 저장될까?" /><published>2020-06-05T00:00:00+09:00</published><updated>2020-06-05T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/06/05/iossnapshot</id><content type="html" xml:base="https://useworld.github.io/ios/2020/06/05/iossnapshot.html">&lt;h1 id=&quot;백그라운드-스냅샷이-뭐야&quot;&gt;백그라운드 스냅샷이 뭐야?&lt;/h1&gt;
 
 &lt;p&gt;앱 실행 중 홈키를 한 번 눌러 홈화면으로 돌아가거나&lt;br /&gt;
 홈키를 두 번 눌러 Multitasking Switcher에 진입하면
@@ -23,7 +23,7 @@
 
 &lt;p&gt;등이 노출이 되면 취약하다고 한다.&lt;/p&gt;
 
-&lt;p&gt;내 생각에는 이게 위험성이 엄청나게 높다고는 생각하지 않는다.&lt;br /&gt;
+&lt;p&gt;이게 위험성이 엄청나게 높다고는 생각하지 않는다.&lt;br /&gt;
 백그라운드 화면이 유출될 상황이라면 이미 이게 문제가 아닌 것 같은데?&lt;/p&gt;
 
 &lt;hr /&gt;
