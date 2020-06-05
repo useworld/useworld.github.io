@@ -1,4 +1,176 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-06-03T20:20:01+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">Python PIP에서 SSLCertVerificationError 날 때</title><link href="https://useworld.github.io/python/2020/04/16/pipssl.html" rel="alternate" type="text/html" title="Python PIP에서 SSLCertVerificationError 날 때" /><published>2020-04-16T00:00:00+09:00</published><updated>2020-04-16T00:00:00+09:00</updated><id>https://useworld.github.io/python/2020/04/16/pipssl</id><content type="html" xml:base="https://useworld.github.io/python/2020/04/16/pipssl.html">&lt;style&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-06-05T11:43:41+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">아이폰 백그라운드 스냅샷은 어디에 저장될까?</title><link href="https://useworld.github.io/ios/2020/06/05/iossnapshot.html" rel="alternate" type="text/html" title="아이폰 백그라운드 스냅샷은 어디에 저장될까?" /><published>2020-06-05T00:00:00+09:00</published><updated>2020-06-05T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/06/05/iossnapshot</id><content type="html" xml:base="https://useworld.github.io/ios/2020/06/05/iossnapshot.html">&lt;h1 id=&quot;백그라운드-스냅샷이-뭐야&quot;&gt;백그라운드 스냅샷이 뭐야?&lt;/h1&gt;
+
+&lt;p&gt;앱 실행 중 홈키를 한 번 눌러 홈화면으로 돌아가거나&lt;br /&gt;
+홈키를 두 번 눌러 Multitasking Switcher에 진입하면
+직전의 앱 화면이 스크린샷으로 저장되어 화면에 보이게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/iossnapshot01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 화면은 이미지 파일로 아이폰 내부 저장공간에 파일로 저장이 된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;그래서-이게-뭐&quot;&gt;그래서 이게 뭐?&lt;/h1&gt;
+
+&lt;p&gt;모바일 앱 보안 관련해서 백그라운드 화면에&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;고유식별정보(주민등록번호, 운전면허번호, 여권번호, 외국인 등록번호)&lt;/li&gt;
+  &lt;li&gt;비밀번호(로그인 비밀번호, 계좌 비밀번호, 공인인증서 비밀번호 등)&lt;/li&gt;
+  &lt;li&gt;신용정보(보안카드번호, OTP번호, 신용/체크 카드번호 등)&lt;/li&gt;
+  &lt;li&gt;기타 중요 정보&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;등이 노출이 되면 취약하다고 한다.&lt;/p&gt;
+
+&lt;p&gt;내 생각에는 이게 위험성이 엄청나게 높다고는 생각하지 않는다.&lt;br /&gt;
+백그라운드 화면이 유출될 상황이라면 이미 이게 문제가 아닌 것 같은데?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;저장-경로&quot;&gt;저장 경로&lt;/h1&gt;
+
+&lt;p&gt;결론부터 말하면 iOS 버전에 따라 저장경로가 다르다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;iOS 8 미만 
+&lt;kbd&gt;/var/mobile/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;iOS 8 이상 13 미만
+&lt;kbd&gt;/var/mobile/Containers/Data/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;iOS 13
+&lt;kbd&gt;/var/mobile/Conatiners/Data/Application/[BundleID]/Library/SplashBoard/Snapshots/sceneID:[PackageName]-default/&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[BundleID]&lt;/code&gt;는 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA 이런 식으로 생긴 앱 고유 ID를 말하고&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[PackageName]&lt;/code&gt;은 com.useworld.test 같은 앱 패키지명을 말한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;확인&quot;&gt;확인&lt;/h1&gt;
+
+&lt;p&gt;이미지 파일 확인을 직접 해보았다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;테스트 기기 : iOS 13(Jailbroken)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;보통 앱 바이너리가 저장되어 있는 &lt;kbd&gt;/var/containers/Bundle/Application/&lt;/kbd&gt;
+경로에서 검색 해보면 원하는 앱의 이름으로 BundleID 확인이 가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;/var/containers/Bundle/Application
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;find ./ &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; Useworld
+&lt;span class=&quot;go&quot;&gt;./0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/Useworld.app/Useworld
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+&lt;span class=&quot;go&quot;&gt;BundleMetadata.plist  Useworld.app/
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;_
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;내 앱의 BundleID는 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA 이거구나.&lt;/p&gt;
+
+&lt;p&gt;그러면 스냅샷이 저장되는 &lt;kbd&gt;/var/mobile/Conatiners/Data/Application/&lt;/kbd&gt;로 가보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;/var/mobile/Containers/Data/Application
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+&lt;span class=&quot;go&quot;&gt;-sh: cd: 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/: No such file or directory
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+&lt;span class=&quot;go&quot;&gt;ls: cannot access '0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/': No such file or directory
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;find ./ &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; Useworld
+&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;_
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;아 뭐야 없어.
+보니까 이곳에 저장되는 BundleID는 달랐던 것이었다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;bundleid-찾기&quot;&gt;BundleID 찾기&lt;/h1&gt;
+
+&lt;p&gt;그러면 내가 원하는 앱의 BundleID를 어떻게 찾느냐.&lt;br /&gt;
+폴더 내에  &lt;kbd&gt;.com.apple.mobile_container_manager.metadata.plist&lt;/kbd&gt; 파일에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;PackageName&lt;/code&gt;에 포함된 문자열로 찾으면 된다.&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;PackageName&lt;/code&gt;은 위에서 말했듯이 com.useworld.test 같은 패키지명이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;grep [문자열] */.com.apple.mobile_container_manager.metadata.plist&lt;/kbd&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;/var/mobile/Containers/Data/Application
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;useworld &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/.com.apple.mobile_container_manager.metadata.plist
+&lt;span class=&quot;go&quot;&gt;Binary file 492BD434-B2C2-4FA9-92B9-FFD999EE8C98/.com.apple.mobile_container_manager.metadata.plist matches
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;492BD434-B2C2-4FA9-92B9-FFD999EE8C98/
+&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; .com.apple.mobil e_container_manager.metadata.plist
+&lt;span class=&quot;go&quot;&gt;bplist00�☺☻♥♦♣◄↕_►↕MCMMetadataVersion_►§MCMMetadataIdentifier_►↨MCMMetadataUserIdentity_►↨MCMMetadataContentClass_►☼MCMMetadataUUIDQ2_►↨com.useworld.test�
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;♫♫☼►♠XposixUIDXposixGID_►‼personaUniqueStringTtypeWversion◄☺�_►$&lt;/span&gt;5C0C954D-8251-4BA6-8ACE-7DECCE6A2F52► ►☻_►&lt;span class=&quot;nv&quot;&gt;$3D70C1E6&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-879C-4E7D-8490-5D536A8AE545&lt;/span&gt; ‼ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; @ Z t � � � � � � � � � �☺♀☺♫☺►      ☻☺       ‼              ☺7
+&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;_
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;찾앗다.&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;492BD434-B2C2-4FA9-92B9-FFD999EE8C98&lt;/code&gt; 이거였다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;확인-1&quot;&gt;확인&lt;/h1&gt;
+
+&lt;p&gt;이제 스냅샷 저장 경로에서 확인한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;/var/mobile/Containers/Data/Application/492BD434-B2C2-4FA9-92B9-FFD999EE8C98/Library/SplashBoard/Snapshots/sceneID:com.useworld.test-default
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-al&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;38543746-8F29-4BFC-AB0A-36BE3986A7F8\@2x.ktx  5118E936-461F-4C12-9147-8C8471A09656\@2x.ktx  downscaled/
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;_
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;저기있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;ktx&lt;/code&gt; 파일이 스냅샷 이미지 파일이다.&lt;br /&gt;
+익숙치 않은 확장자인데 맥에서 열어보면 이미지 확인이 가능하다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;정리&quot;&gt;정리&lt;/h1&gt;
+
+&lt;p&gt;아이폰 백그라운드 스냅샷 확인 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;iOS 8 미만 
+&lt;kbd&gt;/var/mobile/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;iOS 8 이상 13 미만
+&lt;kbd&gt;/var/mobile/Containers/Data/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;iOS 13
+&lt;kbd&gt;/var/mobile/Conatiners/Data/Application/[BundleID]/Library/SplashBoard/Snapshots/sceneID:[PackageName]-default/&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;BundleID 찾기&lt;br /&gt;
+&lt;kbd&gt;grep [패키지명에 포함된 문자열] */.com.apple.mobile_container_manager.metadata.plist&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;안에 들어있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;ktx&lt;/code&gt; 파일이 범인이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="iOS" /><summary type="html">백그라운드 스냅샷이 뭐야?</summary></entry><entry><title type="html">Python PIP에서 SSLCertVerificationError 날 때</title><link href="https://useworld.github.io/python/2020/04/16/pipssl.html" rel="alternate" type="text/html" title="Python PIP에서 SSLCertVerificationError 날 때" /><published>2020-04-16T00:00:00+09:00</published><updated>2020-04-16T00:00:00+09:00</updated><id>https://useworld.github.io/python/2020/04/16/pipssl</id><content type="html" xml:base="https://useworld.github.io/python/2020/04/16/pipssl.html">&lt;style&gt;
 .highlight pre{
   white-space: pre-wrap;
 }
@@ -665,110 +837,4 @@ Youtube 영상 제작 연습용으로 제작해봤다.&lt;/p&gt;
 &lt;p&gt;무과금으로 하다보니 장비가 거의 일반 장비다.&lt;br /&gt;
 Youtube 영상 제작 연습용으로 제작해봤다.&lt;/p&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">태고의 웜(노멀) 토벌 영상</summary></entry><entry><title type="html">Markdown으로 글 써보기</title><link href="https://useworld.github.io/jekyll/2018/07/08/markdown.html" rel="alternate" type="text/html" title="Markdown으로 글 써보기" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T00:00:00+09:00</updated><id>https://useworld.github.io/jekyll/2018/07/08/markdown</id><content type="html" xml:base="https://useworld.github.io/jekyll/2018/07/08/markdown.html">&lt;h2 id=&quot;제목쓰기&quot;&gt;제목쓰기&lt;/h2&gt;
-
-&lt;p&gt;# 제목&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h1 id=&quot;제목&quot;&gt;제목&lt;/h1&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;## 제목&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;제목-1&quot;&gt;제목&lt;/h2&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;### 제목&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;제목-2&quot;&gt;제목&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;#### 제목&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h4 id=&quot;제목-3&quot;&gt;제목&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;##### 제목&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h5 id=&quot;제목-4&quot;&gt;제목&lt;/h5&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;###### 제목&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h6 id=&quot;제목-5&quot;&gt;제목&lt;/h6&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;#을 6개 까지 쓸 일은 없겠지.
-참고로 7개를 사용하면&lt;/p&gt;
-
-&lt;p&gt;####### 제목&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;####### 제목&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;안된다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;리스트-만들기&quot;&gt;리스트 만들기&lt;/h2&gt;
-
-&lt;p&gt;*이나 +나 -를 쓰면된다.&lt;/p&gt;
-
-&lt;p&gt;* 리스트 1&lt;br /&gt;
-+ 리스트 2&lt;br /&gt;
-- 리스트 3&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;리스트 1&lt;/li&gt;
-    &lt;li&gt;리스트 2&lt;/li&gt;
-    &lt;li&gt;리스트 3&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;숫자는 1. 2. 3. 이런식으로 매기면 된다.&lt;/p&gt;
-
-&lt;p&gt;순서가 바뀌어도 알아서 맞춰준다.&lt;/p&gt;
-
-&lt;p&gt;\1. 리스트 1
-\3. 리스트 2
-\5. 리스트 3&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;리스트 1&lt;/li&gt;
-    &lt;li&gt;리스트 2&lt;/li&gt;
-    &lt;li&gt;리스트 3&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;인용구-쓰기&quot;&gt;인용구 쓰기&lt;/h2&gt;
-
-&lt;p&gt;&amp;gt; 글씨&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;글씨&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;코드블럭&quot;&gt;코드블럭&lt;/h2&gt;
-
-&lt;p&gt;~~~ 언어&lt;br /&gt;
- 코드&lt;br /&gt;
-~~~&lt;/p&gt;
-
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Jekyll" /><summary type="html">제목쓰기</summary></entry></feed>
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">태고의 웜(노멀) 토벌 영상</summary></entry></feed>

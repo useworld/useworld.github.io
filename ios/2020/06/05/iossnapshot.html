@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-  탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기 - To be Useful to the World
+  아이폰 백그라운드 스냅샷은 어디에 저장될까? - To be Useful to the World
   
   </title>
   <meta name="naver-site-verification" content="0852d6d163568038e97274dc755d304f86cfebda"/>
-  <meta name="description" content="사건의 발단">
+  <meta name="description" content="백그라운드 스냅샷이 뭐야?">
   <link href="https://fonts.googleapis.com/nanumgothiccoding.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://useworld.github.io/ios/2020/04/07/hosts.html">
+  <link rel="canonical" href="https://useworld.github.io/ios/2020/06/05/iossnapshot.html">
   <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160063834-1"></script>
@@ -105,8 +105,8 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
-          <h1>탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</h1>
-          <span class="meta" style="font-size:16px;color: #AAAAAA;"><i class="far fa-calendar-alt"></i> 2020년 04월 07일
+          <h1>아이폰 백그라운드 스냅샷은 어디에 저장될까?</h1>
+          <span class="meta" style="font-size:16px;color: #AAAAAA;"><i class="far fa-calendar-alt"></i> 2020년 06월 05일
           </span>
         </div>
       </div>
@@ -117,69 +117,177 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="content">
-        <h1 id="사건의-발단">사건의 발단</h1>
+        <h1 id="백그라운드-스냅샷이-뭐야">백그라운드 스냅샷이 뭐야?</h1>
 
-<p>앱에 SSL Pinning을 구현하기 위하여 우선 HTTPS 서버를 구축했다.<br />
-운영 서버에서 사용하는 인증서를 받아 로컬에 서버를 구동하고 접속하려고 하니<br />
-인증서에 등록된 Hostname에 맞지 않으면 Invalid Certificate 에러를 뿜어낸다.<br />
-우선 개발용인 PC에서 hosts 파일을 수정하여 등록된 주소로 접속해보니 잘 됐다.</p>
+<p>앱 실행 중 홈키를 한 번 눌러 홈화면으로 돌아가거나<br />
+홈키를 두 번 눌러 Multitasking Switcher에 진입하면
+직전의 앱 화면이 스크린샷으로 저장되어 화면에 보이게 된다.</p>
 
-<hr />
+<p><img src="/img/posts/iossnapshot01.png" alt="" /></p>
 
-<h1 id="아이폰에서-접속">아이폰에서 접속</h1>
-
-<p>동일 네트워크에 있는 탈옥된 아이폰에 /etc/hosts 파일을 수정했다.<br />
-로컬 서버의 내부 IP와 사용할 주소를 넣고나서 Ping을 날렸다.</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ping test.useworld.com
-<span class="go">PING test.useworld.com (192.168.0.0) 56(84) bytes of data.
-64 bytes from 192.168.0.0: icmp_seq=1 ttl=54 time=0.0 ms
-64 bytes from 192.168.0.0: icmp_seq=2 ttl=54 time=0.0 ms
-64 bytes from 192.168.0.0: icmp_seq=3 ttl=54 time=0.0 ms
-64 bytes from 192.168.0.0: icmp_seq=4 ttl=54 time=0.0 ms
-64 bytes from 192.168.0.0: icmp_seq=5 ttl=54 time=0.0 ms
-64 bytes from 192.168.0.0: icmp_seq=6 ttl=54 time=0.0 ms
-64 bytes from 192.168.0.0: icmp_seq=7 ttl=54 time=0.0 ms
-</span><span class="c">...
-</span></code></pre></div></div>
-
-<p>잘 된다.<br />
-이어서 Safari를 열어 <kbd>https://test.useworld.com</kbd>로 접속해보니 이게 왠걸.<br />
-서버에 접속할 수 없다고 한다.<br />
-개발중인 앱에서 Request를 날려봐도 마찬가지로 Not Found라고 나온다.</p>
+<p>이 화면은 이미지 파일로 아이폰 내부 저장공간에 파일로 저장이 된다.</p>
 
 <hr />
 
-<h1 id="삽질">삽질</h1>
+<h1 id="그래서-이게-뭐">그래서 이게 뭐?</h1>
 
-<p>구글링을 해봐도 쉽게 나와주질 않는다.<br />
-DNS Flush를 하라고 해서 찾아보니 비행기 모드를 하고 15초 정도 있다가 다시 켜면 된다고 한다.<br />
-해봤으나 실패.<br />
-IPv4로만 해놨으면 IPv6으로 변환해서 한번 더 hosts 파일에 등록하면 된다고 한다.<br />
-<a href="https://www.ultratools.com/tools/ipv4toipv6">변환 사이트</a>에서 변환해서 등록해 보았으나 역시나 실패.<br />
-test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 된다고 한다.
-마찬가지로 실패.
-또 구글링해보니 iOS 12에서 hosts 적용이 안되는데 어떻게 하냐는 질문에 답이 없는 글도 봤다.<br />
-계속되는 실패에 원래 iOS에서는 안되는 건가? 라는 생각이 들었다.</p>
+<p>모바일 앱 보안 관련해서 백그라운드 화면에</p>
+
+<ul>
+  <li>고유식별정보(주민등록번호, 운전면허번호, 여권번호, 외국인 등록번호)</li>
+  <li>비밀번호(로그인 비밀번호, 계좌 비밀번호, 공인인증서 비밀번호 등)</li>
+  <li>신용정보(보안카드번호, OTP번호, 신용/체크 카드번호 등)</li>
+  <li>기타 중요 정보</li>
+</ul>
+
+<p>등이 노출이 되면 취약하다고 한다.</p>
+
+<p>내 생각에는 이게 위험성이 엄청나게 높다고는 생각하지 않는다.<br />
+백그라운드 화면이 유출될 상황이라면 이미 이게 문제가 아닌 것 같은데?</p>
 
 <hr />
 
-<h1 id="letmeblock">LetMeBlock</h1>
+<h1 id="저장-경로">저장 경로</h1>
 
-<p>삽질을 하다가 결국엔 찾았다.</p>
+<p>결론부터 말하면 iOS 버전에 따라 저장경로가 다르다.</p>
 
-<ol>
-  <li>Cydia의 Source에서 <kbd>https://poomsmart.github.io/repo/</kbd> Repository를 추가한다.</li>
-  <li><code class="highlighter-rouge">LetMeBlock</code>을 검색하여 들어가서 변경을 누르고 재설치한다.</li>
-  <li>root 권한으로 mDNSResponder를 kill한다.</li>
-</ol>
+<ul>
+  <li>
+    <p>iOS 8 미만 
+<kbd>/var/mobile/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/</kbd></p>
+  </li>
+  <li>
+    <p>iOS 8 이상 13 미만
+<kbd>/var/mobile/Containers/Data/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/</kbd></p>
+  </li>
+  <li>
+    <p>iOS 13
+<kbd>/var/mobile/Conatiners/Data/Application/[BundleID]/Library/SplashBoard/Snapshots/sceneID:[PackageName]-default/</kbd></p>
+  </li>
+</ul>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>killall <span class="nt">-9</span> mDNSResponder
-<span class="gp">$</span><span class="w"> </span>killall <span class="nt">-9</span> mDNSResponderHelper
+<p><code class="highlighter-rouge">[BundleID]</code>는 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA 이런 식으로 생긴 앱 고유 ID를 말하고<br />
+<code class="highlighter-rouge">[PackageName]</code>은 com.useworld.test 같은 앱 패키지명을 말한다.</p>
+
+<hr />
+
+<h1 id="확인">확인</h1>
+
+<p>이미지 파일 확인을 직접 해보았다.</p>
+
+<ul>
+  <li>테스트 기기 : iOS 13(Jailbroken)</li>
+</ul>
+
+<p>보통 앱 바이너리가 저장되어 있는 <kbd>/var/containers/Bundle/Application/</kbd>
+경로에서 검색 해보면 원하는 앱의 이름으로 BundleID 확인이 가능하다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span><span class="nb">pwd</span>
+<span class="go">/var/containers/Bundle/Application
+
+</span><span class="gp">#</span><span class="w"> </span>find ./ <span class="nt">-name</span> Useworld
+<span class="go">./0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/Useworld.app/Useworld
+
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">ls </span>0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+<span class="go">BundleMetadata.plist  Useworld.app/
+
+</span><span class="gp">#</span>_
 </code></pre></div></div>
 
-<p>Safari로 접속을 해도 앱에서 접근을 해도 잘 접속된다.<br />
-오 놀라워라.</p>
+<p>내 앱의 BundleID는 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA 이거구나.</p>
+
+<p>그러면 스냅샷이 저장되는 <kbd>/var/mobile/Conatiners/Data/Application/</kbd>로 가보자.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span><span class="nb">pwd</span>
+<span class="go">/var/mobile/Containers/Data/Application
+
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">cd </span>0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+<span class="go">-sh: cd: 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/: No such file or directory
+
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">ls </span>0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+<span class="go">ls: cannot access '0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/': No such file or directory
+
+</span><span class="gp">#</span><span class="w"> </span>find ./ <span class="nt">-name</span> Useworld
+<span class="go">
+</span><span class="gp">#</span>_
+</code></pre></div></div>
+
+<p>아 뭐야 없어.
+보니까 이곳에 저장되는 BundleID는 달랐던 것이었다.</p>
+
+<hr />
+
+<h1 id="bundleid-찾기">BundleID 찾기</h1>
+
+<p>그러면 내가 원하는 앱의 BundleID를 어떻게 찾느냐.<br />
+폴더 내에  <kbd>.com.apple.mobile_container_manager.metadata.plist</kbd> 파일에서 <code class="highlighter-rouge">PackageName</code>에 포함된 문자열로 찾으면 된다.<br />
+<code class="highlighter-rouge">PackageName</code>은 위에서 말했듯이 com.useworld.test 같은 패키지명이다.</p>
+
+<p><kbd>grep [문자열] */.com.apple.mobile_container_manager.metadata.plist</kbd></p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span><span class="nb">pwd</span>
+<span class="go">/var/mobile/Containers/Data/Application
+
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">grep </span>useworld <span class="k">*</span>/.com.apple.mobile_container_manager.metadata.plist
+<span class="go">Binary file 492BD434-B2C2-4FA9-92B9-FFD999EE8C98/.com.apple.mobile_container_manager.metadata.plist matches
+
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">cd </span>492BD434-B2C2-4FA9-92B9-FFD999EE8C98/
+<span class="go">
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">cat</span> .com.apple.mobil e_container_manager.metadata.plist
+<span class="go">bplist00�☺☻♥♦♣◄↕_►↕MCMMetadataVersion_►§MCMMetadataIdentifier_►↨MCMMetadataUserIdentity_►↨MCMMetadataContentClass_►☼MCMMetadataUUIDQ2_►↨com.useworld.test�
+</span><span class="gp">♫♫☼►♠XposixUIDXposixGID_►‼personaUniqueStringTtypeWversion◄☺�_►$</span>5C0C954D-8251-4BA6-8ACE-7DECCE6A2F52► ►☻_►<span class="nv">$3D70C1E6</span><span class="nt">-879C-4E7D-8490-5D536A8AE545</span> ‼ <span class="o">(</span> @ Z t � � � � � � � � � �☺♀☺♫☺►      ☻☺       ‼              ☺7
+<span class="go">
+</span><span class="gp">#</span>_
+</code></pre></div></div>
+
+<p>찾앗다.<br />
+<code class="highlighter-rouge">492BD434-B2C2-4FA9-92B9-FFD999EE8C98</code> 이거였다.</p>
+
+<hr />
+
+<h1 id="확인-1">확인</h1>
+
+<p>이제 스냅샷 저장 경로에서 확인한다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="w"> </span><span class="nb">pwd</span>
+<span class="go">/var/mobile/Containers/Data/Application/492BD434-B2C2-4FA9-92B9-FFD999EE8C98/Library/SplashBoard/Snapshots/sceneID:com.useworld.test-default
+
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">ls</span> <span class="nt">-al</span>
+<span class="go">38543746-8F29-4BFC-AB0A-36BE3986A7F8\@2x.ktx  5118E936-461F-4C12-9147-8C8471A09656\@2x.ktx  downscaled/
+
+</span><span class="gp">#</span>_
+</code></pre></div></div>
+
+<p>저기있는 <code class="highlighter-rouge">ktx</code> 파일이 스냅샷 이미지 파일이다.<br />
+익숙치 않은 확장자인데 맥에서 열어보면 이미지 확인이 가능하다.</p>
+
+<hr />
+
+<h1 id="정리">정리</h1>
+
+<p>아이폰 백그라운드 스냅샷 확인 방법</p>
+
+<ul>
+  <li>
+    <p>iOS 8 미만 
+<kbd>/var/mobile/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/</kbd></p>
+  </li>
+  <li>
+    <p>iOS 8 이상 13 미만
+<kbd>/var/mobile/Containers/Data/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/</kbd></p>
+  </li>
+  <li>
+    <p>iOS 13
+<kbd>/var/mobile/Conatiners/Data/Application/[BundleID]/Library/SplashBoard/Snapshots/sceneID:[PackageName]-default/</kbd></p>
+  </li>
+  <li>
+    <p>BundleID 찾기<br />
+<kbd>grep [패키지명에 포함된 문자열] */.com.apple.mobile_container_manager.metadata.plist</kbd></p>
+  </li>
+  <li>
+    <p>안에 들어있는 <code class="highlighter-rouge">ktx</code> 파일이 범인이다.</p>
+  </li>
+</ul>
 
 <p>끝.</p>
 
@@ -204,7 +312,7 @@ test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 �
                     
                     <th class="more-posts-title">
                       
-                        <a href="/ios/2020/06/05/iossnapshot.html">아이폰 백그라운드 스냅샷은 어디에 저장될까?</a>
+                        <a href="/ios/2020/06/05/iossnapshot.html"><u><strong>아이폰 백그라운드 스냅샷은 어디에 저장될까?</strong></u></a>
                       
                     </th>
                     <td class="more-posts-date">2020. 06. 05</td>
@@ -224,7 +332,7 @@ test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 �
                     
                     <th class="more-posts-title">
                       
-                        <a href="/ios/2020/04/07/hosts.html"><u><strong>탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</strong></u></a>
+                        <a href="/ios/2020/04/07/hosts.html">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</a>
                       
                     </th>
                     <td class="more-posts-date">2020. 04. 07</td>
@@ -276,12 +384,9 @@ test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 �
       <div class="clearfix">
         <!--
         
-          <a class="btn btn-primary float-left" href="/game/2020/03/25/asyuna.html" data-toggle="tooltip" data-placement="top" title="어나더 에덴 - AS유나 등장">&larr; Previous<span class="d-none d-md-inline">
+          <a class="btn btn-primary float-left" href="/python/2020/04/16/pipssl.html" data-toggle="tooltip" data-placement="top" title="Python PIP에서 SSLCertVerificationError 날 때">&larr; Previous<span class="d-none d-md-inline">
           Post</span></a>
         
-        
-          <a class="btn btn-primary float-right" href="/python/2020/04/16/pipssl.html" data-toggle="tooltip" data-placement="top" title="Python PIP에서 SSLCertVerificationError 날 때">Next<span class="d-none d-md-inline">
-          Post</span> &rarr;</a>
         
         -->
       </div>
