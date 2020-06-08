@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://useworld.github.io/swift/2020/03/10/bgsnapshot.html">
+  <link rel="canonical" href="http://localhost:4000/swift/2020/03/10/bgsnapshot.html">
   <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160063834-1"></script>
@@ -272,6 +272,34 @@
 </ul>
 
 <p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
+
+<hr />
+
+<h1 id="결론">결론</h1>
+
+<p>Swift에서 백그라운드 스냅샷에 중요 정보 노출 방지하는 방법</p>
+
+<ul>
+  <li>iOS 13 미만 버전에서는 App Delegate, iOS 13 이상이면 Scene Delegate 고려</li>
+  <li>임의의 이미지 뷰를 생성하여 앱이 백그라운드 진입할 때 위에 덮어쓰고 다시 돌아올 때 뺀다.</li>
+</ul>
+
+<p>즉 App Delegate의 경우 <kbd>AppDelegate.swift</kbd>에 아래 코드 추가</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="p">?</span>
+
+<span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="n">window</span><span class="o">!.</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">imageView</span><span class="p">?</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="p">[</span><span class="n">넣을</span> <span class="n">이미지</span><span class="p">])</span>
+    <span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">imageView</span><span class="o">!</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">imageView</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="n">imageView</span><span class="p">?</span><span class="o">.</span><span class="nf">removeFromSuperview</span><span class="p">()</span>
+        <span class="n">imageView</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>끝.</p>
 

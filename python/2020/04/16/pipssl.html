@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://useworld.github.io/python/2020/04/16/pipssl.html">
+  <link rel="canonical" href="http://localhost:4000/python/2020/04/16/pipssl.html">
   <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160063834-1"></script>
@@ -215,14 +215,36 @@ wcwidth-0.1.7-py2.py3-none-any.whl
 
 <p>이 방법을 사용하면 사용하던 환경 그대로 dependency 문제 없이 깔끔하게 한번에 모두 오프라인으로 설치가 가능하다.</p>
 
-<p>정리하면</p>
+<hr />
+
+<h1 id="결론">결론</h1>
+
+<p>PIP 설치 시 SSL 에러 발생</p>
+
+<ul>
+  <li>
+    <p>일회성<br />
+<kbd>pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org [module]</kbd></p>
+  </li>
+  <li>
+    <p>매번 치기 귀찮으면 php.ini에 아래 내용 삽입</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[global]
+trusted-host = pypi.python.org
+             pypi.org
+             files.pythonhosted.org
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>오프라인 설치 시</p>
+
 <ol>
   <li><code class="highlighter-rouge">Python 설치 파일</code></li>
   <li><kbd>pip freeze &gt; requirements.txt</kbd> 해서 나온 <code class="highlighter-rouge">requirements.txt</code></li>
-  <li><kbd>pip download -r requirements.txt</kbd> 해서 나온 <code class="highlighter-rouge">설치 파일</code>들</li>
+  <li><kbd>pip download -r requirements.txt</kbd> 해서 나온 <code class="highlighter-rouge">설치 파일들</code></li>
 </ol>
 
-<p>이것들을 가지고<br />
+<p>이것들을 가지고
 <kbd>pip install --no-index --find-links="./" -r .\requirements.txt</kbd>로 설치한다.</p>
 
 <p>끝.</p>
