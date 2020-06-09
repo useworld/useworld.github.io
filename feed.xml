@@ -1,4 +1,138 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-09T09:01:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">아이폰 백그라운드 스냅샷은 어디에 저장될까?</title><link href="http://localhost:4000/ios/2020/06/05/iossnapshot.html" rel="alternate" type="text/html" title="아이폰 백그라운드 스냅샷은 어디에 저장될까?" /><published>2020-06-05T00:00:00+09:00</published><updated>2020-06-05T00:00:00+09:00</updated><id>http://localhost:4000/ios/2020/06/05/iossnapshot</id><content type="html" xml:base="http://localhost:4000/ios/2020/06/05/iossnapshot.html">&lt;h1 id=&quot;백그라운드-스냅샷이-뭐야&quot;&gt;백그라운드 스냅샷이 뭐야?&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-06-09T14:25:08+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)</title><link href="https://useworld.github.io/android/2020/06/09/nethunter.html" rel="alternate" type="text/html" title="당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)" /><published>2020-06-09T00:00:00+09:00</published><updated>2020-06-09T00:00:00+09:00</updated><id>https://useworld.github.io/android/2020/06/09/nethunter</id><content type="html" xml:base="https://useworld.github.io/android/2020/06/09/nethunter.html">&lt;h1 id=&quot;서론&quot;&gt;서론&lt;/h1&gt;
+
+&lt;p&gt;데스크탑이나 노트북이 없어도 휴대용으로 들고 다닐 수 있는 해킹 도구는 매력적이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;물론 영화나 게임에서 나오는 해커들처럼 1초만에 띠디딕 잠긴 문을 다 따는 등의 행위는 아마도(?) 불가능하다.&lt;br /&gt;
+이 글은 안드로이드 기기에 모의해킹 침투테스트 환경을 구축하는 방법에 대한 내용이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;nethunter란&quot;&gt;Nethunter란?&lt;/h1&gt;
+
+&lt;p&gt;모의해킹을 수행하거나 관심이 있는 사람이라면 &lt;code class=&quot;highlighter-rouge&quot;&gt;Backtrack&lt;/code&gt;이나 &lt;code class=&quot;highlighter-rouge&quot;&gt;Kali Linux&lt;/code&gt;를 한번 쯤 들어본 적이 있을 것이다.&lt;br /&gt;
+이는 &lt;a href=&quot;https://www.offensive-security.com/&quot;&gt;Offensive Security&lt;/a&gt;에서 만든 모의 침투 테스트용 운영체제이며 칼리 리눅스는 백트랙의 후속 버전이다.
+그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;넷헌터(NetHunter OS)&lt;/code&gt;는 2015년 1월 출시된 칼리 리눅스의 공식 안드로이드 롬이다.&lt;/p&gt;
+
+&lt;p&gt;문제는 &lt;a href=&quot;https://www.offensive-security.com/kali-linux-nethunter-download/&quot;&gt;공식 지원 기종&lt;/a&gt;이 거의 구글 레퍼런스 폰인 Nexus 시리즈, Sony XPeria(일본꺼), OnePlus 시리즈(중국꺼)이며 갤럭시는 Tab S4 밖에 없다.&lt;/p&gt;
+
+&lt;p&gt;국내 안드로이드 사용자들은 아마 대부분 갤럭시S 시리즈를 사용할텐데 공식 지원 기종에 없다. 여담으로 나도 Galaxy S 시리즈를 사용하고 있지만 솔직히 삼성페이 아니었으면 안쓸텐데 삼성페이 편의성이 넘사벽이라 어쩔 수가 없네…&lt;/p&gt;
+
+&lt;p&gt;하지만 지원해주지 않는다고 설치를 못하는 것은 아니다.
+지금부터 시작해보자.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;작업-환경&quot;&gt;작업 환경&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Device : Galaxy S7(SM-G930F)&lt;/li&gt;
+  &lt;li&gt;OS : LineageOS 17.1(Android 10)&lt;/li&gt;
+  &lt;li&gt;Status : Rooted(Magisk 20.4)&lt;/li&gt;
+  &lt;li&gt;Image : &lt;a href=&quot;https://images.offensive-security.com/nethunter/nethunter-2020.2-angler-los-ten-kalifs-full.zip?_ga=2.54912939.1884579290.1591662327-547972089.1590403638&quot;&gt;Nexus 6P Los Ten&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter02.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;\img\posts\nethunter03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;최신 버전을 선호하기에 갤럭시S7에서 설치 가능한 안드로이드 10 커스텀롬인 &lt;code class=&quot;highlighter-rouge&quot;&gt;리니지OS&lt;/code&gt;를 올려놓고 &lt;code class=&quot;highlighter-rouge&quot;&gt;Magisk&lt;/code&gt;로 루팅을 했다.&lt;br /&gt;
+물론 &lt;a href=&quot;https://www.kali.org/docs/nethunter/nethunter-rootless/&quot;&gt;루팅안하고도 할 수 있는 방법&lt;/a&gt;도 있긴 하지만 안드로이드 기기로 뭔가 해보려면 루팅은 기본이지.&lt;br /&gt;
+이미지는 안드로이드 버전만 맞으면 아무거나 받아도 된다.&lt;br /&gt;
+커스텀롬을 올리거나 루팅을 하면서 폰이 벽돌이 되도 나는 모르오.&lt;br /&gt;
+뭐 문제 생기면 &lt;code class=&quot;highlighter-rouge&quot;&gt;Odin&lt;/code&gt;으로 밀고 순정 펌웨어를 새로 설치하면 앵간한 문제는 다 해결되니 긴장할 필요는 없다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;설치-방법&quot;&gt;설치 방법&lt;/h1&gt;
+
+&lt;p&gt;지금부터 하는 방법은 공식 방법이 아닌 야매 방법으로 문제가 있을 수도 있다.&lt;br /&gt;
+참고로 난 한 번에 잘됐다.&lt;/p&gt;
+
+&lt;p&gt;우선 다운로드 받은 이미지 파일의 압축을 풀어 &lt;kbd&gt;data/app/&lt;/kbd&gt; 경로의 apk파일들을 한 개씩 설치해준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;NetHunter 앱을 한 번 실행 했다가 종료한 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;Root Explorer&lt;/code&gt; 같은 탐색기를 이용하여
+&lt;kbd&gt;/data/data/com.offsec.nethunter/files/scripts&lt;/kbd&gt; 경로의 파일들을
+&lt;kbd&gt;/system/bin&lt;/kbd&gt;로 전부 복사해준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 Nethunter 앱을 실행하여 Kali Chroot Manager 메뉴에서 Minimal Chroot를 Install한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Chroot가 설치되기 전에는 하단의 메뉴들이 전부 비활성화 되어있다.&lt;/p&gt;
+
+&lt;p&gt;설치가 완료된 후 Nethunter Terminal에서 Kali를 선택하고 Root 권한을 부여하면 Kali Shell이 등장한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;리눅스를 처음 설치하면 항상 하는 그것과 함께 칼리 리눅스 넷헌터를 설치한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;항상 하는 그것
+&lt;kbd&gt;apt-get update&lt;/kbd&gt;
+&lt;kbd&gt;apt-get upgrade&lt;/kbd&gt;
+&lt;kbd&gt;apt-get dist-upgrade&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;넷헌터 설치
+&lt;kbd&gt;apt-get install kali-linux-nethunter&lt;/kbd&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이제 Nethunter 앱에서 각종 서비스들을 켜주고 사용하면 된다.
+앱 안에는 이런 다양한 기능들이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;metasploit console 이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;만약 실행이 안되면 &lt;kbd&gt;msfdb init&lt;/kbd&gt;을 해주거나
+넷헌터 앱 내의 서비스들을 &lt;code class=&quot;highlighter-rouge&quot;&gt;Start at Boot&lt;/code&gt; 해주면 된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;난-gui도-쓰고-싶어&quot;&gt;난 GUI도 쓰고 싶어.&lt;/h1&gt;
+
+&lt;p&gt;조그만 화면의 스마트폰으로 GUI를 쓸 일이 있을 것 같진 않지만 혹시 큰 화면에 미러링하거나 키보드 마우스를 연결해서 마치 노트북처럼 사용할 수도 있으려나.&lt;br /&gt;
+넷헌터 GUI는 NetHunter KeX로 제공해주는데 VNCServer를 구동하여 VNCClient로 붙어 화면을 보는 방식이다.&lt;/p&gt;
+
+&lt;p&gt;Nethunter 앱에서 KeX Manager 메뉴로 들어가 서버를 설정해준 후 시작한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그리고 NetHunter Kex 앱을 실행하여 접속하면 GUI 등장.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\img\posts\nethunter14.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;하지만 검정 화면 콘솔의 간지를 이길 순 없다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;결론&quot;&gt;결론&lt;/h1&gt;
+
+&lt;p&gt;루팅폰에 넷헌터 설치법&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;이미지 파일의 압축을 풀어 &lt;kbd&gt;data/app/&lt;/kbd&gt; 경로의 apk파일들 설치&lt;/li&gt;
+  &lt;li&gt;&lt;kbd&gt;/data/data/com.offsec.nethunter/files/scripts&lt;/kbd&gt; 경로의 파일들을
+&lt;kbd&gt;/system/bin&lt;/kbd&gt;로 복사&lt;/li&gt;
+  &lt;li&gt;Nethunter 앱을 실행하여 Kali Chroot Manager 메뉴에서 Chroot를 Install&lt;/li&gt;
+  &lt;li&gt;터미널에서 넷헌터 설치&lt;kbd&gt;apt-get install kali-linux-nethunter&lt;/kbd&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Android" /><summary type="html">서론</summary></entry><entry><title type="html">아이폰 백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)</title><link href="https://useworld.github.io/ios/2020/06/05/iossnapshot.html" rel="alternate" type="text/html" title="아이폰 백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)" /><published>2020-06-05T00:00:00+09:00</published><updated>2020-06-05T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/06/05/iossnapshot</id><content type="html" xml:base="https://useworld.github.io/ios/2020/06/05/iossnapshot.html">&lt;h1 id=&quot;백그라운드-스냅샷이-뭐야&quot;&gt;백그라운드 스냅샷이 뭐야?&lt;/h1&gt;
 
 &lt;p&gt;앱 실행 중 홈키를 한 번 눌러 홈화면으로 돌아가거나&lt;br /&gt;
 홈키를 두 번 눌러 Multitasking Switcher에 진입하면
@@ -170,7 +304,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="iOS" /><summary type="html">백그라운드 스냅샷이 뭐야?</summary></entry><entry><title type="html">Python PIP에서 SSLCertVerificationError 날 때</title><link href="http://localhost:4000/python/2020/04/16/pipssl.html" rel="alternate" type="text/html" title="Python PIP에서 SSLCertVerificationError 날 때" /><published>2020-04-16T00:00:00+09:00</published><updated>2020-04-16T00:00:00+09:00</updated><id>http://localhost:4000/python/2020/04/16/pipssl</id><content type="html" xml:base="http://localhost:4000/python/2020/04/16/pipssl.html">&lt;h1 id=&quot;pip가-안된다&quot;&gt;PIP가 안된다.&lt;/h1&gt;
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="iOS" /><summary type="html">백그라운드 스냅샷이 뭐야?</summary></entry><entry><title type="html">Python PIP에서 SSLCertVerificationError 날 때</title><link href="https://useworld.github.io/python/2020/04/16/pipssl.html" rel="alternate" type="text/html" title="Python PIP에서 SSLCertVerificationError 날 때" /><published>2020-04-16T00:00:00+09:00</published><updated>2020-04-16T00:00:00+09:00</updated><id>https://useworld.github.io/python/2020/04/16/pipssl</id><content type="html" xml:base="https://useworld.github.io/python/2020/04/16/pipssl.html">&lt;h1 id=&quot;pip가-안된다&quot;&gt;PIP가 안된다.&lt;/h1&gt;
 
 &lt;p&gt;인터넷이 되는 환경인데 주로 웹 Proxy를 사용하는 네트워크 환경에서&lt;br /&gt;
 PIP를 이용하여 모듈을 설치 하면 꼭 이런 에러가 발생한다.&lt;/p&gt;
@@ -300,7 +434,7 @@ trusted-host = pypi.python.org
 &lt;p&gt;이것들을 가지고
 &lt;kbd&gt;pip install --no-index --find-links=&quot;./&quot; -r .\requirements.txt&lt;/kbd&gt;로 설치한다.&lt;/p&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Python" /><summary type="html">PIP가 안된다.</summary></entry><entry><title type="html">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</title><link href="http://localhost:4000/ios/2020/04/07/hosts.html" rel="alternate" type="text/html" title="탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기" /><published>2020-04-07T00:00:00+09:00</published><updated>2020-04-07T00:00:00+09:00</updated><id>http://localhost:4000/ios/2020/04/07/hosts</id><content type="html" xml:base="http://localhost:4000/ios/2020/04/07/hosts.html">&lt;h1 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h1&gt;
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Python" /><summary type="html">PIP가 안된다.</summary></entry><entry><title type="html">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</title><link href="https://useworld.github.io/ios/2020/04/07/hosts.html" rel="alternate" type="text/html" title="탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기" /><published>2020-04-07T00:00:00+09:00</published><updated>2020-04-07T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/04/07/hosts</id><content type="html" xml:base="https://useworld.github.io/ios/2020/04/07/hosts.html">&lt;h1 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h1&gt;
 
 &lt;p&gt;앱에 SSL Pinning을 구현하기 위하여 우선 HTTPS 서버를 구축했다.&lt;br /&gt;
 운영 서버에서 사용하는 인증서를 받아 로컬에 서버를 구동하고 접속하려고 하니&lt;br /&gt;
@@ -364,7 +498,7 @@ test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 �
 &lt;p&gt;Safari로 접속을 해도 앱에서 접근을 해도 잘 접속된다.&lt;br /&gt;
 오 놀라워라.&lt;/p&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="iOS" /><summary type="html">사건의 발단</summary></entry><entry><title type="html">어나더 에덴 - AS유나 등장</title><link href="http://localhost:4000/game/2020/03/25/asyuna.html" rel="alternate" type="text/html" title="어나더 에덴 - AS유나 등장" /><published>2020-03-25T00:00:00+09:00</published><updated>2020-03-25T00:00:00+09:00</updated><id>http://localhost:4000/game/2020/03/25/asyuna</id><content type="html" xml:base="http://localhost:4000/game/2020/03/25/asyuna.html">&lt;h1 id=&quot;as-유나&quot;&gt;AS 유나&lt;/h1&gt;
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="iOS" /><summary type="html">사건의 발단</summary></entry><entry><title type="html">어나더 에덴 - AS유나 등장</title><link href="https://useworld.github.io/game/2020/03/25/asyuna.html" rel="alternate" type="text/html" title="어나더 에덴 - AS유나 등장" /><published>2020-03-25T00:00:00+09:00</published><updated>2020-03-25T00:00:00+09:00</updated><id>https://useworld.github.io/game/2020/03/25/asyuna</id><content type="html" xml:base="https://useworld.github.io/game/2020/03/25/asyuna.html">&lt;h1 id=&quot;as-유나&quot;&gt;AS 유나&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/posts/yuna01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -429,7 +563,7 @@ AS아카네는 이절 모아서 나중에 클체하지뭐.&lt;br /&gt;
 그래도 이제 가리유 개안과 팔요 등 고난이도 컨텐츠 도전을 해볼 수 있겠다.&lt;br /&gt;
 씁쓸하구만.&lt;/p&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">AS 유나</summary></entry><entry><title type="html">어나더 에덴 - 무료 10연뽑 및 아나벨, 쿨레르보 얻기</title><link href="http://localhost:4000/game/2020/03/11/anothereden.html" rel="alternate" type="text/html" title="어나더 에덴 - 무료 10연뽑 및 아나벨, 쿨레르보 얻기" /><published>2020-03-11T00:00:00+09:00</published><updated>2020-03-11T00:00:00+09:00</updated><id>http://localhost:4000/game/2020/03/11/anothereden</id><content type="html" xml:base="http://localhost:4000/game/2020/03/11/anothereden.html">&lt;h1 id=&quot;어나더-에덴---시공을-넘는-고양이&quot;&gt;어나더 에덴 - 시공을 넘는 고양이&lt;/h1&gt;
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">AS 유나</summary></entry><entry><title type="html">어나더 에덴 - 무료 10연뽑 및 아나벨, 쿨레르보 얻기</title><link href="https://useworld.github.io/game/2020/03/11/anothereden.html" rel="alternate" type="text/html" title="어나더 에덴 - 무료 10연뽑 및 아나벨, 쿨레르보 얻기" /><published>2020-03-11T00:00:00+09:00</published><updated>2020-03-11T00:00:00+09:00</updated><id>https://useworld.github.io/game/2020/03/11/anothereden</id><content type="html" xml:base="https://useworld.github.io/game/2020/03/11/anothereden.html">&lt;h1 id=&quot;어나더-에덴---시공을-넘는-고양이&quot;&gt;어나더 에덴 - 시공을 넘는 고양이&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/posts/eden01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -512,7 +646,7 @@ New라 고맙긴한데 사실 5성 아니면 안써.&lt;/p&gt;
 
 &lt;p&gt;아니다 10연뽑 한개 더 준다그랬다. 봐줬다. 그 때 다시 한 번 도전해보자.&lt;/p&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">어나더 에덴 - 시공을 넘는 고양이</summary></entry><entry><title type="html">iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)</title><link href="http://localhost:4000/swift/2020/03/10/bgsnapshot.html" rel="alternate" type="text/html" title="iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)" /><published>2020-03-10T00:00:00+09:00</published><updated>2020-03-10T00:00:00+09:00</updated><id>http://localhost:4000/swift/2020/03/10/bgsnapshot</id><content type="html" xml:base="http://localhost:4000/swift/2020/03/10/bgsnapshot.html">&lt;h1 id=&quot;multitasking-switcher&quot;&gt;Multitasking Switcher&lt;/h1&gt;
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">어나더 에덴 - 시공을 넘는 고양이</summary></entry><entry><title type="html">iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)</title><link href="https://useworld.github.io/swift/2020/03/10/bgsnapshot.html" rel="alternate" type="text/html" title="iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)" /><published>2020-03-10T00:00:00+09:00</published><updated>2020-03-10T00:00:00+09:00</updated><id>https://useworld.github.io/swift/2020/03/10/bgsnapshot</id><content type="html" xml:base="https://useworld.github.io/swift/2020/03/10/bgsnapshot.html">&lt;h1 id=&quot;multitasking-switcher&quot;&gt;Multitasking Switcher&lt;/h1&gt;
 
 &lt;p&gt;iOS 앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱은 백그라운드로 들어가고 홈화면이 나온다. 홈화면이던 앱 실행중이던 홈버튼을 연속으로 두번 누르면 현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다. 이 기능을 Multitasking Switcher라고 하는 것 같다.&lt;/p&gt;
 
@@ -696,7 +830,7 @@ New라 고맙긴한데 사실 5성 아니면 안써.&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Swift" /><summary type="html">Multitasking Switcher</summary></entry><entry><title type="html">Swift로 WebView 구현하기(iOS 8.0 WKWebView)</title><link href="http://localhost:4000/swift/2020/03/09/webview.html" rel="alternate" type="text/html" title="Swift로 WebView 구현하기(iOS 8.0 WKWebView)" /><published>2020-03-09T00:00:00+09:00</published><updated>2020-03-09T00:00:00+09:00</updated><id>http://localhost:4000/swift/2020/03/09/webview</id><content type="html" xml:base="http://localhost:4000/swift/2020/03/09/webview.html">&lt;h1 id=&quot;웹-페이지-표시&quot;&gt;웹 페이지 표시&lt;/h1&gt;
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Swift" /><summary type="html">Multitasking Switcher</summary></entry><entry><title type="html">Swift로 WebView 구현하기(iOS 8.0 WKWebView)</title><link href="https://useworld.github.io/swift/2020/03/09/webview.html" rel="alternate" type="text/html" title="Swift로 WebView 구현하기(iOS 8.0 WKWebView)" /><published>2020-03-09T00:00:00+09:00</published><updated>2020-03-09T00:00:00+09:00</updated><id>https://useworld.github.io/swift/2020/03/09/webview</id><content type="html" xml:base="https://useworld.github.io/swift/2020/03/09/webview.html">&lt;h1 id=&quot;웹-페이지-표시&quot;&gt;웹 페이지 표시&lt;/h1&gt;
 
 &lt;p&gt;iOS 앱에서 웹페이지를 보여주려면 몇 가지 방법이 있다.&lt;/p&gt;
 
@@ -797,7 +931,7 @@ New라 고맙긴한데 사실 5성 아니면 안써.&lt;/p&gt;
 &lt;p&gt;코드는 요렇게 되겠다.
 테스트 결과 성공했다.&lt;/p&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Swift" /><summary type="html">웹 페이지 표시</summary></entry><entry><title type="html">Favicon 만들고 적용하기</title><link href="http://localhost:4000/jekyll/2020/03/08/favicon.html" rel="alternate" type="text/html" title="Favicon 만들고 적용하기" /><published>2020-03-08T00:00:00+09:00</published><updated>2020-03-08T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/2020/03/08/favicon</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/03/08/favicon.html">&lt;h1 id=&quot;favicon&quot;&gt;Favicon&lt;/h1&gt;
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Swift" /><summary type="html">웹 페이지 표시</summary></entry><entry><title type="html">Favicon 만들고 적용하기</title><link href="https://useworld.github.io/jekyll/2020/03/08/favicon.html" rel="alternate" type="text/html" title="Favicon 만들고 적용하기" /><published>2020-03-08T00:00:00+09:00</published><updated>2020-03-08T00:00:00+09:00</updated><id>https://useworld.github.io/jekyll/2020/03/08/favicon</id><content type="html" xml:base="https://useworld.github.io/jekyll/2020/03/08/favicon.html">&lt;h1 id=&quot;favicon&quot;&gt;Favicon&lt;/h1&gt;
 &lt;p&gt;Favicon이란 Favorites + Icon의 합성어로 웹 브라우저 주소창에 표시되는 웹사이트나 웹페이지를 대표하는 아이콘이다.&lt;br /&gt;
 새로 개장한 내 블로그에도 Favicon을 달아야겠다.&lt;/p&gt;
 
@@ -834,7 +968,7 @@ New라 고맙긴한데 사실 5성 아니면 안써.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/img/posts/favicon04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;요렇게 깔끔하게 적용이 되었다.&lt;br /&gt;
-끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Jekyll" /><summary type="html">Favicon Favicon이란 Favorites + Icon의 합성어로 웹 브라우저 주소창에 표시되는 웹사이트나 웹페이지를 대표하는 아이콘이다. 새로 개장한 내 블로그에도 Favicon을 달아야겠다.</summary></entry><entry><title type="html">헌드레드 소울 - 화산 하피(헬) 무한 공중 콤보로 토벌하기(영상)</title><link href="http://localhost:4000/game/2019/10/15/hsoulharpy.html" rel="alternate" type="text/html" title="헌드레드 소울 - 화산 하피(헬) 무한 공중 콤보로 토벌하기(영상)" /><published>2019-10-15T00:00:00+09:00</published><updated>2019-10-15T00:00:00+09:00</updated><id>http://localhost:4000/game/2019/10/15/hsoulharpy</id><content type="html" xml:base="http://localhost:4000/game/2019/10/15/hsoulharpy.html">&lt;h1 id=&quot;화산-하피헬-토벌-영상&quot;&gt;화산 하피(헬) 토벌 영상&lt;/h1&gt;
+끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Jekyll" /><summary type="html">Favicon Favicon이란 Favorites + Icon의 합성어로 웹 브라우저 주소창에 표시되는 웹사이트나 웹페이지를 대표하는 아이콘이다. 새로 개장한 내 블로그에도 Favicon을 달아야겠다.</summary></entry><entry><title type="html">헌드레드 소울 - 화산 하피(헬) 무한 공중 콤보로 토벌하기(영상)</title><link href="https://useworld.github.io/game/2019/10/15/hsoulharpy.html" rel="alternate" type="text/html" title="헌드레드 소울 - 화산 하피(헬) 무한 공중 콤보로 토벌하기(영상)" /><published>2019-10-15T00:00:00+09:00</published><updated>2019-10-15T00:00:00+09:00</updated><id>https://useworld.github.io/game/2019/10/15/hsoulharpy</id><content type="html" xml:base="https://useworld.github.io/game/2019/10/15/hsoulharpy.html">&lt;h1 id=&quot;화산-하피헬-토벌-영상&quot;&gt;화산 하피(헬) 토벌 영상&lt;/h1&gt;
 &lt;p&gt;카르마 강화 재료를 드랍하는 화산 하피(헬)를 무과금 장비로 잡아보겠다.&lt;br /&gt;
 맞으면 거의 실패라고 보면 되기 때문에 패턴을 무시하고 토벌한다.&lt;/p&gt;
 
@@ -857,28 +991,4 @@ New라 고맙긴한데 사실 5성 아니면 안써.&lt;/p&gt;
 &lt;p&gt;무과금으로 하다보니 장비가 거의 일반 장비다.&lt;br /&gt;
 Youtube 영상 제작 연습용으로 제작해봤다.&lt;/p&gt;
 
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">화산 하피(헬) 토벌 영상 카르마 강화 재료를 드랍하는 화산 하피(헬)를 무과금 장비로 잡아보겠다. 맞으면 거의 실패라고 보면 되기 때문에 패턴을 무시하고 토벌한다.</summary></entry><entry><title type="html">헌드레드 소울 - 태고의 웜(노멀) 본 크러셔로 부관 없이 잡기(영상)</title><link href="http://localhost:4000/game/2019/10/14/hsoulworm.html" rel="alternate" type="text/html" title="헌드레드 소울 - 태고의 웜(노멀) 본 크러셔로 부관 없이 잡기(영상)" /><published>2019-10-14T00:00:00+09:00</published><updated>2019-10-14T00:00:00+09:00</updated><id>http://localhost:4000/game/2019/10/14/hsoulworm</id><content type="html" xml:base="http://localhost:4000/game/2019/10/14/hsoulworm.html">&lt;h1 id=&quot;태고의-웜노멀-토벌-영상&quot;&gt;태고의 웜(노멀) 토벌 영상&lt;/h1&gt;
-
-&lt;p&gt;헌드레드 소울 비앙카의 대장간 재료를 드랍하는 태고의 웜(노멀)을 무과금 장비로 잡아보겠다.&lt;br /&gt;
-부관 행동력이 드니 부관 상관 없이 혼자 잡아 보자.&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/7PcnWsAcZ6Y&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;장비&quot;&gt;장비&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;주무기 : T6. 본 크러셔(4초월) - 일반&lt;/li&gt;
-  &lt;li&gt;보조무기 : T6. 데들리 로즈(3초월) - 일반&lt;/li&gt;
-  &lt;li&gt;방어구 : T6. 브리간딘(4초월) - 일반&lt;/li&gt;
-  &lt;li&gt;목걸이 : T6. 쉐도우댄서  펜던트(1초월) - 세트&lt;/li&gt;
-  &lt;li&gt;반지 : T6. 크래쉬 링(2초월) 레어 - 희귀&lt;/li&gt;
-  &lt;li&gt;허리띠 : T6. 쉐도우 벨트 - 세트&lt;/li&gt;
-  &lt;li&gt;카르마 : B. 돌격대장의 전투장갑&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;무과금으로 하다보니 장비가 거의 일반 장비다.&lt;br /&gt;
-Youtube 영상 제작 연습용으로 제작해봤다.&lt;/p&gt;
-
-&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">태고의 웜(노멀) 토벌 영상</summary></entry></feed>
+&lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Game" /><summary type="html">화산 하피(헬) 토벌 영상 카르마 강화 재료를 드랍하는 화산 하피(헬)를 무과금 장비로 잡아보겠다. 맞으면 거의 실패라고 보면 되기 때문에 패턴을 무시하고 토벌한다.</summary></entry></feed>

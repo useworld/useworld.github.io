@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-  Markdown으로 글 써보기 - To be Useful to the World
+  당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device) - To be Useful to the World
   
   </title>
   <meta name="naver-site-verification" content="0852d6d163568038e97274dc755d304f86cfebda"/>
-  <meta name="description" content="제목쓰기">
+  <meta name="description" content="서론">
   <link href="https://fonts.googleapis.com/nanumgothiccoding.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://useworld.github.io/jekyll/2018/07/08/markdown.html">
+  <link rel="canonical" href="https://useworld.github.io/android/2020/06/09/nethunter.html">
   <link rel="alternate" type="application/rss+xml" title="To be Useful to the World" href="/feed.xml">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160063834-1"></script>
@@ -98,15 +98,15 @@
   </div>
 </nav>
 		<!-- Page Header -->
-<header class="masthead" style="background-image: url('/img/category/bg-jekyll.jpg')">
+<header class="masthead" style="background-image: url('/img/category/bg-android.jpg')">
   
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
-          <h1>Markdown으로 글 써보기</h1>
-          <span class="meta" style="font-size:16px;color: #AAAAAA;"><i class="far fa-calendar-alt"></i> 2018년 07월 08일
+          <h1>당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)</h1>
+          <span class="meta" style="font-size:16px;color: #AAAAAA;"><i class="far fa-calendar-alt"></i> 2020년 06월 09일
           </span>
         </div>
       </div>
@@ -117,121 +117,148 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="content">
-        <h2 id="제목쓰기">제목쓰기</h2>
+        <h1 id="서론">서론</h1>
 
-<p># 제목</p>
+<p>데스크탑이나 노트북이 없어도 휴대용으로 들고 다닐 수 있는 해킹 도구는 매력적이다.</p>
 
-<blockquote>
-  <h1 id="제목">제목</h1>
-</blockquote>
+<p><img src="\img\posts\nethunter01.jpg" alt="" /></p>
 
-<p>## 제목</p>
-
-<blockquote>
-  <h2 id="제목-1">제목</h2>
-</blockquote>
-
-<p>### 제목</p>
-
-<blockquote>
-  <h3 id="제목-2">제목</h3>
-</blockquote>
-
-<p>#### 제목</p>
-
-<blockquote>
-  <h4 id="제목-3">제목</h4>
-</blockquote>
-
-<p>##### 제목</p>
-
-<blockquote>
-  <h5 id="제목-4">제목</h5>
-</blockquote>
-
-<p>###### 제목</p>
-
-<blockquote>
-  <h6 id="제목-5">제목</h6>
-</blockquote>
-
-<p>#을 6개 까지 쓸 일은 없겠지.
-참고로 7개를 사용하면</p>
-
-<p>####### 제목</p>
-
-<blockquote>
-  <p>####### 제목</p>
-</blockquote>
-
-<p>안된다.</p>
+<p>물론 영화나 게임에서 나오는 해커들처럼 1초만에 띠디딕 잠긴 문을 다 따는 등의 행위는 아마도(?) 불가능하다.<br />
+이 글은 안드로이드 기기에 모의해킹 침투테스트 환경을 구축하는 방법에 대한 내용이다.</p>
 
 <hr />
 
-<h2 id="리스트-만들기">리스트 만들기</h2>
+<h1 id="nethunter란">Nethunter란?</h1>
 
-<p>*이나 +나 -를 쓰면된다.</p>
+<p>모의해킹을 수행하거나 관심이 있는 사람이라면 <code class="highlighter-rouge">Backtrack</code>이나 <code class="highlighter-rouge">Kali Linux</code>를 한번 쯤 들어본 적이 있을 것이다.<br />
+이는 <a href="https://www.offensive-security.com/">Offensive Security</a>에서 만든 모의 침투 테스트용 운영체제이며 칼리 리눅스는 백트랙의 후속 버전이다.
+그리고 <code class="highlighter-rouge">넷헌터(NetHunter OS)</code>는 2015년 1월 출시된 칼리 리눅스의 공식 안드로이드 롬이다.</p>
 
-<p>* 리스트 1<br />
-+ 리스트 2<br />
-- 리스트 3</p>
+<p>문제는 <a href="https://www.offensive-security.com/kali-linux-nethunter-download/">공식 지원 기종</a>이 거의 구글 레퍼런스 폰인 Nexus 시리즈, Sony XPeria(일본꺼), OnePlus 시리즈(중국꺼)이며 갤럭시는 Tab S4 밖에 없다.</p>
 
-<blockquote>
-  <ul>
-    <li>리스트 1</li>
-    <li>리스트 2</li>
-    <li>리스트 3</li>
-  </ul>
-</blockquote>
+<p>국내 안드로이드 사용자들은 아마 대부분 갤럭시S 시리즈를 사용할텐데 공식 지원 기종에 없다. 여담으로 나도 Galaxy S 시리즈를 사용하고 있지만 솔직히 삼성페이 아니었으면 안쓸텐데 삼성페이 편의성이 넘사벽이라 어쩔 수가 없네…</p>
 
-<p>숫자는 1. 2. 3. 이런식으로 매기면 된다.</p>
-
-<p>순서가 바뀌어도 알아서 맞춰준다.</p>
-
-<p>\1. 리스트 1
-\3. 리스트 2
-\5. 리스트 3</p>
-
-<blockquote>
-  <ol>
-    <li>리스트 1</li>
-    <li>리스트 2</li>
-    <li>리스트 3</li>
-  </ol>
-</blockquote>
+<p>하지만 지원해주지 않는다고 설치를 못하는 것은 아니다.
+지금부터 시작해보자.</p>
 
 <hr />
 
-<h2 id="인용구-쓰기">인용구 쓰기</h2>
+<h1 id="작업-환경">작업 환경</h1>
 
-<p>&gt; 글씨</p>
+<ul>
+  <li>Device : Galaxy S7(SM-G930F)</li>
+  <li>OS : LineageOS 17.1(Android 10)</li>
+  <li>Status : Rooted(Magisk 20.4)</li>
+  <li>Image : <a href="https://images.offensive-security.com/nethunter/nethunter-2020.2-angler-los-ten-kalifs-full.zip?_ga=2.54912939.1884579290.1591662327-547972089.1590403638">Nexus 6P Los Ten</a></li>
+</ul>
 
-<blockquote>
-  <p>글씨</p>
-</blockquote>
+<p><img src="\img\posts\nethunter02.png" alt="" />
+<img src="\img\posts\nethunter03.png" alt="" /></p>
+
+<p>최신 버전을 선호하기에 갤럭시S7에서 설치 가능한 안드로이드 10 커스텀롬인 <code class="highlighter-rouge">리니지OS</code>를 올려놓고 <code class="highlighter-rouge">Magisk</code>로 루팅을 했다.<br />
+물론 <a href="https://www.kali.org/docs/nethunter/nethunter-rootless/">루팅안하고도 할 수 있는 방법</a>도 있긴 하지만 안드로이드 기기로 뭔가 해보려면 루팅은 기본이지.<br />
+이미지는 안드로이드 버전만 맞으면 아무거나 받아도 된다.<br />
+커스텀롬을 올리거나 루팅을 하면서 폰이 벽돌이 되도 나는 모르오.<br />
+뭐 문제 생기면 <code class="highlighter-rouge">Odin</code>으로 밀고 순정 펌웨어를 새로 설치하면 앵간한 문제는 다 해결되니 긴장할 필요는 없다.</p>
 
 <hr />
 
-<h2 id="코드블럭">코드블럭</h2>
+<h1 id="설치-방법">설치 방법</h1>
 
-<p>~~~ 언어<br />
- 코드<br />
-~~~</p>
+<p>지금부터 하는 방법은 공식 방법이 아닌 야매 방법으로 문제가 있을 수도 있다.<br />
+참고로 난 한 번에 잘됐다.</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span><span class="p">()</span> <span class="p">{</span>
- <span class="n">printf</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>우선 다운로드 받은 이미지 파일의 압축을 풀어 <kbd>data/app/</kbd> 경로의 apk파일들을 한 개씩 설치해준다.</p>
+
+<p><img src="\img\posts\nethunter04.png" alt="" /></p>
+
+<p>NetHunter 앱을 한 번 실행 했다가 종료한 후 <code class="highlighter-rouge">Root Explorer</code> 같은 탐색기를 이용하여
+<kbd>/data/data/com.offsec.nethunter/files/scripts</kbd> 경로의 파일들을
+<kbd>/system/bin</kbd>로 전부 복사해준다.</p>
+
+<p><img src="\img\posts\nethunter05.png" alt="" /></p>
+
+<p>이제 Nethunter 앱을 실행하여 Kali Chroot Manager 메뉴에서 Minimal Chroot를 Install한다.</p>
+
+<p><img src="\img\posts\nethunter06.png" alt="" /></p>
+
+<p><img src="\img\posts\nethunter07.png" alt="" /></p>
+
+<p><img src="\img\posts\nethunter08.png" alt="" /></p>
+
+<p>Chroot가 설치되기 전에는 하단의 메뉴들이 전부 비활성화 되어있다.</p>
+
+<p>설치가 완료된 후 Nethunter Terminal에서 Kali를 선택하고 Root 권한을 부여하면 Kali Shell이 등장한다.</p>
+
+<p><img src="\img\posts\nethunter09.png" alt="" /></p>
+
+<p>리눅스를 처음 설치하면 항상 하는 그것과 함께 칼리 리눅스 넷헌터를 설치한다.</p>
+
+<ul>
+  <li>
+    <p>항상 하는 그것
+<kbd>apt-get update</kbd>
+<kbd>apt-get upgrade</kbd>
+<kbd>apt-get dist-upgrade</kbd></p>
+  </li>
+  <li>
+    <p>넷헌터 설치
+<kbd>apt-get install kali-linux-nethunter</kbd></p>
+  </li>
+</ul>
+
+<p>이제 Nethunter 앱에서 각종 서비스들을 켜주고 사용하면 된다.
+앱 안에는 이런 다양한 기능들이 있다.</p>
+
+<p><img src="\img\posts\nethunter10.png" alt="" /></p>
+
+<p>metasploit console 이다.</p>
+
+<p><img src="\img\posts\nethunter11.png" alt="" /></p>
+
+<p>만약 실행이 안되면 <kbd>msfdb init</kbd>을 해주거나
+넷헌터 앱 내의 서비스들을 <code class="highlighter-rouge">Start at Boot</code> 해주면 된다.</p>
+
+<hr />
+
+<h1 id="난-gui도-쓰고-싶어">난 GUI도 쓰고 싶어.</h1>
+
+<p>조그만 화면의 스마트폰으로 GUI를 쓸 일이 있을 것 같진 않지만 혹시 큰 화면에 미러링하거나 키보드 마우스를 연결해서 마치 노트북처럼 사용할 수도 있으려나.<br />
+넷헌터 GUI는 NetHunter KeX로 제공해주는데 VNCServer를 구동하여 VNCClient로 붙어 화면을 보는 방식이다.</p>
+
+<p>Nethunter 앱에서 KeX Manager 메뉴로 들어가 서버를 설정해준 후 시작한다.</p>
+
+<p><img src="\img\posts\nethunter12.png" alt="" /></p>
+
+<p>그리고 NetHunter Kex 앱을 실행하여 접속하면 GUI 등장.</p>
+
+<p><img src="\img\posts\nethunter13.png" alt="" /></p>
+
+<p><img src="\img\posts\nethunter14.jpg" alt="" /></p>
+
+<p>하지만 검정 화면 콘솔의 간지를 이길 순 없다.</p>
+
+<hr />
+
+<h1 id="결론">결론</h1>
+
+<p>루팅폰에 넷헌터 설치법</p>
+<ul>
+  <li>이미지 파일의 압축을 풀어 <kbd>data/app/</kbd> 경로의 apk파일들 설치</li>
+  <li><kbd>/data/data/com.offsec.nethunter/files/scripts</kbd> 경로의 파일들을
+<kbd>/system/bin</kbd>로 복사</li>
+  <li>Nethunter 앱을 실행하여 Kali Chroot Manager 메뉴에서 Chroot를 Install</li>
+  <li>터미널에서 넷헌터 설치<kbd>apt-get install kali-linux-nethunter</kbd></li>
+</ul>
 
 <p>끝.</p>
-
 
       </div>
       <div class="more-posts">
         <div class="more-category">
           
-          <h4>Jekyll 카테고리의 다른 글</h4>
-          <a href="/category/Jekyll.html" class="more-button">더보기</a>
+          <h4>Android 카테고리의 다른 글</h4>
+          <a href="/category/Android.html" class="more-button">더보기</a>
         </div>
         <table>
           <tbody>
@@ -240,30 +267,6 @@
             
               
               
-            
-              
-              
-            
-              
-              
-            
-              
-              
-            
-              
-              
-            
-              
-              
-            
-              
-              
-            
-              
-              
-            
-              
-              
                 
                 
                 
@@ -271,10 +274,10 @@
                     
                     <th class="more-posts-title">
                       
-                        <a href="/jekyll/2020/03/08/favicon.html">Favicon 만들고 적용하기</a>
+                        <a href="/android/2020/06/09/nethunter.html"><u><strong>당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)</strong></u></a>
                       
                     </th>
-                    <td class="more-posts-date">2020. 03. 08</td>
+                    <td class="more-posts-date">2020. 06. 09</td>
                   </tr>
                 
               
@@ -287,19 +290,29 @@
             
               
               
-                
-                
-                
-                  <tr>
-                    
-                    <th class="more-posts-title">
-                      
-                        <a href="/jekyll/2018/07/08/markdown.html"><u><strong>Markdown으로 글 써보기</strong></u></a>
-                      
-                    </th>
-                    <td class="more-posts-date">2018. 07. 08</td>
-                  </tr>
-                
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
               
@@ -322,12 +335,9 @@
       <div class="clearfix">
         <!--
         
-          <a class="btn btn-primary float-left" href="/node.js/2016/04/20/nodejsffi.html" data-toggle="tooltip" data-placement="top" title="Node.js에서 C 라이브러리 사용하기 - FFI(Foreign Function Interface)">&larr; Previous<span class="d-none d-md-inline">
+          <a class="btn btn-primary float-left" href="/ios/2020/06/05/iossnapshot.html" data-toggle="tooltip" data-placement="top" title="아이폰 백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)">&larr; Previous<span class="d-none d-md-inline">
           Post</span></a>
         
-        
-          <a class="btn btn-primary float-right" href="/game/2019/10/14/hsoulworm.html" data-toggle="tooltip" data-placement="top" title="헌드레드 소울 - 태고의 웜(노멀) 본 크러셔로 부관 없이 잡기(영상)">Next<span class="d-none d-md-inline">
-          Post</span> &rarr;</a>
         
         -->
       </div>
