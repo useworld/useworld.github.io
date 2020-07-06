@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-07-06T23:16:46+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">안드로이드폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)</title><link href="https://useworld.github.io/android/2020/06/09/nethunter.html" rel="alternate" type="text/html" title="안드로이드폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)" /><published>2020-06-09T00:00:00+09:00</published><updated>2020-06-09T00:00:00+09:00</updated><id>https://useworld.github.io/android/2020/06/09/nethunter</id><content type="html" xml:base="https://useworld.github.io/android/2020/06/09/nethunter.html">&lt;h1 id=&quot;서론&quot;&gt;서론&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://useworld.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://useworld.github.io/" rel="alternate" type="text/html" /><updated>2020-07-06T23:20:56+09:00</updated><id>https://useworld.github.io/feed.xml</id><title type="html">To be Useful to the World</title><subtitle>이것저것 다하는 블로그</subtitle><author><name>Useworld</name></author><entry><title type="html">안드로이드폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)</title><link href="https://useworld.github.io/android/2020/06/09/nethunter.html" rel="alternate" type="text/html" title="안드로이드폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)" /><published>2020-06-09T00:00:00+09:00</published><updated>2020-06-09T00:00:00+09:00</updated><id>https://useworld.github.io/android/2020/06/09/nethunter</id><content type="html" xml:base="https://useworld.github.io/android/2020/06/09/nethunter.html">&lt;h1 id=&quot;서론&quot;&gt;서론&lt;/h1&gt;
 
 &lt;p&gt;데스크탑이나 노트북이 없어도 휴대용으로 들고 다닐 수 있는 해킹 도구는 매력적이다.&lt;/p&gt;
 
@@ -432,8 +432,9 @@ trusted-host = pypi.python.org
   &lt;li&gt;&lt;kbd&gt;pip download -r requirements.txt&lt;/kbd&gt; 해서 나온 &lt;code class=&quot;highlighter-rouge&quot;&gt;설치 파일들&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;이것들을 가지고
-&lt;kbd&gt;pip install --no-index --find-links=&quot;./&quot; -r .\requirements.txt&lt;/kbd&gt;로 설치한다.&lt;/p&gt;
+&lt;p&gt;이것들을 가지고&lt;br /&gt;
+&lt;kbd&gt;pip install --no-index --find-links=&quot;./&quot; -r .\requirements.txt&lt;/kbd&gt;&lt;br /&gt;
+로 설치한다.&lt;/p&gt;
 
 &lt;p&gt;끝.&lt;/p&gt;</content><author><name>Useworld</name></author><category term="Python" /><summary type="html">PIP가 안된다.</summary></entry><entry><title type="html">iOS에서 hosts 변경 적용하기</title><link href="https://useworld.github.io/ios/2020/04/07/hosts.html" rel="alternate" type="text/html" title="iOS에서 hosts 변경 적용하기" /><published>2020-04-07T00:00:00+09:00</published><updated>2020-04-07T00:00:00+09:00</updated><id>https://useworld.github.io/ios/2020/04/07/hosts</id><content type="html" xml:base="https://useworld.github.io/ios/2020/04/07/hosts.html">&lt;h1 id=&quot;사건의-발단&quot;&gt;사건의 발단&lt;/h1&gt;
 
