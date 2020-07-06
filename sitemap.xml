@@ -1,32 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://useworld.github.io/guitar/2014/04/02/windsong.html</loc>
-<lastmod>2014-04-02T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://useworld.github.io/guitar/2014/04/03/redshoesdance.html</loc>
-<lastmod>2014-04-03T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://useworld.github.io/guitar/2014/07/06/fight.html</loc>
-<lastmod>2014-07-06T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>https://useworld.github.io/node.js/2016/04/20/nodejsffi.html</loc>
 <lastmod>2016-04-20T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>https://useworld.github.io/jekyll/2018/07/08/markdown.html</loc>
 <lastmod>2018-07-08T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://useworld.github.io/game/2019/10/14/hsoulworm.html</loc>
-<lastmod>2019-10-14T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://useworld.github.io/game/2019/10/15/hsoulharpy.html</loc>
-<lastmod>2019-10-15T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>https://useworld.github.io/jekyll/2020/03/08/favicon.html</loc>
@@ -39,14 +19,6 @@
 <url>
 <loc>https://useworld.github.io/swift/2020/03/10/bgsnapshot.html</loc>
 <lastmod>2020-03-10T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://useworld.github.io/game/2020/03/11/anothereden.html</loc>
-<lastmod>2020-03-11T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://useworld.github.io/game/2020/03/25/asyuna.html</loc>
-<lastmod>2020-03-25T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>https://useworld.github.io/ios/2020/04/07/hosts.html</loc>
