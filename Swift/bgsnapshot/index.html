@@ -1,0 +1,815 @@
+
+<!doctype html>
+<html lang="kr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../images/u.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift) - To be Useful to the World</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ios-swift" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="To be Useful to the World" class="md-header__button md-logo" aria-label="To be Useful to the World" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            To be Useful to the World
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="지우기" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="To be Useful to the World" class="md-nav__button md-logo" aria-label="To be Useful to the World" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    To be Useful to the World
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Android" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/nethunter/" class="md-nav__link">
+        당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/pipssl/" class="md-nav__link">
+        Python PIP에서 SSLCertVerificationError 날 때
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Swift
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Swift" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Swift
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#multitasking-switcher" class="md-nav__link">
+    Multitasking Switcher
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot" class="md-nav__link">
+    Snapshot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    이미지 교체
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appdelegate" class="md-nav__link">
+    AppDelegate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenedelegate" class="md-nav__link">
+    SceneDelegate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenedelegate_1" class="md-nav__link">
+    SceneDelegate 제거
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webview/" class="md-nav__link">
+        Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          iOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="iOS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          iOS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iOS/background/" class="md-nav__link">
+        아이폰 백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iOS/hosts/" class="md-nav__link">
+        탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#multitasking-switcher" class="md-nav__link">
+    Multitasking Switcher
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot" class="md-nav__link">
+    Snapshot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    이미지 교체
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appdelegate" class="md-nav__link">
+    AppDelegate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenedelegate" class="md-nav__link">
+    SceneDelegate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenedelegate_1" class="md-nav__link">
+    SceneDelegate 제거
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ios-swift">iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)</h1>
+<h2 id="multitasking-switcher">Multitasking Switcher</h2>
+<p>iOS 앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱은 백그라운드로 들어가고 홈화면이 나온다. 홈화면이던 앱 실행중이던 홈버튼을 연속으로 두번 누르면 현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다. 이 기능을 Multitasking Switcher라고 하는 것 같다.</p>
+<hr />
+<h2 id="snapshot">Snapshot</h2>
+<p>앱 생명 주기는 <a href="https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle">애플 개발자 페이지</a>에 설명이 나와있다. 아이폰은 앱이 백그라운드에 갈 때마다 Screenshot을 저장하여 해당 이미지를 Multitasking Switcher에서 보여준다. 그럼 직접적으로 해당 스냅샷을 지정할 수 있는지 찾아보았는데 마땅히 없었다. </p>
+<hr />
+<h2 id="_1">이미지 교체</h2>
+<p>직접적으로 이미지 지정이 안된다면 다른 방법을 사용해야 한다. 앱이 백그라운드로 갈 때 원하는 이미지 파일로 스냅샷이 찍히도록 꼼수를 썼다. </p>
+<ol>
+<li>지정한 이미지파일로 UIImageView를 하나 생성한다.</li>
+<li>앱이 백그라운드에 진입 직전 현재 화면 위에 이미지뷰를 덮어버린다.</li>
+<li>다시 앱이 실행되면 해당 이미지뷰를 지운다.</li>
+</ol>
+<p>이러면 백그라운드 진입과 동시에 찍히는 스냅샷은 화면 위에 덮어 쓴 이미지뷰가 찍힐 것이다.</p>
+<hr />
+<h2 id="appdelegate">AppDelegate</h2>
+<p>인터넷을 검색해보니 <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate">애플 개발자 페이지</a>에 Responding to App Life-Cycle Events
+항목이 있었다. AppDelegate에 applicationDidEnterBackground와 applicationWillEnterForeground를 사용하면 될 것 같다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">AppDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIApplicationDelegate</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> 
+        <span class="n">didFinishLaunchingWithOptions</span> <span class="n">launchOptions</span><span class="p">:</span> <span class="p">[</span>
+        <span class="bp">UIApplication</span><span class="p">.</span><span class="n">LaunchOptionsKey</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Background!&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">applicationWillEnterForeground</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Foreground!&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>앱에서 홈버튼을 누르면 Background!라고 콘솔에 찍힐 것이고 다시 실행하면 Foreground!라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다.<br />
+하지만 콘솔창엔 아무것도 찍히지 않았다.</p>
+<hr />
+<h2 id="scenedelegate">SceneDelegate</h2>
+<p>한참을 삽질하다가 결국 알아냈다. <a href="https://developer.apple.com/documentation/uikit/app_and_environment/scenes/specifying_the_scenes_your_app_supports">애플 개발자 페이지</a>에 써있기를 iOS 13 이상부터는 SceneDelegate를 사용한댄다. 이런... 개발중인 내 폰의 버전은 iOS 13.3.1이었다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">SceneDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIWindowSceneDelegate</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="n">session</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> 
+        <span class="n">options</span> <span class="n">connectionOptions</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">_</span> <span class="p">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as</span><span class="p">?</span> <span class="bp">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">sceneWillEnterForeground</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Foreground!&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">sceneDidEnterBackground</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Background!&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>다시 한 번 앱에서 홈버튼을 누르면 Background!라고 콘솔에 찍힐 것이고 다시 실행하면 Foreground!라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다. 드디어 콘솔창에 찍혔다!</p>
+<p>하지만 뭔가 애매했다. </p>
+<ul>
+<li>앱 실행 중 홈버튼을 한 번 눌러서 완전히 백그라운드로 돌아갔다가 다시 실행(O)</li>
+<li>앱 실행 중 홈버튼을 따닥 두 번 눌러서 멀티태스킹 진입 시(X)</li>
+</ul>
+<p>또 뭐가 문제인지 찾다가 모든 이벤트를 다 테스트 해본 결과 <code>sceneWillResignActive</code>, <code>sceneDidBecomeActive</code> 이 두 함수가 홈버튼을 한 번 눌러서 백그라운드로 갔다가 복귀하던, 홈버튼을 두 번 눌러서 바로 멀티태스킹을 하던 실행이 되는 것을 확인했다.</p>
+<p>이제 스냅샷으로 찍혀 줄 이미지 파일을 asset에 SecureBackground로 등록한 뒤 해당 이미지를 표시해 줄 이미지뷰를 백그라운드 갈때는 덮어 쓰고 다시 실행될때는 없애는 코드를 넣고 실행했다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">SceneDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIWindowSceneDelegate</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nv">window</span><span class="p">:</span> <span class="bp">UIWindow</span><span class="p">?</span>
+    <span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">?</span>
+
+    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="n">session</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> 
+        <span class="n">options</span> <span class="n">connectionOptions</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">_</span> <span class="p">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as</span><span class="p">?</span> <span class="bp">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">sceneWillResignActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">imageView</span> <span class="p">=</span> <span class="bp">UIImageView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">window</span><span class="p">!.</span><span class="n">frame</span><span class="p">)</span>
+        <span class="n">imageView</span><span class="p">?.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="s">&quot;SecureBackground&quot;</span><span class="p">)</span>
+        <span class="n">window</span><span class="p">?.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">imageView</span><span class="p">!)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">sceneDidBecomeActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">imageView</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="n">imageView</span><span class="p">?.</span><span class="n">removeFromSuperview</span><span class="p">()</span>
+            <span class="n">imageView</span> <span class="p">=</span> <span class="kc">nil</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>성공이다.</p>
+<hr />
+<h2 id="scenedelegate_1">SceneDelegate 제거</h2>
+<p>그런데 위 코드는 iOS 13 미만 버전대 기기에서는 또 작동을 안했다. 다시 AppDelegate에서 코드를 추가했더니 작동했다. iOS 13보다 낮은 버전에서는 AppDelegate로 이벤트를 핸들링하기 때문에 똑같은 코드를 두번 넣어야 되게 생겼다. 
+어차피 나는 Scene을 사용하지 않아도 무방하기 때문에 아예 SceneDelegate를 삭제하고  설정하면 AppDelegate에서 해결되는게 아닌가 싶었다. </p>
+<ul>
+<li>info.plist에서 <kbd>Application Scene Manifest</kbd> 제거</li>
+<li>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 관련 코드들 주석처리나 삭제</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// AppDelegate.swift</span>
+
+    <span class="c1">// </span><span class="cs">MARK:</span><span class="c1"> UISceneSession Lifecycle</span>
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">configurationForConnecting</span> 
+        <span class="n">connectingSceneSession</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> 
+        <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UISceneConfiguration</span> <span class="p">{</span>
+        <span class="c1">// Called when a new scene session is being created.</span>
+        <span class="c1">// Use this method to select a configuration to create the new scene with.</span>
+        <span class="k">return</span> <span class="bp">UISceneConfiguration</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Default Configuration&quot;</span><span class="p">,</span>
+         <span class="n">sessionRole</span><span class="p">:</span> <span class="n">connectingSceneSession</span><span class="p">.</span><span class="n">role</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">didDiscardSceneSessions</span> 
+        <span class="n">sceneSessions</span><span class="p">:</span> <span class="n">Set</span><span class="p">&lt;</span><span class="bp">UISceneSession</span><span class="p">&gt;)</span> <span class="p">{</span>
+        <span class="c1">// Called when the user discards a scene session.</span>
+        <span class="c1">// If any sessions were discarded while the application was not running, this will be called shortly after  application:didFinishLaunchingWithOptions.</span>
+        <span class="c1">// Use this method to release any resources that were specific to the discarded scenes, as they will not return.</span>
+    <span class="p">}</span>
+</code></pre></div>
+- SceneDelegate에 삽입했던 코드를 AppDelegate로 이동
+- 어차피 이제는 안쓸 SceneDelegate.swift 제거</p>
+<p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
+<hr />
+<h2 id="_2">결론</h2>
+<p>Swift에서 백그라운드 스냅샷에 중요 정보 노출 방지하는 방법</p>
+<ul>
+<li>iOS 13 미만 버전에서는 App Delegate, iOS 13 이상이면 Scene Delegate 고려</li>
+<li>임의의 이미지 뷰를 생성하여 앱이 백그라운드 진입할 때 위에 덮어쓰고 다시 돌아올 때 뺀다.</li>
+</ul>
+<p>즉 App Delegate의 경우 <kbd>AppDelegate.swift</kbd>에 아래 코드 추가
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">?</span>
+
+<span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">imageView</span> <span class="p">=</span> <span class="bp">UIImageView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">window</span><span class="p">!.</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">imageView</span><span class="p">?.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="p">[</span><span class="err">넣을</span> <span class="err">이미지</span><span class="p">])</span>
+    <span class="n">window</span><span class="p">?.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">imageView</span><span class="p">!)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">imageView</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="n">imageView</span><span class="p">?.</span><span class="n">removeFromSuperview</span><span class="p">()</span>
+        <span class="n">imageView</span> <span class="p">=</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>끝.</p>
+                
+              
+              
+                
+
+
+  <h2 id="__comments">댓글</h2>
+  <div id="disqus_thread"></div>
+  <script>var script,disqus_config=function(){this.page.url="None",this.page.identifier="None"};"undefined"==typeof DISQUS?((script=document.createElement("script")).async=!0,script.src="https://useworld.disqus.com/embed.js",script.setAttribute("data-timestamp",Date.now()),document.body.appendChild(script)):DISQUS.reset({reload:!0,config:disqus_config})</script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../Python/pipssl/" class="md-footer__link md-footer__link--prev" aria-label="이전: Python PIP에서 SSLCertVerificationError 날 때" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              Python PIP에서 SSLCertVerificationError 날 때
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../webview/" class="md-footer__link md-footer__link--next" aria-label="다음: Swift로 WebView 구현하기(iOS 8.0 WKWebView)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Seyong Kim
+          </div>
+        
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\uac80\uc0c9", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version.title": "\ubc84\uc804 \uc120\ud0dd"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>

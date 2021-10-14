@@ -1,0 +1,743 @@
+
+<!doctype html>
+<html lang="kr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../images/u.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device) - To be Useful to the World</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kali-nethunter-for-any-android-device" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="To be Useful to the World" class="md-header__button md-logo" aria-label="To be Useful to the World" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            To be Useful to the World
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="지우기" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="To be Useful to the World" class="md-nav__button md-logo" aria-label="To be Useful to the World" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    To be Useful to the World
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Android" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nethunter" class="md-nav__link">
+    Nethunter란?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    작업 환경
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    설치 방법
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    난 GUI도 쓰고 싶어.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/pipssl/" class="md-nav__link">
+        Python PIP에서 SSLCertVerificationError 날 때
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Swift
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Swift" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Swift
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Swift/bgsnapshot/" class="md-nav__link">
+        iOS 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Swift/webview/" class="md-nav__link">
+        Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          iOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="iOS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          iOS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iOS/background/" class="md-nav__link">
+        아이폰 백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iOS/hosts/" class="md-nav__link">
+        탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nethunter" class="md-nav__link">
+    Nethunter란?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    작업 환경
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    설치 방법
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    난 GUI도 쓰고 싶어.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="kali-nethunter-for-any-android-device">당신의 스마트폰을 해킹머신으로 만들어보자(Kali Nethunter for any android device)</h1>
+<h2 id="_1">서론</h2>
+<p>데스크탑이나 노트북이 없어도 휴대용으로 들고 다닐 수 있는 해킹 도구는 매력적이다.  </p>
+<p><img alt="" src="/images/nethunter01.jpg" /></p>
+<p>물론 영화나 게임에서 나오는 해커들처럼 1초만에 띠디딕 잠긴 문을 다 따는 등의 행위는 아마도(?) 불가능하다.<br />
+이 글은 안드로이드 기기에 모의해킹 침투테스트 환경을 구축하는 방법에 대한 내용이다.</p>
+<hr />
+<h2 id="nethunter">Nethunter란?</h2>
+<p>모의해킹을 수행하거나 관심이 있는 사람이라면 <code>Backtrack</code>이나 <code>Kali Linux</code>를 한번 쯤 들어본 적이 있을 것이다.<br />
+이는 <a href="https://www.offensive-security.com/">Offensive Security</a>에서 만든 모의 침투 테스트용 운영체제이며 칼리 리눅스는 백트랙의 후속 버전이다.
+그리고 <code>넷헌터(NetHunter OS)</code>는 2015년 1월 출시된 칼리 리눅스의 공식 안드로이드 롬이다.  </p>
+<p>문제는 <a href="https://www.offensive-security.com/kali-linux-nethunter-download/">공식 지원 기종</a>이 거의 구글 레퍼런스 폰인 Nexus 시리즈, Sony XPeria(일본꺼), OnePlus 시리즈(중국꺼)이며 갤럭시는 Tab S4 밖에 없다.  </p>
+<p>국내 안드로이드 사용자들은 아마 대부분 갤럭시S 시리즈를 사용할텐데 공식 지원 기종에 없다. 여담으로 나도 Galaxy S 시리즈를 사용하고 있지만 솔직히 삼성페이 아니었으면 안쓸텐데 삼성페이 편의성이 넘사벽이라 어쩔 수가 없네...</p>
+<p>하지만 지원해주지 않는다고 설치를 못하는 것은 아니다.
+지금부터 시작해보자.</p>
+<hr />
+<h2 id="_2">작업 환경</h2>
+<ul>
+<li>Device : Galaxy S7(SM-G930F)</li>
+<li>OS : LineageOS 17.1(Android 10)</li>
+<li>Status : Rooted(Magisk 20.4)</li>
+<li>Image : <a href="https://images.offensive-security.com/nethunter/nethunter-2020.2-angler-los-ten-kalifs-full.zip?_ga=2.54912939.1884579290.1591662327-547972089.1590403638">Nexus 6P Los Ten</a></li>
+</ul>
+<p><img alt="" src="/images/nethunter02.png" />
+<img alt="" src="/images/nethunter03.png" /></p>
+<p>최신 버전을 선호하기에 갤럭시S7에서 설치 가능한 안드로이드 10 커스텀롬인 <code>리니지OS</code>를 올려놓고 <code>Magisk</code>로 루팅을 했다.<br />
+물론 <a href="https://www.kali.org/docs/nethunter/nethunter-rootless/">루팅안하고도 할 수 있는 방법</a>도 있긴 하지만 안드로이드 기기로 뭔가 해보려면 루팅은 기본이지.<br />
+이미지는 안드로이드 버전만 맞으면 아무거나 받아도 된다.<br />
+커스텀롬을 올리거나 루팅을 하면서 폰이 벽돌이 되도 나는 모르오.<br />
+뭐 문제 생기면 <code>Odin</code>으로 밀고 순정 펌웨어를 새로 설치하면 앵간한 문제는 다 해결되니 긴장할 필요는 없다.</p>
+<hr />
+<h2 id="_3">설치 방법</h2>
+<p>지금부터 하는 방법은 공식 방법이 아닌 야매 방법으로 문제가 있을 수도 있다.<br />
+참고로 난 한 번에 잘됐다.</p>
+<p>우선 다운로드 받은 이미지 파일의 압축을 풀어 <kbd>data/app/</kbd> 경로의 apk파일들을 한 개씩 설치해준다.</p>
+<p><img alt="" src="/images/nethunter04.png" /></p>
+<p>NetHunter 앱을 한 번 실행 했다가 종료한 후 <code>Root Explorer</code> 같은 탐색기를 이용하여
+<kbd>/data/data/com.offsec.nethunter/files/scripts</kbd> 경로의 파일들을
+<kbd>/system/bin</kbd>로 전부 복사해준다.</p>
+<p><img alt="" src="/images/nethunter05.png" /></p>
+<p>이제 Nethunter 앱을 실행하여 Kali Chroot Manager 메뉴에서 Minimal Chroot를 Install한다.  </p>
+<p><img alt="" src="/images/nethunter06.png" /></p>
+<p><img alt="" src="/images/nethunter07.png" /></p>
+<p><img alt="" src="/images/nethunter08.png" /></p>
+<p>Chroot가 설치되기 전에는 하단의 메뉴들이 전부 비활성화 되어있다.</p>
+<p>설치가 완료된 후 Nethunter Terminal에서 Kali를 선택하고 Root 권한을 부여하면 Kali Shell이 등장한다.  </p>
+<p><img alt="" src="/images/nethunter09.png" /></p>
+<p>리눅스를 처음 설치하면 항상 하는 그것과 함께 칼리 리눅스 넷헌터를 설치한다.</p>
+<ul>
+<li>
+<p>항상 하는 그것
+<kbd>apt-get update</kbd>
+<kbd>apt-get upgrade</kbd>
+<kbd>apt-get dist-upgrade</kbd></p>
+</li>
+<li>
+<p>넷헌터 설치
+<kbd>apt-get install kali-linux-nethunter</kbd></p>
+</li>
+</ul>
+<p>이제 Nethunter 앱에서 각종 서비스들을 켜주고 사용하면 된다.
+앱 안에는 이런 다양한 기능들이 있다.</p>
+<p><img alt="" src="/images/nethunter10.png" /></p>
+<p>metasploit console 이다.</p>
+<p><img alt="" src="/images/nethunter11.png" /></p>
+<p>만약 실행이 안되면 <kbd>msfdb init</kbd>을 해주거나
+넷헌터 앱 내의 서비스들을 <code>Start at Boot</code> 해주면 된다.</p>
+<hr />
+<h2 id="gui">난 GUI도 쓰고 싶어.</h2>
+<p>조그만 화면의 스마트폰으로 GUI를 쓸 일이 있을 것 같진 않지만 혹시 큰 화면에 미러링하거나 키보드 마우스를 연결해서 마치 노트북처럼 사용할 수도 있으려나.<br />
+넷헌터 GUI는 NetHunter KeX로 제공해주는데 VNCServer를 구동하여 VNCClient로 붙어 화면을 보는 방식이다.</p>
+<p>Nethunter 앱에서 KeX Manager 메뉴로 들어가 서버를 설정해준 후 시작한다.</p>
+<p><img alt="" src="/images/nethunter12.png" /></p>
+<p>그리고 NetHunter Kex 앱을 실행하여 접속하면 GUI 등장.</p>
+<p><img alt="" src="/images/nethunter13.png" /></p>
+<p><img alt="" src="/images/nethunter14.jpg" /></p>
+<p>하지만 검정 화면 콘솔의 간지를 이길 순 없다.</p>
+<hr />
+<h2 id="_4">결론</h2>
+<p>아무 루팅 기기에 넷헌터 설치법</p>
+<ul>
+<li>이미지 파일의 압축을 풀어 <kbd>data/app/</kbd> 경로의 apk파일들 설치</li>
+<li><kbd>/data/data/com.offsec.nethunter/files/scripts</kbd> 경로의 파일들을
+<kbd>/system/bin</kbd>로 복사</li>
+<li>Nethunter 앱을 실행하여 Kali Chroot Manager 메뉴에서 Chroot를 Install </li>
+<li>터미널에서 넷헌터 설치<kbd>apt-get install kali-linux-nethunter</kbd></li>
+</ul>
+<p>끝.</p>
+                
+              
+              
+                
+
+
+  <h2 id="__comments">댓글</h2>
+  <div id="disqus_thread"></div>
+  <script>var script,disqus_config=function(){this.page.url="None",this.page.identifier="None"};"undefined"==typeof DISQUS?((script=document.createElement("script")).async=!0,script.src="https://useworld.disqus.com/embed.js",script.setAttribute("data-timestamp",Date.now()),document.body.appendChild(script)):DISQUS.reset({reload:!0,config:disqus_config})</script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="이전: About" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              About
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../Python/pipssl/" class="md-footer__link md-footer__link--next" aria-label="다음: Python PIP에서 SSLCertVerificationError 날 때" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              Python PIP에서 SSLCertVerificationError 날 때
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Seyong Kim
+          </div>
+        
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\uac80\uc0c9", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version.title": "\ubc84\uc804 \uc120\ud0dd"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>

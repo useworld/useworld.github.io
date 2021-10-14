@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'D2 coding';
+    font-style: normal;
+    font-weight: 400;
+    src: url('font/D2Coding.eot');
+    src: local('※'), local('D2Coding'),
+         url('font/D2Coding.eot?#iefix') format('embedded-opentype'),
+         url('font/D2Coding.woff2') format('x-woff2'),
+         url('font/D2Coding.woff') format('woff'),
+         url('font/D2Coding.ttf') format('truetype'),
+         url('font/D2Coding.svg') format('svg');
+  }
+  @font-face {
+    font-family: 'D2 coding';
+    font-style: normal;
+    font-weight: 700;
+    src: url('font/D2CodingBold.eot');
+    src: local('※'), local('D2Coding Bold'),
+         url('font/D2CodingBold.eot?#iefix') format('embedded-opentype'),
+         url('font/D2CodingBold.woff2') format('x-woff2'),
+         url('font/D2CodingBold.woff') format('woff'),
+         url('font/D2CodingBold.ttf') format('truetype'),
+         url('font/D2CodingBold.svg') format('svg');
+  }
+
+  :root {
+    --md-text-font-family: "D2 coding";   
+    --md-code-font-family: "D2 coding";
+  }
