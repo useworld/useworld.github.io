@@ -16,7 +16,7 @@
     
     
       
-        <title>Swift로 WebView 구현하기(iOS 8.0 WKWebView) - To be Useful to the World</title>
+        <title>Swift로 WebView 구현하기 - To be Useful to the World</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#swift-webview-ios-80-wkwebview" class="md-skip">
+        <a href="#swift-webview" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+              Swift로 WebView 구현하기
             
           </span>
         </div>
@@ -394,6 +394,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frida/vscodefrida/" class="md-nav__link">
+        Script 편하게 짜는 방법
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -483,7 +497,7 @@
   
     <li class="md-nav__item">
       <a href="../../Python/offline/" class="md-nav__link">
-        오프라인에서 Python Module 깔끔하게 설치하기
+        인터넷 없이 개발환경 만들기
       </a>
     </li>
   
@@ -547,7 +561,7 @@
   
     <li class="md-nav__item">
       <a href="../background/" class="md-nav__link">
-        백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+        백그라운드 스냅샷 저장 경로
       </a>
     </li>
   
@@ -561,7 +575,7 @@
   
     <li class="md-nav__item">
       <a href="../bgsnapshot/" class="md-nav__link">
-        백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+        Swift 백그라운드 스냅샷 보안
       </a>
     </li>
   
@@ -575,7 +589,7 @@
   
     <li class="md-nav__item">
       <a href="../hosts/" class="md-nav__link">
-        탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+        hosts 변경 적용하기
       </a>
     </li>
   
@@ -598,12 +612,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+          Swift로 WebView 구현하기
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+        Swift로 WebView 구현하기
       </a>
       
         
@@ -644,6 +658,13 @@
         <li class="md-nav__item">
   <a href="#post-method" class="md-nav__link">
     POST Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    결론
   </a>
   
 </li>
@@ -716,6 +737,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -729,26 +757,31 @@
               
                 
                 
-                <h1 id="swift-webview-ios-80-wkwebview">Swift로 WebView 구현하기(iOS 8.0 WKWebView)</h1>
+                <h1 id="swift-webview">Swift로 WebView 구현하기</h1>
 <h2 id="_1">웹 페이지 표시</h2>
 <p>iOS 앱에서 웹페이지를 보여주려면 몇 가지 방법이 있다.</p>
+<div class="admonition note">
+<p class="admonition-title">iOS 웹 표시 방법</p>
 <ol>
 <li>WebView를 사용해서 앱 내부에서 표시</li>
 <li>앱이 Safari를 호출해서 해당 URL을 열기</li>
 <li>SFSafariViewController로 앱 안에서 SafariView로 열기</li>
 </ol>
-<p>각각 장단점이 있기에 사용할 용도에 따라 선택해서 쓰면 되겠다.
+</div>
+<p>각각 장단점이 있기에 사용할 용도에 따라 선택해서 쓰면 되겠다.<br />
 이번에는 WebView를 사용하려고 한다.</p>
 <h2 id="webview">WebView</h2>
-<p>우선 웹뷰를 사용하기 위해 ViewController를 하나 생성하였다.
-그리고 UIWebView를 사용하려고 했더니 이런.. <a href="https://developer.apple.com/documentation/uikit/uiwebview">애플 개발자 사이트</a>에 알아보니 Deprecated라고 한다.
+<p>우선 웹뷰를 사용하기 위해 ViewController를 하나 생성하였다.<br />
+그리고 UIWebView를 사용하려고 했더니 이런..<br />
+<a href="https://developer.apple.com/documentation/uikit/uiwebview">애플 개발자 사이트</a>에 알아보니 Deprecated라고 한다.<br />
 그래서 찾아보니 iOS 8부터 사용 가능한 WKWebView를 쓰면 될 것 같다.</p>
 <h2 id="webkit-view">Webkit View</h2>
 <p>Storyboard에서 WebView를 추가했더니 바로 에러가 났다.</p>
-<div class="alert alert-danger" role="alert">WKWebView before iOS 11.0 (NSCoding support was broken in previous versions)</div>
-
-<p>그렇다. 나는 Deployment Target을 8.0으로 작업하고 있기에 안되는 것이었다.
-혹시 모를 호환성 때문에 낮은 버전 기준으로 개발을 하고 있는데 이것때문에 겪은 불편이 한두가지가 아니다.</p>
+<div class="admonition danger">
+<p>WKWebView before iOS 11.0 (NSCoding support was broken in previous versions)</p>
+</div>
+<p>그렇다. 나는 Deployment Target을 8.0으로 작업하고 있기에 안되는 것이었다.<br />
+혹시 모를 호환성 때문에 낮은 버전 기준으로 개발을 하고 있는데 이것때문에 겪은 불편이 한두가지가 아니다.  </p>
 <p>그래서 코드로 직접 만들어 넣었다.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">WebKit</span>
 
@@ -774,22 +807,24 @@
 </code></pre></div>
 <p>해당 주소로 접속해서 웹 페이지가 잘 나온다.</p>
 <h2 id="post-method">POST Method</h2>
-<p>웹뷰에 POST 방식으로 파라미터를 전달하고 싶어졌다.
-다음 코드를 위의 <code>webView.load(request)</code> 앞에 추가하면 될 것 같았다.
-파라미터는 <code>a=1&amp;b=2</code> 이런 String으로 해도 되고 Dictionary 타입으로 지정하고 나서 형변환해도 된다. 이번 테스트는 문자열로 했다.</p>
+<p>웹뷰에 POST 방식으로 파라미터를 전달하고 싶어졌다.<br />
+다음 코드를 위의 <code>webView.load(request)</code> 앞에 추가하면 될 것 같았다.<br />
+파라미터는 <code>a=1&amp;b=2</code> 이런 String으로 해도 되고 Dictionary 타입으로 지정하고 나서 형변환해도 된다.<br />
+이번 테스트는 문자열로 했다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">request</span><span class="p">.</span><span class="n">httpMethod</span> <span class="p">=</span> <span class="s">&quot;POST&quot;</span>
 <span class="kd">let</span> <span class="nv">postString</span> <span class="p">=</span> <span class="s">&quot;파라미터&quot;</span>
 <span class="n">request</span><span class="p">.</span><span class="n">httpBody</span> <span class="p">=</span> <span class="n">postString</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="n">using</span><span class="p">:</span> <span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
 </code></pre></div>
-<p>에러는 나지 않았지만 뭔가 이상했다.
-웹 서버에서 확인해 보니 앱에서 아무런 파라미터도 날리지 않았다.
-또 열심히 <a href="https://bugs.webkit.org/show_bug.cgi?id=140188">찾아보니</a> WKWebkit에서 POST 요청 시 HTTP Body를 씹는 버그가 있다고 한다.</p>
-<p>여러가지 방법이 있었는데 가장 쉽고 간단한 방법을 선택했다.
+<p>에러는 나지 않았지만 뭔가 이상했다.<br />
+웹 서버에서 확인해 보니 앱에서 아무런 파라미터도 날리지 않았다.<br />
+또 열심히 <a href="https://bugs.webkit.org/show_bug.cgi?id=140188">찾아보니</a> WKWebkit에서 POST 요청 시 HTTP Body를 씹는 버그가 있다고 한다.  </p>
+<p>여러가지 방법이 있었는데 가장 쉽고 간단한 방법을 선택했다.<br />
 보아하니 content-type 설정이 누락되어 안된다는 것 같았다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">request</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
     <span class="n">forHTTPHeaderField</span><span class="p">:</span> <span class="s">&quot;Content-Type&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>요걸 추가하면 될 것 같았다.</p>
+<h2 id="_2">결론</h2>
 <div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
     <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
     <span class="kd">let</span> <span class="nv">sURL</span> <span class="p">=</span> <span class="s">&quot;주소&quot;</span>
@@ -803,7 +838,7 @@
     <span class="n">webView</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>코드는 요렇게 되겠다.
+<p>코드는 요렇게 되겠다.<br />
 테스트 결과 성공했다.</p>
 <p>끝.</p>
                 
@@ -829,7 +864,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../hosts/" class="md-footer__link md-footer__link--prev" aria-label="이전: 탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기" rel="prev">
+        <a href="../hosts/" class="md-footer__link md-footer__link--prev" aria-label="이전: hosts 변경 적용하기" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -838,7 +873,7 @@
               <span class="md-footer__direction">
                 이전
               </span>
-              탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+              hosts 변경 적용하기
             </div>
           </div>
         </a>

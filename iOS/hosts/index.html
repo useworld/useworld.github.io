@@ -16,7 +16,7 @@
     
     
       
-        <title>탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기 - To be Useful to the World</title>
+        <title>hosts 변경 적용하기 - To be Useful to the World</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jailbroken-ios-hosts" class="md-skip">
+        <a href="#hosts" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+              hosts 변경 적용하기
             
           </span>
         </div>
@@ -394,6 +394,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frida/vscodefrida/" class="md-nav__link">
+        Script 편하게 짜는 방법
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -483,7 +497,7 @@
   
     <li class="md-nav__item">
       <a href="../../Python/offline/" class="md-nav__link">
-        오프라인에서 Python Module 깔끔하게 설치하기
+        인터넷 없이 개발환경 만들기
       </a>
     </li>
   
@@ -547,7 +561,7 @@
   
     <li class="md-nav__item">
       <a href="../background/" class="md-nav__link">
-        백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+        백그라운드 스냅샷 저장 경로
       </a>
     </li>
   
@@ -561,7 +575,7 @@
   
     <li class="md-nav__item">
       <a href="../bgsnapshot/" class="md-nav__link">
-        백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+        Swift 백그라운드 스냅샷 보안
       </a>
     </li>
   
@@ -584,12 +598,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+          hosts 변경 적용하기
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+        hosts 변경 적용하기
       </a>
       
         
@@ -657,7 +671,7 @@
   
     <li class="md-nav__item">
       <a href="../webview/" class="md-nav__link">
-        Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+        Swift로 WebView 구현하기
       </a>
     </li>
   
@@ -743,7 +757,7 @@
               
                 
                 
-                <h1 id="jailbroken-ios-hosts">탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기</h1>
+                <h1 id="hosts">hosts 변경 적용하기</h1>
 <h2 id="_1">사건의 발단</h2>
 <p>앱에 SSL Pinning을 구현하기 위하여 우선 HTTPS 서버를 구축했다.<br />
 운영 서버에서 사용하는 인증서를 받아 로컬에 서버를 구동하고 접속하려고 하니<br />
@@ -772,13 +786,15 @@
 포트가 제대로 열려 있는 것은 확인했다.</p>
 <h2 id="_2">삽질 내역</h2>
 <p>구글링을 해봐도 쉽게 나와주질 않는다.  </p>
+<blockquote>
 <ul>
 <li>DNS Flush를 하라고 해서 찾아보니 비행기 모드를 하고 15초 정도 있다가 다시 켜면 된다고 했으나 실패.  </li>
 <li>IPv4로만 해놨으면 IPv6으로 변환해서 한번 더 hosts 파일에 등록하면 된다고 한다.<br />
 <a href="https://www.ultratools.com/tools/ipv4toipv6">변환 사이트</a>에서 변환해서 등록해 보았으나 역시나 실패.  </li>
 <li>test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 된다고 한다. 마찬가지로 실패.  </li>
-<li>iOS 12에서 hosts 적용이 안되는데 어떻게 하냐는 질문에 답이 없는 글도 봤다.  </li>
+<li>iOS 12에서 hosts 적용이 안되는데 어떻게 하냐는 질문에 답이 없어 실패.</li>
 </ul>
+</blockquote>
 <p>계속되는 실패에 원래 iOS에서는 안되는 건가? 라는 생각이 들었다.  </p>
 <h2 id="_3">결론</h2>
 <p>삽질을 하다가 결국엔 알아냈다.<br />
@@ -820,7 +836,7 @@ hosts 파일 수정 후 LetMeBlock Tweak을 설치하면 적용된다.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../bgsnapshot/" class="md-footer__link md-footer__link--prev" aria-label="이전: 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)" rel="prev">
+        <a href="../bgsnapshot/" class="md-footer__link md-footer__link--prev" aria-label="이전: Swift 백그라운드 스냅샷 보안" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -829,20 +845,20 @@ hosts 파일 수정 후 LetMeBlock Tweak을 설치하면 적용된다.</p>
               <span class="md-footer__direction">
                 이전
               </span>
-              백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+              Swift 백그라운드 스냅샷 보안
             </div>
           </div>
         </a>
       
       
         
-        <a href="../webview/" class="md-footer__link md-footer__link--next" aria-label="다음: Swift로 WebView 구현하기(iOS 8.0 WKWebView)" rel="next">
+        <a href="../webview/" class="md-footer__link md-footer__link--next" aria-label="다음: Swift로 WebView 구현하기" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 다음
               </span>
-              Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+              Swift로 WebView 구현하기
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -16,7 +16,7 @@
     
     
       
-        <title>백그라운드 스냅샷 중요정보 노출 방지하기(Swift) - To be Useful to the World</title>
+        <title>Swift 백그라운드 스냅샷 보안 - To be Useful to the World</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+              Swift 백그라운드 스냅샷 보안
             
           </span>
         </div>
@@ -394,6 +394,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frida/vscodefrida/" class="md-nav__link">
+        Script 편하게 짜는 방법
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -483,7 +497,7 @@
   
     <li class="md-nav__item">
       <a href="../../Python/offline/" class="md-nav__link">
-        오프라인에서 Python Module 깔끔하게 설치하기
+        인터넷 없이 개발환경 만들기
       </a>
     </li>
   
@@ -547,7 +561,7 @@
   
     <li class="md-nav__item">
       <a href="../background/" class="md-nav__link">
-        백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+        백그라운드 스냅샷 저장 경로
       </a>
     </li>
   
@@ -570,12 +584,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+          Swift 백그라운드 스냅샷 보안
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+        Swift 백그라운드 스냅샷 보안
       </a>
       
         
@@ -593,6 +607,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multitasking-switcher" class="md-nav__link">
     Multitasking Switcher
   </a>
@@ -600,14 +621,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snapshot" class="md-nav__link">
-    Snapshot
+  <a href="#_2" class="md-nav__link">
+    보안 설정
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     이미지 교체
   </a>
   
@@ -635,7 +656,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     결론
   </a>
   
@@ -657,7 +678,7 @@
   
     <li class="md-nav__item">
       <a href="../hosts/" class="md-nav__link">
-        탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+        hosts 변경 적용하기
       </a>
     </li>
   
@@ -671,7 +692,7 @@
   
     <li class="md-nav__item">
       <a href="../webview/" class="md-nav__link">
-        Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+        Swift로 WebView 구현하기
       </a>
     </li>
   
@@ -710,6 +731,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multitasking-switcher" class="md-nav__link">
     Multitasking Switcher
   </a>
@@ -717,14 +745,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snapshot" class="md-nav__link">
-    Snapshot
+  <a href="#_2" class="md-nav__link">
+    보안 설정
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     이미지 교체
   </a>
   
@@ -752,7 +780,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     결론
   </a>
   
@@ -771,13 +799,31 @@
               
                 
                 
-                <h1 id="swift">백그라운드 스냅샷 중요정보 노출 방지하기(Swift)</h1>
+                <h1 id="swift">Swift 백그라운드 스냅샷 보안</h1>
+<h2 id="_1">서론</h2>
+<p>모바일 앱 보안 관련해서 백그라운드 화면에</p>
+<blockquote>
+<ul>
+<li>고유식별정보(주민등록번호, 운전면허번호, 여권번호, 외국인 등록번호)</li>
+<li>비밀번호(로그인 비밀번호, 계좌 비밀번호, 공인인증서 비밀번호 등)</li>
+<li>신용정보(보안카드번호, OTP번호, 신용/체크 카드번호 등)</li>
+<li>기타 중요 정보</li>
+</ul>
+</blockquote>
+<p>등이 노출되면 취약하다고 한다.  </p>
 <h2 id="multitasking-switcher">Multitasking Switcher</h2>
-<p>iOS 앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱은 백그라운드로 들어가고 홈화면이 나온다. 홈화면이던 앱 실행중이던 홈버튼을 연속으로 두번 누르면 현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다. 이 기능을 Multitasking Switcher라고 하는 것 같다.</p>
-<h2 id="snapshot">Snapshot</h2>
-<p>앱 생명 주기는 <a href="https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle">애플 개발자 페이지</a>에 설명이 나와있다. 아이폰은 앱이 백그라운드에 갈 때마다 Screenshot을 저장하여 해당 이미지를 Multitasking Switcher에서 보여준다. 그럼 직접적으로 해당 스냅샷을 지정할 수 있는지 찾아보았는데 마땅히 없었다. </p>
-<h2 id="_1">이미지 교체</h2>
-<p>직접적으로 이미지 지정이 안된다면 다른 방법을 사용해야 한다. 앱이 백그라운드로 갈 때 원하는 이미지 파일로 스냅샷이 찍히도록 꼼수를 썼다. </p>
+<p>앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱이 들어가고 홈 화면이 나온다.<br />
+홈 화면이던 앱 실행중이던 홈버튼을 연속으로 두 번 누르면<br />
+현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다.<br />
+이 기능을 Multitasking Switcher라고 한다.</p>
+<h2 id="_2">보안 설정</h2>
+<p>앱 생명 주기는 <a href="https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle">애플 개발자 페이지</a>에 설명이 나와있다.<br />
+아이폰은 앱이 백그라운드에 갈 때마다 Screenshot을 저장하여<br />
+해당 이미지를 Multitasking Switcher에서 보여준다.<br />
+직접적으로 해당 스냅샷을 지정하거나 보안 옵션이 있는지 찾아보았는데 마땅히 없었다. </p>
+<h2 id="_3">이미지 교체</h2>
+<p>직접적으로 이미지 지정이 안된다면 다른 방법을 사용해야 한다.<br />
+앱이 백그라운드로 갈 때 원하는 이미지 파일로 스냅샷이 찍히도록 꼼수를 썼다. </p>
 <ol>
 <li>지정한 이미지파일로 UIImageView를 하나 생성한다.</li>
 <li>앱이 백그라운드에 진입 직전 현재 화면 위에 이미지뷰를 덮어버린다.</li>
@@ -786,7 +832,8 @@
 <p>이러면 백그라운드 진입과 동시에 찍히는 스냅샷은 화면 위에 덮어 쓴 이미지뷰가 찍힐 것이다.</p>
 <h2 id="appdelegate">AppDelegate</h2>
 <p>인터넷을 검색해보니 <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate">애플 개발자 페이지</a>에 Responding to App Life-Cycle Events
-항목이 있었다. AppDelegate에 applicationDidEnterBackground와 applicationWillEnterForeground를 사용하면 될 것 같다.</p>
+항목이 있었다.<br />
+AppDelegate에 applicationDidEnterBackground와 applicationWillEnterForeground를 사용하면 될 것 같다.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">AppDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIApplicationDelegate</span> <span class="p">{</span>
 
     <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> 
@@ -805,10 +852,12 @@
 
 <span class="p">}</span>
 </code></pre></div>
-<p>앱에서 홈버튼을 누르면 Background!라고 콘솔에 찍힐 것이고 다시 실행하면 Foreground!라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다.<br />
+<p>앱에서 홈버튼을 누르면 <code>Background!</code>라고 콘솔에 찍힐 것이고 다시 실행하면 <code>Foreground!</code>라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다.<br />
 하지만 콘솔창엔 아무것도 찍히지 않았다.</p>
 <h2 id="scenedelegate">SceneDelegate</h2>
-<p>한참을 삽질하다가 결국 알아냈다. <a href="https://developer.apple.com/documentation/uikit/app_and_environment/scenes/specifying_the_scenes_your_app_supports">애플 개발자 페이지</a>에 써있기를 iOS 13 이상부터는 SceneDelegate를 사용한댄다. 이런... 개발중인 내 폰의 버전은 iOS 13.3.1이었다.</p>
+<p>한참을 삽질하다가 결국 알아냈다.<br />
+<a href="https://developer.apple.com/documentation/uikit/app_and_environment/scenes/specifying_the_scenes_your_app_supports">애플 개발자 페이지</a>에 써있기를 iOS 13 이상부터는 SceneDelegate를 사용한댄다.<br />
+이런... 개발중인 내 폰의 버전은 iOS 13.3.1이었다.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">SceneDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIWindowSceneDelegate</span> <span class="p">{</span>
 
     <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="n">session</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> 
@@ -830,7 +879,7 @@
 <p>하지만 뭔가 애매했다. </p>
 <ul>
 <li>앱 실행 중 홈버튼을 한 번 눌러서 완전히 백그라운드로 돌아갔다가 다시 실행(O)</li>
-<li>앱 실행 중 홈버튼을 따닥 두 번 눌러서 멀티태스킹 진입 시(X)</li>
+<li>앱 실행 중 홈버튼을 따닥 두 번 눌러서 Multitasking Switcher에서 진입 시(X)</li>
 </ul>
 <p>또 뭐가 문제인지 찾다가 모든 이벤트를 다 테스트 해본 결과 <code>sceneWillResignActive</code>, <code>sceneDidBecomeActive</code> 이 두 함수가 홈버튼을 한 번 눌러서 백그라운드로 갔다가 복귀하던, 홈버튼을 두 번 눌러서 바로 멀티태스킹을 하던 실행이 되는 것을 확인했다.</p>
 <p>이제 스냅샷으로 찍혀 줄 이미지 파일을 asset에 SecureBackground로 등록한 뒤 해당 이미지를 표시해 줄 이미지뷰를 백그라운드 갈때는 덮어 쓰고 다시 실행될때는 없애는 코드를 넣고 실행했다.</p>
@@ -861,13 +910,15 @@
 </code></pre></div>
 <p>성공이다.</p>
 <h2 id="scenedelegate_1">SceneDelegate 제거</h2>
-<p>그런데 위 코드는 iOS 13 미만 버전대 기기에서는 또 작동을 안했다. 다시 AppDelegate에서 코드를 추가했더니 작동했다. iOS 13보다 낮은 버전에서는 AppDelegate로 이벤트를 핸들링하기 때문에 똑같은 코드를 두번 넣어야 되게 생겼다. 
-어차피 나는 Scene을 사용하지 않아도 무방하기 때문에 아예 SceneDelegate를 삭제하고  설정하면 AppDelegate에서 해결되는게 아닌가 싶었다. </p>
+<p>그런데 위 코드는 iOS 13 미만 버전대 기기에서는 또 작동을 안했다.<br />
+다시 AppDelegate에서 코드를 추가했더니 작동했다.<br />
+iOS 13보다 낮은 버전에서는 AppDelegate로 이벤트를 핸들링하기 때문에 똑같은 코드를 두번 넣어야 되게 생겼다.<br />
+어차피 나는 Scene을 사용하지 않아도 무방하기 때문에 아예 SceneDelegate를 삭제하고 설정하면 AppDelegate에서 해결되는게 아닌가 싶었다. </p>
 <ul>
 <li>info.plist에서 <kbd>Application Scene Manifest</kbd> 제거</li>
 <li>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 관련 코드들 주석처리나 삭제</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="c1">// AppDelegate.swift</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// AppDelegate.swift</span>
 
     <span class="c1">// </span><span class="cs">MARK:</span><span class="c1"> UISceneSession Lifecycle</span>
     <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">configurationForConnecting</span> 
@@ -885,15 +936,18 @@
         <span class="c1">// Use this method to release any resources that were specific to the discarded scenes, as they will not return.</span>
     <span class="p">}</span>
 </code></pre></div>
-- SceneDelegate에 삽입했던 코드를 AppDelegate로 이동
-- 어차피 이제는 안쓸 SceneDelegate.swift 제거</p>
-<p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
-<h2 id="_2">결론</h2>
-<p>Swift에서 백그라운드 스냅샷에 중요 정보 노출 방지하는 방법</p>
 <ul>
-<li>iOS 13 미만 버전에서는 App Delegate, iOS 13 이상이면 Scene Delegate 고려</li>
+<li>SceneDelegate에 삽입했던 코드를 AppDelegate로 이동  </li>
+<li>어차피 이제는 안쓸 SceneDelegate.swift 제거</li>
+</ul>
+<p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
+<h2 id="_4">결론</h2>
+<p>Swift에서 백그라운드 스냅샷에 중요 정보 노출 방지하는 방법</p>
+<blockquote>
+<ul>
 <li>임의의 이미지 뷰를 생성하여 앱이 백그라운드 진입할 때 위에 덮어쓰고 다시 돌아올 때 뺀다.</li>
 </ul>
+</blockquote>
 <p>즉 App Delegate의 경우 <kbd>AppDelegate.swift</kbd>에 아래 코드 추가
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">?</span>
 
@@ -910,6 +964,11 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">주의</p>
+<p>iOS 13부터 window의 개념이 scene으로 대체되고 하나의 앱에서 여러개의 scene을 가질 수 있게 된다.
+SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려해야 한다.</p>
+</div>
 <p>끝.</p>
                 
               
@@ -934,7 +993,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../background/" class="md-footer__link md-footer__link--prev" aria-label="이전: 백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)" rel="prev">
+        <a href="../background/" class="md-footer__link md-footer__link--prev" aria-label="이전: 백그라운드 스냅샷 저장 경로" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -943,20 +1002,20 @@
               <span class="md-footer__direction">
                 이전
               </span>
-              백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+              백그라운드 스냅샷 저장 경로
             </div>
           </div>
         </a>
       
       
         
-        <a href="../hosts/" class="md-footer__link md-footer__link--next" aria-label="다음: 탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기" rel="next">
+        <a href="../hosts/" class="md-footer__link md-footer__link--next" aria-label="다음: hosts 변경 적용하기" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 다음
               </span>
-              탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+              hosts 변경 적용하기
             </div>
           </div>
           <div class="md-footer__button md-icon">

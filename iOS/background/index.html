@@ -16,7 +16,7 @@
     
     
       
-        <title>백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot) - To be Useful to the World</title>
+        <title>백그라운드 스냅샷 저장 경로 - To be Useful to the World</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ios-background-snapshot" class="md-skip">
+        <a href="#_1" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+              백그라운드 스냅샷 저장 경로
             
           </span>
         </div>
@@ -394,6 +394,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frida/vscodefrida/" class="md-nav__link">
+        Script 편하게 짜는 방법
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -483,7 +497,7 @@
   
     <li class="md-nav__item">
       <a href="../../Python/offline/" class="md-nav__link">
-        오프라인에서 Python Module 깔끔하게 설치하기
+        인터넷 없이 개발환경 만들기
       </a>
     </li>
   
@@ -556,12 +570,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+          백그라운드 스냅샷 저장 경로
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)
+        백그라운드 스냅샷 저장 경로
       </a>
       
         
@@ -579,15 +593,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    백그라운드 스냅샷이 뭐야?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    그래서 이게 뭐?
+    서론
   </a>
   
 </li>
@@ -643,7 +650,7 @@
   
     <li class="md-nav__item">
       <a href="../bgsnapshot/" class="md-nav__link">
-        백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+        Swift 백그라운드 스냅샷 보안
       </a>
     </li>
   
@@ -657,7 +664,7 @@
   
     <li class="md-nav__item">
       <a href="../hosts/" class="md-nav__link">
-        탈옥 아이폰(Jailbroken iOS)에서 hosts 변경 적용하기
+        hosts 변경 적용하기
       </a>
     </li>
   
@@ -671,7 +678,7 @@
   
     <li class="md-nav__item">
       <a href="../webview/" class="md-nav__link">
-        Swift로 WebView 구현하기(iOS 8.0 WKWebView)
+        Swift로 WebView 구현하기
       </a>
     </li>
   
@@ -710,15 +717,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    백그라운드 스냅샷이 뭐야?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    그래서 이게 뭐?
+    서론
   </a>
   
 </li>
@@ -771,22 +771,14 @@
               
                 
                 
-                <h1 id="ios-background-snapshot">백그라운드 스냅샷은 어디에 저장될까?(iOS Background Snapshot)</h1>
-<h2 id="_1">백그라운드 스냅샷이 뭐야?</h2>
+                <h1 id="_1">백그라운드 스냅샷 저장 경로</h1>
+<h2 id="_2">서론</h2>
 <p>앱 실행 중 홈키를 한 번 눌러 홈화면으로 돌아가거나<br />
 홈키를 두 번 눌러 Multitasking Switcher에 진입하면<br />
-직전의 앱 화면이 스크린샷으로 저장되어 화면에 보이게 된다.</p>
+직전의 앱 화면이 스크린샷으로 저장되어 화면에 보이게 된다.<br />
+이 저장된 이미지를 백그라운드 스냅샷이라고 한다.</p>
 <p><img alt="" src="/images/iossnapshot01.png" /></p>
 <p>이 화면은 이미지 파일로 아이폰 내부 저장공간에 파일로 저장이 된다.</p>
-<h2 id="_2">그래서 이게 뭐?</h2>
-<p>모바일 앱 보안 관련해서 백그라운드 화면에</p>
-<ul>
-<li>고유식별정보(주민등록번호, 운전면허번호, 여권번호, 외국인 등록번호)</li>
-<li>비밀번호(로그인 비밀번호, 계좌 비밀번호, 공인인증서 비밀번호 등)</li>
-<li>신용정보(보안카드번호, OTP번호, 신용/체크 카드번호 등)</li>
-<li>기타 중요 정보</li>
-</ul>
-<p>등이 노출이 되면 취약하다고 한다.</p>
 <h2 id="_3">저장 경로</h2>
 <p>결론부터 말하면 iOS 버전에 따라 저장경로가 다르다.</p>
 <ul>
@@ -940,13 +932,13 @@
       
       
         
-        <a href="../bgsnapshot/" class="md-footer__link md-footer__link--next" aria-label="다음: 백그라운드 스냅샷 중요정보 노출 방지하기(Swift)" rel="next">
+        <a href="../bgsnapshot/" class="md-footer__link md-footer__link--next" aria-label="다음: Swift 백그라운드 스냅샷 보안" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 다음
               </span>
-              백그라운드 스냅샷 중요정보 노출 방지하기(Swift)
+              Swift 백그라운드 스냅샷 보안
             </div>
           </div>
           <div class="md-footer__button md-icon">
