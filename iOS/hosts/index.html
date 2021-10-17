@@ -333,12 +333,74 @@
       
       
         <label class="md-nav__link" for="__nav_4">
+          Frida
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frida" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Frida
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frida/fridaserverios/" class="md-nav__link">
+        iOS frida-server 설치하기
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Frida/return/" class="md-nav__link">
+        Return 값 바꾸기
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
           Mobile
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Mobile" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Mobile
         </label>
@@ -375,18 +437,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_6">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Python" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Python
         </label>
@@ -439,18 +501,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_7">
           iOS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="iOS" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           iOS
         </label>
@@ -530,22 +592,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ping-test" class="md-nav__link">
+    Ping Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safari-test" class="md-nav__link">
+    Safari와 앱 Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    아이폰에서 접속
+    삽질 내역
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    삽질
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#letmeblock" class="md-nav__link">
-    LetMeBlock
+    결론
   </a>
   
 </li>
@@ -612,22 +681,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ping-test" class="md-nav__link">
+    Ping Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safari-test" class="md-nav__link">
+    Safari와 앱 Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    아이폰에서 접속
+    삽질 내역
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    삽질
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#letmeblock" class="md-nav__link">
-    LetMeBlock
+    결론
   </a>
   
 </li>
@@ -650,40 +726,43 @@
 <p>앱에 SSL Pinning을 구현하기 위하여 우선 HTTPS 서버를 구축했다.<br />
 운영 서버에서 사용하는 인증서를 받아 로컬에 서버를 구동하고 접속하려고 하니<br />
 인증서에 등록된 Hostname에 맞지 않으면 Invalid Certificate 에러를 뿜어낸다.<br />
-우선 개발용인 PC에서 hosts 파일을 수정하여 등록된 주소로 접속해보니 잘 됐다.</p>
-<hr />
-<h2 id="_2">아이폰에서 접속</h2>
-<p>동일 네트워크에 있는 탈옥된 아이폰에 /etc/hosts 파일을 수정했다.<br />
-로컬 서버의 내부 IP와 사용할 주소를 넣고나서 Ping을 날렸다.</p>
+우선 개발용인 PC에서는 hosts 파일을 수정하여 등록된 주소로 접속해보니 잘 됐다.<br />
+아이폰에서도 해봤다.</p>
+<h2 id="ping-test">Ping Test</h2>
+<p>동일 네트워크에 있는 탈옥된 아이폰에 <kbd>/etc/hosts</kbd> 파일을 수정했다.<br />
+로컬 서버의 내부 IP(<code>192.168.0.x</code>)와 주소(<code>test.useworld.com</code>)를 넣고나서 Ping을 날렸다.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>ping test.useworld.com
-<span class="go">PING test.useworld.com (192.168.0.0) 56(84) bytes of data.</span>
-<span class="go">64 bytes from 192.168.0.0: icmp_seq=1 ttl=54 time=0.0 ms</span>
-<span class="go">64 bytes from 192.168.0.0: icmp_seq=2 ttl=54 time=0.0 ms</span>
-<span class="go">64 bytes from 192.168.0.0: icmp_seq=3 ttl=54 time=0.0 ms</span>
-<span class="go">64 bytes from 192.168.0.0: icmp_seq=4 ttl=54 time=0.0 ms</span>
-<span class="go">64 bytes from 192.168.0.0: icmp_seq=5 ttl=54 time=0.0 ms</span>
-<span class="go">64 bytes from 192.168.0.0: icmp_seq=6 ttl=54 time=0.0 ms</span>
-<span class="go">64 bytes from 192.168.0.0: icmp_seq=7 ttl=54 time=0.0 ms</span>
+<span class="go">PING test.useworld.com (192.168.0.x) 56(84) bytes of data.</span>
+<span class="go">64 bytes from 192.168.0.x: icmp_seq=1 ttl=54 time=0.0 ms</span>
+<span class="go">64 bytes from 192.168.0.x: icmp_seq=2 ttl=54 time=0.0 ms</span>
+<span class="go">64 bytes from 192.168.0.x: icmp_seq=3 ttl=54 time=0.0 ms</span>
+<span class="go">64 bytes from 192.168.0.x: icmp_seq=4 ttl=54 time=0.0 ms</span>
+<span class="go">64 bytes from 192.168.0.x: icmp_seq=5 ttl=54 time=0.0 ms</span>
+<span class="go">64 bytes from 192.168.0.x: icmp_seq=6 ttl=54 time=0.0 ms</span>
+<span class="go">64 bytes from 192.168.0.x: icmp_seq=7 ttl=54 time=0.0 ms</span>
 <span class="go">...</span>
 </code></pre></div>
-<p>잘 된다.<br />
-이어서 Safari를 열어 <kbd>https://test.useworld.com</kbd>로 접속해보니 이게 왠걸.<br />
+<p>잘 된다.  </p>
+<h2 id="safari-test">Safari와 앱 Test</h2>
+<p>이어서 Safari를 열어 <kbd>https://test.useworld.com</kbd>로 접속해보니 이게 왠걸.<br />
 서버에 접속할 수 없다고 한다.<br />
-개발중인 앱에서 Request를 날려봐도 마찬가지로 Not Found라고 나온다.  </p>
-<hr />
-<h2 id="_3">삽질</h2>
-<p>구글링을 해봐도 쉽게 나와주질 않는다.<br />
-DNS Flush를 하라고 해서 찾아보니 비행기 모드를 하고 15초 정도 있다가 다시 켜면 된다고 한다.<br />
-해봤으나 실패.<br />
-IPv4로만 해놨으면 IPv6으로 변환해서 한번 더 hosts 파일에 등록하면 된다고 한다.<br />
-<a href="https://www.ultratools.com/tools/ipv4toipv6">변환 사이트</a>에서 변환해서 등록해 보았으나 역시나 실패.<br />
-test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 된다고 한다.
-마찬가지로 실패.
-또 구글링해보니 iOS 12에서 hosts 적용이 안되는데 어떻게 하냐는 질문에 답이 없는 글도 봤다.<br />
-계속되는 실패에 원래 iOS에서는 안되는 건가? 라는 생각이 들었다.  </p>
-<hr />
-<h2 id="letmeblock">LetMeBlock</h2>
-<p>삽질을 하다가 결국엔 찾았다.  </p>
+개발중인 앱에서 Request를 날려봐도 마찬가지로 Not Found라고 나온다.<br />
+포트가 제대로 열려 있는 것은 확인했다.</p>
+<h2 id="_2">삽질 내역</h2>
+<p>구글링을 해봐도 쉽게 나와주질 않는다.  </p>
+<ul>
+<li>DNS Flush를 하라고 해서 찾아보니 비행기 모드를 하고 15초 정도 있다가 다시 켜면 된다고 했으나 실패.  </li>
+<li>IPv4로만 해놨으면 IPv6으로 변환해서 한번 더 hosts 파일에 등록하면 된다고 한다.<br />
+<a href="https://www.ultratools.com/tools/ipv4toipv6">변환 사이트</a>에서 변환해서 등록해 보았으나 역시나 실패.  </li>
+<li>test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 된다고 한다. 마찬가지로 실패.  </li>
+<li>iOS 12에서 hosts 적용이 안되는데 어떻게 하냐는 질문에 답이 없는 글도 봤다.  </li>
+</ul>
+<p>계속되는 실패에 원래 iOS에서는 안되는 건가? 라는 생각이 들었다.  </p>
+<h2 id="_3">결론</h2>
+<p>삽질을 하다가 결국엔 알아냈다.<br />
+hosts 파일 수정 후 LetMeBlock Tweak을 설치하면 적용된다.</p>
+<div class="admonition note">
+<p class="admonition-title">LetMeBlock 설치 방법</p>
 <ol>
 <li>Cydia의 Source에서 <kbd>https://poomsmart.github.io/repo/</kbd> Repository를 추가한다.</li>
 <li><code>LetMeBlock</code>을 검색하여 들어가서 변경을 누르고 재설치한다.</li>
@@ -692,7 +771,8 @@ test.useworld.com이라고 했으면 같은 IP로 useworld.com도 등록하면 �
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>killall -9 mDNSResponder
 <span class="gp">$ </span>killall -9 mDNSResponderHelper
 </code></pre></div>
-<p>Safari로 접속을 해도 앱에서 접근을 해도 잘 접속된다.<br />
+</div>
+<p>Safari로 접속을 해도 앱에서 접근을 해도 잘된다.<br />
 오 놀라워라.  </p>
 <p>끝.</p>
                 
