@@ -16,7 +16,7 @@
     
     
       
-        <title>PIP에서 SSLCertVerificationError - Useworld</title>
+        <title>SSLCertVerificationError - Useworld</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pip-sslcertverificationerror" class="md-skip">
+        <a href="#sslcertverificationerror" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PIP에서 SSLCertVerificationError
+              SSLCertVerificationError
             
           </span>
         </div>
@@ -522,12 +522,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          PIP에서 SSLCertVerificationError
+          SSLCertVerificationError
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        PIP에서 SSLCertVerificationError
+        SSLCertVerificationError
       </a>
       
         
@@ -545,28 +545,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pip" class="md-nav__link">
-    PIP가 안된다.
+  <a href="#_1" class="md-nav__link">
+    서론
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pip_1" class="md-nav__link">
+  <a href="#pip" class="md-nav__link">
     pip 옵션 추가
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    매번 붙여 넣기 귀찮음
+  <a href="#_2" class="md-nav__link">
+    매번 옵션 넣기 귀찮음
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     결론
   </a>
   
@@ -703,28 +703,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pip" class="md-nav__link">
-    PIP가 안된다.
+  <a href="#_1" class="md-nav__link">
+    서론
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pip_1" class="md-nav__link">
+  <a href="#pip" class="md-nav__link">
     pip 옵션 추가
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    매번 붙여 넣기 귀찮음
+  <a href="#_2" class="md-nav__link">
+    매번 옵션 넣기 귀찮음
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     결론
   </a>
   
@@ -743,10 +743,13 @@
               
                 
                 
-                <h1 id="pip-sslcertverificationerror">PIP에서 SSLCertVerificationError</h1>
-<h2 id="pip">PIP가 안된다.</h2>
+                <h1 id="sslcertverificationerror">SSLCertVerificationError</h1>
+<h2 id="_1">서론</h2>
 <p>인터넷이 되는 환경인데 주로 내부망이나 웹 Proxy를 사용하는 네트워크 환경에서<br />
-PIP를 이용하여 모듈을 설치 하면 꼭 이런 에러가 발생한다.</p>
+pip를 이용하여 모듈을 설치 하면 꼭 이런 에러가 발생한다.</p>
+<div class="admonition danger">
+<p>SSLError&lt;SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERTIFY_FAILED] certificate verify failed</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="go">&gt;pip install frida</span>
 <span class="go">Collecting frida</span>
 <span class="go"> WARNING: Retrying &lt;Retry&lt;total=4, connect=None, read=None, redirect=None, status=none)) after connection broken by &#39;SSLError&lt;SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERTIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1056)&#39;))&#39;: /simple/frida</span>
@@ -758,10 +761,11 @@ PIP를 이용하여 모듈을 설치 하면 꼭 이런 에러가 발생한다.</
 
 <span class="go">&gt;_</span>
 </code></pre></div>
-<h2 id="pip_1">pip 옵션 추가</h2>
+<h2 id="pip">pip 옵션 추가</h2>
 <p>이럴 경우 다운받아오는 위치를 신뢰할 수 있는 호스트로 설정하여 사용하면<br />
 설치가 가능해진다.<br />
-<kbd>--trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org</kbd> 옵션을 붙여주면 된다.</p>
+<kbd>--trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org</kbd><br />
+옵션을 붙여주면 된다.</p>
 <div class="highlight"><pre><span></span><code><span class="go">&gt;pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org frida</span>
 <span class="go">Collecting frida</span>
 <span class="go">  Downloading https://files.pythonhosted.org/packages/c7/52/a4c0c4d85fbe27389841ae40958c46e612ad4a66a75ff838b9f6c96eceff/frida-12.7.11.tar.gz</span>
@@ -772,7 +776,7 @@ PIP를 이용하여 모듈을 설치 하면 꼭 이런 에러가 발생한다.</
 <span class="go">&gt;_</span>
 </code></pre></div>
 <p>잘 된다.  </p>
-<h2 id="_1">매번 붙여 넣기 귀찮음</h2>
+<h2 id="_2">매번 옵션 넣기 귀찮음</h2>
 <p>매번 저렇게 옵션을 달아서 설치하기 귀찮을 경우<br />
 아예 pip.ini 파일에 설정을 해주면 된다.<br />
 윈도우의 경우 경로는<br />
@@ -783,17 +787,21 @@ trusted-host = pypi.python.org
                pypi.org
                files.pythonhosted.org
 </code></pre></div>
-<h2 id="_2">결론</h2>
-<p>PIP 설치 시 SSL 에러 발생</p>
+<h2 id="_3">결론</h2>
+<p>pip 설치 시 SSL 에러 발생</p>
 <ul>
-<li>일회성<br />
-<kbd>pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org [module]</kbd></li>
-<li>매번 치기 귀찮으면 php.ini에 아래 내용 삽입
+<li>
+<p>일회성<br />
+<kbd>pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org [module]</kbd></p>
+</li>
+<li>
+<p>매번 치기 귀찮으면 php.ini에 아래 내용 삽입
 <div class="highlight"><pre><span></span><code>[global]
 trusted-host = pypi.python.org
                pypi.org
                files.pythonhosted.org
-</code></pre></div></li>
+</code></pre></div></p>
+</li>
 </ul>
 <p>끝.</p>
                 
