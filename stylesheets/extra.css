@@ -10,7 +10,7 @@
          url('font/D2Coding.ttf') format('truetype'),
          url('font/D2Coding.svg') format('svg');
   }
-  @font-face {
+@font-face {
     font-family: 'D2 coding';
     font-style: normal;
     font-weight: 700;
@@ -21,9 +21,11 @@
          url('font/D2CodingBold.woff') format('woff'),
          url('font/D2CodingBold.ttf') format('truetype'),
          url('font/D2CodingBold.svg') format('svg');
-  }
+}
 
-  :root {
+:root {
     --md-text-font-family: "D2 coding";   
     --md-code-font-family: "D2 coding";
-  }
+}
+
+img { display: block; margin: 0px auto; }
