@@ -2,72 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://useworld.github.io/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Android/nethunter/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Etc/humanerror/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Etc/words/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://useworld.github.io/Frida/devicenotfound/</loc>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Frida/fridaserverios/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Frida/return/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Frida/vscodefrida/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Mobile/proxy/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Python/offline/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/Python/pipssl/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/iOS/background/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/iOS/bgsnapshot/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/iOS/hosts/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://useworld.github.io/iOS/webview/</loc>
-         <lastmod>2021-10-18</lastmod>
+         <lastmod>2021-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
