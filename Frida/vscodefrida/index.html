@@ -16,7 +16,7 @@
     
     
       
-        <title>Script 편하게 짜는 방법 - Useworld</title>
+        <title>Script 자동완성 - Useworld</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Script 편하게 짜는 방법
+              Script 자동완성
             
           </span>
         </div>
@@ -374,20 +374,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../devicenotfound/" class="md-nav__link">
-        device not found
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../fridaserverios/" class="md-nav__link">
         iOS frida-server 설치하기
       </a>
@@ -426,12 +412,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Script 편하게 짜는 방법
+          Script 자동완성
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Script 편하게 짜는 방법
+        Script 자동완성
       </a>
       
         
@@ -771,7 +757,7 @@
               
                 
                 
-                <h1 id="script">Script 편하게 짜는 방법</h1>
+                <h1 id="script">Script 자동완성</h1>
 <h2 id="_1">서론</h2>
 <p>Frida Script를 작성 시 Frida 공식 홈페이지의 API Reference 중<br />
 <a href="https://frida.re/docs/javascript-api/">Javascript API</a>를 계속 참조하게 된다.<br />
@@ -787,7 +773,7 @@ VSCode 설치는 <a href="https://code.visualstudio.com/">공식 홈페이지</a
 VSCode와 frida를 연동하여 다양한 편의성을 제공해주는 플러그인이다.<br />
 소개 화면만 봐도 다양한 기능들이 있지만 코드 자동완성 기능을 가장 유용히 사용중이다.</p>
 <p><img alt="" src="/images/vscodefrida01.png" /></p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">frida Workbench 설치 방법</p>
 <ol>
 <li>좌측 Sidebar의 확장 클릭(<kbd>Ctrl+Shift+X</kbd>)</li>
@@ -799,19 +785,30 @@ VSCode와 frida를 연동하여 다양한 편의성을 제공해주는 플러그
 <p>깔자마자 자동완성 기능이 바로 적용되는 것은 아니고<br />
 몇 가지 설정이 필요하다.</p>
 <p><img alt="" src="/images/vscodefrida02.png" /></p>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">자동완성 설정 방법</p>
 <ol>
 <li><code>js</code> 파일을 생성하거나 빈파일을 <code>js</code> 파일로 저장</li>
 <li>Command Pallete 호출(<kbd>F1</kbd>, <kbd>Ctrl+Shift+P</kbd>)</li>
 <li>frida get 등을 검색하여 <code>Frida: Get typing hint for frida</code> 실행</li>
-<li><code>/// &lt;reference path="frida-gum.d.ts" /&gt;</code> 구문이 자동으로 삽입되고 다운로드</li>
-<li>이제 자동완성 및 함수 설명까지 확인 가능</li>
-<li>편안하게 Script 작성</li>
+<li><code>/// &lt;reference path="frida-gum.d.ts" /&gt;</code> 구문이 자동으로 삽입</li>
 </ol>
 </div>
+<div class="admonition warning">
+<ul>
+<li>파일 확장자가 <code>js</code>나 <code>ts</code>가 아닐 경우 작동 안함</li>
+<li><code>frida-gum.d.ts</code> 파일이 자동으로 다운로드 되는데 해당 파일 삭제 시 기능 동작 안함</li>
+</ul>
+</div>
 <h2 id="_3">결론</h2>
-<p>편하긴 편한데<br />
+<div class="admonition note">
+<p class="admonition-title">Vscode에서 frida Script 자동 완성 설정법</p>
+<ol>
+<li><code>frida Workbench</code> 설치</li>
+<li>Command Pallet의 <code>Frida: Get typing hint for frida</code> 실행</li>
+</ol>
+</div>
+<p>편하긴 편한데...<br />
 사실 타이핑을 줄여줄 뿐 까먹으면 다시 찾아보는 건 똑같다.</p>
 <p>끝.</p>
                 
@@ -893,6 +890,8 @@ VSCode와 frida를 연동하여 다양한 편의성을 제공해주는 플러그
     
     
       <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

@@ -372,20 +372,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Frida/devicenotfound/" class="md-nav__link">
-        device not found
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Frida/fridaserverios/" class="md-nav__link">
         iOS frida-server 설치하기
       </a>
@@ -415,7 +401,7 @@
   
     <li class="md-nav__item">
       <a href="../../Frida/vscodefrida/" class="md-nav__link">
-        Script 편하게 짜는 방법
+        Script 자동완성
       </a>
     </li>
   
@@ -802,21 +788,20 @@ trusted-host = pypi.python.org
                files.pythonhosted.org
 </code></pre></div>
 <h2 id="_3">결론</h2>
-<p>pip 설치 시 SSL 에러 발생</p>
-<ul>
-<li>
-<p>일회성<br />
-<kbd>pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org [module]</kbd></p>
-</li>
-<li>
-<p>매번 치기 귀찮으면 php.ini에 아래 내용 삽입
+<p>pip에서 SSL 에러 발생 시</p>
+<div class="admonition note">
+<p class="admonition-title">Command Line</p>
+<div class="highlight"><pre><span></span><code>&gt;pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org [module]
+</code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">pip Config</p>
 <div class="highlight"><pre><span></span><code>[global]
 trusted-host = pypi.python.org
                pypi.org
                files.pythonhosted.org
-</code></pre></div></p>
-</li>
-</ul>
+</code></pre></div>
+</div>
 <p>끝.</p>
                 
               
@@ -897,6 +882,8 @@ trusted-host = pypi.python.org
     
     
       <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

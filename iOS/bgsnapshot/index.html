@@ -372,20 +372,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Frida/devicenotfound/" class="md-nav__link">
-        device not found
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Frida/fridaserverios/" class="md-nav__link">
         iOS frida-server 설치하기
       </a>
@@ -415,7 +401,7 @@
   
     <li class="md-nav__item">
       <a href="../../Frida/vscodefrida/" class="md-nav__link">
-        Script 편하게 짜는 방법
+        Script 자동완성
       </a>
     </li>
   
@@ -815,21 +801,21 @@
                 
                 <h1 id="swift">Swift 백그라운드 스냅샷 보안</h1>
 <h2 id="_1">서론</h2>
-<p>모바일 앱 보안 관련해서 백그라운드 화면에</p>
-<blockquote>
+<p>모바일 앱 보안 관련해서 백그라운드 화면에 중요정보가 노출되면 취약하다고 한다.  </p>
+<div class="admonition info">
+<p class="admonition-title">중요정보</p>
 <ul>
 <li>고유식별정보(주민등록번호, 운전면허번호, 여권번호, 외국인 등록번호)</li>
 <li>비밀번호(로그인 비밀번호, 계좌 비밀번호, 공인인증서 비밀번호 등)</li>
 <li>신용정보(보안카드번호, OTP번호, 신용/체크 카드번호 등)</li>
 <li>기타 중요 정보</li>
 </ul>
-</blockquote>
-<p>등이 노출되면 취약하다고 한다.  </p>
+</div>
 <h2 id="multitasking-switcher">Multitasking Switcher</h2>
 <p>앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱이 들어가고 홈 화면이 나온다.<br />
 홈 화면이던 앱 실행중이던 홈버튼을 연속으로 두 번 누르면<br />
 현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다.<br />
-이 기능을 Multitasking Switcher라고 한다.</p>
+이 기능을 <code>Multitasking Switcher</code>라고 한다.</p>
 <h2 id="_2">보안 설정</h2>
 <p>앱 생명 주기는 <a href="https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle">애플 개발자 페이지</a>에 설명이 나와있다.<br />
 아이폰은 앱이 백그라운드에 갈 때마다 Screenshot을 저장하여<br />
@@ -956,12 +942,10 @@ iOS 13보다 낮은 버전에서는 AppDelegate로 이벤트를 핸들링하기 
 </ul>
 <p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
 <h2 id="_4">결론</h2>
-<p>Swift에서 백그라운드 스냅샷에 중요 정보 노출 방지하는 방법</p>
-<blockquote>
-<ul>
-<li>임의의 이미지 뷰를 생성하여 앱이 백그라운드 진입할 때 위에 덮어쓰고 다시 돌아올 때 뺀다.</li>
-</ul>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Swift에서 백그라운드 스냅샷에 중요 정보 노출 방지하는 방법</p>
+<p>임의의 이미지 뷰를 생성하여 앱이 백그라운드 진입할 때 위에 덮어쓰고 다시 돌아올 때 제거한다.</p>
+</div>
 <p>즉 App Delegate의 경우 <kbd>AppDelegate.swift</kbd>에 아래 코드 추가
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">?</span>
 
@@ -1063,6 +1047,8 @@ SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려�
     
     
       <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

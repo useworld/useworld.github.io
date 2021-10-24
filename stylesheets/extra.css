@@ -28,4 +28,24 @@
     --md-code-font-family: "D2 coding";
 }
 
-img { display: block; margin: 0px auto; }
+img {
+    height: auto;
+    width: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform ease-in-out 0.5s;
+    cursor: zoom-in;    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-zoom-large {    
+    transform: scale(1.5);
+    cursor: zoom-out;    
+    z-index: 100;
+    position: relative;
+}

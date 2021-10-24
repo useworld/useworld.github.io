@@ -325,13 +325,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gui" class="md-nav__link">
-    난 GUI도 쓰고 싶어.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     결론
   </a>
@@ -449,20 +442,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Frida/devicenotfound/" class="md-nav__link">
-        device not found
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Frida/fridaserverios/" class="md-nav__link">
         iOS frida-server 설치하기
       </a>
@@ -492,7 +471,7 @@
   
     <li class="md-nav__item">
       <a href="../../Frida/vscodefrida/" class="md-nav__link">
-        Script 편하게 짜는 방법
+        Script 자동완성
       </a>
     </li>
   
@@ -759,13 +738,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gui" class="md-nav__link">
-    난 GUI도 쓰고 싶어.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     결론
   </a>
@@ -787,18 +759,15 @@
                 
                 <h1 id="kali-linuxnethunter">Kali Linux(Nethunter) 설치</h1>
 <h2 id="_1">서론</h2>
-<p>데스크탑이나 노트북이 없어도 휴대용으로 들고 다닐 수 있는 해킹 도구는 매력적이다.  </p>
-<p><img alt="" src="/images/nethunter01.jpg" /></p>
-<p>물론 영화나 게임에서 나오는 해커들처럼 1초만에 띠디딕 잠긴 문을 다 따는 등의 행위는 아마도(?) 불가능하다.<br />
+<p>데스크탑이나 노트북이 없어도 휴대용으로 들고 다닐 수 있는 해킹 도구는 매력적이다.<br />
 이 글은 안드로이드 기기에 모의해킹 침투테스트 환경을 구축하는 방법에 대한 내용이다.</p>
 <h2 id="nethunter">Nethunter란?</h2>
 <p>모의해킹을 수행하거나 관심이 있는 사람이라면 <code>Backtrack</code>이나 <code>Kali Linux</code>를 한번 쯤 들어본 적이 있을 것이다.<br />
-이는 <a href="https://www.offensive-security.com/">Offensive Security</a>에서 만든 모의 침투 테스트용 운영체제이며 칼리 리눅스는 백트랙의 후속 버전이다.
-그리고 <code>넷헌터(NetHunter OS)</code>는 2015년 1월 출시된 칼리 리눅스의 공식 안드로이드 롬이다.  </p>
-<p>문제는 <a href="https://www.offensive-security.com/kali-linux-nethunter-download/">공식 지원 기종</a>이 거의 구글 레퍼런스 폰인 Nexus 시리즈, Sony XPeria(일본꺼), OnePlus 시리즈(중국꺼)이며 갤럭시는 Tab S4 밖에 없다.  </p>
-<p>국내 안드로이드 사용자들은 아마 대부분 갤럭시S 시리즈를 사용할텐데 공식 지원 기종에 없다. 여담으로 나도 Galaxy S 시리즈를 사용하고 있지만 솔직히 삼성페이 아니었으면 안쓸텐데 삼성페이 편의성이 넘사벽이라 어쩔 수가 없네...</p>
-<p>하지만 지원해주지 않는다고 설치를 못하는 것은 아니다.
-지금부터 시작해보자.</p>
+이는 <a href="https://www.offensive-security.com/">Offensive Security</a>에서 만든 모의 침투 테스트용 운영체제이며 칼리 리눅스는 백트랙의 후속 버전이다.<br />
+그리고 <code>넷헌터(NetHunter OS)</code>는 2015년 1월 출시된 칼리 리눅스의 공식 안드로이드 롬이다.<br />
+문제는 <a href="https://www.offensive-security.com/kali-linux-nethunter-download/">공식 지원 기종</a>이 거의 구글 레퍼런스 폰인 Nexus 시리즈, Sony XPeria(일본), OnePlus 시리즈(중국)이며 갤럭시는 Tab S4 밖에 없다.<br />
+국내 안드로이드 사용자들은 아마 대부분 갤럭시S 시리즈를 사용할텐데 공식 지원 기종에 없다.<br />
+하지만 지원해주지 않는다고 설치를 못하는 것은 아니다.  </p>
 <h2 id="_2">작업 환경</h2>
 <ul>
 <li>Device : Galaxy S7(SM-G930F)</li>
@@ -806,64 +775,68 @@
 <li>Status : Rooted(Magisk 20.4)</li>
 <li>Image : <a href="https://images.offensive-security.com/nethunter/nethunter-2020.2-angler-los-ten-kalifs-full.zip?_ga=2.54912939.1884579290.1591662327-547972089.1590403638">Nexus 6P Los Ten</a></li>
 </ul>
-<p><img alt="" src="/images/nethunter02.png" /></p>
+<p><img alt="" src="/images/nethunter01.png" /></p>
 <p>최신 버전을 선호하기에 갤럭시S7에서 설치 가능한 안드로이드 10 커스텀롬인 <code>리니지OS</code>를 올려놓고 <code>Magisk</code>로 루팅을 했다.<br />
 물론 <a href="https://www.kali.org/docs/nethunter/nethunter-rootless/">루팅안하고도 할 수 있는 방법</a>도 있긴 하지만 안드로이드 기기로 뭔가 해보려면 루팅은 기본이지.<br />
 이미지는 안드로이드 버전만 맞으면 아무거나 받아도 된다.<br />
 커스텀롬을 올리거나 루팅을 하면서 폰이 벽돌이 돼도 나는 모르오.<br />
 뭐 문제 생기면 <code>Odin</code>으로 밀고 순정 펌웨어를 새로 설치하면 앵간한 문제는 다 해결되니 긴장할 필요는 없다.</p>
 <h2 id="_3">설치 방법</h2>
-<p>지금부터 하는 방법은 공식 방법이 아닌 야매 방법으로 문제가 있을 수도 있다.<br />
+<p>지금부터 하는 방법은 공식 방법이 아닌 방법으로 문제가 있을 수도 있다.<br />
 참고로 난 한 번에 잘됐다.</p>
+<div class="admonition info">
+<p class="admonition-title">이미지 다운로드 링크</p>
+<p><a href="https://www.kali.org/get-kali/#kali-mobile">칼리 공식 홈페이지 - 모바일</a></p>
+</div>
+<ol>
+<li>
 <p>우선 다운로드 받은 이미지 파일의 압축을 풀어 <kbd>data/app/</kbd> 경로의 apk파일들을 한 개씩 설치해준다.</p>
-<p><img alt="" src="/images/nethunter03.png" /></p>
-<p>NetHunter 앱을 한 번 실행 했다가 종료한 후 <code>Root Explorer</code> 같은 탐색기를 이용하여
-<kbd>/data/data/com.offsec.nethunter/files/scripts</kbd> 경로의 파일들을
-<kbd>/system/bin</kbd>로 전부 복사해준다.</p>
-<p><img alt="" src="/images/nethunter04.png" /></p>
-<p>이제 Nethunter 앱을 실행하여 Kali Chroot Manager 메뉴에서 Minimal Chroot를 Install한다.  </p>
-<p><img alt="" src="/images/nethunter05.png" /></p>
-<p>Chroot가 설치되기 전에는 하단의 메뉴들이 전부 비활성화 되어있다.</p>
-<p>설치가 완료된 후 Nethunter Terminal에서 Kali를 선택하고 Root 권한을 부여하면 Kali Shell이 등장한다.  </p>
-<p><img alt="" src="/images/nethunter06.png" /></p>
-<p>리눅스를 처음 설치하면 항상 하는 그것과 함께 칼리 리눅스 넷헌터를 설치한다.</p>
+</li>
+<li>
+<p>NetHunter 앱을 한 번 실행 했다가 종료한 후 <code>Root Explorer</code> 같은 탐색기를 이용하여 <kbd>/data/data/com.offsec.nethunter/files/scripts</kbd> 경로의 파일들을 <kbd>/system/bin</kbd>로 전부 복사해준다.
+    <img alt="" src="/images/nethunter02.png" /><br></p>
+</li>
+<li>
+<p>이제 <code>Nethunter</code> 앱을 실행하여 <code>Kali Chroot Manager</code> 메뉴에서 <code>Minimal Chroot</code>를 Install한다.<br />
+<img alt="" src="/images/nethunter03.png" /></p>
+<div class="admonition warning">
+<p><code>Chroot</code>가 설치되기 전에는 하단의 메뉴들이 전부 비활성화 되어있다.</p>
+</div>
+</li>
+<li>
+<p>설치가 완료된 후 <code>Nethunter Terminal</code>에서<code>Kali</code>를 선택하고 Root 권한을 부여하면 Kali Shell이 등장한다.<br />
+업데이트 후 넷헌터를 설치한다.
+    <div class="highlight"><pre><span></span><code><span class="gp"># </span>apt-get update
+<span class="gp"># </span>apt-get upgrade
+<span class="gp"># </span>apt-get dist-upgrade
+
+<span class="gp"># </span>apt-get install kali-linux-nethunter
+</code></pre></div></p>
+</li>
+<li>
+<p>이제 Nethunter 앱에서 각종 서비스들을 켜주고 사용하면 된다.<br />
+앱 안에는 다양한 진단 도구들이 있으며 터미널에서 <code>metasploit</code>도 실행할 수 있다.
+    <img alt="" src="/images/nethunter04.png" /></p>
+<div class="admonition fail">
+<p class="admonition-title">msfconsole 실행이 안될 때</p>
 <ul>
-<li>
-<p>항상 하는 그것
-<kbd>apt-get update</kbd>
-<kbd>apt-get upgrade</kbd>
-<kbd>apt-get dist-upgrade</kbd></p>
-</li>
-<li>
-<p>넷헌터 설치
-<kbd>apt-get install kali-linux-nethunter</kbd></p>
-</li>
+<li><kbd>msfdb init</kbd> 실행</li>
+<li>넷헌터 앱 내의 서비스들 <code>Start at Boot</code> 설정</li>
+<li>재부팅</li>
 </ul>
-<p>이제 Nethunter 앱에서 각종 서비스들을 켜주고 사용하면 된다.
-앱 안에는 이런 다양한 기능들이 있다.</p>
-<p><img alt="" src="/images/nethunter07.png" /></p>
-<p>metasploit console 이다.</p>
-<p><img alt="" src="/images/nethunter08.png" /></p>
-<p>만약 실행이 안되면 <kbd>msfdb init</kbd>을 해주거나
-넷헌터 앱 내의 서비스들을 <code>Start at Boot</code> 해주면 된다.</p>
-<h2 id="gui">난 GUI도 쓰고 싶어.</h2>
-<p>조그만 화면의 스마트폰으로 GUI를 쓸 일이 있을 것 같진 않지만 혹시 큰 화면에 미러링하거나 키보드 마우스를 연결해서 마치 노트북처럼 사용할 수도 있으려나.<br />
-넷헌터 GUI는 NetHunter KeX로 제공해주는데 VNCServer를 구동하여 VNCClient로 붙어 화면을 보는 방식이다.</p>
-<p>Nethunter 앱에서 KeX Manager 메뉴로 들어가 서버를 설정해준 후 시작한다.</p>
-<p><img alt="" src="/images/nethunter09.png" /></p>
-<p>그리고 NetHunter Kex 앱을 실행하여 접속하면 GUI 등장.</p>
-<p><img alt="" src="/images/nethunter10.png" /></p>
-<p><img alt="" src="/images/nethunter11.jpg" /></p>
-<p>하지만 검정 화면 콘솔의 간지를 이길 순 없다.</p>
+</div>
+</li>
+</ol>
 <h2 id="_4">결론</h2>
-<p>아무 루팅 기기에 넷헌터 설치법</p>
-<ul>
+<div class="admonition note">
+<p class="admonition-title">넷헌터 설치법</p>
+<ol>
 <li>이미지 파일의 압축을 풀어 <kbd>data/app/</kbd> 경로의 apk파일들 설치</li>
-<li><kbd>/data/data/com.offsec.nethunter/files/scripts</kbd> 경로의 파일들을
-<kbd>/system/bin</kbd>로 복사</li>
-<li>Nethunter 앱을 실행하여 Kali Chroot Manager 메뉴에서 Chroot를 Install </li>
+<li><kbd>/data/data/com.offsec.nethunter/files/scripts</kbd> 경로의 파일들을 <kbd>/system/bin</kbd>로 복사</li>
+<li>Nethunter 앱을 실행하여 <code>Kali Chroot Manager</code> 메뉴에서 <code>Chroot</code> 설치</li>
 <li>터미널에서 넷헌터 설치<kbd>apt-get install kali-linux-nethunter</kbd></li>
-</ul>
+</ol>
+</div>
 <p>끝.</p>
                 
               
@@ -944,6 +917,8 @@
     
     
       <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

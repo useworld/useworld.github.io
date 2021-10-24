@@ -372,20 +372,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Frida/devicenotfound/" class="md-nav__link">
-        device not found
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Frida/fridaserverios/" class="md-nav__link">
         iOS frida-server 설치하기
       </a>
@@ -415,7 +401,7 @@
   
     <li class="md-nav__item">
       <a href="../../Frida/vscodefrida/" class="md-nav__link">
-        Script 편하게 짜는 방법
+        Script 자동완성
       </a>
     </li>
   
@@ -643,7 +629,7 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    정리
+    결론
   </a>
   
 </li>
@@ -767,7 +753,7 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    정리
+    결론
   </a>
   
 </li>
@@ -797,11 +783,11 @@
 <p>결론부터 말하면 iOS 버전에 따라 저장경로가 다르다.</p>
 <ul>
 <li>
-<p>iOS 8 미만 
+<p>iOS 8 미만<br />
 <kbd>/var/mobile/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/</kbd></p>
 </li>
 <li>
-<p>iOS 8 이상 13 미만
+<p>iOS 8 이상 13 미만<br />
 <kbd>/var/mobile/Containers/Data/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/</kbd></p>
 </li>
 <li>
@@ -818,29 +804,29 @@
 </ul>
 <p>보통 앱 바이너리가 저장되어 있는 <kbd>/var/containers/Bundle/Application/</kbd>
 경로에서 검색 해보면 원하는 앱의 이름으로 BundleID 확인이 가능하다.</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span><span class="nb">pwd</span>
+<div class="highlight"><pre><span></span><code><span class="gp">#</span><span class="nb">pwd</span>
 <span class="go">/var/containers/Bundle/Application</span>
 
-<span class="gp"># </span>find ./ -name Useworld
+<span class="gp">#</span>find ./ -name Useworld
 <span class="go">./0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/Useworld.app/Useworld</span>
 
-<span class="gp"># </span>ls 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+<span class="gp">#</span>ls 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
 <span class="go">BundleMetadata.plist  Useworld.app/</span>
 
 <span class="gp">#</span>_
 </code></pre></div>
 <p>내 앱의 BundleID는 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA 이거구나.</p>
 <p>그러면 스냅샷이 저장되는 <kbd>/var/mobile/Conatiners/Data/Application/</kbd>로 가보자.</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span><span class="nb">pwd</span>
+<div class="highlight"><pre><span></span><code><span class="gp">#</span><span class="nb">pwd</span>
 <span class="go">/var/mobile/Containers/Data/Application</span>
 
-<span class="gp"># </span><span class="nb">cd</span> 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+<span class="gp">#</span><span class="nb">cd</span> 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
 <span class="go">-sh: cd: 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/: No such file or directory</span>
 
-<span class="gp"># </span>ls 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
+<span class="gp">#</span>ls 0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/
 <span class="go">ls: cannot access &#39;0C60E8AE-54CF-4322-871E-7DC4EE39E6AA/&#39;: No such file or directory</span>
 
-<span class="gp"># </span>find ./ -name Useworld
+<span class="gp">#</span>find ./ -name Useworld
 
 <span class="gp">#</span>_
 </code></pre></div>
@@ -851,15 +837,15 @@
 폴더 내에  <kbd>.com.apple.mobile_container_manager.metadata.plist</kbd> 파일에서 <code>PackageName</code>에 포함된 문자열로 찾으면 된다.<br />
 <code>PackageName</code>은 위에서 말했듯이 com.useworld.test 같은 패키지명이다.</p>
 <p><kbd>grep [문자열] */.com.apple.mobile_container_manager.metadata.plist</kbd></p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span><span class="nb">pwd</span>
+<div class="highlight"><pre><span></span><code><span class="gp">#</span><span class="nb">pwd</span>
 <span class="go">/var/mobile/Containers/Data/Application</span>
 
-<span class="gp"># </span>grep useworld */.com.apple.mobile_container_manager.metadata.plist
+<span class="gp">#</span>grep useworld */.com.apple.mobile_container_manager.metadata.plist
 <span class="go">Binary file 492BD434-B2C2-4FA9-92B9-FFD999EE8C98/.com.apple.mobile_container_manager.metadata.plist matches</span>
 
-<span class="gp"># </span><span class="nb">cd</span> 492BD434-B2C2-4FA9-92B9-FFD999EE8C98/
+<span class="gp">#</span><span class="nb">cd</span> 492BD434-B2C2-4FA9-92B9-FFD999EE8C98/
 
-<span class="gp"># </span>cat .com.apple.mobil e_container_manager.metadata.plist
+<span class="gp">#</span>cat .com.apple.mobil e_container_manager.metadata.plist
 <span class="go">bplist00�☺☻♥♦♣◄↕_►↕MCMMetadataVersion_►§MCMMetadataIdentifier_►↨MCMMetadataUserIdentity_►↨MCMMetadataContentClass_►☼MCMMetadataUUIDQ2_►↨com.useworld.test�</span>
 <span class="go">♫♫☼►♠XposixUIDXposixGID_►‼personaUniqueStringTtypeWversion◄☺�_►$5C0C954D-8251-4BA6-8ACE-7DECCE6A2F52► ►☻_►$3D70C1E6-879C-4E7D-8490-5D536A8AE545 ‼ ( @ Z t � � � � � � � � � �☺♀☺♫☺►      ☻☺       ‼              ☺7</span>
 
@@ -869,10 +855,10 @@
 <code>492BD434-B2C2-4FA9-92B9-FFD999EE8C98</code> 이거였다.</p>
 <h2 id="_5">확인</h2>
 <p>이제 스냅샷 저장 경로에서 확인한다.</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span><span class="nb">pwd</span>
+<div class="highlight"><pre><span></span><code><span class="gp">#</span><span class="nb">pwd</span>
 <span class="go">/var/mobile/Containers/Data/Application/492BD434-B2C2-4FA9-92B9-FFD999EE8C98/Library/SplashBoard/Snapshots/sceneID:com.useworld.test-default</span>
 
-<span class="gp"># </span>ls
+<span class="gp">#</span>ls
 <span class="go">38543746-8F29-4BFC-AB0A-36BE3986A7F8\@2x.ktx  5118E936-461F-4C12-9147-8C8471A09656\@2x.ktx  downscaled/</span>
 
 <span class="gp">#</span>_
@@ -881,14 +867,14 @@
 익숙치 않은 확장자인데 Mac에서 열어보면 이미지 확인이 가능하다.</p>
 <div class="admonition warning">
 <p class="admonition-title">ktx 이미지 확인</p>
-<p>현재까지 저 ktx 이미지 파일을 Mac이 아닌 Windows에서 확인하는 방법은 찾을 수 없었다.    </p>
+<p>현재까지 ktx 이미지 파일을 Mac이 아닌 Windows에서 확인하는 방법은 찾을 수 없었다.    </p>
 </div>
-<h2 id="_6">정리</h2>
+<h2 id="_6">결론</h2>
 <div class="admonition note">
 <p class="admonition-title">아이폰 백그라운드 스냅샷 저장 경로</p>
 <ul>
 <li>
-<p>iOS 8 미만 <br />
+<p>iOS 8 미만  <br />
 <kbd>/var/mobile/Application/[BundleID]/Library/Caches/Snapshots/[PackageName]/</kbd></p>
 </li>
 <li>
@@ -903,7 +889,8 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">BundleID 찾기</p>
-<p><kbd>grep [패키지명에 포함된 문자열] */.com.apple.mobile_container_manager.metadata.plist</kbd></p>
+<div class="highlight"><pre><span></span><code><span class="go">grep [패키지명에 포함된 문자열] */.com.apple.mobile_container_manager.metadata.plist</span>
+</code></pre></div>
 </div>
 <p>안에 들어있는 <code>ktx</code> 파일이 범인이다.</p>
 <p>끝.</p>
@@ -986,6 +973,8 @@
     
     
       <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

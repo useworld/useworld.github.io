@@ -372,20 +372,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Frida/devicenotfound/" class="md-nav__link">
-        device not found
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Frida/fridaserverios/" class="md-nav__link">
         iOS frida-server 설치하기
       </a>
@@ -415,7 +401,7 @@
   
     <li class="md-nav__item">
       <a href="../../Frida/vscodefrida/" class="md-nav__link">
-        Script 편하게 짜는 방법
+        Script 자동완성
       </a>
     </li>
   
@@ -830,12 +816,12 @@
 네트워크 속성에서 Wi-Fi 이름과 비밀번호를 설정하여<br />
 모바일에서 해당 이름의 Wi-Fi에 비밀번호를 입력 후 접속하면 된다.  </p>
 <h2 id="_6">왜 빨라질까</h2>
-<p>동일 공유기의 Wi-Fi 연결 시 다음의 과정을 거칠 것 같다.  </p>
-<div class="admonition note">
+<p>공유기 Wi-Fi에 연결하여 Proxy 설정 시 다음의 과정을 거칠 것 같다.  </p>
+<div class="admonition info">
 <p class="admonition-title">요청 시</p>
 <p>모바일 &gt; 공유기 &gt; PC(Proxy) &gt; 공유기 &gt; 외부</p>
 </div>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">응답 시</p>
 <p>외부 &gt; 공유기 &gt; PC(Proxy) &gt; 공유기 &gt; 모바일</p>
 </div>
@@ -843,6 +829,13 @@
 공유기를 거치는 과정이 줄어들어서 그런 것이 아닐까 추측된다.<br />
 (아닐 수도 있다.)</p>
 <h2 id="_7">결론</h2>
+<div class="admonition note">
+<p class="admonition-title">모바일 Proxy 빠르게 하는 방법</p>
+<ol>
+<li>인터넷이 연결된 PC에서 핫스팟 켜기</li>
+<li>모바일을 핫스팟에 Wi-Fi 연결    </li>
+</ol>
+</div>
 <p>핫스팟을 사용할 수 없는 환경이 대부분이긴 하겠지만<br />
 만약 제약이 없을 경우 꼭 한번 해보길 바란다.<br />
 속도가 신세계다.</p>
@@ -870,7 +863,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../Frida/vscodefrida/" class="md-footer__link md-footer__link--prev" aria-label="이전: Script 편하게 짜는 방법" rel="prev">
+        <a href="../../Frida/vscodefrida/" class="md-footer__link md-footer__link--prev" aria-label="이전: Script 자동완성" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -879,7 +872,7 @@
               <span class="md-footer__direction">
                 이전
               </span>
-              Script 편하게 짜는 방법
+              Script 자동완성
             </div>
           </div>
         </a>
@@ -926,6 +919,8 @@
     
     
       <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>
