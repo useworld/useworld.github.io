@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://useworld.github.io/iOS/webview/">
+        <link rel="canonical" href="https://useworld.github.io/Android/scrcpy/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
-        <title>Swift로 WebView 구현하기 - Useworld</title>
+        <title>안드로이드 원격 제어 - Useworld</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#swift-webview" class="md-skip">
+        <a href="#_1" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Swift로 WebView 구현하기
+              안드로이드 원격 제어
             
           </span>
         </div>
@@ -231,12 +231,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -259,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/nethunter/" class="md-nav__link">
+      <a href="../nethunter/" class="md-nav__link">
         Kali Linux(Nethunter) 설치
       </a>
     </li>
@@ -271,11 +273,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Android/scrcpy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          안드로이드 원격 제어
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         안드로이드 원격 제어
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    원격 제어
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    요구 사항
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrcpy" class="md-nav__link">
+    Scrcpy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -287,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/sslpinning/" class="md-nav__link">
+      <a href="../sslpinning/" class="md-nav__link">
         SSL Pinning 우회
       </a>
     </li>
@@ -679,14 +750,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
@@ -709,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../background/" class="md-nav__link">
+      <a href="../../iOS/background/" class="md-nav__link">
         백그라운드 스냅샷 저장 경로
       </a>
     </li>
@@ -723,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgsnapshot/" class="md-nav__link">
+      <a href="../../iOS/bgsnapshot/" class="md-nav__link">
         Swift 백그라운드 스냅샷 보안
       </a>
     </li>
@@ -737,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hosts/" class="md-nav__link">
+      <a href="../../iOS/hosts/" class="md-nav__link">
         hosts 변경 적용하기
       </a>
     </li>
@@ -749,80 +818,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Swift로 WebView 구현하기
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../iOS/webview/" class="md-nav__link">
         Swift로 WebView 구현하기
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    웹 페이지 표시
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webview" class="md-nav__link">
-    WebView
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webkit-view" class="md-nav__link">
-    Webkit View
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post-method" class="md-nav__link">
-    POST Method
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    결론
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -861,35 +861,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    웹 페이지 표시
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webview" class="md-nav__link">
-    WebView
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webkit-view" class="md-nav__link">
-    Webkit View
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post-method" class="md-nav__link">
-    POST Method
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    원격 제어
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    요구 사항
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrcpy" class="md-nav__link">
+    Scrcpy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     결론
   </a>
   
@@ -909,89 +909,53 @@
                 
 
 
-<h1 id="swift-webview">Swift로 WebView 구현하기</h1>
-<h2 id="_1">웹 페이지 표시</h2>
-<p>iOS 앱에서 웹페이지를 보여주려면 몇 가지 방법이 있다.</p>
-<div class="admonition note">
-<p class="admonition-title">iOS 웹 표시 방법</p>
+<h1 id="_1">안드로이드 원격 제어</h1>
+<h2 id="_2">서론</h2>
+<p>안드로이드 앱 진단 시 PC에 USB로 연결하게 되는데<br />
+폰 누르다가 키보드 치다가 여간 귀찮은게 아니다.  </p>
+<h2 id="_3">원격 제어</h2>
+<p>안드로이드를 원격제어하는 프로그램들은 많다.<br />
+Mirroid라던가 Teamviewer, 이 외에 유료 프로그램들도 있지만<br />
+adb가 안되거나 와이파이를 통해야 하는 등 나사가 하나씩 빠져있다.  </p>
+<h2 id="_4">요구 사항</h2>
 <ol>
-<li>WebView를 사용해서 앱 내부에서 표시</li>
-<li>앱이 Safari를 호출해서 해당 URL을 열기</li>
-<li>SFSafariViewController로 앱 안에서 SafariView로 열기</li>
+<li>가볍고</li>
+<li>무료에</li>
+<li>별도의 설치가 필요 없으며  </li>
+<li>터치 대신 키보드, 마우스 입력을 할 수 있고</li>
+<li>WI-fi나 IP 기반이 아닌 USB로 연결하며  </li>
+<li>adb 사용에도 문제가 없는  </li>
+</ol>
+<p>도구가 필요하다.<br />
+(공짜를 원하면서 바라는게 많다.)</p>
+<h2 id="scrcpy">Scrcpy</h2>
+<p>그래서 찾은 툴이 <a href="https://github.com/Genymobile/scrcpy#translations">Scrcpy</a>다.<br />
+친절하게 <a href="https://github.com/Genymobile/scrcpy/blob/master/README.ko.md">한글 매뉴얼</a>도 제공한다.<br />
+흔히 알고 있는 Genymotion 에뮬레이터를 개발한 곳에서 만든 듯 하다.</p>
+<div class="admonition info">
+<p class="admonition-title">Scrcpy 사용법</p>
+<ol>
+<li>Scrcpy를 다운로드 받아 압축을 푼다. <a href="https://github.com/Genymobile/scrcpy/releases/download/v1.24/scrcpy-win64-v1.24.zip">다운로드 링크</a></li>
+<li>안드로이드 폰에 USB연결 후 USB 디버깅을 활성화한다.</li>
+<li>scrcpy.exe 실행(콘솔창이 싫으면 scrcpy-noconsole.vbs 실행)</li>
+<li>바로 간결한 폰화면 등장</li>
 </ol>
 </div>
-<p>각각 장단점이 있기에 사용할 용도에 따라 선택해서 쓰면 되겠다.<br />
-이번에는 WebView를 사용하려고 한다.</p>
-<h2 id="webview">WebView</h2>
-<p>우선 웹뷰를 사용하기 위해 ViewController를 하나 생성하였다.<br />
-그리고 UIWebView를 사용하려고 했더니 이런..<br />
-<a href="https://developer.apple.com/documentation/uikit/uiwebview">애플 개발자 사이트</a>에 알아보니 Deprecated라고 한다.<br />
-그래서 찾아보니 iOS 8부터 사용 가능한 WKWebView를 쓰면 될 것 같다.</p>
-<h2 id="webkit-view">Webkit View</h2>
-<p>Storyboard에서 WebView를 추가했더니 바로 에러가 났다.</p>
-<div class="admonition danger">
-<p>WKWebView before iOS 11.0 (NSCoding support was broken in previous versions)</p>
+<p><img alt="" src="/images/scrcpy01.png" /></p>
+<p>adb까지 포함되어 있어 그대로 사용이 가능하다.</p>
+<div class="admonition warning">
+<p class="admonition-title">버전 오류로 adb가 안될 때</p>
+<p>만약 <code>minimal ADB and Fastboot</code> 같은 툴을 사용해서 버전 충돌 시 압축해제 폴더 내의 adb를 삭제하면 된다.</p>
 </div>
-<p>그렇다. 나는 Deployment Target을 8.0으로 작업하고 있기에 안되는 것이었다.<br />
-혹시 모를 호환성 때문에 낮은 버전 기준으로 개발을 하고 있는데 이것때문에 겪은 불편이 한두가지가 아니다.  </p>
-<p>그래서 코드로 직접 만들어 넣었다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">WebKit</span>
-
-<span class="kd">class</span> <span class="nc">WebViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="bp">WKNavigationDelegate</span><span class="p">,</span>
-    <span class="bp">WKUIDelegate</span> <span class="p">{</span>
-
-    <span class="kd">var</span> <span class="nv">webView</span><span class="p">:</span> <span class="bp">WKWebView</span><span class="p">!</span>
-
-    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">loadView</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kc">super</span><span class="p">.</span><span class="n">loadView</span><span class="p">()</span>
-        <span class="n">webView</span> <span class="p">=</span> <span class="bp">WKWebView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">)</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">view</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">webView</span><span class="p">!</span>
-    <span class="p">}</span>
-
-    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
-        <span class="kd">let</span> <span class="nv">sURL</span> <span class="p">=</span> <span class="s">&quot;주소&quot;</span>
-        <span class="kd">let</span> <span class="nv">uURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n">sURL</span><span class="p">)</span>
-        <span class="kd">var</span> <span class="nv">request</span> <span class="p">=</span> <span class="n">URLRequest</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">uURL</span><span class="p">!)</span>
-        <span class="n">webView</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>해당 주소로 접속해서 웹 페이지가 잘 나온다.</p>
-<h2 id="post-method">POST Method</h2>
-<p>웹뷰에 POST 방식으로 파라미터를 전달하고 싶어졌다.<br />
-다음 코드를 위의 <code>webView.load(request)</code> 앞에 추가하면 될 것 같았다.<br />
-파라미터는 <code>a=1&amp;b=2</code> 이런 String으로 해도 되고 Dictionary 타입으로 지정하고 나서 형변환해도 된다.<br />
-이번 테스트는 문자열로 했다.</p>
-<div class="highlight"><pre><span></span><code><span class="n">request</span><span class="p">.</span><span class="n">httpMethod</span> <span class="p">=</span> <span class="s">&quot;POST&quot;</span>
-<span class="kd">let</span> <span class="nv">postString</span> <span class="p">=</span> <span class="s">&quot;파라미터&quot;</span>
-<span class="n">request</span><span class="p">.</span><span class="n">httpBody</span> <span class="p">=</span> <span class="n">postString</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="n">using</span><span class="p">:</span> <span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
-</code></pre></div>
-<p>에러는 나지 않았지만 뭔가 이상했다.<br />
-웹 서버에서 확인해 보니 앱에서 아무런 파라미터도 날리지 않았다.<br />
-또 열심히 <a href="https://bugs.webkit.org/show_bug.cgi?id=140188">찾아보니</a> WKWebkit에서 POST 요청 시 HTTP Body를 씹는 버그가 있다고 한다.  </p>
-<p>여러가지 방법이 있었는데 가장 쉽고 간단한 방법을 선택했다.<br />
-보아하니 content-type 설정이 누락되어 안된다는 것 같았다.</p>
-<div class="highlight"><pre><span></span><code><span class="n">request</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
-    <span class="n">forHTTPHeaderField</span><span class="p">:</span> <span class="s">&quot;Content-Type&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>요걸 추가하면 될 것 같았다.</p>
-<h2 id="_2">결론</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
-    <span class="kd">let</span> <span class="nv">sURL</span> <span class="p">=</span> <span class="s">&quot;주소&quot;</span>
-    <span class="kd">let</span> <span class="nv">uURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n">sURL</span><span class="p">)</span>
-    <span class="kd">var</span> <span class="nv">request</span> <span class="p">=</span> <span class="n">URLRequest</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">uURL</span><span class="p">!)</span>
-    <span class="n">request</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
-        <span class="n">forHTTPHeaderField</span><span class="p">:</span> <span class="s">&quot;Content-Type&quot;</span><span class="p">)</span>
-    <span class="n">request</span><span class="p">.</span><span class="n">httpMethod</span> <span class="p">=</span> <span class="s">&quot;POST&quot;</span>
-    <span class="kd">let</span> <span class="nv">postString</span> <span class="p">=</span> <span class="s">&quot;파라미터&quot;</span>
-    <span class="n">request</span><span class="p">.</span><span class="n">httpBody</span> <span class="p">=</span> <span class="n">postString</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="n">using</span><span class="p">:</span> <span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
-    <span class="n">webView</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>코드는 요렇게 되겠다.<br />
-테스트 결과 성공했다.</p>
+<h2 id="_5">결론</h2>
+<div class="admonition note">
+<p class="admonition-title">스크린샷의 게임</p>
+<ol>
+<li>Ant Defense - 디펜스 게임 <a href="https://play.google.com/store/apps/details?id=ksy.useworlds.antdefense">링크</a></li>
+<li>Mino Hunter - 슈팅 게임 <a href="https://play.google.com/store/apps/details?id=ksy.useworlds.minohunter">링크</a></li>
+<li>Banshee Runner - 횡스크롤 러너 게임 <a href="https://play.google.com/store/apps/details?id=com.useworld.BansheeRunner">링크</a></li>
+</ol>
+</div>
 <p>끝.</p>
 
   <hr>
@@ -999,7 +963,7 @@
   <small>
     
       마지막 업데이트:
-      2021-10-17
+      2022-05-06
     
   </small>
 </div>
@@ -1016,7 +980,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../hosts/" class="md-footer__link md-footer__link--prev" aria-label="이전: hosts 변경 적용하기" rel="prev">
+        <a href="../nethunter/" class="md-footer__link md-footer__link--prev" aria-label="이전: Kali Linux(Nethunter) 설치" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1025,11 +989,26 @@
               <span class="md-footer__direction">
                 이전
               </span>
-              hosts 변경 적용하기
+              Kali Linux(Nethunter) 설치
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../sslpinning/" class="md-footer__link md-footer__link--next" aria-label="다음: SSL Pinning 우회" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              SSL Pinning 우회
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
