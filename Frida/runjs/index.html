@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://useworld.github.io/iOS/webview/">
+        <link rel="canonical" href="https://useworld.github.io/Frida/runjs/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
-        <title>Swift로 WebView 구현하기 - Useworld</title>
+        <title>js 파일 실행하기 - Useworld</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#swift-webview" class="md-skip">
+        <a href="#js" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Swift로 WebView 구현하기
+              js 파일 실행하기
             
           </span>
         </div>
@@ -445,12 +445,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -473,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Frida/fridaserverios/" class="md-nav__link">
+      <a href="../fridaserverios/" class="md-nav__link">
         iOS frida-server 설치하기
       </a>
     </li>
@@ -487,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Frida/return/" class="md-nav__link">
+      <a href="../return/" class="md-nav__link">
         Return 값 바꾸기
       </a>
     </li>
@@ -499,11 +501,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Frida/runjs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          js 파일 실행하기
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         js 파일 실행하기
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-highlight" class="md-nav__link">
+    Syntax Highlight
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-frida-cli" class="md-nav__link">
+    방법 1. frida CLI 사용
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-js-py" class="md-nav__link">
+    방법 2. js 파일을 불러오는 py 코드 짜기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -515,7 +586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Frida/vscodefrida/" class="md-nav__link">
+      <a href="../vscodefrida/" class="md-nav__link">
         Script 자동완성
       </a>
     </li>
@@ -693,14 +764,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
@@ -723,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../background/" class="md-nav__link">
+      <a href="../../iOS/background/" class="md-nav__link">
         백그라운드 스냅샷 저장 경로
       </a>
     </li>
@@ -737,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgsnapshot/" class="md-nav__link">
+      <a href="../../iOS/bgsnapshot/" class="md-nav__link">
         Swift 백그라운드 스냅샷 보안
       </a>
     </li>
@@ -751,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hosts/" class="md-nav__link">
+      <a href="../../iOS/hosts/" class="md-nav__link">
         hosts 변경 적용하기
       </a>
     </li>
@@ -763,80 +832,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Swift로 WebView 구현하기
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../iOS/webview/" class="md-nav__link">
         Swift로 WebView 구현하기
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    웹 페이지 표시
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webview" class="md-nav__link">
-    WebView
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webkit-view" class="md-nav__link">
-    Webkit View
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post-method" class="md-nav__link">
-    POST Method
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    결론
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -876,28 +876,28 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    웹 페이지 표시
+    서론
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#webview" class="md-nav__link">
-    WebView
+  <a href="#syntax-highlight" class="md-nav__link">
+    Syntax Highlight
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#webkit-view" class="md-nav__link">
-    Webkit View
+  <a href="#1-frida-cli" class="md-nav__link">
+    방법 1. frida CLI 사용
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#post-method" class="md-nav__link">
-    POST Method
+  <a href="#2-js-py" class="md-nav__link">
+    방법 2. js 파일을 불러오는 py 코드 짜기
   </a>
   
 </li>
@@ -923,89 +923,125 @@
                 
 
 
-<h1 id="swift-webview">Swift로 WebView 구현하기</h1>
-<h2 id="_1">웹 페이지 표시</h2>
-<p>iOS 앱에서 웹페이지를 보여주려면 몇 가지 방법이 있다.</p>
+<h1 id="js">js 파일 실행하기</h1>
+<h2 id="_1">서론</h2>
+<p>Frida Script는 Javscript API를 이용하여 코딩하고 실행하게 된다.<br />
+하지만 python 코드 내의 Javascript는 문자열이기에<br />
+에디터의 Syntax Highlight가 적용되지 않는다.<br />
+앱을 Spawn하면서 js 파일을 불러오는 방법에 대해 소개한다.</p>
+<h2 id="syntax-highlight">Syntax Highlight</h2>
+<p>아래의 코드는 <a href="https://frida.re/docs/examples/android/">공식 Frida 사이트</a>의 안드로이드 Example이다.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">frida</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">message</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;send&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[*] </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="p">[</span><span class="s1">&#39;payload&#39;</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="n">jscode</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Java.perform(function () {</span>
+<span class="s2">  // Function to hook is defined here</span>
+<span class="s2">  var MainActivity = Java.use(&#39;com.example.seccon2015.rock_paper_scissors.MainActivity&#39;);</span>
+
+<span class="s2">  // Whenever button is clicked</span>
+<span class="s2">  var onClick = MainActivity.onClick;</span>
+<span class="s2">  onClick.implementation = function (v) {</span>
+<span class="s2">    // Show a message to know that the function got called</span>
+<span class="s2">    send(&#39;onClick&#39;);</span>
+
+<span class="s2">    // Call the original onClick handler</span>
+<span class="s2">    onClick.call(this, v);</span>
+
+<span class="s2">    // Set our values after running the original onClick handler</span>
+<span class="s2">    this.m.value = 0;</span>
+<span class="s2">    this.n.value = 1;</span>
+<span class="s2">    this.cnt.value = 999;</span>
+
+<span class="s2">    // Log to the console that it&#39;s done, and we should have the flag!</span>
+<span class="s2">    console.log(&#39;Done:&#39; + JSON.stringify(this.cnt));</span>
+<span class="s2">  };</span>
+<span class="s2">});</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">process</span> <span class="o">=</span> <span class="n">frida</span><span class="o">.</span><span class="n">get_usb_device</span><span class="p">()</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="s1">&#39;com.example.seccon2015.rock_paper_scissors&#39;</span><span class="p">)</span>
+<span class="n">script</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">create_script</span><span class="p">(</span><span class="n">jscode</span><span class="p">)</span>
+<span class="n">script</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="n">on_message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[*] Running CTF&#39;</span><span class="p">)</span>
+<span class="n">script</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div>
+<p>에디터에서 위처럼 Javascript 코드가 Syntax Highlighting이 되지 않는다.<br />
+jscode부분만 따로 보면</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Java</span><span class="p">.</span><span class="nx">perform</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Function to hook is defined here</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">MainActivity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Java</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;com.example.seccon2015.rock_paper_scissors.MainActivity&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// Whenever button is clicked</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MainActivity</span><span class="p">.</span><span class="nx">onClick</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">onClick</span><span class="p">.</span><span class="nx">implementation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Show a message to know that the function got called</span><span class="w"></span>
+<span class="w">    </span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;onClick&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Call the original onClick handler</span><span class="w"></span>
+<span class="w">    </span><span class="nx">onClick</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Set our values after running the original onClick handler</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">m</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">n</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">cnt</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">999</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Log to the console that it&#39;s done, and we should have the flag!</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Done:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cnt</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="p">};</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</code></pre></div>
+<p>Syntax Highlighting이 되어 이렇게 예쁘게(?) 보인다.<br />
+그래서 보통 js파일을 따로 만드는 것이 편하다.</p>
+<h2 id="1-frida-cli">방법 1. frida CLI 사용</h2>
+<p><code>frida-tools</code>를 설치했다면 <code>frida</code>를 실행하여 frida CLI 사용이 가능하다.</p>
+<div class="highlight"><pre><span></span><code><span class="go">&gt;frida -U -l [js파일] -f [앱] --no-pause</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">옵션 설명</p>
+<p>-U, --usb : USB로 연결<br />
+-l, --load : 스크립트 불러오기<br />
+-f, --file : 해당 앱 Spawn 하기<br />
+--no-pause : 자동 시작  </p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">주의</p>
+<p>frida 실행이 안되면 <code>pip install frida-tools</code>로 설치하자.<br />
+--no-pause 옵션이 없으면 앱이 계속 멈춰 있는다.</p>
+</div>
+<h2 id="2-js-py">방법 2. js 파일을 불러오는 py 코드 짜기</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">frida</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="n">bundle</span> <span class="o">=</span> <span class="s2">&quot;[앱]&quot;</span>
+<span class="n">scriptfile</span> <span class="o">=</span> <span class="s2">&quot;[js파일]&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./&quot;</span> <span class="o">+</span> <span class="n">scriptfile</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">script</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">frida</span><span class="o">.</span><span class="n">get_usb_device</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">target_process</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="n">bundle</span><span class="p">)</span>
+<span class="n">process_session</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">target_process</span><span class="p">)</span>
+
+<span class="n">script</span> <span class="o">=</span> <span class="n">process_session</span><span class="o">.</span><span class="n">create_script</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
+<span class="n">script</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+<span class="n">device</span><span class="o">.</span><span class="n">resume</span><span class="p">(</span><span class="n">target_process</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div>
+<p>이 py 파일을 실행하면 동일한 결과를 얻을 수 있다.</p>
+<h2 id="_2">결론</h2>
 <div class="admonition note">
-<p class="admonition-title">iOS 웹 표시 방법</p>
+<p class="admonition-title">앱 Spawn, Frida js 파일 실행</p>
 <ol>
-<li>WebView를 사용해서 앱 내부에서 표시</li>
-<li>앱이 Safari를 호출해서 해당 URL을 열기</li>
-<li>SFSafariViewController로 앱 안에서 SafariView로 열기</li>
+<li>frida -U -l [js파일] -f [앱] --no-pause</li>
+<li>js 파일 읽는 py 실행</li>
 </ol>
 </div>
-<p>각각 장단점이 있기에 사용할 용도에 따라 선택해서 쓰면 되겠다.<br />
-이번에는 WebView를 사용하려고 한다.</p>
-<h2 id="webview">WebView</h2>
-<p>우선 웹뷰를 사용하기 위해 ViewController를 하나 생성하였다.<br />
-그리고 UIWebView를 사용하려고 했더니 이런..<br />
-<a href="https://developer.apple.com/documentation/uikit/uiwebview">애플 개발자 사이트</a>에 알아보니 Deprecated라고 한다.<br />
-그래서 찾아보니 iOS 8부터 사용 가능한 WKWebView를 쓰면 될 것 같다.</p>
-<h2 id="webkit-view">Webkit View</h2>
-<p>Storyboard에서 WebView를 추가했더니 바로 에러가 났다.</p>
-<div class="admonition danger">
-<p>WKWebView before iOS 11.0 (NSCoding support was broken in previous versions)</p>
-</div>
-<p>그렇다. 나는 Deployment Target을 8.0으로 작업하고 있기에 안되는 것이었다.<br />
-혹시 모를 호환성 때문에 낮은 버전 기준으로 개발을 하고 있는데 이것때문에 겪은 불편이 한두가지가 아니다.  </p>
-<p>그래서 코드로 직접 만들어 넣었다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">WebKit</span>
-
-<span class="kd">class</span> <span class="nc">WebViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="bp">WKNavigationDelegate</span><span class="p">,</span>
-    <span class="bp">WKUIDelegate</span> <span class="p">{</span>
-
-    <span class="kd">var</span> <span class="nv">webView</span><span class="p">:</span> <span class="bp">WKWebView</span><span class="p">!</span>
-
-    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">loadView</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kc">super</span><span class="p">.</span><span class="n">loadView</span><span class="p">()</span>
-        <span class="n">webView</span> <span class="p">=</span> <span class="bp">WKWebView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">)</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">view</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">webView</span><span class="p">!</span>
-    <span class="p">}</span>
-
-    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
-        <span class="kd">let</span> <span class="nv">sURL</span> <span class="p">=</span> <span class="s">&quot;주소&quot;</span>
-        <span class="kd">let</span> <span class="nv">uURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n">sURL</span><span class="p">)</span>
-        <span class="kd">var</span> <span class="nv">request</span> <span class="p">=</span> <span class="n">URLRequest</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">uURL</span><span class="p">!)</span>
-        <span class="n">webView</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>해당 주소로 접속해서 웹 페이지가 잘 나온다.</p>
-<h2 id="post-method">POST Method</h2>
-<p>웹뷰에 POST 방식으로 파라미터를 전달하고 싶어졌다.<br />
-다음 코드를 위의 <code>webView.load(request)</code> 앞에 추가하면 될 것 같았다.<br />
-파라미터는 <code>a=1&amp;b=2</code> 이런 String으로 해도 되고 Dictionary 타입으로 지정하고 나서 형변환해도 된다.<br />
-이번 테스트는 문자열로 했다.</p>
-<div class="highlight"><pre><span></span><code><span class="n">request</span><span class="p">.</span><span class="n">httpMethod</span> <span class="p">=</span> <span class="s">&quot;POST&quot;</span>
-<span class="kd">let</span> <span class="nv">postString</span> <span class="p">=</span> <span class="s">&quot;파라미터&quot;</span>
-<span class="n">request</span><span class="p">.</span><span class="n">httpBody</span> <span class="p">=</span> <span class="n">postString</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="n">using</span><span class="p">:</span> <span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
-</code></pre></div>
-<p>에러는 나지 않았지만 뭔가 이상했다.<br />
-웹 서버에서 확인해 보니 앱에서 아무런 파라미터도 날리지 않았다.<br />
-또 열심히 <a href="https://bugs.webkit.org/show_bug.cgi?id=140188">찾아보니</a> WKWebkit에서 POST 요청 시 HTTP Body를 씹는 버그가 있다고 한다.  </p>
-<p>여러가지 방법이 있었는데 가장 쉽고 간단한 방법을 선택했다.<br />
-보아하니 content-type 설정이 누락되어 안된다는 것 같았다.</p>
-<div class="highlight"><pre><span></span><code><span class="n">request</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
-    <span class="n">forHTTPHeaderField</span><span class="p">:</span> <span class="s">&quot;Content-Type&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>요걸 추가하면 될 것 같았다.</p>
-<h2 id="_2">결론</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
-    <span class="kd">let</span> <span class="nv">sURL</span> <span class="p">=</span> <span class="s">&quot;주소&quot;</span>
-    <span class="kd">let</span> <span class="nv">uURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n">sURL</span><span class="p">)</span>
-    <span class="kd">var</span> <span class="nv">request</span> <span class="p">=</span> <span class="n">URLRequest</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">uURL</span><span class="p">!)</span>
-    <span class="n">request</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
-        <span class="n">forHTTPHeaderField</span><span class="p">:</span> <span class="s">&quot;Content-Type&quot;</span><span class="p">)</span>
-    <span class="n">request</span><span class="p">.</span><span class="n">httpMethod</span> <span class="p">=</span> <span class="s">&quot;POST&quot;</span>
-    <span class="kd">let</span> <span class="nv">postString</span> <span class="p">=</span> <span class="s">&quot;파라미터&quot;</span>
-    <span class="n">request</span><span class="p">.</span><span class="n">httpBody</span> <span class="p">=</span> <span class="n">postString</span><span class="p">.</span><span class="n">data</span><span class="p">(</span><span class="n">using</span><span class="p">:</span> <span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
-    <span class="n">webView</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>코드는 요렇게 되겠다.<br />
-테스트 결과 성공했다.</p>
 <p>끝.</p>
 
   <hr>
@@ -1013,7 +1049,7 @@
   <small>
     
       마지막 업데이트:
-      2021-10-17
+      2022-05-06
     
   </small>
 </div>
@@ -1030,7 +1066,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../hosts/" class="md-footer__link md-footer__link--prev" aria-label="이전: hosts 변경 적용하기" rel="prev">
+        <a href="../return/" class="md-footer__link md-footer__link--prev" aria-label="이전: Return 값 바꾸기" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1039,11 +1075,26 @@
               <span class="md-footer__direction">
                 이전
               </span>
-              hosts 변경 적용하기
+              Return 값 바꾸기
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../vscodefrida/" class="md-footer__link md-footer__link--next" aria-label="다음: Script 자동완성" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              Script 자동완성
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
