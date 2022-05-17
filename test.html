@@ -6,7 +6,7 @@
         악성 외부 객체
 
         
-        <script>
+        <script>        
         var mapForm = document.createElement("form");
         mapForm.target = "Map";
         mapForm.method = "POST"; // or "post" if appropriate
@@ -46,6 +46,7 @@
         document.body.appendChild(mapForm);
     
         map = window.open("", "Map", "status=0,title=0,height=600,width=800,scrollbars=1");
+        map.document.domain = 'dapp-web.alp.uptn.io';
     
     if (map) {
         mapForm.submit();
