@@ -1,9 +1,23 @@
 <html>
-    <head>hack test</head>
+    <head>
+        <title>Hack Test</title></head>
+
     <body>
+        악성 외부 객체
+        <iframe
+            src="https://dapp-web.alp.uptn.io/"
+            name="uptnframe"
+            width="300px"
+            height="500px"
+            sandbox="allow-scripts allow-popups allow-same-origin">
+        </iframe>
         <script>
-            alert('test');
-            window.open("https://dapp-web.alp.uptn.io/main/");
+            function balanceAlert() {
+                var textarea = document.querySelector("iframe").contentWindow.document.querySelector(".balance");            
+                alert('잔고 : ' + textarea);
+            }
+            setTimeout(balanceAlert, 5);
+            // window.open("https://dapp-web.alp.uptn.io/main/");
         </script>
     </body>
 </html>
