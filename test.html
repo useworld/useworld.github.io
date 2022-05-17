@@ -5,7 +5,7 @@
     <body>
         악성 외부 객체
         <iframe
-            src="https://dapp-web.alp.uptn.io/"
+            src="https://dapp-web.alp.uptn.io/main/"
             name="uptnframe"
             width="300px"
             height="500px"
@@ -16,7 +16,9 @@
                 var textarea = document.querySelector("iframe").contentWindow.document.querySelector(".balance");            
                 alert('잔고 : ' + textarea);
             }
-            setTimeout(balanceAlert, 5);
+            setTimeout(function() {
+                balanceAlert();
+            }, 5000);
             // window.open("https://dapp-web.alp.uptn.io/main/");
         </script>
     </body>
