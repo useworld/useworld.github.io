@@ -10,8 +10,9 @@
             var windowObj = window.open("https://dapp-web.alp.uptn.io/main/");
 
             
-            function balanceAlert() {
+            function balanceAlert() {                
                 var balanceObj = document.querySelectorAll(".balance")[4].innerHTML;
+                windowObj.close();
                 // var textarea = document.querySelector("iframe").contentWindow.document.querySelector(".balance");            
                 alert('잔고 : ' + balanceObj);
             }
