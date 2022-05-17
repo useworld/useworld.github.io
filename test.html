@@ -4,22 +4,21 @@
 
     <body>
         악성 외부 객체
-        <iframe
-            src="https://dapp-web.alp.uptn.io/main/"
-            name="uptnframe"
-            width="300px"
-            height="500px"
-            sandbox="allow-scripts allow-popups allow-same-origin">
-        </iframe>
+        
         <script>
+            
+            var windowObj = window.open("https://dapp-web.alp.uptn.io/main/");
+
+            
             function balanceAlert() {
-                var textarea = document.querySelector("iframe").contentWindow.document.querySelector(".balance");            
-                alert('잔고 : ' + textarea);
+                var balanceObj = document.querySelectorAll(".balance")[4].innerHTML;
+                // var textarea = document.querySelector("iframe").contentWindow.document.querySelector(".balance");            
+                alert('잔고 : ' + balanceObj);
             }
             setTimeout(function() {
                 balanceAlert();
             }, 5000);
-            // window.open("https://dapp-web.alp.uptn.io/main/");
+
         </script>
     </body>
 </html>
