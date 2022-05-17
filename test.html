@@ -11,7 +11,11 @@
 
             
             function balanceAlert() {                
-                var balanceObj = document.querySelectorAll(".balance")[4].innerHTML;
+                try {
+                    var balanceObj = windowObj.document.querySelectorAll(".balance")[4].innerHTML;
+                } catch(e) {
+                    console.log(e);
+                }
                 windowObj.close();
                 // var textarea = document.querySelector("iframe").contentWindow.document.querySelector(".balance");            
                 alert('잔고 : ' + balanceObj);
