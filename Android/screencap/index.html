@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://useworld.github.io/iOS/bgsnapshot/">
+        <link rel="canonical" href="https://useworld.github.io/Android/screencap/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.2">
     
     
       
-        <title>[iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법 - Useworld</title>
+        <title>[Android] adb로 스크린샷 편하게 찍는 방법 - Useworld</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ios-swift" class="md-skip">
+        <a href="#android-adb" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              [iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법
+              [Android] adb로 스크린샷 편하게 찍는 방법
             
           </span>
         </div>
@@ -236,12 +236,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -264,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/hotspot/" class="md-nav__link">
+      <a href="../hotspot/" class="md-nav__link">
         [모바일] Proxy 설정 시 앱 속도를 빠르게 하는 방법
       </a>
     </li>
@@ -278,7 +280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/nethunter/" class="md-nav__link">
+      <a href="../nethunter/" class="md-nav__link">
         [Android] 스마트폰에 Kali Linux 설치하는 방법
       </a>
     </li>
@@ -292,7 +294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/nox9proxy/" class="md-nav__link">
+      <a href="../nox9proxy/" class="md-nav__link">
         [Android] Nox에서 Android 9 Wi-Fi Proxy 설정하는 방법
       </a>
     </li>
@@ -306,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/samfirm/" class="md-nav__link">
+      <a href="../samfirm/" class="md-nav__link">
         [Android] SamFirm.js로 삼성 스마트폰 펌웨어 편하게 다운받는 방법
       </a>
     </li>
@@ -320,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/samsung9rooting/" class="md-nav__link">
+      <a href="../samsung9rooting/" class="md-nav__link">
         [Android] 삼성 스마트폰 Android 9 이상 Magisk로 루팅하는 방법
       </a>
     </li>
@@ -334,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/scrcpy/" class="md-nav__link">
+      <a href="../scrcpy/" class="md-nav__link">
         [Android] Scrcpy로 PC에서 편하게 스마트폰 원격 제어하는 방법
       </a>
     </li>
@@ -346,11 +348,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Android/screencap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          [Android] adb로 스크린샷 편하게 찍는 방법
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         [Android] adb로 스크린샷 편하게 찍는 방법
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    미러링 프로그램 이용
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screencap" class="md-nav__link">
+    screencap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -362,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/sslpinning/" class="md-nav__link">
+      <a href="../sslpinning/" class="md-nav__link">
         [Android] Frida로 SSL Pinning 우회하는 방법
       </a>
     </li>
@@ -652,14 +716,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -682,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../background/" class="md-nav__link">
+      <a href="../../iOS/background/" class="md-nav__link">
         [iOS] 아이폰 백그라운드 스냅샷 파일 찾는 방법
       </a>
     </li>
@@ -694,101 +756,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          [iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../iOS/bgsnapshot/" class="md-nav__link">
         [iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    서론
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multitasking-switcher" class="md-nav__link">
-    Multitasking Switcher
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    보안 설정
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    이미지 교체
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#appdelegate" class="md-nav__link">
-    AppDelegate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenedelegate" class="md-nav__link">
-    SceneDelegate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenedelegate_1" class="md-nav__link">
-    SceneDelegate 제거
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    결론
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -800,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fridaserverios/" class="md-nav__link">
+      <a href="../../iOS/fridaserverios/" class="md-nav__link">
         [iOS] 공식 저장소에 없는 frida-server 설치하는 방법
       </a>
     </li>
@@ -814,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hosts/" class="md-nav__link">
+      <a href="../../iOS/hosts/" class="md-nav__link">
         [iOS] hosts 파일 내용 변경사항 적용하는 방법
       </a>
     </li>
@@ -828,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../webview/" class="md-nav__link">
+      <a href="../../iOS/webview/" class="md-nav__link">
         [iOS] Swift로 WebView 구현하는 방법
       </a>
     </li>
@@ -876,49 +848,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multitasking-switcher" class="md-nav__link">
-    Multitasking Switcher
+  <a href="#_2" class="md-nav__link">
+    미러링 프로그램 이용
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    보안 설정
+  <a href="#screencap" class="md-nav__link">
+    screencap
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    이미지 교체
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#appdelegate" class="md-nav__link">
-    AppDelegate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenedelegate" class="md-nav__link">
-    SceneDelegate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenedelegate_1" class="md-nav__link">
-    SceneDelegate 제거
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
     결론
   </a>
   
@@ -940,174 +884,30 @@
                   
 
 
-<h1 id="ios-swift">[iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법</h1>
+<h1 id="android-adb">[Android] adb로 스크린샷 편하게 찍는 방법</h1>
 <h2 id="_1">서론</h2>
-<p>모바일 앱 보안 관련해서 백그라운드 화면에 중요정보가 노출되면 취약하다고 한다.  </p>
-<div class="admonition info">
-<p class="admonition-title">중요정보</p>
-<ul>
-<li>고유식별정보(주민등록번호, 운전면허번호, 여권번호, 외국인 등록번호)</li>
-<li>비밀번호(로그인 비밀번호, 계좌 비밀번호, 공인인증서 비밀번호 등)</li>
-<li>신용정보(보안카드번호, OTP번호, 신용/체크 카드번호 등)</li>
-<li>기타 중요 정보</li>
-</ul>
-</div>
-<h2 id="multitasking-switcher">Multitasking Switcher</h2>
-<p>앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱이 들어가고 홈 화면이 나온다.<br />
-홈 화면이던 앱 실행중이던 홈버튼을 연속으로 두 번 누르면<br />
-현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다.<br />
-이 기능을 <code>Multitasking Switcher</code>라고 한다.</p>
-<h2 id="_2">보안 설정</h2>
-<p>앱 생명 주기는 <a href="https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle">애플 개발자 페이지</a>에 설명이 나와있다.<br />
-아이폰은 앱이 백그라운드에 갈 때마다 Screenshot을 저장하여<br />
-해당 이미지를 Multitasking Switcher에서 보여준다.<br />
-직접적으로 해당 스냅샷을 지정하거나 보안 옵션이 있는지 찾아보았는데 마땅히 없었다. </p>
-<h2 id="_3">이미지 교체</h2>
-<p>직접적으로 이미지 지정이 안된다면 다른 방법을 사용해야 한다.<br />
-앱이 백그라운드로 갈 때 원하는 이미지 파일로 스냅샷이 찍히도록 꼼수를 썼다. </p>
-<ol>
-<li>지정한 이미지파일로 UIImageView를 하나 생성한다.</li>
-<li>앱이 백그라운드에 진입 직전 현재 화면 위에 이미지뷰를 덮어버린다.</li>
-<li>다시 앱이 실행되면 해당 이미지뷰를 지운다.</li>
-</ol>
-<p>이러면 백그라운드 진입과 동시에 찍히는 스냅샷은 화면 위에 덮어 쓴 이미지뷰가 찍힐 것이다.</p>
-<h2 id="appdelegate">AppDelegate</h2>
-<p>인터넷을 검색해보니 <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate">애플 개발자 페이지</a>에 Responding to App Life-Cycle Events
-항목이 있었다.<br />
-AppDelegate에 applicationDidEnterBackground와 applicationWillEnterForeground를 사용하면 될 것 같다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">AppDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIApplicationDelegate</span> <span class="p">{</span>
-
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> 
-        <span class="n">didFinishLaunchingWithOptions</span> <span class="n">launchOptions</span><span class="p">:</span> <span class="p">[</span>
-        <span class="bp">UIApplication</span><span class="p">.</span><span class="n">LaunchOptionsKey</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">true</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Background!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">applicationWillEnterForeground</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Foreground!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
+<p>안드로이드 앱 진단 시 스크린샷을 찍을 경우<br />
+폰에서 찍은 뒤 저장소에서 PC로 복사하기가 여간 귀찮은게 아니다.  </p>
+<h2 id="_2">미러링 프로그램 이용</h2>
+<p><a href="/Android/scrcpy/">[Android] PC에서 스마트폰 원격 제어하는 방법(Scrcpy)</a>에 나와있는<br />
+<code>Scrcpy</code>등을 이용하여 PC로 미러링한 뒤 PC에서 스크린샷을 찍는 방법이 있다.  </p>
+<p><img alt="" src="/images/screencap01.png" /></p>
+<p>하지만 위에 창 이름이 나온다.<br />
+편집 툴로 잘라내야하는 귀찮음이 있다.</p>
+<h2 id="screencap">screencap</h2>
+<p>USB디버깅 모드로 adb가 연결되어 있다면<br />
+간단히 스크린샷을 찍어서 PC에 저장할 수 있다.  </p>
+<div class="highlight"><pre><span></span><code><span class="go">&gt; adb exec-out screencap -p &gt; [파일이름].png</span>
 </code></pre></div>
-<p>앱에서 홈버튼을 누르면 <code>Background!</code>라고 콘솔에 찍힐 것이고 다시 실행하면 <code>Foreground!</code>라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다.<br />
-하지만 콘솔창엔 아무것도 찍히지 않았다.</p>
-<h2 id="scenedelegate">SceneDelegate</h2>
-<p>한참을 삽질하다가 결국 알아냈다.<br />
-<a href="https://developer.apple.com/documentation/uikit/app_and_environment/scenes/specifying_the_scenes_your_app_supports">애플 개발자 페이지</a>에 써있기를 iOS 13 이상부터는 SceneDelegate를 사용한댄다.<br />
-이런... 개발중인 내 폰의 버전은 iOS 13.3.1이었다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">SceneDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIWindowSceneDelegate</span> <span class="p">{</span>
-
-    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="n">session</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> 
-        <span class="n">options</span> <span class="n">connectionOptions</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">_</span> <span class="p">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as</span><span class="p">?</span> <span class="bp">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">sceneWillEnterForeground</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Foreground!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">sceneDidEnterBackground</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Background!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-<p>다시 한 번 앱에서 홈버튼을 누르면 Background!라고 콘솔에 찍힐 것이고 다시 실행하면 Foreground!라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다. 드디어 콘솔창에 찍혔다!</p>
-<p>하지만 뭔가 애매했다. </p>
-<ul>
-<li>앱 실행 중 홈버튼을 한 번 눌러서 완전히 백그라운드로 돌아갔다가 다시 실행(O)</li>
-<li>앱 실행 중 홈버튼을 따닥 두 번 눌러서 Multitasking Switcher에서 진입 시(X)</li>
-</ul>
-<p>또 뭐가 문제인지 찾다가 모든 이벤트를 다 테스트 해본 결과 <code>sceneWillResignActive</code>, <code>sceneDidBecomeActive</code> 이 두 함수가 홈버튼을 한 번 눌러서 백그라운드로 갔다가 복귀하던, 홈버튼을 두 번 눌러서 바로 멀티태스킹을 하던 실행이 되는 것을 확인했다.</p>
-<p>이제 스냅샷으로 찍혀 줄 이미지 파일을 asset에 SecureBackground로 등록한 뒤 해당 이미지를 표시해 줄 이미지뷰를 백그라운드 갈때는 덮어 쓰고 다시 실행될때는 없애는 코드를 넣고 실행했다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">SceneDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIWindowSceneDelegate</span> <span class="p">{</span>
-
-    <span class="kd">var</span> <span class="nv">window</span><span class="p">:</span> <span class="bp">UIWindow</span><span class="p">?</span>
-    <span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">?</span>
-
-    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="n">session</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> 
-        <span class="n">options</span> <span class="n">connectionOptions</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">_</span> <span class="p">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as</span><span class="p">?</span> <span class="bp">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">sceneWillResignActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">imageView</span> <span class="p">=</span> <span class="bp">UIImageView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">window</span><span class="p">!.</span><span class="n">frame</span><span class="p">)</span>
-        <span class="n">imageView</span><span class="p">?.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="s">&quot;SecureBackground&quot;</span><span class="p">)</span>
-        <span class="n">window</span><span class="p">?.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">imageView</span><span class="p">!)</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">sceneDidBecomeActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">imageView</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-            <span class="n">imageView</span><span class="p">?.</span><span class="n">removeFromSuperview</span><span class="p">()</span>
-            <span class="n">imageView</span> <span class="p">=</span> <span class="kc">nil</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-<p>성공이다.</p>
-<h2 id="scenedelegate_1">SceneDelegate 제거</h2>
-<p>그런데 위 코드는 iOS 13 미만 버전대 기기에서는 또 작동을 안했다.<br />
-다시 AppDelegate에서 코드를 추가했더니 작동했다.<br />
-iOS 13보다 낮은 버전에서는 AppDelegate로 이벤트를 핸들링하기 때문에 똑같은 코드를 두번 넣어야 되게 생겼다.<br />
-어차피 나는 Scene을 사용하지 않아도 무방하기 때문에 아예 SceneDelegate를 삭제하고 설정하면 AppDelegate에서 해결되는게 아닌가 싶었다. </p>
-<ul>
-<li>info.plist에서 <kbd>Application Scene Manifest</kbd> 제거</li>
-<li>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 관련 코드들 주석처리나 삭제</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c1">// AppDelegate.swift</span>
-
-    <span class="c1">// </span><span class="cs">MARK:</span><span class="c1"> UISceneSession Lifecycle</span>
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">configurationForConnecting</span> 
-        <span class="n">connectingSceneSession</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> 
-        <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UISceneConfiguration</span> <span class="p">{</span>
-        <span class="c1">// Called when a new scene session is being created.</span>
-        <span class="c1">// Use this method to select a configuration to create the new scene with.</span>
-        <span class="k">return</span> <span class="bp">UISceneConfiguration</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Default Configuration&quot;</span><span class="p">,</span>
-         <span class="n">sessionRole</span><span class="p">:</span> <span class="n">connectingSceneSession</span><span class="p">.</span><span class="n">role</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">didDiscardSceneSessions</span> 
-        <span class="n">sceneSessions</span><span class="p">:</span> <span class="n">Set</span><span class="p">&lt;</span><span class="bp">UISceneSession</span><span class="p">&gt;)</span> <span class="p">{</span>
-        <span class="c1">// Called when the user discards a scene session.</span>
-        <span class="c1">// If any sessions were discarded while the application was not running, this will be called shortly after  application:didFinishLaunchingWithOptions.</span>
-        <span class="c1">// Use this method to release any resources that were specific to the discarded scenes, as they will not return.</span>
-    <span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>SceneDelegate에 삽입했던 코드를 AppDelegate로 이동  </li>
-<li>어차피 이제는 안쓸 SceneDelegate.swift 제거</li>
-</ul>
-<p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
-<h2 id="_4">결론</h2>
+<p>PC에서 이렇게 명령어를 입력하면 깔끔하게 <code>png</code>파일로 스크린샷을 저장한다.<br />
+해상도도 폰 해상도로 찍힌다.  </p>
+<p><img alt="" src="/images/screencap02.png" /></p>
+<h2 id="_3">결론</h2>
 <div class="admonition note">
-<p class="admonition-title">Swift에서 백그라운드 스냅샷에 중요 정보 노출 방지하는 방법</p>
-<p>임의의 이미지 뷰를 생성하여 앱이 백그라운드 진입할 때 위에 덮어쓰고 다시 돌아올 때 제거한다.</p>
+<p class="admonition-title">안드로이드 스크린샷 편하게 찍는 방법</p>
+<p><code>adb exec-out screencap -p &gt; [파일이름].png</code></p>
 </div>
-<p>즉 App Delegate의 경우 <kbd>AppDelegate.swift</kbd>에 아래 코드 추가
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">?</span>
-
-<span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">imageView</span> <span class="p">=</span> <span class="bp">UIImageView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">window</span><span class="p">!.</span><span class="n">frame</span><span class="p">)</span>
-    <span class="n">imageView</span><span class="p">?.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="p">[</span><span class="err">넣을</span> <span class="err">이미지</span><span class="p">])</span>
-    <span class="n">window</span><span class="p">?.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">imageView</span><span class="p">!)</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="n">imageView</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="n">imageView</span><span class="p">?.</span><span class="n">removeFromSuperview</span><span class="p">()</span>
-        <span class="n">imageView</span> <span class="p">=</span> <span class="kc">nil</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></p>
-<div class="admonition warning">
-<p class="admonition-title">주의</p>
-<p>iOS 13부터 window의 개념이 scene으로 대체되고 하나의 앱에서 여러개의 scene을 가질 수 있게 된다.
-SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려해야 한다.</p>
-</div>
+<p>해상도가 커져서 용량이 커지니 파일크기는 알아서 줄여서 쓰자.</p>
 <p>끝.</p>
 
   <hr>
@@ -1115,7 +915,7 @@ SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려�
   <small>
     
       마지막 업데이트:
-      2022-09-20
+      2022-10-04
     
   </small>
 </div>
@@ -1187,7 +987,7 @@ SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려�
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../background/" class="md-footer__link md-footer__link--prev" aria-label="이전: [iOS] 아이폰 백그라운드 스냅샷 파일 찾는 방법" rel="prev">
+        <a href="../scrcpy/" class="md-footer__link md-footer__link--prev" aria-label="이전: [Android] Scrcpy로 PC에서 편하게 스마트폰 원격 제어하는 방법" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1196,20 +996,20 @@ SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려�
               <span class="md-footer__direction">
                 이전
               </span>
-              [iOS] 아이폰 백그라운드 스냅샷 파일 찾는 방법
+              [Android] Scrcpy로 PC에서 편하게 스마트폰 원격 제어하는 방법
             </div>
           </div>
         </a>
       
       
         
-        <a href="../fridaserverios/" class="md-footer__link md-footer__link--next" aria-label="다음: [iOS] 공식 저장소에 없는 frida-server 설치하는 방법" rel="next">
+        <a href="../sslpinning/" class="md-footer__link md-footer__link--next" aria-label="다음: [Android] Frida로 SSL Pinning 우회하는 방법" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 다음
               </span>
-              [iOS] 공식 저장소에 없는 frida-server 설치하는 방법
+              [Android] Frida로 SSL Pinning 우회하는 방법
             </div>
           </div>
           <div class="md-footer__button md-icon">

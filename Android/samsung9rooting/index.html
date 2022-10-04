@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://useworld.github.io/iOS/bgsnapshot/">
+        <link rel="canonical" href="https://useworld.github.io/Android/samsung9rooting/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.2">
     
     
       
-        <title>[iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법 - Useworld</title>
+        <title>[Android] 삼성 스마트폰 Android 9 이상 Magisk로 루팅하는 방법 - Useworld</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ios-swift" class="md-skip">
+        <a href="#android-android-9-magisk" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              [iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법
+              [Android] 삼성 스마트폰 Android 9 이상 Magisk로 루팅하는 방법
             
           </span>
         </div>
@@ -236,12 +236,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -264,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/hotspot/" class="md-nav__link">
+      <a href="../hotspot/" class="md-nav__link">
         [모바일] Proxy 설정 시 앱 속도를 빠르게 하는 방법
       </a>
     </li>
@@ -278,7 +280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/nethunter/" class="md-nav__link">
+      <a href="../nethunter/" class="md-nav__link">
         [Android] 스마트폰에 Kali Linux 설치하는 방법
       </a>
     </li>
@@ -292,7 +294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/nox9proxy/" class="md-nav__link">
+      <a href="../nox9proxy/" class="md-nav__link">
         [Android] Nox에서 Android 9 Wi-Fi Proxy 설정하는 방법
       </a>
     </li>
@@ -306,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/samfirm/" class="md-nav__link">
+      <a href="../samfirm/" class="md-nav__link">
         [Android] SamFirm.js로 삼성 스마트폰 펌웨어 편하게 다운받는 방법
       </a>
     </li>
@@ -318,11 +320,143 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Android/samsung9rooting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          [Android] 삼성 스마트폰 Android 9 이상 Magisk로 루팅하는 방법
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         [Android] 삼성 스마트폰 Android 9 이상 Magisk로 루팅하는 방법
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    서론
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    준비물
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    개발자 옵션
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oem" class="md-nav__link">
+    OEM 잠금 해제
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    USB 디버깅
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magisk-app" class="md-nav__link">
+    Magisk APP 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ap" class="md-nav__link">
+    AP 파일 넣기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ap_1" class="md-nav__link">
+    펌웨어 AP파일 패치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    패치한 파일 꺼내기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odin" class="md-nav__link">
+    Odin으로 패치한 펌웨어 설치하기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    공장초기화 후 재부팅
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magisk" class="md-nav__link">
+    Magisk에서 추가 설정
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    한번 더 재부팅 후 루팅 완료
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    결론
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -334,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/scrcpy/" class="md-nav__link">
+      <a href="../scrcpy/" class="md-nav__link">
         [Android] Scrcpy로 PC에서 편하게 스마트폰 원격 제어하는 방법
       </a>
     </li>
@@ -348,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/screencap/" class="md-nav__link">
+      <a href="../screencap/" class="md-nav__link">
         [Android] adb로 스크린샷 편하게 찍는 방법
       </a>
     </li>
@@ -362,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Android/sslpinning/" class="md-nav__link">
+      <a href="../sslpinning/" class="md-nav__link">
         [Android] Frida로 SSL Pinning 우회하는 방법
       </a>
     </li>
@@ -652,14 +786,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -682,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../background/" class="md-nav__link">
+      <a href="../../iOS/background/" class="md-nav__link">
         [iOS] 아이폰 백그라운드 스냅샷 파일 찾는 방법
       </a>
     </li>
@@ -694,101 +826,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          [iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../iOS/bgsnapshot/" class="md-nav__link">
         [iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    서론
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multitasking-switcher" class="md-nav__link">
-    Multitasking Switcher
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    보안 설정
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    이미지 교체
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#appdelegate" class="md-nav__link">
-    AppDelegate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenedelegate" class="md-nav__link">
-    SceneDelegate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenedelegate_1" class="md-nav__link">
-    SceneDelegate 제거
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    결론
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -800,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fridaserverios/" class="md-nav__link">
+      <a href="../../iOS/fridaserverios/" class="md-nav__link">
         [iOS] 공식 저장소에 없는 frida-server 설치하는 방법
       </a>
     </li>
@@ -814,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hosts/" class="md-nav__link">
+      <a href="../../iOS/hosts/" class="md-nav__link">
         [iOS] hosts 파일 내용 변경사항 적용하는 방법
       </a>
     </li>
@@ -828,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../webview/" class="md-nav__link">
+      <a href="../../iOS/webview/" class="md-nav__link">
         [iOS] Swift로 WebView 구현하는 방법
       </a>
     </li>
@@ -876,49 +918,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multitasking-switcher" class="md-nav__link">
-    Multitasking Switcher
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    보안 설정
+    준비물
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    이미지 교체
+    개발자 옵션
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#appdelegate" class="md-nav__link">
-    AppDelegate
+  <a href="#oem" class="md-nav__link">
+    OEM 잠금 해제
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scenedelegate" class="md-nav__link">
-    SceneDelegate
+  <a href="#usb" class="md-nav__link">
+    USB 디버깅
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scenedelegate_1" class="md-nav__link">
-    SceneDelegate 제거
+  <a href="#magisk-app" class="md-nav__link">
+    Magisk APP 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ap" class="md-nav__link">
+    AP 파일 넣기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ap_1" class="md-nav__link">
+    펌웨어 AP파일 패치
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    패치한 파일 꺼내기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odin" class="md-nav__link">
+    Odin으로 패치한 펌웨어 설치하기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    공장초기화 후 재부팅
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magisk" class="md-nav__link">
+    Magisk에서 추가 설정
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    한번 더 재부팅 후 루팅 완료
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     결론
   </a>
   
@@ -940,173 +1024,164 @@
                   
 
 
-<h1 id="ios-swift">[iOS] Swift로 홈키 길게 눌렀을 때 앱 화면 보호하는 방법</h1>
+<h1 id="android-android-9-magisk">[Android] 삼성 스마트폰 Android 9 이상 Magisk로 루팅하는 방법</h1>
 <h2 id="_1">서론</h2>
-<p>모바일 앱 보안 관련해서 백그라운드 화면에 중요정보가 노출되면 취약하다고 한다.  </p>
+<p>삼성 스마트폰에서 안드로이드 OS 9 버전 이상에서는<br />
+기존의 Magisk를 Custom Recovery를 사용하여 설치했던 방식과 다르게<br />
+펌웨어 패치를 하는 새로운 방식으로 루팅을 한다.  </p>
+<p>친절하게 한글로 설명되어 있는 글이 없다길레<br />
+친절하게 적어봤다.<br />
+글이 기니까 차근차근 따라와야 한다.  </p>
+<h2 id="_2">준비물</h2>
+<ul>
+<li>삼성 기기 : Android 9.0 or higher</li>
+<li>magisk 최신 버전 : <a href="https://github.com/topjohnwu/Magisk/releases/tag/v25.2">다운로드 링크</a></li>
+<li>펌웨어 : <a href="/Android/samfirm">[Android] SamFirm.js로 삼성 스마트폰 펌웨어 편하게 다운받는 방법</a> 참고</li>
+<li>Odin : <a href="https://odindownload.com/">다운로드 링크</a>  </li>
+<li>삼성 통합 USB 드라이버 : <a href="https://www.samsungsvc.co.kr/download">다운로드 링크</a></li>
+<li>Minimal ADB and Fastboot Tool : <a href="https://androidmtk.com/download-minimal-adb-and-fastboot-tool">다운로드 링크</a></li>
+</ul>
+<p>드라이버 설치 안했으면 설치하고 ADB 없으면 설치하자.<br />
+ADB는 공식 사이트가 아닌 것 같고<br />
+오딘 사이트는 뭔가 피싱 사이트 같이 생겨서 기분이 좋지는 않다.  </p>
+<h2 id="_3">개발자 옵션</h2>
+<p>우선 개발자 옵션을 켠다.  </p>
 <div class="admonition info">
-<p class="admonition-title">중요정보</p>
-<ul>
-<li>고유식별정보(주민등록번호, 운전면허번호, 여권번호, 외국인 등록번호)</li>
-<li>비밀번호(로그인 비밀번호, 계좌 비밀번호, 공인인증서 비밀번호 등)</li>
-<li>신용정보(보안카드번호, OTP번호, 신용/체크 카드번호 등)</li>
-<li>기타 중요 정보</li>
-</ul>
-</div>
-<h2 id="multitasking-switcher">Multitasking Switcher</h2>
-<p>앱 실행 중 홈버튼을 한번 누르면 실행중이던 앱이 들어가고 홈 화면이 나온다.<br />
-홈 화면이던 앱 실행중이던 홈버튼을 연속으로 두 번 누르면<br />
-현재 백그라운드에 있는 앱 목록이 나오며 해당 앱의 마지막 화면이 나타나게 된다.<br />
-이 기능을 <code>Multitasking Switcher</code>라고 한다.</p>
-<h2 id="_2">보안 설정</h2>
-<p>앱 생명 주기는 <a href="https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle">애플 개발자 페이지</a>에 설명이 나와있다.<br />
-아이폰은 앱이 백그라운드에 갈 때마다 Screenshot을 저장하여<br />
-해당 이미지를 Multitasking Switcher에서 보여준다.<br />
-직접적으로 해당 스냅샷을 지정하거나 보안 옵션이 있는지 찾아보았는데 마땅히 없었다. </p>
-<h2 id="_3">이미지 교체</h2>
-<p>직접적으로 이미지 지정이 안된다면 다른 방법을 사용해야 한다.<br />
-앱이 백그라운드로 갈 때 원하는 이미지 파일로 스냅샷이 찍히도록 꼼수를 썼다. </p>
+<p class="admonition-title">개발자 옵션 켜는 방법</p>
 <ol>
-<li>지정한 이미지파일로 UIImageView를 하나 생성한다.</li>
-<li>앱이 백그라운드에 진입 직전 현재 화면 위에 이미지뷰를 덮어버린다.</li>
-<li>다시 앱이 실행되면 해당 이미지뷰를 지운다.</li>
+<li><strong>설정</strong>에 들어간다.</li>
+<li><strong>휴대전화 정보</strong>에 들어간다.</li>
+<li><strong>소프트웨어 정보</strong>에 들어간다.</li>
+<li><strong>빌드번호</strong>를 마구 터치한다.</li>
 </ol>
-<p>이러면 백그라운드 진입과 동시에 찍히는 스냅샷은 화면 위에 덮어 쓴 이미지뷰가 찍힐 것이다.</p>
-<h2 id="appdelegate">AppDelegate</h2>
-<p>인터넷을 검색해보니 <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate">애플 개발자 페이지</a>에 Responding to App Life-Cycle Events
-항목이 있었다.<br />
-AppDelegate에 applicationDidEnterBackground와 applicationWillEnterForeground를 사용하면 될 것 같다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">AppDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIApplicationDelegate</span> <span class="p">{</span>
-
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> 
-        <span class="n">didFinishLaunchingWithOptions</span> <span class="n">launchOptions</span><span class="p">:</span> <span class="p">[</span>
-        <span class="bp">UIApplication</span><span class="p">.</span><span class="n">LaunchOptionsKey</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">true</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Background!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">applicationWillEnterForeground</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Foreground!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-<p>앱에서 홈버튼을 누르면 <code>Background!</code>라고 콘솔에 찍힐 것이고 다시 실행하면 <code>Foreground!</code>라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다.<br />
-하지만 콘솔창엔 아무것도 찍히지 않았다.</p>
-<h2 id="scenedelegate">SceneDelegate</h2>
-<p>한참을 삽질하다가 결국 알아냈다.<br />
-<a href="https://developer.apple.com/documentation/uikit/app_and_environment/scenes/specifying_the_scenes_your_app_supports">애플 개발자 페이지</a>에 써있기를 iOS 13 이상부터는 SceneDelegate를 사용한댄다.<br />
-이런... 개발중인 내 폰의 버전은 iOS 13.3.1이었다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">SceneDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIWindowSceneDelegate</span> <span class="p">{</span>
-
-    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="n">session</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> 
-        <span class="n">options</span> <span class="n">connectionOptions</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">_</span> <span class="p">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as</span><span class="p">?</span> <span class="bp">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">sceneWillEnterForeground</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Foreground!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">sceneDidEnterBackground</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Background!&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-<p>다시 한 번 앱에서 홈버튼을 누르면 Background!라고 콘솔에 찍힐 것이고 다시 실행하면 Foreground!라고 찍힐 것이라 기대하며 위의 코드를 넣고 실행해봤다. 드디어 콘솔창에 찍혔다!</p>
-<p>하지만 뭔가 애매했다. </p>
-<ul>
-<li>앱 실행 중 홈버튼을 한 번 눌러서 완전히 백그라운드로 돌아갔다가 다시 실행(O)</li>
-<li>앱 실행 중 홈버튼을 따닥 두 번 눌러서 Multitasking Switcher에서 진입 시(X)</li>
-</ul>
-<p>또 뭐가 문제인지 찾다가 모든 이벤트를 다 테스트 해본 결과 <code>sceneWillResignActive</code>, <code>sceneDidBecomeActive</code> 이 두 함수가 홈버튼을 한 번 눌러서 백그라운드로 갔다가 복귀하던, 홈버튼을 두 번 눌러서 바로 멀티태스킹을 하던 실행이 되는 것을 확인했다.</p>
-<p>이제 스냅샷으로 찍혀 줄 이미지 파일을 asset에 SecureBackground로 등록한 뒤 해당 이미지를 표시해 줄 이미지뷰를 백그라운드 갈때는 덮어 쓰고 다시 실행될때는 없애는 코드를 넣고 실행했다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">SceneDelegate</span><span class="p">:</span> <span class="bp">UIResponder</span><span class="p">,</span> <span class="bp">UIWindowSceneDelegate</span> <span class="p">{</span>
-
-    <span class="kd">var</span> <span class="nv">window</span><span class="p">:</span> <span class="bp">UIWindow</span><span class="p">?</span>
-    <span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">?</span>
-
-    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="n">session</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> 
-        <span class="n">options</span> <span class="n">connectionOptions</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">_</span> <span class="p">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as</span><span class="p">?</span> <span class="bp">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">sceneWillResignActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">imageView</span> <span class="p">=</span> <span class="bp">UIImageView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">window</span><span class="p">!.</span><span class="n">frame</span><span class="p">)</span>
-        <span class="n">imageView</span><span class="p">?.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="s">&quot;SecureBackground&quot;</span><span class="p">)</span>
-        <span class="n">window</span><span class="p">?.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">imageView</span><span class="p">!)</span>
-    <span class="p">}</span>
-
-    <span class="kd">func</span> <span class="nf">sceneDidBecomeActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">scene</span><span class="p">:</span> <span class="bp">UIScene</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">imageView</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-            <span class="n">imageView</span><span class="p">?.</span><span class="n">removeFromSuperview</span><span class="p">()</span>
-            <span class="n">imageView</span> <span class="p">=</span> <span class="kc">nil</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-<p>성공이다.</p>
-<h2 id="scenedelegate_1">SceneDelegate 제거</h2>
-<p>그런데 위 코드는 iOS 13 미만 버전대 기기에서는 또 작동을 안했다.<br />
-다시 AppDelegate에서 코드를 추가했더니 작동했다.<br />
-iOS 13보다 낮은 버전에서는 AppDelegate로 이벤트를 핸들링하기 때문에 똑같은 코드를 두번 넣어야 되게 생겼다.<br />
-어차피 나는 Scene을 사용하지 않아도 무방하기 때문에 아예 SceneDelegate를 삭제하고 설정하면 AppDelegate에서 해결되는게 아닌가 싶었다. </p>
-<ul>
-<li>info.plist에서 <kbd>Application Scene Manifest</kbd> 제거</li>
-<li>AppDelegate.swift에서 아래의 UISceneSession Lifecycle 관련 코드들 주석처리나 삭제</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c1">// AppDelegate.swift</span>
-
-    <span class="c1">// </span><span class="cs">MARK:</span><span class="c1"> UISceneSession Lifecycle</span>
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">configurationForConnecting</span> 
-        <span class="n">connectingSceneSession</span><span class="p">:</span> <span class="bp">UISceneSession</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> 
-        <span class="bp">UIScene</span><span class="p">.</span><span class="n">ConnectionOptions</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UISceneConfiguration</span> <span class="p">{</span>
-        <span class="c1">// Called when a new scene session is being created.</span>
-        <span class="c1">// Use this method to select a configuration to create the new scene with.</span>
-        <span class="k">return</span> <span class="bp">UISceneConfiguration</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Default Configuration&quot;</span><span class="p">,</span>
-         <span class="n">sessionRole</span><span class="p">:</span> <span class="n">connectingSceneSession</span><span class="p">.</span><span class="n">role</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">didDiscardSceneSessions</span> 
-        <span class="n">sceneSessions</span><span class="p">:</span> <span class="n">Set</span><span class="p">&lt;</span><span class="bp">UISceneSession</span><span class="p">&gt;)</span> <span class="p">{</span>
-        <span class="c1">// Called when the user discards a scene session.</span>
-        <span class="c1">// If any sessions were discarded while the application was not running, this will be called shortly after  application:didFinishLaunchingWithOptions.</span>
-        <span class="c1">// Use this method to release any resources that were specific to the discarded scenes, as they will not return.</span>
-    <span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>SceneDelegate에 삽입했던 코드를 AppDelegate로 이동  </li>
-<li>어차피 이제는 안쓸 SceneDelegate.swift 제거</li>
-</ul>
-<p>이렇게 하고 실행해보니 똑같은 코드 두 번 안쓰고 잘됐다.</p>
-<h2 id="_4">결론</h2>
-<div class="admonition note">
-<p class="admonition-title">Swift에서 백그라운드 스냅샷에 중요 정보 노출 방지하는 방법</p>
-<p>임의의 이미지 뷰를 생성하여 앱이 백그라운드 진입할 때 위에 덮어쓰고 다시 돌아올 때 제거한다.</p>
 </div>
-<p>즉 App Delegate의 경우 <kbd>AppDelegate.swift</kbd>에 아래 코드 추가
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">?</span>
+<h2 id="oem">OEM 잠금 해제</h2>
+<p>개발자 옵션을 켰으면 개발자 옵션에 들어가서 <strong>OEM 잠금 해제</strong>를 활성화 시킨다.<br />
+이미 켜져있거나 해당 메뉴가 없으면 다음으로 넘어가면 된다.  </p>
+<p><img alt="" src="/images/samsung9rooting01.png" /></p>
+<p>그러면 공장초기화 할거냐고 물어보는데 안하면 진행이 안된다.<br />
+어차피 새로 펌웨어 설치할 거라 백업하고 공장초기화 하자.<br />
+재부팅 후 오랜시간 기다리면 초기화면이 반겨줄 것이다.  </p>
+<h2 id="usb">USB 디버깅</h2>
+<p>작업을 편하게 하기 위해서<br />
+개발자 옵션에서 <strong>USB 디버깅</strong>을 활성화 시켜준 후<br />
+PC와 데이터케이블로 연결한다.</p>
+<h2 id="magisk-app">Magisk APP 설치</h2>
+<p>다운로드 받은 Magisk APK를 설치한다.<br />
+현재 최신 버전인 25.2로 진행한다.  </p>
+<p><code>adb install [파일명]</code></p>
+<div class="highlight"><pre><span></span><code><span class="go">&gt;adb install Magisk-v25.2.apk</span>
+<span class="go">Success</span>
 
-<span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">imageView</span> <span class="p">=</span> <span class="bp">UIImageView</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">window</span><span class="p">!.</span><span class="n">frame</span><span class="p">)</span>
-    <span class="n">imageView</span><span class="p">?.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="p">[</span><span class="err">넣을</span> <span class="err">이미지</span><span class="p">])</span>
-    <span class="n">window</span><span class="p">?.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">imageView</span><span class="p">!)</span>
-<span class="p">}</span>
+<span class="go">&gt;_</span>
+</code></pre></div>
+<p>이렇게 해도 되고 그냥 파일 탐색기로 폰에 복사해서 폰에서 설치해도 된다.<br />
+하지만 콘솔창에서 하는게 더 멋있다.  </p>
+<h2 id="ap">AP 파일 넣기</h2>
+<p>다운로드 받은 펌웨어 파일 중<br />
+AP로 시작하는 파일을 기기에 넣는다.  </p>
+<p><code>adb push [파일명] /sdcard/</code></p>
+<div class="highlight"><pre><span></span><code><span class="go">&gt;adb push AP_G960NKSU5FVG2_CL23583079_QB54201952_REV01_user_low_ship_meta_OS10.tar.md5 /sdcard/</span>
+<span class="go">AP_G960NKSU5FVG2_CL23583079_QB54201952_REV01_user_low_... file pushed. 32.1 MB/s (3670855870 bytes in 109.151s)</span>
 
-<span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="n">imageView</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="n">imageView</span><span class="p">?.</span><span class="n">removeFromSuperview</span><span class="p">()</span>
-        <span class="n">imageView</span> <span class="p">=</span> <span class="kc">nil</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<span class="go">&gt;_</span>
+</code></pre></div>
+<p>이렇게 해도 되고 그냥 파일 탐색기로 폰에 복사해도 된다.<br />
+하지만 콘솔창에서 하는게 더 멋있다.  </p>
+<h2 id="ap_1">펌웨어 AP파일 패치</h2>
+<p>설치한 Magisk를 실행하고 <strong>설치</strong>를 누른다.  </p>
+<p><img alt="" src="/images/samsung9rooting02.png" /></p>
+<ol>
+<li><strong>옵션</strong>에서 <strong>강제 암호화 유지</strong> 체크 확인 후 </li>
+<li><strong>다음</strong> 버튼을 누르면 <strong>설치 방법</strong> 메뉴가 나온다.</li>
+<li><strong>파일 선택 및 패치</strong>를 선택하여 아까 넣은 AP 파일 선택</li>
+<li><strong>설치</strong>를 누른다.</li>
+</ol>
+<p><img alt="" src="/images/samsung9rooting03.png" /></p>
+<p>패치를 정상적으로 완료했다.</p>
+<p><img alt="" src="/images/samsung9rooting04.png" /></p>
+<h2 id="_4">패치한 파일 꺼내기</h2>
+<p>패치한 AP 파일은 /sdcard/download에<br />
+<code>magisk_patched_[랜덤문자].tar</code>로 저장된다.<br />
+내 폰에는 이렇게 저장되었다.<br />
+꺼내자.  </p>
+<p><img alt="" src="/images/samsung9rooting05.png" /></p>
+<p><code>adb pull magisk_patched_[랜덤문자].tar</code></p>
+<div class="highlight"><pre><span></span><code><span class="go">&gt;adb pull /sdcard/download/magisk_patched-25200_yh4CG.tar</span>
+<span class="go">/sdcard/download/magisk_patched-25200_yh4CG.tar: 1 file pulled. 29.6 MB/s (3687932928 bytes in 118.807s)</span>
+
+<span class="go">&gt;_</span>
+</code></pre></div>
+<p>이렇게 해도 되고 그냥 파일 탐색기로 폰에 복사해서 폰에서 설치해도 된다.<br />
+하지만 콘솔창에서 하는게 더 멋있다.  </p>
 <div class="admonition warning">
-<p class="admonition-title">주의</p>
-<p>iOS 13부터 window의 개념이 scene으로 대체되고 하나의 앱에서 여러개의 scene을 가질 수 있게 된다.
-SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려해야 한다.</p>
+<p class="admonition-title">대용량 파일 전송 시</p>
+<p>MTP 사용 시 대용량 파일을 손상시킬 수 있다고 한다.</p>
+</div>
+<h2 id="odin">Odin으로 패치한 펌웨어 설치하기</h2>
+<p>폰을 재부팅하여 다운로드 모드로 진입한다.  </p>
+<div class="admonition info">
+<p class="admonition-title">Galaxy S9 Mode</p>
+<p>기기마다 다르지만 갤럭시S9의 경우 부팅 시 </p>
+<ul>
+<li>Download Mode : <strong>전원 + 빅스비 + 볼륨 다운</strong>  </li>
+<li>Recovery Mode : <strong>전원 + 빅스비 + 볼륨 업</strong>  </li>
+</ul>
+</div>
+<p>다운로드 모드 진입 후 주의사항이 나오면 <strong>볼륨 업</strong> 버튼으로 계속 진행한다.  </p>
+<p>Odin을 실행하여 순정 펌웨어의 BL, CP, CSC를 넣어주고<br />
+AP는 패치한 tar파일을 넣어준다.  </p>
+<div class="admonition warning">
+<p class="admonition-title">CSC 파일</p>
+<p>CSC 파일은 HOME_CSC가 아닌 그냥 CSC 파일을 넣는다.</p>
+</div>
+<p>그리고 <strong>Start</strong>를 눌러 설치를 시작한다.  </p>
+<p><img alt="" src="/images/samsung9rooting06.png" /></p>
+<p>시간이 좀 걸리는데 얌전히 기다리자.  </p>
+<h2 id="_5">공장초기화 후 재부팅</h2>
+<p>재부팅 후 Recovery Mode로 진입하면 <strong>Factory Reset</strong>을 하고<br />
+다시 <strong>Reboot</strong>를 해준다.<br />
+부팅하는데 이번에는 시간이 상당히 걸린다.<br />
+얌전히 기다리자.</p>
+<h2 id="magisk">Magisk에서 추가 설정</h2>
+<p>부팅 후 Magisk가 설치된 상태이면 실행을<br />
+설치가 안되있다면 <a href="#magisk-app">다시 설치</a>한 다음 실행하면<br />
+추가 설정 창이 뜨며 <strong>확인</strong>을 눌러준다.  </p>
+<p><img alt="" src="/images/samsung9rooting07.png" /></p>
+<h2 id="_6">한번 더 재부팅 후 루팅 완료</h2>
+<p>여기까지 문제 없이 따라왔다면 루팅 성공이다.<br />
+루팅 성공 여부를 확인하기 위해서는<br />
+쉘에서 <code>su</code> 명령으로 root 권한을 확인하면 된다.  </p>
+<ul>
+<li>
+<p>성공 시
+<div class="highlight"><pre><span></span><code><span class="go">&gt;adb shell</span>
+<span class="gp">starlteks:/ $ </span>su
+<span class="gp">starlteks:/ # </span>id
+<span class="go">uid=0(root) gid=0(root) groups=0(root) context=u:r:magisk:s0</span>
+<span class="gp">starlteks:/ # </span>_
+</code></pre></div></p>
+</li>
+<li>
+<p>실패 시
+<div class="highlight"><pre><span></span><code><span class="go">&gt;adb shell</span>
+<span class="gp">1|starlteks:/ $ </span>su
+<span class="go">Permission denied</span>
+<span class="gp">13|starlteks:/ $ </span>_
+</code></pre></div></p>
+</li>
+</ul>
+<h2 id="_7">결론</h2>
+<div class="admonition note">
+<p class="admonition-title">삼성 스마트폰 Android 9 이상 Magisk로 루팅하는 방법</p>
+<ol>
+<li>순정 펌웨어 준비</li>
+<li>Magisk 앱 설치</li>
+<li>순정 펌웨어 중 AP 파일 Magisk로 패치</li>
+<li>Odin으로 패치한 파일 Flash</li>
+<li>공장 초기화</li>
+<li>다시 부팅 후 Magisk에서 추가 설정</li>
+</ol>
 </div>
 <p>끝.</p>
 
@@ -1115,7 +1190,7 @@ SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려�
   <small>
     
       마지막 업데이트:
-      2022-09-20
+      2022-10-04
     
   </small>
 </div>
@@ -1187,7 +1262,7 @@ SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려�
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../background/" class="md-footer__link md-footer__link--prev" aria-label="이전: [iOS] 아이폰 백그라운드 스냅샷 파일 찾는 방법" rel="prev">
+        <a href="../samfirm/" class="md-footer__link md-footer__link--prev" aria-label="이전: [Android] SamFirm.js로 삼성 스마트폰 펌웨어 편하게 다운받는 방법" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1196,20 +1271,20 @@ SceneDelegate을 통해 UILifeCycle을 관리하게 되므로 개발 시 고려�
               <span class="md-footer__direction">
                 이전
               </span>
-              [iOS] 아이폰 백그라운드 스냅샷 파일 찾는 방법
+              [Android] SamFirm.js로 삼성 스마트폰 펌웨어 편하게 다운받는 방법
             </div>
           </div>
         </a>
       
       
         
-        <a href="../fridaserverios/" class="md-footer__link md-footer__link--next" aria-label="다음: [iOS] 공식 저장소에 없는 frida-server 설치하는 방법" rel="next">
+        <a href="../scrcpy/" class="md-footer__link md-footer__link--next" aria-label="다음: [Android] Scrcpy로 PC에서 편하게 스마트폰 원격 제어하는 방법" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 다음
               </span>
-              [iOS] 공식 저장소에 없는 frida-server 설치하는 방법
+              [Android] Scrcpy로 PC에서 편하게 스마트폰 원격 제어하는 방법
             </div>
           </div>
           <div class="md-footer__button md-icon">
