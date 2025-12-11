@@ -1,51 +1,459 @@
+/* =========================================================
+   GITHUB DOCS STYLE — Integrated CSS
+   Author: ChatGPT Modern UI tuning
+========================================================= */
+
+/* ------------------------------
+   폰트 설정
+------------------------------ */
 @font-face {
-    font-family: 'D2 coding';
-    font-style: normal;
+    font-family: "D2 coding";
     font-weight: 400;
-    src: url('/font/D2Coding.eot');
-    src: local('※'), local('D2Coding'),
-         url('/font/D2Coding.eot?#iefix') format('embedded-opentype'),
-         url('/font/D2Coding.woff2') format('x-woff2'),
-         url('/font/D2Coding.woff') format('woff'),
-         url('/font/D2Coding.ttf') format('truetype'),
-         url('/font/D2Coding.svg') format('svg');
-  }
+    src: url("/font/D2Coding.woff2") format("woff2"),
+         url("/font/D2Coding.woff") format("woff");
+}
+
 @font-face {
-    font-family: 'D2 coding';
-    font-style: normal;
+    font-family: "D2 coding";
     font-weight: 700;
-    src: url('/font/D2CodingBold.eot');
-    src: local('※'), local('D2Coding Bold'),
-         url('/font/D2CodingBold.eot?#iefix') format('embedded-opentype'),
-         url('/font/D2CodingBold.woff2') format('x-woff2'),
-         url('/font/D2CodingBold.woff') format('woff'),
-         url('/font/D2CodingBold.ttf') format('truetype'),
-         url('/font/D2CodingBold.svg') format('svg');
+    src: url("/font/D2CodingBold.woff2") format("woff2"),
+         url("/font/D2CodingBold.woff") format("woff");
 }
 
 :root {
-    --md-text-font-family: "D2 coding";   
+    --md-text-font-family: "D2 coding";
     --md-code-font-family: "D2 coding";
+
+    /* GitHub Docs neutral palette */
+    --gh-gray-light: rgba(27, 31, 36, 0.15);
+    --gh-gray-lighter: rgba(27, 31, 36, 0.05);
+    --gh-gray-border: rgba(27, 31, 36, 0.12);
+    --gh-hover-opacity: 0.75;
+
+    /* disable orange accent from Material */
+    --md-accent-fg-color: var(--md-default-fg-color) !important;
+    --md-accent-fg-color--transparent: var(--md-default-fg-color--lighter) !important;
 }
 
+/* ------------------------------
+   이미지 스타일 (GitHub Docs light shadow style)
+------------------------------ */
 img {
-    height: auto;
-    width: auto;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 4px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: transform ease-in-out 0.5s;
-    cursor: zoom-in;    
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1.2rem auto;
+    border: 1px solid var(--gh-gray-border);
+    border-radius: 8px;
+    padding: 4px;
+    background: var(--md-default-bg-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform .4s ease;
+    cursor: zoom-in;
 }
 
-.image-zoom-large {    
-    transform: scale(1.5);
-    cursor: zoom-out;    
-    z-index: 100;
+.image-zoom-large {
+    transform: scale(1.6);
+    cursor: zoom-out;
     position: relative;
+    z-index: 100;
 }
+
+
+/* =========================================================
+   블로그 카드 – GitHub Issues 카드 스타일
+========================================================= */
+.md-post {
+    border-radius: 12px;
+    padding: 1.35rem 1.6rem;
+    margin-bottom: 1.8rem;
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--gh-gray-border);
+
+    transition: 
+        box-shadow .18s ease,
+        transform .12s ease;
+}
+
+.md-post:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+/* 카드 제목 링크 = GitHub Docs 스타일 */
+.md-post__content h2 a {
+    color: var(--md-default-fg-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity .15s ease, text-decoration .15s ease;
+}
+
+.md-post__content h2 a:hover {
+    opacity: var(--gh-hover-opacity);
+    text-decoration: underline;
+}
+
+/* "계속 읽기" 버튼 숨기기 */
+.md-post__action {
+    display: none !important;
+}
+
+
+/* =========================================================
+   본문 상단 메타라인 (.post-meta-inline)
+========================================================= */
+.post-meta-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.35rem 0;
+    margin-top: -0.2rem !important;
+    margin-bottom: 1.0rem !important;
+
+    flex-wrap: wrap;
+
+    font-size: 0.88rem;
+    color: var(--md-default-fg-color); /* 더 선명하게 */
+}
+
+/* Badge 스타일 — GitHub 라벨 느낌 */
+.post-meta-inline span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+
+    background: var(--gh-gray-lighter);
+    border: 1px solid var(--gh-gray-light);
+
+    color: var(--md-default-fg-color) !important;
+}
+
+.post-meta-inline a {
+    color: var(--md-default-fg-color) !important;
+    text-decoration: none;
+}
+
+.post-meta-inline a:hover {
+    text-decoration: underline;
+    opacity: var(--gh-hover-opacity);
+}
+
+
+/* =========================================================
+   사이드바 최소화/숨기기
+========================================================= */
+.md-sidebar--primary,
+body > div.md-container > main > div > div.md-content.md-content--post > div > div > div,
+body > div.md-container > main > div > div.md-content.md-content--post > div > div > div > nav > ul > li > nav,
+body > div.md-container > main > div > div.md-sidebar.md-sidebar--secondary > div {
+    visibility: hidden !important;
+}
+body > div.md-container > main > div > div.md-content.md-content--post > article > div.post-summary {
+    display: none;
+}
+
+
+/* =========================================================
+   제목(H1) – GitHub Docs 스타일
+========================================================= */
+.md-typeset h1 {
+    margin-bottom: 0.4rem !important;
+    color: var(--md-default-fg-color) !important;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   링크 전체 hover 스타일—GitHub Docs Global Rule
+========================================================= */
+.md-typeset a {
+    color: var(--md-default-fg-color);
+    text-decoration: none;
+    transition: opacity .15s ease, text-decoration .15s ease;
+}
+
+.md-typeset a:hover {
+    opacity: var(--gh-hover-opacity);
+    text-decoration: underline;
+}
+
+/* ---- Github Docs style: hover 시 텍스트 흐릿해지고 underline ---- */
+.md-typeset a:hover,
+.md-typeset h1 a:hover,
+.md-typeset h2 a:hover,
+.md-nav__link:hover,
+.md-post__content h2 a:hover {
+    color: var(--md-default-fg-color) !important;
+    opacity: 0.75 !important;
+    text-decoration: underline !important;
+}
+
+/* ============================================
+   🔥 카테고리 링크 Hover 주황색 완전 제거
+============================================ */
+.md-post__meta a,
+.md-post__meta a:hover,
+.md-meta__item a,
+.md-meta__item a:hover,
+.md-nav__item a:hover,
+.post-meta-inline a:hover,
+.post-meta-inline a,
+.md-nav__link:hover,
+.md-nav__link:focus,
+.md-nav__link:active {
+    color: var(--md-default-fg-color) !important;
+    text-decoration: underline !important;
+    opacity: .75 !important;
+}
+
+/* =========================================================
+   🔵 GitHub Docs 스타일 메타데이터 라벨 (이모지 제거)
+========================================================= */
+
+.post-meta-inline {
+    display: flex;
+    gap: .55rem;
+    margin-top: .1rem !important;
+    margin-bottom: 1rem !important;
+    font-size: .82rem;
+    color: var(--md-default-fg-color);
+    flex-wrap: wrap;
+}
+
+.post-meta-inline span {
+    padding: .2rem .45rem;
+    border-radius: 6px;
+    background: var(--gh-gray-lighter);
+    border: 1px solid var(--gh-gray-border);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.post-meta-inline a {
+    color: var(--md-default-fg-color);
+    text-decoration: none;
+}
+
+.post-meta-inline a:hover {
+    text-decoration: underline;
+    opacity: .7;
+}
+
+/* 제목 아래 HR (GitHub Docs 스타일) */
+.post-hr {
+    border: none;
+    border-top: 1px solid var(--gh-gray-border);
+    margin: .4rem 0 0.6rem 0;
+}
+
+.post-meta-row {
+    margin-top: 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.post-meta-date {
+    font-size: 0.88rem;
+    color: var(--md-default-fg-color--light);
+}
+
+.post-meta-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.18rem 0.65rem;
+    font-size: 0.78rem;
+    background: var(--gh-gray-lighter);
+    border: 1px solid var(--gh-gray-border);
+    border-radius: 999px;
+    color: var(--md-default-fg-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background .15s ease, opacity .15s ease;
+}
+
+.post-meta-cat-icon {
+    opacity: 0.7;
+}
+
+/* ===== Post Meta Line: date + category next to each other ===== */
+
+.post-meta-line {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem; /* 날짜와 카테고리 사이 적당한 간격 */
+    margin: 0.6rem 0 1.1rem 0;
+}
+
+.post-meta-date {
+    font-size: 0.85rem;
+    color: var(--md-default-fg-color--light);
+    font-weight: 500;
+}
+
+/* 카테고리 pill */
+.post-meta-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.30rem;
+    padding: 0.20rem 0.55rem;
+    font-size: 0.78rem;
+
+    background: var(--gh-gray-lighter);
+    border: 1px solid var(--gh-gray-border);
+    border-radius: 999px;
+
+    color: var(--md-default-fg-color);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: opacity .15s ease, background .15s ease;
+}
+
+.post-meta-category:hover {
+    opacity: 0.72;
+    text-decoration: underline;
+}
+
+.post-meta-cat-icon {
+    opacity: 0.75;
+    font-size: 0.78rem;
+}
+
+/* =============================
+   페이지 제목 숨기기 (여백 유지)
+============================= */
+.md-content > .md-content__inner > header.md-typeset h1 {
+    visibility: hidden !important;
+}
+
+/* =============================
+   글 상세 페이지는 제목 표시
+============================= */
+.md-content--post > .md-content__inner > h1 {
+    visibility: visible !important;
+}
+/* ===== Fix heading styles (restore bold + clarity) ===== */
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+    color: var(--md-default-fg-color) !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+/* ===== Make text link hover only affect normal links ===== */
+
+.md-typeset a:hover {
+    opacity: .75 !important;
+    text-decoration: underline !important;
+}
+
+/* Do not dim heading links */
+.md-typeset h1 a:hover,
+.md-typeset h2 a:hover {
+    opacity: 1 !important;
+    text-decoration: underline !important;
+}
+
+/* ===============================
+   본문 링크 스타일 (가독성 + 깔끔)
+   =============================== */
+
+/* 기본 링크 색 (본문보다 아주 살짝 진하게) */
+.md-typeset p a,
+.md-typeset li a {
+    color: var(--md-default-fg-color) !important;
+    opacity: 0.88;                 /* 살짝 강조 */
+    font-weight: 500;              /* 약한 bold 느낌 */
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(27,31,36,0.22); /* GitHub 스타일 약한 밑줄 */
+    transition: opacity .15s ease, border-color .15s ease;
+}
+
+/* hover 시 – underline + 더 선명하게 */
+.md-typeset p a:hover,
+.md-typeset li a:hover {
+    opacity: 1 !important;
+    border-bottom: 1px solid rgba(27,31,36,0.5);
+    text-decoration: none !important; /* underline 대신 border 유지 */
+}
+
+/* ===========================================
+   Pagination hover 색상 강제 통일 (GitHub style)
+=========================================== */
+
+.md-pagination__link {
+    color: var(--md-default-fg-color) !important;
+    border: 1px solid var(--gh-gray-border);
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    background: var(--md-default-bg-color);
+    transition: opacity .15s ease, background .15s ease;
+}
+
+.md-pagination__link:hover {
+    color: var(--md-default-fg-color) !important;
+    background: var(--gh-gray-lighter) !important;
+    opacity: .75 !important;
+    text-decoration: underline !important;
+    border-color: var(--gh-gray-border) !important;
+}
+
+/* 현재 페이지 숫자도 Github 스타일로 */
+.md-pagination__current {
+    color: var(--md-default-fg-color);
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--gh-gray-border);
+    border-radius: 6px;
+    background: var(--gh-gray-lighter);
+}
+
+
+
+/* ===========================================
+   카테고리 페이지 왼쪽 목록 – 뱃지 + # 아이콘 적용
+   (본문의 post-meta-category 와 100% 동일 스타일)
+=========================================== */
+[data-md-type="navigation"] .md-nav__item--nested nav .md-nav__link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.30rem;
+    padding: 0.20rem 0.55rem;
+    margin: 0.25rem 0;
+
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+
+    background: var(--gh-gray-lighter);
+    border: 1px solid var(--gh-gray-border);
+    border-radius: 999px;
+
+    color: var(--md-default-fg-color) !important;
+    text-decoration: none !important;
+
+    transition: opacity .15s ease, background .15s ease;
+}
+
+/* Hover 효과 */
+[data-md-type="navigation"] .md-nav__item--nested nav .md-nav__link:hover {
+    opacity: 0.72 !important;
+    text-decoration: underline !important;
+}
+
+/* # 아이콘 추가 (본문의 .post-meta-cat-icon 과 동일한 역할) */
+[data-md-type="navigation"] .md-nav__item--nested nav .md-nav__link::before {
+    content: "#";
+    font-size: 0.78rem;
+    opacity: 0.75;
+}
+
+
+
