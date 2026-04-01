@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code Source Leak</title>
+  <desc id="desc">Formal incident cover for a Claude Code source exposure analysis.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10151d"/>
+      <stop offset="60%" stop-color="#16202b"/>
+      <stop offset="100%" stop-color="#223041"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d8842c"/>
+      <stop offset="100%" stop-color="#f1c27d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="url(#bar)"/>
+  <g opacity="0.15" stroke="#8ca0b7">
+    <path d="M76 84h1048v462H76z" fill="none"/>
+    <path d="M76 176h1048"/>
+    <path d="M76 268h1048"/>
+    <path d="M76 360h1048"/>
+    <path d="M76 452h1048"/>
+    <path d="M76 544h1048"/>
+    <path d="M338 84v462"/>
+    <path d="M600 84v462"/>
+    <path d="M862 84v462"/>
+  </g>
+  <rect x="86" y="86" width="168" height="32" rx="4" fill="#1c2632" stroke="#56687d"/>
+  <text x="170" y="107" fill="#d8e1ec" font-size="17" font-family="IBM Plex Mono, monospace" text-anchor="middle" letter-spacing="2">SECURITY ISSUE</text>
+  <text x="86" y="212" fill="#f4f7fb" font-size="58" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Claude Code</text>
+  <text x="86" y="282" fill="#dce5ef" font-size="56" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Source Exposure</text>
+  <text x="86" y="338" fill="#9fb0c1" font-size="22" font-family="Segoe UI, Arial, sans-serif">Packaging error, source map exposure, and operational security implications.</text>
+  <g transform="translate(86 408)">
+    <rect width="360" height="108" rx="8" fill="#111a24" stroke="#36495d"/>
+    <text x="24" y="34" fill="#8fa1b4" font-size="15" font-family="IBM Plex Mono, monospace">PACKAGE</text>
+    <text x="24" y="68" fill="#eef3f8" font-size="26" font-weight="700" font-family="IBM Plex Mono, monospace">@anthropic-ai/claude-code</text>
+    <text x="24" y="92" fill="#93a6bb" font-size="16" font-family="Segoe UI, Arial, sans-serif">Affected release 2.1.88</text>
+  </g>
+  <g transform="translate(882 96)">
+    <rect width="230" height="230" rx="18" fill="#111a24" stroke="#4a5d72"/>
+    <path d="M64 172h102M64 134h102M64 96h102" stroke="#9db0c5" stroke-width="10" stroke-linecap="round"/>
+    <path d="M188 82l-22 22M166 82l22 22" stroke="#d8842c" stroke-width="8" stroke-linecap="round"/>
+    <rect x="60" y="58" width="110" height="150" rx="10" fill="none" stroke="#d8e1ec" stroke-width="4"/>
+  </g>
+  <text x="882" y="386" fill="#95a7bb" font-size="17" font-family="IBM Plex Mono, monospace">EVENT TYPE</text>
+  <text x="882" y="418" fill="#edf3f9" font-size="30" font-weight="700" font-family="IBM Plex Mono, monospace">IP EXPOSURE</text>
+  <text x="882" y="470" fill="#95a7bb" font-size="17" font-family="IBM Plex Mono, monospace">INITIAL VIEW</text>
+  <text x="882" y="502" fill="#f0c98d" font-size="30" font-weight="700" font-family="IBM Plex Mono, monospace">PACKAGING ERROR</text>
+  <text x="86" y="586" fill="#6f8297" font-size="18" font-family="IBM Plex Mono, monospace">2026.04.01  |  Operational Security Brief</text>
+</svg>
