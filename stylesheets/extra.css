@@ -203,13 +203,17 @@ img {
 .md-post--excerpt .post-card-thumb {
     width: 100%;
     max-width: 180px;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
     overflow: hidden;
     border: 1px solid var(--gh-gray-border);
     border-radius: 10px;
     background:
-        linear-gradient(135deg, rgba(27,31,36,0.06), rgba(27,31,36,0.12));
+        linear-gradient(160deg, rgba(27,31,36,0.04), rgba(27,31,36,0.1) 58%, rgba(27,31,36,0.14));
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
@@ -222,24 +226,25 @@ img {
     border-radius: 0;
     box-shadow: none;
     object-fit: cover;
-    background: transparent;
+    object-position: center center;
+    background: var(--md-default-bg-color--light);
 }
 
 .md-post--excerpt .post-card-thumb--placeholder {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    padding: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.9rem;
     background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.75), transparent 35%),
-        linear-gradient(135deg, #111827, #374151 58%, #6b7280);
+        radial-gradient(circle at top right, rgba(255,255,255,0.14), transparent 34%),
+        linear-gradient(160deg, #17202c, #253243 62%, #34485f);
     color: #fff;
 }
 
 .md-post--excerpt .post-card-thumb__eyebrow {
     display: inline-flex;
-    align-self: flex-start;
     padding: 0.18rem 0.48rem;
     border: 1px solid rgba(255,255,255,0.28);
     border-radius: 999px;
@@ -253,9 +258,9 @@ img {
     display: -webkit-box;
     overflow: hidden;
     color: inherit;
-    font-size: 0.84rem;
-    line-height: 1.32;
-    -webkit-line-clamp: 2;
+    font-size: 0.82rem;
+    line-height: 1.36;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
