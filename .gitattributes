@@ -6,3 +6,4 @@
 *.xml text eol=lf
 *.svg text eol=lf
 *.txt text eol=lf
+.gitattributes text eol=lf
