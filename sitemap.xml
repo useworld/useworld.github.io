@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://useworld.github.io/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-04-06</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/profile/</loc>
@@ -39,6 +39,10 @@
     <url>
          <loc>https://useworld.github.io/android/sslpinning/</loc>
          <lastmod>2022-10-05</lastmod>
+    </url>
+    <url>
+         <loc>https://useworld.github.io/cve/forticlient-ems-preauth-rce/</loc>
+         <lastmod>2026-04-06</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/etc/humanerror/</loc>
@@ -118,11 +122,15 @@
     </url>
     <url>
          <loc>https://useworld.github.io/security/cve-2026-5281-chrome-dawn-webgpu-use-after-free/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-04-06</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/security/claude-code-source-leak/</loc>
          <lastmod>2026-04-01</lastmod>
+    </url>
+    <url>
+         <loc>https://useworld.github.io/category/cve/</loc>
+         <lastmod>2026-04-06</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/security/</loc>
@@ -150,10 +158,10 @@
     </url>
     <url>
          <loc>https://useworld.github.io/page/2/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-04-06</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/3/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-04-06</lastmod>
     </url>
 </urlset>
