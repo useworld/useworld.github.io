@@ -42,11 +42,19 @@
     </url>
     <url>
          <loc>https://useworld.github.io/cve/cve-2026-5281-chrome-dawn-webgpu-use-after-free/</loc>
+         <lastmod>2026-04-08</lastmod>
+    </url>
+    <url>
+         <loc>https://useworld.github.io/cve/flowise-custommcp-rce/</loc>
          <lastmod>2026-04-07</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/cve/forticlient-ems-cve-2026-35616/</loc>
          <lastmod>2026-04-07</lastmod>
+    </url>
+    <url>
+         <loc>https://useworld.github.io/cve/trueconf-cve-2026-3502/</loc>
+         <lastmod>2026-03-31</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/etc/humanerror/</loc>
@@ -158,10 +166,14 @@
     </url>
     <url>
          <loc>https://useworld.github.io/page/2/</loc>
-         <lastmod>2026-04-07</lastmod>
+         <lastmod>2026-04-08</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/3/</loc>
-         <lastmod>2026-04-07</lastmod>
+         <lastmod>2026-04-08</lastmod>
+    </url>
+    <url>
+         <loc>https://useworld.github.io/page/4/</loc>
+         <lastmod>2026-04-08</lastmod>
     </url>
 </urlset>
