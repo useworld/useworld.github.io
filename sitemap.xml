@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://useworld.github.io/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-13</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/profile/</loc>
@@ -41,8 +41,12 @@
          <lastmod>2022-10-05</lastmod>
     </url>
     <url>
+         <loc>https://useworld.github.io/cve/adobe-acrobat-cve-2026-34621/</loc>
+         <lastmod>2026-04-13</lastmod>
+    </url>
+    <url>
          <loc>https://useworld.github.io/cve/cve-2026-5281-chrome-dawn-webgpu-use-after-free/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-13</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/cve/cve-2026-20093-cisco-cimc-auth-bypass/</loc>
@@ -145,12 +149,12 @@
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
-         <loc>https://useworld.github.io/category/security/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <loc>https://useworld.github.io/category/cve/</loc>
+         <lastmod>2026-04-13</lastmod>
     </url>
     <url>
-         <loc>https://useworld.github.io/category/cve/</loc>
-         <lastmod>2026-04-08</lastmod>
+         <loc>https://useworld.github.io/category/security/</loc>
+         <lastmod>2026-04-09</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/etc/</loc>
@@ -174,14 +178,14 @@
     </url>
     <url>
          <loc>https://useworld.github.io/page/2/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-13</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/3/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-13</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/4/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-13</lastmod>
     </url>
 </urlset>
