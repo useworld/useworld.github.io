@@ -9,6 +9,14 @@
          <lastmod>2026-04-02</lastmod>
     </url>
     <url>
+         <loc>https://useworld.github.io/ai/birdragon/</loc>
+         <lastmod>2026-04-22</lastmod>
+    </url>
+    <url>
+         <loc>https://useworld.github.io/ai/escaperoom/</loc>
+         <lastmod>2026-04-23</lastmod>
+    </url>
+    <url>
          <loc>https://useworld.github.io/android/hotspot/</loc>
          <lastmod>2022-05-13</lastmod>
     </url>
@@ -46,7 +54,7 @@
     </url>
     <url>
          <loc>https://useworld.github.io/cve/cve-2026-5281-chrome-dawn-webgpu-use-after-free/</loc>
-         <lastmod>2026-04-21</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/cve/cisco-webex-sso-forgery/</loc>
@@ -73,6 +81,10 @@
          <lastmod>2026-04-14</lastmod>
     </url>
     <url>
+         <loc>https://useworld.github.io/cve/jenkins-cli-vulns/</loc>
+         <lastmod>2026-04-23</lastmod>
+    </url>
+    <url>
          <loc>https://useworld.github.io/cve/marimo-pre-auth-rce/</loc>
          <lastmod>2026-04-15</lastmod>
     </url>
@@ -83,14 +95,6 @@
     <url>
          <loc>https://useworld.github.io/cve/trueconf-cve-2026-3502/</loc>
          <lastmod>2026-03-31</lastmod>
-    </url>
-    <url>
-         <loc>https://useworld.github.io/etc/birdragon/</loc>
-         <lastmod>2026-04-22</lastmod>
-    </url>
-    <url>
-         <loc>https://useworld.github.io/etc/escaperoom/</loc>
-         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/etc/humanerror/</loc>
@@ -177,16 +181,20 @@
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
-         <loc>https://useworld.github.io/category/etc/</loc>
+         <loc>https://useworld.github.io/category/ai/</loc>
          <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/cve/</loc>
-         <lastmod>2026-04-21</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/security/</loc>
          <lastmod>2026-04-09</lastmod>
+    </url>
+    <url>
+         <loc>https://useworld.github.io/category/etc/</loc>
+         <lastmod>2023-05-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/android/</loc>
@@ -206,22 +214,22 @@
     </url>
     <url>
          <loc>https://useworld.github.io/page/2/</loc>
-         <lastmod>2026-04-21</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/3/</loc>
-         <lastmod>2026-04-21</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/4/</loc>
-         <lastmod>2026-04-21</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/5/</loc>
-         <lastmod>2026-04-21</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/cve/page/2/</loc>
-         <lastmod>2026-04-21</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
 </urlset>
