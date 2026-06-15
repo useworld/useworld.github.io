@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://useworld.github.io/sitemap.xml
+Sitemap: https://useworld.github.io/sitemaps.xml
