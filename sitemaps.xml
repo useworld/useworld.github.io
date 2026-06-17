@@ -91,6 +91,9 @@
          <loc>https://useworld.github.io/cve/sap-commerce-cve-2026-34260/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/cve/teams-turn-c2/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/cve/trueconf-cve-2026-3502/</loc>
 </url>
     <url>
@@ -178,10 +181,10 @@
          <loc>https://useworld.github.io/security/libraw-heap-buffer-overflow/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/incident/</loc>
+         <loc>https://useworld.github.io/category/cve/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/cve/</loc>
+         <loc>https://useworld.github.io/category/incident/</loc>
 </url>
     <url>
          <loc>https://useworld.github.io/category/security/</loc>
@@ -221,5 +224,8 @@
 </url>
     <url>
          <loc>https://useworld.github.io/category/cve/page/2/</loc>
+</url>
+    <url>
+         <loc>https://useworld.github.io/category/cve/page/3/</loc>
 </url>
 </urlset>
