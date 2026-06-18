@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://useworld.github.io/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/profile/</loc>
@@ -54,7 +54,7 @@
     </url>
     <url>
          <loc>https://useworld.github.io/cve/cve-2026-5281-chrome-dawn-webgpu-use-after-free/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/cve/cisco-webex-sso-forgery/</loc>
@@ -185,6 +185,10 @@
          <lastmod>2026-05-27</lastmod>
     </url>
     <url>
+         <loc>https://useworld.github.io/incident/mastra-npm-supply-chain-compromise/</loc>
+         <lastmod>2026-06-18</lastmod>
+    </url>
+    <url>
          <loc>https://useworld.github.io/incident/miasma-github-supply-chain/</loc>
          <lastmod>2026-06-08</lastmod>
     </url>
@@ -241,12 +245,12 @@
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
-         <loc>https://useworld.github.io/category/cve/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <loc>https://useworld.github.io/category/incident/</loc>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
-         <loc>https://useworld.github.io/category/incident/</loc>
-         <lastmod>2026-06-16</lastmod>
+         <loc>https://useworld.github.io/category/cve/</loc>
+         <lastmod>2026-06-17</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/security/</loc>
@@ -278,30 +282,30 @@
     </url>
     <url>
          <loc>https://useworld.github.io/page/2/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/3/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/4/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/5/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/page/6/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/cve/page/2/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
     <url>
          <loc>https://useworld.github.io/category/cve/page/3/</loc>
-         <lastmod>2026-06-17</lastmod>
+         <lastmod>2026-06-18</lastmod>
     </url>
 </urlset>
