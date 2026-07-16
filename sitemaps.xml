@@ -55,6 +55,9 @@
          <loc>https://useworld.github.io/cve/cve-2026-32190-microsoft-office-uaf/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/cve/firefox-wasm-invalid-pointer/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/cve/flowise-custommcp-rce/</loc>
 </url>
     <url>
@@ -133,6 +136,9 @@
          <loc>https://useworld.github.io/frida/vscodefrida/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/incident/cursor-repository-git-execution/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/incident/jdy-botnet-recon/</loc>
 </url>
     <url>
@@ -193,10 +199,10 @@
          <loc>https://useworld.github.io/category/incident/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/security/</loc>
+         <loc>https://useworld.github.io/category/cve/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/cve/</loc>
+         <loc>https://useworld.github.io/category/security/</loc>
 </url>
     <url>
          <loc>https://useworld.github.io/category/ai/</loc>
