@@ -49,6 +49,9 @@
          <loc>https://useworld.github.io/cve/copy-fail-linux-kernel-lpe/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/cve/cve-2026-0257-qilin-ransomware/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/cve/cve-2026-20093-cisco-cimc-auth-bypass/</loc>
 </url>
     <url>
@@ -196,10 +199,10 @@
          <loc>https://useworld.github.io/security/libraw-heap-buffer-overflow/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/incident/</loc>
+         <loc>https://useworld.github.io/category/cve/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/cve/</loc>
+         <loc>https://useworld.github.io/category/incident/</loc>
 </url>
     <url>
          <loc>https://useworld.github.io/category/security/</loc>
