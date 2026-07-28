@@ -106,6 +106,9 @@
          <loc>https://useworld.github.io/cve/ubuntu-snap-confine-cve-2026-8933/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/cve/vbulletin-pre-auth-rce/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/cve/wordpress-wp2shell/</loc>
 </url>
     <url>
