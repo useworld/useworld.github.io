@@ -124,6 +124,9 @@
          <loc>https://useworld.github.io/cve/zimbra-cve-2025-66376/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/cve/zoom-meeting-rce-chain/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/etc/humanerror/</loc>
 </url>
     <url>
@@ -260,6 +263,9 @@
 </url>
     <url>
          <loc>https://useworld.github.io/page/7/</loc>
+</url>
+    <url>
+         <loc>https://useworld.github.io/page/8/</loc>
 </url>
     <url>
          <loc>https://useworld.github.io/category/cve/page/2/</loc>
