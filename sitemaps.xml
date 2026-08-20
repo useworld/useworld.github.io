@@ -58,6 +58,9 @@
          <loc>https://useworld.github.io/cve/cve-2026-32190-microsoft-office-uaf/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/cve/firefox-remote-settings-sandbox-escape/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/cve/firefox-wasm-invalid-pointer/</loc>
 </url>
     <url>
@@ -272,5 +275,8 @@
 </url>
     <url>
          <loc>https://useworld.github.io/category/cve/page/3/</loc>
+</url>
+    <url>
+         <loc>https://useworld.github.io/category/cve/page/4/</loc>
 </url>
 </urlset>
