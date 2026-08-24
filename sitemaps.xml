@@ -166,6 +166,9 @@
          <loc>https://useworld.github.io/incident/cursor-repository-git-execution/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/incident/dofun-twcore-supply-chain-attack/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/incident/jdy-botnet-recon/</loc>
 </url>
     <url>
@@ -223,10 +226,10 @@
          <loc>https://useworld.github.io/security/libraw-heap-buffer-overflow/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/cve/</loc>
+         <loc>https://useworld.github.io/category/incident/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/incident/</loc>
+         <loc>https://useworld.github.io/category/cve/</loc>
 </url>
     <url>
          <loc>https://useworld.github.io/category/security/</loc>
