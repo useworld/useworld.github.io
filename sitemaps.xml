@@ -79,6 +79,9 @@
          <loc>https://useworld.github.io/cve/jenkins-cli-vulns/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/cve/keycloak-account-takeover/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/cve/litellm-cve-2026-42208-kev/</loc>
 </url>
     <url>
