@@ -181,6 +181,9 @@
          <loc>https://useworld.github.io/incident/laravel-lang-tag-compromise/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/incident/malicious-browser-extension-supply-chain/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/incident/mastra-npm-supply-chain-compromise/</loc>
 </url>
     <url>
@@ -232,10 +235,10 @@
          <loc>https://useworld.github.io/security/libraw-heap-buffer-overflow/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/cve/</loc>
+         <loc>https://useworld.github.io/category/incident/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/incident/</loc>
+         <loc>https://useworld.github.io/category/cve/</loc>
 </url>
     <url>
          <loc>https://useworld.github.io/category/security/</loc>
