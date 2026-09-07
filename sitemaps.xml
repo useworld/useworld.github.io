@@ -43,6 +43,9 @@
          <loc>https://useworld.github.io/cve/cve-2026-5281-chrome-dawn-webgpu-use-after-free/</loc>
 </url>
     <url>
+         <loc>https://useworld.github.io/cve/chrome-v8-cve-2026-85046/</loc>
+</url>
+    <url>
          <loc>https://useworld.github.io/cve/cisco-webex-sso-forgery/</loc>
 </url>
     <url>
@@ -235,10 +238,10 @@
          <loc>https://useworld.github.io/security/libraw-heap-buffer-overflow/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/incident/</loc>
+         <loc>https://useworld.github.io/category/cve/</loc>
 </url>
     <url>
-         <loc>https://useworld.github.io/category/cve/</loc>
+         <loc>https://useworld.github.io/category/incident/</loc>
 </url>
     <url>
          <loc>https://useworld.github.io/category/security/</loc>
